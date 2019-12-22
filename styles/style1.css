@@ -1,0 +1,26 @@
+p {
+text-align: justify;
+font-family: 'Crimson Text', serif;
+font-size: 18px;
+}
+
+
+p.masterOfWisdom {
+font-family: 'Dancing Script', cursive;
+font-size: 30px;
+}
+
+i.large.material-icons {
+font-size: 60px;
+}
+
+h1 {
+font-family: 'Dancing Script', cursive;
+}
+
+img.responsive-img {
+max-width: 50%;
+height: auto;
+float: left;
+margin-right: 1rem;
+}
