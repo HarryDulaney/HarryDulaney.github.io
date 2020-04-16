@@ -2,9 +2,8 @@
 @import url("http://fonts.googleapis.com/css?family=Raleway:100,200,300,500,600,700,800,900");
 
 /*
-	Phase Shift by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+	Released for free under the Creative Commons Attribution 3.0 license 
 */
 
 /* Basic */
@@ -190,6 +189,15 @@
 	.formerize-placeholder {
 		color: rgba(85, 85, 85, 0.5) !important;
 	}
+	.icons{
+		color: #eeeeee;
+
+	}
+	.icons > a  {
+		display: inline-block;
+		padding: 0.1em;
+
+	}
 
 /* Image */
 
@@ -227,92 +235,6 @@
 				display: block;
 				width: 100%;
 			}
-
-/* Icon */
-
-	.icon {
-		position: relative;
-	}
-
-		.icon:before {
-			content: "";
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
-			font-style: normal;
-			font-weight: normal;
-			text-transform: none !important;
-		}
-
-		.icon > .label {
-			display: none;
-		}
-
-/* Lists */
-
-	ol.default {
-		list-style: decimal;
-		padding-left: 1.25em;
-	}
-
-		ol.default li {
-			padding-left: 0.25em;
-		}
-
-	ul.default {
-		margin: 0em 0em 2em 0em;
-		padding: 0em 0em 1.5em 0em;
-		list-style: none;
-	}
-
-		ul.default li {
-			padding: 0.60em 0em;
-			font-size: 0.90em;
-			border-top: 1px solid;
-			border-color: rgba(0, 0, 0, 0.1);
-		}
-
-		ul.default li:first-child {
-			border-top: none;
-		}
-
-	ul.icons {
-		cursor: default;
-		text-align: center;
-	}
-
-		ul.icons li {
-			display: inline-block;
-			padding: 0em 0.20em;
-		}
-
-			ul.icons li:first-child {
-				padding-left: 0;
-			}
-
-			ul.icons li span {
-				display: none;
-			}
-
-			ul.icons li a {
-				display: inline-block;
-				color: #828282;
-				width: 30px;
-				height: 30px;
-				text-align: center;
-			}
-
-				ul.icons li a:before {
-					display: inline-block;
-					border: 1px solid #828282;
-					width: 2em;
-					height: 2em;
-					line-height: 2em;
-					font-size: 1em;
-					color: #828282;
-					border-radius: 100%;
-					text-align: center;
-				}
 
 	ul.actions {
 		cursor: default;
@@ -426,7 +348,7 @@
 		-o-transition: background-color 0.35s ease-in-out;
 		-ms-transition: background-color 0.35s ease-in-out;
 		transition: background-color 0.35s ease-in-out;
-		background: #d84780;
+		background: #000000;
 		border-radius: 6px;
 		border: 0;
 		color: white;
@@ -556,9 +478,9 @@
 
 	#banner {
 		text-align: center;
-		color: #fff;
+		color: #eeeeee;
 		padding: 0em 4em;
-		margin-bottom: 6em;
+		margin-bottom: 4em;
 	}
 
 		#banner p {
