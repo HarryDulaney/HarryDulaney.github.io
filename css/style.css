@@ -13,7 +13,8 @@ body {
 }
 
 body, span, input, select, textarea {
-    color: #555555;
+    color: whitesmoke;
+    text-decoration: none;
     font-family: 'Raleway', sans-serif;
     font-size: 12pt;
     font-weight: 300;
@@ -21,7 +22,8 @@ body, span, input, select, textarea {
 }
 
 a {
-    color: #d84780;
+    color: #dddddd;
+    text-decoration: none;
 
 }
 
@@ -39,6 +41,7 @@ p, ul, ol, dl, table, blockquote {
 
 p {
     line-height: 2em;
+    -webkit-text-fill-color: #0F1116;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -446,6 +449,10 @@ input[type="button"].medium,
     display: inline-block;
     text-transform: uppercase;
 }
+#logo h1 > a {
+    display: inline-block;
+}
+
 
 /* Navigation */
 
@@ -491,6 +498,7 @@ input[type="button"].medium,
 #banner p {
     font-size: 1.75em;
     line-height: 1.5em;
+    color: darkgrey;
 }
 
 #banner strong,
@@ -501,6 +509,14 @@ input[type="button"].medium,
 }
 
 /* Main */
+
+#skill-icons img{
+    justify-content: center;
+    display: inline-block;
+    width: 5%;
+
+
+}
 
 /* Footer */
 
@@ -547,6 +563,11 @@ input[type="button"].medium,
     color: #ddd;
     color: rgba(255, 255, 255, 0.4) !important;
     padding: 0.1em
+}
+#tag{
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0.1em;
 }
 
 /* Box */
