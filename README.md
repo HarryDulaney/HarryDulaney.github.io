@@ -1,7 +1,7 @@
 # Project portfolio 
 
 
-[Visit Live Website](https://harrydulaney.github.io)
+[Check It Out Here](https://harrydulaney.github.io)
 
 ## Other Links:
 
