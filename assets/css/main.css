@@ -1135,8 +1135,8 @@ body {
 .about--banner h2 {
     position: relative;
     margin-top: 35px;
-    font-size: 68px;
-    font-weight: 900;
+    font-size: 38px;
+    font-weight: 600;
     line-height: 1;
     z-index: 1
 }
