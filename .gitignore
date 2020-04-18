@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+### CodeKit template
+# General CodeKit files to ignore
+config.codekit
+config.codekit3
+/min
+
+/.idea
