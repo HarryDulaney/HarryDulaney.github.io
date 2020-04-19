@@ -424,8 +424,11 @@ body {
     transform: translateY(-45px);
     -webkit-transition: -webkit-transform .4s ease-in-out;
     transition: -webkit-transform .4s ease-in-out;
-    transition: transform .4s ease-in-out;
     transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out
+}
+
+s {
+    transition: transform .4s ease-in-out;
 }
 
 .section--prev {
@@ -434,6 +437,9 @@ body {
     -webkit-transition: -webkit-transform .4s ease-in-out;
     transition: -webkit-transform .4s ease-in-out;
     transition: transform .4s ease-in-out;
+}
+
+.section--prev {
     transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out
 }
 
@@ -1178,6 +1184,9 @@ body {
     -webkit-transition: -webkit-transform .4s;
     transition: -webkit-transform .4s;
     transition: transform .4s;
+}
+
+.container {
     transition: transform .4s, -webkit-transform .4s
 }
 
@@ -1196,6 +1205,9 @@ body {
     -webkit-transition: -webkit-transform .4s;
     transition: -webkit-transform .4s;
     transition: transform .4s;
+}
+
+.effect-rotate-left .container {
     transition: transform .4s, -webkit-transform .4s
 }
 
