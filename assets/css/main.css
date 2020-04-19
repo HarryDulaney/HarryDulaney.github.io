@@ -1263,9 +1263,15 @@ s {
     opacity: 0;
     cursor: pointer;
     -webkit-transition: opacity .2s, -webkit-transform .2s;
-    transition: opacity .2s, -webkit-transform .2s;
-    transition: transform .2s, opacity .2s;
     transition: transform .2s, opacity .2s, -webkit-transform .2s
+}
+
+.outer-nav > li {
+    transition: opacity .2s, -webkit-transform .2s;
+}
+
+.outer-nav > li {
+    transition: transform .2s, opacity .2s;
 }
 
 .outer-nav > li.is-vis {
@@ -1273,9 +1279,15 @@ s {
     transform: translateX(0) translateZ(0);
     opacity: 1;
     -webkit-transition: opacity .4s, -webkit-transform .4s;
-    transition: opacity .4s, -webkit-transform .4s;
-    transition: transform .4s, opacity .4s;
     transition: transform .4s, opacity .4s, -webkit-transform .4s
+}
+
+.outer-nav > li.is-vis {
+    transition: opacity .4s, -webkit-transform .4s;
+}
+
+.outer-nav > li.is-vis {
+    transition: transform .4s, opacity .4s;
 }
 
 .outer-nav > li::before {
