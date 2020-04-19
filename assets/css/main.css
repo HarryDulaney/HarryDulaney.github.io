@@ -895,7 +895,7 @@ body {
 }
 
 .work h2 {
-    margin: 0 0 20px 0;
+    margin: 5px 0 20px 0;
     font-size: 30px;
     text-align: center
 }
@@ -1150,7 +1150,7 @@ body {
         margin-bottom: 30px
     }
 
-    .work-request--information .information-name, .work-request--information .information-email, .information-org {
+    .work-request--information .information-name, .work-request--information .information-email {
         height: 40px;
         font-size: 24px
     }
