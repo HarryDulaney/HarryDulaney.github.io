@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="keywords" content="HGDIV,Harry Dulaney, template, html, sass, jquery">
+  <meta name="keywords" content="HGDIV,Harry Dulaney, software developer, portfolio, html, jquery">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
@@ -18,6 +18,7 @@
   <p class="device-notification--message"></p>
 </div>
 <div class="perspective effect-rotate-left">
+
   <div class="container">
     <div class="outer-nav--return"></div>
     <div id="viewport" class="l-viewport">
@@ -128,18 +129,18 @@
               </div>
             </div>
           </li>
+
           <li class="l-section section">
             <div class="about">
               <div class="about--banner">
                 <h2>The two<br>most important<br>days in your life,<br>are the day you are born,<br>and the day you find out why.<br><br>-Mark Twain-</h2>
-                  <span>
+                <span>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                     <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
                       <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
                     </g>
                     </svg>
                   </span>
-                </a>
              <img src="assets/img/about-me-pic-1.png" alt="About Me">
               </div>
               <div class="about--options">
@@ -155,29 +156,33 @@
               </div>
             </div>
           </li>
+
           <!-- Resume  -->
           <li class="l-section section">
             <div class="resume">
             </div>
           </li>
+
           <!-- Contact Me -->
           <li class="l-section section">
             <div class="hire">
               <h2>Contact Me</h2>
-              <!-- checkout formspree.io for easy form setup -->
-              <form class="work-request" action="mailto:harrydulaney@gmail.com" method="post" enctype="text/plain">
-                <div class="work-request--options">
-                </div>
+              <form class="work-request" action="https://formspree.io/mbjavzoe" name="contact-form" method="POST" enctype="text/plain">
                 <div class="work-request--information">
                   <div class="information-name">
                     <input id="name" type="text" spellcheck="false">
                     <label for="name">Name</label>
                   </div>
                   <div class="information-email">
-                    <input id="email" type="email" spellcheck="false">
+                    <input id="email" type="text" name="_replyto" spellcheck="false">
                     <label for="email">Email</label>
                   </div>
+                  <div class="information-message">
+                    <label id="message" for="message">Message
+                      <textarea name="message"></textarea></label>
+                  </div>
                 </div>
+
                 <input type="submit" name="submit" value="Submit" >
               </form>
             </div>
@@ -195,6 +200,7 @@
     <li>Contact</li>
   </ul>
 </div>
+
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
 </body>
