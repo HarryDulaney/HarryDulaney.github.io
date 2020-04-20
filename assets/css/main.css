@@ -58,16 +58,6 @@ audio:not([controls]) {
 [hidden], template {
     display: none
 }
-#frame-i {
-    display: block;
-    position: absolute;
-    justify-content: center;
-    width: 90%;
-    height: 90%;
-    object-fit: scale-down!important;
-    line-height: 100%;
-}
-
 
 a {
     background-color: transparent
@@ -1202,7 +1192,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    max-width: 600px;
+    max-width: 700px;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -1234,6 +1224,10 @@ body {
 
 .about--options > a:nth-child(3) {
     background-image: url("../img/about-profesh.jpg")
+}
+.about--options > a:nth-child(4){
+    background-image: url("../img/immersive-atlanta.png");
+
 }
 
 .about--options > a:hover h3 {
@@ -1702,6 +1696,19 @@ body {
     position: fixed;
     -webkit-perspective: 1500px;
     perspective: 1500px
+}
+
+
+.resume .i-frame-container{
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 15%;
+    left: auto;
+    width: 70%;
+    height: 100%;
+
+
 }
 
 .container {
