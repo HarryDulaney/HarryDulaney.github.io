@@ -1508,7 +1508,7 @@ body {
     margin: 30px 0
 }
 
-.work-request--options .options-a {
+.work-request--options.options-a {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
