@@ -58,6 +58,16 @@ audio:not([controls]) {
 [hidden], template {
     display: none
 }
+#frame-i {
+    display: block;
+    position: absolute;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    object-fit: scale-down!important;
+    line-height: 100%;
+}
+
 
 a {
     background-color: transparent
