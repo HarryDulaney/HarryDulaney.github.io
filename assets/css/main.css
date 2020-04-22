@@ -948,6 +948,9 @@ body {
     border-radius: 50%;
     overflow: hidden
 }
+.work--lockup .slider--item-icon {
+    display: none;
+}
 
 .work--lockup .slider--item-image img {
     width: 100%
@@ -984,11 +987,14 @@ body {
 
 .work--lockup .slider--item-center .slider--item-title {
     margin-top: 25px;
-    font-size: 16px
+    font-size: 16px;
 }
 
 .work--lockup .slider--item-center .slider--item-description {
     display: block
+}
+.work--lockup .slider--item-center .slider--item-icon {
+    display: block;
 }
 
 .work--lockup .slider--item-center .slider--item-image {
