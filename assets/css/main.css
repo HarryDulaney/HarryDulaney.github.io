@@ -1421,24 +1421,22 @@ body {
 }
 
 .hire {
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 700px;
-    max-width: 75%;
-    height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
+    display: block;
+    position: center;
+    align-content: center;
+    text-align: center;
     justify-content: center;
-    margin: 0 auto
+    width: 100%;
+    height: 100%;
+}
+.hire .hire-image {
+    width: 35%;
+
+
+}
+.hire .hire-a .hire-image2 {
+    width: 5%;
+
 }
 
 @media (max-width: 1180px) {
@@ -1449,10 +1447,14 @@ body {
 
 
 .hire h2 {
-    margin: 0 0 20px 0;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center
 }
+.hire h3 {
+    font-size: 20px;
+    text-align: center
+}
+
 
 .work-request {
     display: -webkit-box;
@@ -1615,7 +1617,7 @@ body {
 
 }
 
-.work-request--information input[type="text"]:focus, .work-request--information input[type="email"]:focus, .work-request--information textarea input[type="text"] {
+.work-request--information input[type="text"]:focus, .work-request--information input[type="email"]:focus {
     outline: none;
     background-color: #0c0c0c
 }
@@ -1630,7 +1632,7 @@ body {
     transition: top .2s ease-in-out, font-size .2s ease-in-out
 }
 
-.work-request--information input:focus + label, .work-request--information input.has-value + label, .work-request--information textarea.has-value + label {
+.work-request--information input:focus + label, .work-request--information input.has-value + label {
     top: -15px;
     font-size: 14px
 }
