@@ -1722,6 +1722,12 @@ body {
     perspective: 1500px
 }
 
+@media (max-width: 1180px) {
+    .resume {
+        max-width: 100%
+    }
+}
+
 
 .resume .i-frame-container{
     display: block;
@@ -1731,6 +1737,34 @@ body {
     left: auto;
     width: 70%;
     height: 100%;
+
+
+}
+@media (max-width: 767px) {
+
+    .resume .i-frame-container{
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 2%;
+    left: auto;
+    width: 90%;
+    height: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .resume .i-frame-container {
+        display: block;
+        position: absolute;
+        top: 1px;
+        right: 2%;
+        left: auto;
+        width: 90%;
+        height: 100%;
+
+    }
 
 
 }
