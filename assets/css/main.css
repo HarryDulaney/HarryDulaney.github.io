@@ -747,6 +747,7 @@ body {
 
 .intro--banner img {
     position: absolute;
+    border-radius: 50%;
     bottom: 21px;
     right: -12px
 }
@@ -1271,7 +1272,7 @@ body {
 
     .about--banner h2 {
         margin-top: 10px;
-        font-size: 30px
+        font-size: 20px
     }
 
     .about--banner h2::before {
@@ -1285,13 +1286,13 @@ body {
     }
 
     .about--banner img {
-        width: 315px
+        width: 200px
     }
 }
 
 @media (max-width: 600px) {
     .about--banner {
-        height: auto
+        height: 150px
     }
 
     .about--banner::before {
@@ -1304,7 +1305,7 @@ body {
 
     .about--banner h2 {
         margin-top: 0;
-        font-size: 55px
+        font-size: 15px
     }
 
     .about--banner h2::before {
@@ -1436,7 +1437,7 @@ body {
     height: 100%;
 }
 .hire .hire-image {
-    width: 35%;
+    height: 35%;
 
 
 }
@@ -1446,6 +1447,12 @@ body {
 
 }
 .hire .hire-a .hire-image3 {
+    height: 15%;
+    margin-left: 1em;
+    border-radius: 50%;
+}
+.hire .hire-a .hire-image3:hover {
+    background-color: cornsilk;
     height: 15%;
     margin-left: 1em;
 }
