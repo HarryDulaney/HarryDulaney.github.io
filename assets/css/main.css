@@ -747,13 +747,11 @@ body {
 
 .intro--banner img {
     position: absolute;
-    height: 80%;
-    margin-bottom: 5px;
-    border-radius: 50% / 10%;
-    bottom: 21px;
-    right: -12px
+    height: 60%;
+    border-radius: 60% / 20%;
+    bottom: 7em;
+    right: 4em;
 }
-
 
 .intro--options {
     display: -webkit-box;
@@ -798,10 +796,6 @@ body {
         font-size: 55px
     }
 
-    .intro--banner img {
-        width: 430px
-    }
-
     .intro--options > a {
         margin-right: 30px
     }
@@ -818,10 +812,6 @@ body {
 
     .intro--banner h1 {
         font-size: 44px
-    }
-
-    .intro--banner img {
-        width: 330px
     }
 
     .intro--options {
@@ -1452,8 +1442,8 @@ body {
     position: relative;
     height: 15%;
     margin-left: 1em;
+    border-radius: 50%;
 }
-
 .hire .hire-a .hire-image3:hover {
     background-color: cornsilk;
     height: 15%;
@@ -1749,8 +1739,6 @@ body {
     display: block;
     position: absolute;
     top: 1px;
-    right: 2%;
-    left: auto;
     width: 90%;
     height: 100%;
     }
@@ -1762,8 +1750,6 @@ body {
         display: block;
         position: absolute;
         top: 1px;
-        right: 2%;
-        left: auto;
         width: 90%;
         height: 100%;
 
