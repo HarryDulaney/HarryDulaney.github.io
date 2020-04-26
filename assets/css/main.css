@@ -708,6 +708,21 @@ body {
     line-height: 1;
     z-index: 1
 }
+.intro--banner img {
+    position: absolute;
+    height: 60%;
+    border-radius: 60% / 20%;
+    bottom: 7em;
+    right: 4em;
+}
+.intro--banner .main-picture {
+    position: absolute;
+    height: 60%;
+    border-radius: 60% / 20%;
+    bottom: 7em;
+    right: 4em;
+
+}
 
 .intro--banner button {
     position: relative;
@@ -745,13 +760,7 @@ body {
     fill: #fff
 }
 
-.intro--banner img {
-    position: absolute;
-    height: 60%;
-    border-radius: 60% / 20%;
-    bottom: 7em;
-    right: 4em;
-}
+
 
 .intro--options {
     display: -webkit-box;
