@@ -747,16 +747,18 @@ body {
 
 .intro--banner img {
     position: absolute;
-    border-radius: 50%;
+    height: 80%;
+    margin-bottom: 5px;
+    border-radius: 50% / 10%;
     bottom: 21px;
     right: -12px
 }
 
+
 .intro--options {
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-flexbox;display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -1447,10 +1449,11 @@ body {
 
 }
 .hire .hire-a .hire-image3 {
+    position: relative;
     height: 15%;
     margin-left: 1em;
-    border-radius: 50%;
 }
+
 .hire .hire-a .hire-image3:hover {
     background-color: cornsilk;
     height: 15%;
