@@ -1195,8 +1195,9 @@ body {
 
 .about--banner img {
     position: absolute;
+    height: 75%;
     bottom: 0;
-    right: -12px
+    right: 5%
 }
 
 .about--options {
@@ -1243,7 +1244,7 @@ body {
 }
 
 .about--options > a:hover h3 {
-    bottom: -50px
+    bottom: 4em;
 }
 
 .about--options h3 {
@@ -1286,9 +1287,7 @@ body {
         left: 163px
     }
 
-    .about--banner img {
-        width: 200px
-    }
+
 }
 
 @media (max-width: 600px) {
@@ -1322,9 +1321,29 @@ body {
     .about--banner img {
         display: none
     }
+    .about--options > a {
+        position: relative;
+        width: 74px;
+        height: 36px;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid blue;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat
+    }
 
-    .about--options {
-        display: none
+    .about--options > a:hover h3 {
+        bottom: 4em;
+    }
+    .about--options h3 {
+        position: absolute;
+        bottom: -16px;
+        left: 5px;
+        font-size: 8px;
+        text-transform: uppercase;
+        -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
+        transition: bottom .2s ease-in-out, left .2s ease-in-out
     }
 }
 
