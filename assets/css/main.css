@@ -765,12 +765,13 @@ body {
 .intro--options {
     display: -webkit-box;
     display: -webkit-flex;
+    margin-top: 0;
+    margin-bottom: 2em;
     display: -ms-flexbox;display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin: 0;
     padding: 0;
     list-style: none
 }
@@ -780,20 +781,22 @@ body {
     text-decoration: none;
     color: #535050;
     -webkit-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out
+    transition: color .2s ease-in-out;
 }
 
 .intro--options > a:hover {
-    color: #fff
+    color: #fff;
 }
 
 .intro--options h3 {
     font-size: 16px;
     text-transform: uppercase
+
 }
 
 .intro--options p {
-    margin-bottom: 0
+    margin-bottom: 1em;
+    margin-top: -5px;
 }
 
 @media (max-width: 900px) {
