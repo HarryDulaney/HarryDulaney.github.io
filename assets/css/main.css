@@ -30,7 +30,6 @@
     font-style: normal
 }
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -579,7 +578,7 @@ body {
     justify-content: space-around;
     margin: 0;
     padding: 0;
-    list-style-position: inside;
+    list-style-position: outside;
     z-index: 10
 }
 
@@ -612,23 +611,23 @@ body {
 }
 
 .side-nav li:nth-child(1)::before {
-    content: "01"
+    content: "H"
 }
 
 .side-nav li:nth-child(2)::before {
-    content: "02"
+    content: "P"
 }
 
 .side-nav li:nth-child(3)::before {
-    content: "03"
+    content: "A"
 }
 
 .side-nav li:nth-child(4)::before {
-    content: "04"
+    content: "R"
 }
 
 .side-nav li:nth-child(5)::before {
-    content: "05"
+    content: "C"
 }
 
 .side-nav li.is-active {
@@ -1231,18 +1230,18 @@ body {
 }
 
 .about--options > a:nth-child(1) {
-    background-image: url("../img/githubIcon.png")
+    background-image: url("../icon/githubIcon.png")
 }
 
 .about--options > a:nth-child(2) {
-    background-image: url("../img/gsu-logo.jpg")
+    background-image: url("../icon/gsu-logo.jpg")
 }
 
 .about--options > a:nth-child(3) {
-    background-image: url("../img/about-profesh.jpg")
+    background-image: url("../icon/about-profesh.jpg")
 }
 .about--options > a:nth-child(4){
-    background-image: url("../img/immersive-atlanta.png");
+    background-image: url("../icon/immersive-atlanta.png");
 
 }
 
@@ -1356,7 +1355,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../img/contact-visual.png");
+    background-image: url("../img/atl-map-cartoon.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat
@@ -1759,8 +1758,9 @@ body {
     top: 5px;
     right: 15%;
     left: auto;
+    bottom: 5px;
     width: 70%;
-    height: 100%;
+    height: 95%;
 
 
 }
