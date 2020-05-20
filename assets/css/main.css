@@ -709,17 +709,14 @@ body {
 }
 .intro--banner img {
     position: absolute;
-    height: 60%;
-    border-radius: 60% / 20%;
+    height: 75%;
     bottom: 7em;
-    right: 4em;
+    right: 6em;
 }
 .intro--banner .main-picture {
     position: absolute;
-    height: 60%;
-    border-radius: 60% / 20%;
-    bottom: 7em;
-    right: 4em;
+    bottom: 2em;
+    right: 2em;
 
 }
 
