@@ -626,10 +626,6 @@ body {
     content: "C"
 }
 
-.side-nav li:nth-child(5)::before {
-    content: "R"
-}
-
 .side-nav li.is-active {
     color: #0f33ff;
     -webkit-transition: color .4s ease-in-out;
