@@ -214,7 +214,10 @@ body {
 
 .nav--items img {
     position: relative;
-    margin: auto;
+    margin-top: 1vh;
+    margin-left: 0.3vw;
+    float: left;
+
 }
 
 .nav--items img:hover {
@@ -320,60 +323,13 @@ body {
 
 }
 
-.work--grid .project--item-one {
 
-
-}
-
-.work--grid .project--item-two {
-
-
-}
-
-.work--grid .project--item-three {
-
-
-}
-
-.work--grid .project--item-four {
-
-}
 
 .about {
     position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    width: 900px;
-    max-width: 75%;
-    height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    display: block;
     margin: 0 auto
 }
-
-@media (max-width: 1180px) {
-    .about {
-        max-width: 100%
-    }
-
-}
-
-
-@media (max-width: 900px) {
-    .container main {
-        margin-top: 200px;
-    }
-}
-
 .about--banner {
     position: relative;
     height: 475px
@@ -638,16 +594,31 @@ body {
 }
 
 
+@media (max-width: 1180px) {
+    .about {
+        max-width: 100%
+    }
+
+}
+
+
+@media (max-width: 900px) {
+    .container main {
+        margin-top: 100px;
+    }
+}
+
+
 @media (max-width: 767px) {
     .container main {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 
 }
 
 @media (max-width: 600px) {
     .container main {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 
 }
