@@ -189,6 +189,11 @@ body {
     -webkit-text-size-adjust: 100%
 }
 
+.container {
+    height: 100%;
+    width: 100%;
+}
+
 .navbar {
     display: block;
     position: fixed;
@@ -207,7 +212,7 @@ body {
     position: relative;
     margin-left: 2vw;
     margin-right: 2vw;
-    font-size: calc(7px + 0.5vw);
+    font-size: calc(8px + 0.5vw);
     text-decoration: none;
 
 }
@@ -226,11 +231,12 @@ body {
 }
 
 .container .main--body {
-    margin-top: 100px;
+    margin-top: calc(7% + 4vh);
 }
 
-.intro {
-
+.intro h4 {
+    text-align: center;
+    font-size: 20px;
 }
 
 .intro h2 {
@@ -238,6 +244,16 @@ body {
     position: relative;
     text-align: center;
     font-size: 20px;
+}
+
+.intro h4 > a {
+    font-size: calc(4px + 1vw);
+    color: grey;
+    text-decoration: none;
+}
+
+.intro h4 > a:hover {
+
 }
 
 .main--body .intro .intro--icons {
@@ -324,12 +340,12 @@ body {
 }
 
 
-
 .about {
     position: relative;
     display: block;
     margin: 0 auto
 }
+
 .about--banner {
     position: relative;
     height: 475px
@@ -497,17 +513,12 @@ body {
 
 
 .contact h2 {
-    font-size: 20px;
-    text-align: center
-}
-
-.contact h3 {
-    font-size: 20px;
-    text-align: center
+    text-align: center;
+    margin-bottom: 5vh;
 }
 
 
-.contact.contact-form {
+.contact .contact-form {
     display: block;
     position: center;
     padding: 20px;
@@ -519,7 +530,7 @@ body {
 
 }
 
-.contact.contact-form > label {
+.contact .contact-form > label {
     display: block;
     font-size: 15px;
     text-align: center;
@@ -573,9 +584,6 @@ body {
 
 }
 
-.contact > a {
-
-}
 
 .contact .contact--links {
     display: inline-block;
@@ -595,31 +603,21 @@ body {
 
 
 @media (max-width: 1180px) {
-    .about {
-        max-width: 100%
-    }
 
 }
 
 
 @media (max-width: 900px) {
-    .container main {
-        margin-top: 100px;
-    }
+
 }
 
 
 @media (max-width: 767px) {
-    .container main {
-        margin-top: 100px;
-    }
+
 
 }
 
 @media (max-width: 600px) {
-    .container main {
-        margin-top: 100px;
-    }
 
 }
 
