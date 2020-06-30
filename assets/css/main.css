@@ -649,28 +649,14 @@ body {
 
 
 @media (max-width: 900px) {
-    .nav--items > a {
-        margin-left: 0.8vw;
-        margin-right: 0.8vw;
-        margin-bottom: 2px;
-        font-size: calc(5px + 1vw);
-        text-decoration: none;
 
-    }
 
 
 }
 
 
 @media (max-width: 767px) {
-    .nav--items > a {
-        margin-left: 0.8vw;
-        margin-right: 0.8vw;
-        margin-bottom: 2px;
-        font-size: calc(6px + 1vw);
-        text-decoration: none;
 
-    }
 
     .contact .contact-form .textarea--message {
 
@@ -683,15 +669,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    .nav--items > a {
-        position: relative;
-        margin-left: 0.8vw;
-        margin-right: 0.8vw;
-        margin-bottom: 2px;
-        font-size: calc(6px + 1vw);
-        text-decoration: none;
-
-    }
 
 
 }
