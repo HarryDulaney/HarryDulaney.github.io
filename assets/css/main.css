@@ -72,6 +72,7 @@ h1 {
 h2 {
     display: block;
     text-align: center;
+    color:cornflowerblue;
     font-size: calc(10px + 0.5vw);
 }
 
@@ -215,7 +216,7 @@ body {
     position: relative;
     margin-left: 2vw;
     margin-right: 2vw;
-    margin-bottom: -3vh;
+    margin-bottom: -1vh;
     font-size: calc(8px + 0.5vw);
     text-decoration: none;
 
@@ -251,7 +252,7 @@ body {
 
 .intro h4 > a {
     font-size: calc(4px + 1vw);
-    color: blue;
+    color: lightblue;
     text-decoration: none;
 }
 
