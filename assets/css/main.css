@@ -162,7 +162,10 @@ legend {
 }
 
 textarea {
-    overflow: auto
+    overflow: auto;
+    resize: none;
+    max-width:90%;
+    max-height: 10%;
 }
 
 optgroup {
@@ -577,7 +580,6 @@ body {
     display: block;
     align-content: center;
     text-align: center;
-    margin: 15px 5px 20px;
     -webkit-text-fill-color: black;
 
 }
