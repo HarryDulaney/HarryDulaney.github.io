@@ -212,6 +212,7 @@ body {
     position: relative;
     margin-left: 2vw;
     margin-right: 2vw;
+    margin-bottom: -3vh;
     font-size: calc(8px + 0.5vw);
     text-decoration: none;
 
@@ -234,27 +235,23 @@ body {
     margin-top: calc(7% + 4vh);
 }
 
+
 .intro h4 {
     text-align: center;
-    font-size: 20px;
 }
 
 .intro h2 {
     display: block;
     position: relative;
     text-align: center;
-    font-size: 20px;
 }
 
 .intro h4 > a {
     font-size: calc(4px + 1vw);
-    color: grey;
+    color: blue;
     text-decoration: none;
 }
 
-.intro h4 > a:hover {
-
-}
 
 .main--body .intro .intro--icons {
     display: block;
@@ -341,14 +338,15 @@ body {
 
 
 .about {
-    position: relative;
     display: block;
-    margin: 0 auto
+    position: relative;
+
+
 }
 
 .about--banner {
-    position: relative;
-    height: 475px
+    text-align:left;
+    color: grey;
 }
 
 .about--banner::before {
@@ -375,15 +373,22 @@ body {
     background-color: #0f33ff
 }
 
-.about--banner h2 {
+.about--banner p {
     position: relative;
-    margin-top: 35px;
-    font-size: 36px;
+    margin: 6vh 0 6vh 15vw;
+    font-size: calc(8px + 1vw);
+    padding: 0.5vw;
     font-weight: 400;
+    cursor: pointer;
     line-height: 1;
+    transition: color 2s;
+
+}
+.about--banner p:hover{
+    color: cornflowerblue;
 }
 
-.about--banner h2::before {
+.about--banner p::before {
     content: "";
     position: absolute;
     top: 60px;
@@ -394,7 +399,7 @@ body {
     border-radius: 50%
 }
 
-.about--banner h2::after {
+.about--banner p::after {
     content: "";
     position: absolute;
     top: 255px;
@@ -426,23 +431,15 @@ body {
     transition: left .2s ease-in-out
 }
 
-.about--banner img {
-    position: absolute;
-    height: 75%;
-    bottom: 0;
-    right: 5%
-}
 
 .about--options {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    max-width: 700px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-around;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0;
     list-style: none
 }
@@ -451,48 +448,52 @@ body {
     position: relative;
     width: 150px;
     height: 75px;
-    margin-right: 1em;
-    margin-left: 1em;
     text-decoration: none;
     color: #fff;
     border: 1px solid blue;
     background-position: center;
+    text-align: center;
     background-size: cover;
     background-repeat: no-repeat
 
 }
 
-.about--options > a:nth-child(1) {
-    background-image: url("../icon/githubIcon.png")
+.about--options > a:nth-child(1):hover {
+    background-image: url("../icon/githubIcon.png");
+    opacity: 20%;
 }
 
-.about--options > a:nth-child(2) {
-    background-image: url("../icon/gsu-logo.jpg")
+.about--options > a:nth-child(2):hover {
+    background-image: url("../icon/gsu-logo.jpg");
+    opacity: 20%;
+
 }
 
-.about--options > a:nth-child(3) {
+.about--options > a:nth-child(3):hover {
     background-image: url("../img/O_Java-SE-8-OCA-clr.bmp");
     background-color: white;
+    opacity: 20%;
+
 }
 
-.about--options > a:nth-child(4) {
-    background-image: url("../icon/about-profesh.jpg")
+.about--options > a:nth-child(4):hover {
+    background-image: url("../icon/about-profesh.jpg");
+    opacity: 20%;
+
 }
 
-.about--options > a:nth-child(5) {
+.about--options > a:nth-child(5):hover {
     background-image: url("../icon/immersive-atlanta.png");
-
+    opacity: 20%;
 }
 
 .about--options > a:hover h3 {
-    bottom: 4em;
 }
 
 .about--options h3 {
-    position: absolute;
+    font-size: calc(7px + 0.6vw);
     bottom: -38px;
-    left: 10px;
-    font-size: 16px;
+    left:10px;
     text-transform: uppercase;
     -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
     transition: bottom .2s ease-in-out, left .2s ease-in-out
@@ -609,15 +610,19 @@ body {
 
 @media (max-width: 900px) {
 
-}
+
+
+    }
 
 
 @media (max-width: 767px) {
 
 
+
 }
 
 @media (max-width: 600px) {
+
 
 }
 
