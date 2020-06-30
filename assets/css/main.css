@@ -72,7 +72,7 @@ h1 {
 h2 {
     display: block;
     text-align: center;
-    color:cornflowerblue;
+    color: cornflowerblue;
     font-size: calc(10px + 0.5vw);
 }
 
@@ -163,8 +163,11 @@ legend {
 }
 
 textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
     overflow: auto;
-    resize: none;
 }
 
 optgroup {
@@ -393,13 +396,14 @@ body {
     transition: color 2s;
 
 }
+
 .about--banner p > small {
-    color:dodgerblue;
+    color: dodgerblue;
 
 }
 
 .about--banner p > small:hover {
-    color:gray;
+    color: gray;
 
 }
 
@@ -579,9 +583,13 @@ body {
     padding: 15px;
 }
 
-.contact .contact-form > textarea {
+.contact .contact-form .textarea--message {
     display: block;
     align-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    height: auto;
     text-align: center;
     -webkit-text-fill-color: black;
 
@@ -664,6 +672,13 @@ body {
 
     }
 
+    .contact .contact-form .textarea--message {
+
+        width: 75%;
+        height: auto;
+
+    }
+
 
 }
 
@@ -677,6 +692,7 @@ body {
         text-decoration: none;
 
     }
+
 
 }
 
