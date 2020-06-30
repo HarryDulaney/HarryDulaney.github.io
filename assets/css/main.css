@@ -76,7 +76,7 @@ h2 {
 }
 
 small {
-    font-size: 80%
+    font-size: 90%
 }
 
 sub, sup {
@@ -232,7 +232,7 @@ body {
 }
 
 .container .main--body {
-    margin-top: calc(7% + 4vh);
+    margin-top: calc(9% + 10vh);
 }
 
 
@@ -258,14 +258,16 @@ body {
     position: relative;
     align-items: center;
     text-align: center;
+    padding-block-start: 1vw;
+    padding-block-end: 1vw;
     margin-bottom: 5vh;
     margin-top: 5vh;
 
 }
 
 .main--body .intro .intro--icons img {
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
     height: calc(20px + 1vw);
     transition: transform .2s;
 
@@ -281,11 +283,13 @@ body {
 
 .intro .intro--image img {
     display: block;
+    height: calc(30vw + 50px);
+    max-height: 600px;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     border: 1px black;
-    border-radius: 75%;
+    border-radius: 15% 15% 15% 15%;
 }
 
 
@@ -345,7 +349,7 @@ body {
 }
 
 .about--banner {
-    text-align:left;
+    text-align: left;
     color: grey;
 }
 
@@ -354,6 +358,7 @@ body {
     position: absolute;
     top: 20px;
     left: 200px;
+    z-index: -1;
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
     border: 5px solid #0f33ff;
@@ -375,7 +380,7 @@ body {
 
 .about--banner p {
     position: relative;
-    margin: 6vh 0 6vh 15vw;
+    margin: 2vh 0 6vh 15vw;
     font-size: calc(8px + 1vw);
     padding: 0.5vw;
     font-weight: 400;
@@ -384,7 +389,23 @@ body {
     transition: color 2s;
 
 }
-.about--banner p:hover{
+.about--banner p > small {
+    color:dodgerblue;
+
+}
+
+.about--banner p > small:hover {
+    color:gray;
+
+}
+
+.about--banner p + small {
+    margin-left: 15vw;
+    color: grey;
+}
+
+
+.about--banner p:hover {
     color: cornflowerblue;
 }
 
@@ -396,7 +417,9 @@ body {
     width: 30px;
     height: 30px;
     background-color: #0f33ff;
-    border-radius: 50%
+    border-radius: 50%;
+    z-index: -1;
+
 }
 
 .about--banner p::after {
@@ -444,7 +467,7 @@ body {
     list-style: none
 }
 
-.about--options > a {
+.about--options a {
     position: relative;
     width: 150px;
     height: 75px;
@@ -454,46 +477,44 @@ body {
     background-position: center;
     text-align: center;
     background-size: cover;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
 
 }
 
 .about--options > a:nth-child(1):hover {
     background-image: url("../icon/githubIcon.png");
-    opacity: 20%;
+    opacity: 50%;
 }
 
 .about--options > a:nth-child(2):hover {
     background-image: url("../icon/gsu-logo.jpg");
-    opacity: 20%;
+    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(3):hover {
     background-image: url("../img/O_Java-SE-8-OCA-clr.bmp");
     background-color: white;
-    opacity: 20%;
+    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(4):hover {
     background-image: url("../icon/about-profesh.jpg");
-    opacity: 20%;
+    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(5):hover {
     background-image: url("../icon/immersive-atlanta.png");
-    opacity: 20%;
+    opacity: 50%;
 }
 
-.about--options > a:hover h3 {
-}
 
-.about--options h3 {
+.about--options a > h3 {
+    position: relative;
     font-size: calc(7px + 0.6vw);
-    bottom: -38px;
-    left:10px;
+    bottom: 0;
     text-transform: uppercase;
     -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
     transition: bottom .2s ease-in-out, left .2s ease-in-out
@@ -556,10 +577,8 @@ body {
     display: block;
     align-content: center;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin: 15px 5px 20px;
     -webkit-text-fill-color: black;
-
 
 }
 
@@ -604,25 +623,38 @@ body {
 
 
 @media (max-width: 1180px) {
+    .container {
+        height: 100%;
+        width: 100%;
+    }
 
 }
 
 
 @media (max-width: 900px) {
-
-
-
+    .container {
+        height: 100%;
+        width: 100%;
     }
 
 
-@media (max-width: 767px) {
+}
 
+
+@media (max-width: 767px) {
+    .container {
+        height: 100%;
+        width: 100%;
+    }
 
 
 }
 
 @media (max-width: 600px) {
-
+    .container {
+        height: 100%;
+        width: 100%;
+    }
 
 }
 
