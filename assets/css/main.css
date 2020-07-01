@@ -197,7 +197,8 @@ body {
 
 .container {
     display: block;
-
+    margin: 0;
+    padding: 1px;
 }
 
 .navbar {
@@ -240,6 +241,7 @@ body {
 
 .container .main--body {
     margin-top: calc(9% + 10vh);
+    width:100%;
 }
 
 
@@ -283,19 +285,19 @@ body {
 
 .main--body .intro .intro--icons img:hover {
     cursor: pointer;
-    -ms-transform: scale(3);
-    -webkit-transform: scale(3);
-    transform: scale(3);
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
 }
 
 .intro .intro--image img {
     display: block;
-    height: calc(30vw + 50px);
+    height: calc(35vw + 50px);
     max-height: 600px;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    border: 1px black;
+    border: 2px darkblue;
     border-radius: 15% 15% 15% 15%;
 }
 
@@ -357,7 +359,7 @@ body {
 
 .about--banner {
     text-align: left;
-    color: grey;
+    color: purple;
 }
 
 .about--banner::before {
@@ -368,7 +370,7 @@ body {
     z-index: -1;
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
-    border: 5px solid #0f33ff;
+    border: 5px solid #1769ff;
     border-right-color: transparent;
     border-bottom-color: transparent
 }
@@ -377,12 +379,12 @@ body {
     content: "";
     position: absolute;
     top: 75px;
-    left: 400px;
+    left: 200px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     width: 10px;
     height: 10px;
-    background-color: #0f33ff
+    background-color: #0f33ff;
 }
 
 .about--banner p {
@@ -437,7 +439,7 @@ body {
     left: 255px;
     width: 10px;
     height: 10px;
-    background-color: #0f33ff
+    background-color: blueviolet;
 }
 
 .about--banner a {
@@ -669,8 +671,36 @@ body {
 }
 
 @media (max-width: 600px) {
+    .contact .contact-form .textarea--message {
+
+        width: 90%;
+        height: 100px;
+    }
+    .nav--items > a {
+        margin-left: 0.8vw;
+        margin-right: 0.8vw;
+        margin-bottom: -3px;
+        font-size: calc(9px + 1vw);
+        text-decoration: none;
+
+    }
 
 
+}
+@media (max-width: 360px){
+    .nav--items > a {
+        margin-left: 0.8vw;
+        margin-right: 0.8vw;
+        margin-bottom: -3px;
+        font-size: calc(8px + 1vw);
+        text-decoration: none;
+
+    }
+    .contact .contact-form .textarea--message {
+
+        width: 100%;
+        height: 25%;
+    }
 }
 
 
