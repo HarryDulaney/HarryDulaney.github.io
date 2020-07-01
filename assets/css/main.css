@@ -198,7 +198,7 @@ body {
 .container {
     display: block;
     margin: 0;
-    padding: 1px;
+    padding: 2px;
 }
 
 .navbar {
@@ -256,9 +256,14 @@ body {
 }
 
 .intro h4 > a {
-    font-size: calc(4px + 1vw);
-    color: lightblue;
+    font-size: calc(2px + 1vw);
+    color: blue;
+    text-transform: capitalize;
     text-decoration: none;
+}
+
+.intro h4 > a:hover {
+    color:lightblue;
 }
 
 
@@ -642,7 +647,7 @@ body {
         margin-left: 0.8vw;
         margin-right: 0.8vw;
         margin-bottom: 2px;
-        font-size: calc(5px + 1vw);
+        font-size: calc(9px + 1vw);
         text-decoration: none;
 
     }
