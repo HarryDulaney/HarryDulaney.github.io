@@ -241,7 +241,7 @@ body {
 
 .container .main--body {
     margin-top: calc(9% + 10vh);
-    width:100%;
+    width: 100%;
 }
 
 
@@ -264,7 +264,7 @@ body {
 }
 
 .intro h4 > a:hover {
-    color:lightblue;
+    color: lightblue;
 }
 
 
@@ -324,23 +324,57 @@ body {
     font-size: 15px;
 }
 
-.work--grid .piece .project--item-title h3 {
-    -webkit-text-decoration-style: wavy;
-
+/* relevant styles */
+.img__wrap {
+    position: relative;
+    height: 200px;
+    width: 257px;
 }
 
+/*
+.img__description_layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(36, 62, 206, 0.6);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+     //transition effect. not necessary
+    transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description_layer {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img__description {
+    transition: .2s;
+    transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+    transform: translateY(0);
+}
+*/
 .work--grid .piece .project--pic img {
     height: calc(200px + 13vw);
     opacity: 50%;
     transition: opacity 0.5s;
 
 }
+
 .work--grid .piece .project--pic img:hover {
     opacity: 100%;
 
 }
-
 
 
 .work--grid .grid1 {
@@ -671,7 +705,12 @@ body {
 
 
 @media (max-width: 900px) {
+    .contact .contact-form .textarea--message {
 
+        width: 100%;
+        height: 50%;
+
+    }
 
 
 }
@@ -682,8 +721,8 @@ body {
 
     .contact .contact-form .textarea--message {
 
-        width: 75%;
-        height: auto;
+        width: 100%;
+        height: 50%;
 
     }
 
@@ -693,9 +732,10 @@ body {
 @media (max-width: 600px) {
     .contact .contact-form .textarea--message {
 
-        width: 90%;
-        height: 100px;
+        width: 100%;
+        height: 25%;
     }
+
     .nav--items > a {
         margin-left: 0.8vw;
         margin-right: 0.8vw;
@@ -707,7 +747,14 @@ body {
 
 
 }
-@media (max-width: 360px){
+
+@media (max-width: 360px) {
+    .contact .contact-form .textarea--message {
+
+        width: 100%;
+        height: 25%;
+    }
+
     .nav--items > a {
         margin-left: 0.8vw;
         margin-right: 0.8vw;
@@ -716,11 +763,7 @@ body {
         text-decoration: none;
 
     }
-    .contact .contact-form .textarea--message {
 
-        width: 100%;
-        height: 25%;
-    }
 }
 
 
