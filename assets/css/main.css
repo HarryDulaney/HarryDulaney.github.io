@@ -256,10 +256,11 @@ body {
 }
 
 .intro h4 > a {
-    font-size: calc(2px + 1vw);
+    font-size: calc(4px + 1vw);
     color: blue;
     text-transform: capitalize;
     text-decoration: none;
+    transition: color 2s;
 }
 
 .intro h4 > a:hover {
@@ -302,8 +303,7 @@ body {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    border: 2px darkblue;
-    border-radius: 15% 15% 15% 15%;
+    border-radius: 35% 35% 35% 35%;
 }
 
 
@@ -311,17 +311,10 @@ body {
     display: grid;
     display: -moz-grid;
     display: -ms-grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto;
     grid-column-gap: 2em;
     grid-row-gap: 4em;
     align-content: center;
-
-
-}
-
-.work--grid .piece .project--pic img {
-    height: calc(250px + 20vh);
-    width: auto;
 
 }
 
@@ -331,9 +324,31 @@ body {
     font-size: 15px;
 }
 
+.work--grid .piece .project--item-title h3 {
+    -webkit-text-decoration-style: wavy;
+
+}
+
+
+.work--grid .piece .project--pic img {
+    height: calc(200px + 13vw);
+    opacity: 50%;
+    transition: opacity 0.5s;
+
+}
+.work--grid .piece .project--pic img:hover {
+    opacity: 100%;
+
+}
+
+
+
 .work--grid .grid1 {
     grid-column: 1/ span 4;
     grid-row: 1;
+    border-radius: 20% 20% 20% 20%;
+    border-width: 4px;
+    border-color: darkblue;
 }
 
 .work--grid .grid2 {
@@ -428,7 +443,7 @@ body {
     content: "";
     position: absolute;
     top: 60px;
-    left: 268px;
+    left: 168px;
     width: 30px;
     height: 30px;
     background-color: #0f33ff;
