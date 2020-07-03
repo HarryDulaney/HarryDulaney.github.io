@@ -687,9 +687,7 @@ body {
     padding-left: 0.5em;
     margin-right: 0.5em;
     margin-left: 0.5em;
-
 }
-
 
 @media (max-width: 1180px) {
     .nav--items > a {
@@ -698,72 +696,49 @@ body {
         margin-bottom: 2px;
         font-size: calc(9px + 1vw);
         text-decoration: none;
-
     }
-
 }
-
 
 @media (max-width: 900px) {
     .contact .contact-form .textarea--message {
-
         width: 100%;
         height: 50%;
-
     }
-
-
 }
 
-
 @media (max-width: 767px) {
-
-
     .contact .contact-form .textarea--message {
-
         width: 100%;
         height: 50%;
-
     }
-
-
 }
 
 @media (max-width: 600px) {
     .contact .contact-form .textarea--message {
-
         width: 100%;
         height: 25%;
     }
-
     .nav--items > a {
         margin-left: 0.8vw;
         margin-right: 0.8vw;
         margin-bottom: -3px;
         font-size: calc(9px + 1vw);
         text-decoration: none;
-
     }
-
-
 }
 
 @media (max-width: 360px) {
     .contact .contact-form .textarea--message {
-
         width: 100%;
         height: 25%;
     }
-
     .nav--items > a {
         margin-left: 0.8vw;
         margin-right: 0.8vw;
         margin-bottom: -3px;
         font-size: calc(8px + 1vw);
         text-decoration: none;
-
     }
-
 }
 
 
