@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords"
           content="HGDIV,Harry Dulaney, software developer, portfolio, html, Software Engineer,Atlanta Georgia">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -17,116 +18,165 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<div class="container" id="top">
-    <nav class="navbar">
-        <div class="nav--items">
-            <a href="https://www.github.com/harrydulaney">
-                <img src="assets/icon/gitHub-blue-cat.png"></a>
-            <a href="https://www.harrydulaney.com" style="font-size: calc(7px + 1vw);float:right;margin-top:2vh;margin-right: 2vw">Harry G
-                Dulaney</a>
-            <a href="#top">Intro</a>
-            <a href="#about">About</a>
-            <a href="#project">Projects</a>
-            <a href="#contact">Contact</a>
+<!--<div class="w3-container w3-top banner"><span class="w3-text-amber"><strong>Harrydulaney.com</strong></span></div>-->
+<nav class="navbar">
+    <div class="nav--items">
+        <div class="w3-display-left w3-margin-left">
+            <a href="#top" class="w3-margin-left"> <img src="assets/icon/cup-cake-icon.png" alt="cupcake-icon"
+            ></a>
+            <a href="#about" class="w3-margin-left"> <img src="assets/icon/abouticon.png" alt="about-icon"
+            ></a>
+            <a href="#project" class="w3-margin-left"> <img src="assets/icon/PikPng.com_briefcase.png" alt="github-icon"
+            ></a>
+            <a href="#contact" class="w3-margin-left"> <img src="assets/icon/contact-icon.png" alt="contact-icon"></a>
         </div>
-    </nav>
+        <div class="optional">
+            <a class="w3-display-middle" href="https://harrydulaney.com">Harrydulaney.com</a>
+        </div>
+        <div class="w3-display-right w3-margin-right">
+            <a href="https://www.github.com/harrydulaney">
+                <img src="assets/icon/githubback.png" alt="github-icon"
+                     style="float:right;"></a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-container" id="top">
     <main class="main--body">
         <!--Intro-->
         <section class="intro">
-            <h2 id="section--title-one">AND NOW FOR SOMETHING COMPLETELY DIFFERENT...</h2>
-            <h4 class="oldstyle--link"><a href="assets/oldstyle.html"><i>click me to switch to old design</i></a></h4>
-            <div class="intro--icons">
-                <img src="assets/img/javaicon.png">
-                <img src="assets/icon/icons8-android-os-96.png">
-                <img src="assets/img/gcp_icon_main.png">
-                <img src="assets/img/springLogo.png">
-                <img src="assets/img/mysql-logo.jpg">
-                <img src="assets/img/aws-logo.png">
-                <img src="assets/img/powershell-logo.png">
-                <img src="assets/img/python.png">
-                <img src="assets/img/kisspng-systems-development-life-cycle-agile-software.png">
-                <img src="assets/icon/swift-icon.png">
-                <img src="assets/icon/html_icon.png">
-                <img src="assets/icon/js-icon.png">
-                <img src="assets/icon/css_icon.png">
-                <img src="assets/icon/git-icon.png">
-
-            </div>
-            <div class="intro--image">
-                <img src="assets/img/john-fowler-7Ym9rpYtSdA-unsplash.jpg">
+            <div class="w3-cell-row">
+                <div class="w3-container w3-cell">
+                    <p><strong>
+                        <large>Hi There! <br> Thanks for coming to see what I am all about!</large>
+                    </strong><br>
+                        I'm Harry! I'm a graduate of <strong>Georgia State University,</strong> where I majored in
+                        <strong>Computer Information Systems</strong> and <strong>Finance</strong> and
+                        found an amazing community of passionate technologists who helped me see how my passion for computing and
+                        technical problem solving can be valuable to other people.<br>
+                        I love building from scratch, open-sourcing development projects, complex technical problems, continuous learning and taking things apart
+                        to discover why they work, or don't work!<br> One of my biggest joys in life is helping friends
+                        discover the power of computer programming and sharing my knowledge to see what they create.
+                        <strong>Please click around! Keep scrolling to check out my programming projects! And check back soon for my
+                        Java programming and web development tutorials!</strong>
+                    </p>
+                </div>
+                <div class="w3-container w3-cell">
+                    <div class="intro--image">
+                        <img src="assets/img/harry_with_tobby.jpg" alt="harry-tobby-img">
+                    </div>
+                </div>
             </div>
         </section>
         <hr>
-
-
-
+        <hr>
         <!-- Projects -->
-        <section class="work" id="project">
-            <h2 style="margin-bottom: 8vh">PROJECTS</h2>
-            <div class="work--grid">
-                <div class="grid1 piece">
-                    <!-- Deezer api Client-->
-                    <div class="project--pic">
-                        <h3 class="project--item-title">Music-Discography-App </h3>
-                        <a href="https://powerful-hollows-10387.herokuapp.com/" target="_blank" rel="noreferrer noopener">
-                            <img src="assets/img/deezer-logo-circle.png" alt="Discography App Pic"></a>
-                        <p class="project--item-description">Spring Web Application and Web Service
-                            Consumer, displays Artist Info and Album Covers</p>
+        <section class="work--grid" id="project">
+            <div class="w3-container w3-cell-row">
+                <div class="w3-container w3-cell" style="width: 400px;">
+                    <div class="w3-card-4">
+                        <header class="w3-container">
+                            <h2><strong>Music Discography Web App</strong></h2>
+                        </header>
+
+                        <div class="w3-container">
+                            <img src="assets/img/deezer-logo-circle.png" class="w3-image" alt="deezer-img">
+                            <p>This is a passion project I started in March 2020.
+                                It's a Spring web application and Rest API client that utilizes Apache HttpClient
+                                interact with
+                                Deezer.com's open-access API.</p>
+                            <span class="hide">The search feature returns a list of
+                                Artists (Name, Picture, # of Deezer Fans) to choose from,
+                                matching the user's input string.
+                                Other features include: displaying discography of albums by the artist, and a album
+                                details including mp3 clips of tracks.</span>
+                        </div>
+                        <a href="https://powerful-hollows-10387.herokuapp.com/" target="_blank"
+                           rel="noreferrer noopener">
+                            <button type="button" class="w3-button">LAUNCH</button>
+                        </a>
+
                     </div>
                 </div>
+                <div class="w3-container w3-cell" style="width: 200px;">
 
-                <div class="grid2 piece">
+                </div>
+
+                <div class="w3-container w3-cell" style="width: 400px;">
                     <!-- Note Taker Android App -->
-                    <div class="project--pic">
-                        <h3 class="project--item-title">Note Taker for Android and iOS</h3>
-                        <a href="https://github.com/HarryDulaney/Note-Taker-Android">
+                    <div class="w3-card-4">
+
+                        <header class="w3-container">
+                            <h2><strong>NotePad Mobile App Android and iOS</strong></h2>
+                        </header>
+
+                        <div class="w3-container w3-responsive">
                             <img src="assets/img/Note_App_list.png"
-                                 alt="Note Taker App Pic"></a>
-                        <p class="project--item-description">Android App that stores notes and
-                            displays them in a dynamic list, based on their priority</p>
-                    </div>
-
-
-                </div>
-                <div class="grid3 piece">
-                    <!-- Contact List Android-->
-                    <div class="project--pic" style="">
-                        <h3 class="project--item-title">Contact-List App w/ Google Maps</h3>
-                        <a href="https://github.com/HarryDulaney/Contact-List-Android">
-                            <img src="assets/img/map-view-regscreen.png"
-                                 alt="Contact List App Pic"></a>
-
-                        <p class="project--item-description">Android App for storing contacts.
-                            Geolocation for contact addresses and current location</p>
-                    </div>
-
-                </div>
-
-                <div class="grid4 piece">
-                    <!-- SuperCommanderV2-->
-
-                    <div class="project--pic">
-                        <h3 class="project--item-title">SuperCommander</h3>
-                        <a href="https://github.com/harrydulaney/SuperCommanderV2">
-                            <img src="assets/img/SuperCommIMG.png"
-                                 alt="SuperCommander Image"></a>
-                        <p class="project--item-description">JavaFx + Spring Desktop Application, converts
-                            documents, spreadsheets, and images to user preferences.</p>
+                                 alt="Note Taker App Pic" class="w3-image" style="width:50%">
+                            <p>Android App that stores notes and
+                                displays them in a dynamic list, based on their priority</p>
+                        </div>
+                        <a href="https://github.com/HarryDulaney/Note-Taker-Android">
+                            <button type="button" class="w3-button">CODE</button>
+                        </a>
                     </div>
                 </div>
-                <div class="grid5"></div>
-                <div class="grid6"></div>
-                <div class="grid7"></div>
-                <div class="grid8"></div>
             </div>
-        </section>
+            <div class="w3-container w3-cell-row w3-padding-32">
+            </div>
+            <!-- New Row-->
+            <div class="w3-container w3-cell-row">
+                <div class="w3-container w3-cell" style="width: 400px;height: 600px;">
+                    <div class="w3-card-4">
+                        <!-- Contact List Android-->
+                        <header class="w3-container">
+                            <h2><strong>Dynamic Contact Mobile App w/ Google Maps</strong></h2>
+                        </header>
 
+                        <div class="w3-container">
+                            <img src="assets/img/map-view-regscreen.png" class="w3-image"
+                                 alt="Contact List App Pic" style="width: 50%;">
+                            <p>Android App for storing contacts, in a dynamic list.
+                                Features geolocation for contact addresses and data on current location</p>
+                        </div>
+                        <a href="https://github.com/HarryDulaney/Contact-List-Android">
+                            <button type="button" class="w3-button">CODE</button>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="w3-container w3-cell" style="width: 200px;">
+
+                </div>
+                <div class="w3-container w3-cell" style="width: 400px;height: 600px;">
+                    <div class="w3-card-4">
+                        <!-- SuperCommanderV2-->
+                        <header class="w3-container">
+                            <h2><strong>SuperCommander</strong></h2>
+                        </header>
+                        <div class="w3-container">
+                            <img src="assets/img/SuperCommIMG.png" class="w3-image"
+                                 alt="SuperCommander Image">
+                            <p class="project--item-description">JavaFx + Spring desktop application for converting
+                                documents, spreadsheets, and images to user preferences.</p>
+                        </div>
+                        <a href="https://github.com/harrydulaney/SuperCommanderV2">
+                            <button type="button" class="w3-button">CODE</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <hr>
+        <hr>
         <!-- About -->
         <section class="about" id="about">
-            <h2>ABOUT</h2>
+            <h2><strong>ABOUT</strong></h2>
             <div class="about--banner">
-                <p><small>Good ideas can change the world</small></p>
-               <small><i>08-25-1991</i></small>
+                <p><small>Favorite Quotes: </small></p>
+                <small><i>08-25-1991</i></small>
                 <p>"I'm doing a (free) <br>operating system (just a hobby, won't be big and
                     <br>professional like gnu) for 386(486) AT clones.<br>This has been brewing
                     since april,<br> and is starting to get ready.<br> I'd like any feedback on
@@ -156,7 +206,7 @@
 
         <!-- Contact -->
         <section class="contact" id="contact">
-            <h2>CONTACT</h2>
+            <h2>CONTACT ME</h2>
             <div id="contact-form" class="contact-form">
                 <form method="POST" action="https://formspree.io/xbjzadpn">
                     <label for="name">Name: <span class="required">*</span></label>
@@ -174,8 +224,11 @@
                     </select>
                     <br>
                     <label for="message">Message: <span class="required">*</span></label>
-                    <div class="textarea--message"><textarea id="message" name="message" placeholder="Write your message here **" required="required"
-                              maxlength="200" data-minlength="20" rows="20" cols="50"></textarea></div>
+                    <div class="textarea--message"><textarea id="message" name="message"
+                                                             placeholder="Write your message here **"
+                                                             required="required"
+                                                             maxlength="200" data-minlength="20" rows="20"
+                                                             cols="50"></textarea></div>
                     <br>
                     <span id="loading"></span>
                     <div class="form-button" style="align-content: center">
@@ -194,7 +247,13 @@
     <footer><p style="text-align: center;font-size: 15px">
         Created By: Harry G Dulaney<br>©2020</p></footer>
 </div>
-
+<div class="w3-container w3-center w3-margin-bottom">
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License"
+                                                                                   style="border-width:0"
+                                                                                   src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"/></a><br/>This
+    work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+</div>
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
