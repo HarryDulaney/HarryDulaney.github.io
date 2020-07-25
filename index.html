@@ -23,13 +23,13 @@
 <!--<div class="w3-container w3-top banner"><span class="w3-text-amber"><strong>Harrydulaney.com</strong></span></div>-->
 <nav class="navbar" id="navbar">
     <div class="nav--items">
-        <nav class="mobile--nav" id="mobile--navigation">
-            <ul id="mobile-menu" aria-labelledby="expandMenu" role="menu">
-                <li><a href="#top" class="w3-btn w3-black w3-hover-cyan">Top</a></li>
-                <li><a href="#project" class="w3-btn w3-black w3-hover-cyan">Projects</a>
+        <nav class="mobile--nav" id="mobile--navigation" style="margin-top: 40px;margin-left: 20px;">
+            <ul class="mobile-menu" aria-labelledby="expandMenu" role="menu">
+                <li><a href="#top" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Top</a></li>
+                <li><a href="#project" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Projects</a>
                 </li>
-                <li><a href="#about" class="w3-btn w3-black w3-hover-cyan">About</a></li>
-                <li><a href="#contact" class="w3-btn w3-black w3-hover-cyan">Contact
+                <li><a href="#about" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">About</a></li>
+                <li><a href="#contact" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Contact
                     Me</a></li>
             </ul>
         </nav>
@@ -42,9 +42,10 @@
             ></a>
             <a href="#contact" class="w3-margin-left"> <img src="assets/icon/contact-icon.png" alt="contact-icon"></a>
         </div>
-        <a id="expandMenu" href="#" class="bar--icon w3-margin-left w3-display-topleft"
-           style="padding: 5px" aria-haspopup="true"
-           aria-controls="mobile-menu">
+        <!-- Mobile Nav Icon -->
+        <a role="button" id="expandMenu" class="bar--icon w3-margin-left w3-display-topleft" aria-controls="mobile-menu"
+           aria-haspopup="true"
+           style="padding: 5px">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -68,7 +69,7 @@
 </nav>
 
 <div class="main-container" id="top">
-    <main class="main--body">
+    <main class="main--body" id="body--main">
         <!--Intro-->
         <section class="intro">
             <div class="w3-row">
@@ -105,10 +106,10 @@
         <!-- Projects -->
         <section class="work--grid" id="project">
 
-            <div class="w3-row w3-auto" style="width: 100%;">
+            <div class="w3-row-padding w3-auto" style="width: 100%;">
 
                 <div class="w3-mobile w3-col l3" style="width: 33.33%">
-                    <div class="w3-mobile w3-card-4 w3-center w3-responsive" style="width: 300px">
+                    <div class="w3-mobile w3-card-4 w3-center" style="width: 300px">
                         <header class="w3-container">
                             <h2><strong style="font-size: 24px;">Music Discography Web App</strong></h2>
                         </header>
@@ -116,11 +117,12 @@
                         <div class="w3-container w3-responsive">
                             <img src="assets/img/deezer-logo-circle.png" class="w3-image"
                                  alt="deezer-img">
-                            <p class="card--info-block">Spring Web, Spring Boot, Apache HttpClient, Jackson </p>
+                            <p class="card--info-block">Spring Web, Spring Boot, Apache HttpClient, Jackson
+                                Object-Mapper</p>
                             <span class="hide--h">The search feature returns a list of
                                 Artists (Name, Picture, # of Deezer Fans) to choose from,
                                 matching the user's input string.
-                                Other features include: displaying discography of albums by the artist, and a album
+                                Features: displaying discography of albums by the artist, and a album
                                 details including mp3 clips of tracks.</span>
                         </div>
                         <a href="https://powerful-hollows-10387.herokuapp.com/" target="_blank"
@@ -129,6 +131,8 @@
                         </a>
                     </div>
                 </div>
+
+                <div id="mobile-padding2" class="w3-container w3-padding-16"></div>
 
                 <div class="w3-mobile w3-col l3" style="width: 33.33%;">
                     <div class="w3-mobile w3-card-4 w3-center" style="width: 300px">
@@ -155,6 +159,8 @@
                     </div>
                 </div>
 
+                    <div id="mobile-padding1" class="w3-container w3-padding-16"></div>
+
                 <div class="w3-mobile w3-col l3" style="width: 33.33%">
                     <!-- Note Pad Android App -->
                     <div class="w3-mobile w3-card-4 w3-center" style="width: 300px">
@@ -176,11 +182,11 @@
                 </div>
             </div>
 
-            <div class="w3-container w3-padding-48">
+            <div class="w3-container w3-padding-16">
             </div>
             <!-- Start New Row-->
             <div class="w3-row-padding w3-auto" style="width: 100%">
-                <div class="w3-half w3-container">
+                <div class="w3-mobile w3-half w3-container" style="width: 50%">
                     <!-- Contact List Android-->
                     <div class="w3-mobile w3-card-4 w3-center" style="width: 350px;">
                         <header class="w3-container">
@@ -188,7 +194,7 @@
                             </h2>
                         </header>
 
-                        <div class="w3-container">
+                        <div class="w3-container w3-responsive">
                             <img src="assets/img/map-view-regscreen.png" class="w3-image"
                                  alt="Contact List App Pic" style="width: 50%;">
                             <p class="card--info-block">Android SDK, Android Studio, Java, XML, Gradle, Access
@@ -202,14 +208,16 @@
                     </div>
                 </div>
 
+                <div id="mobile-padding" class="w3-container w3-padding-16"></div>
 
-                <div class="w3-half w3-container w3-center">
-                    <div class="w3-mobile w3-card-4" style="width:350px;">
+
+                <div class="w3-mobile w3-half w3-container w3-center" style="width: 50%">
+                    <div class="w3-mobile w3-card-4 w3-center" style="width:350px;">
                         <!-- SuperCommanderV2-->
                         <header class="w3-container">
                             <h2><strong style="font-size: 24px;">SuperCommander</strong></h2>
                         </header>
-                        <div class="w3-container">
+                        <div class="w3-container w3-responsive">
                             <img src="assets/img/SuperCommIMG.png" class="w3-image"
                                  alt="SuperCommander Image" style="width: 80%">
                             <p class="card--info-block">JavaFx + Spring desktop application for converting
@@ -309,8 +317,8 @@
 </div>
 <div class="w3-container w3-center w3-margin-bottom">
     <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License"
-                                                                                   style="border-width:0"
-                                                                                   src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"/></a><br/>This
+                                                                                    style="border-width:0"
+                                                                                    src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"/></a><br/>This
     work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
     Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 </div>
@@ -320,6 +328,6 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-3.5.1.slim.min.js"><\/script>')</script>
-<script src="assets/js/func-nu-page.js"></script>
+<script src="assets/js/functions2.js"></script>
 </body>
 </html>
