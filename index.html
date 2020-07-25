@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HGDIV</title>
+    <title>HarryDulaney.com</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords"
-          content="HGDIV,Harry Dulaney, software developer, portfolio, html, Software Engineer,Atlanta Georgia">
+          content="Harry Dulaney, software developer, portfolio, html, Entry Level Software Developer
+           Software Engineer,Atlanta GA, Tech, Computer Science, web development, programming tutorials">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -19,9 +20,19 @@
 </head>
 <body>
 <!--<div class="w3-container w3-top banner"><span class="w3-text-amber"><strong>Harrydulaney.com</strong></span></div>-->
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <div class="nav--items">
-        <div class="w3-display-left w3-margin-left">
+        <nav class="mobile--nav" id="mobile--navigation">
+            <ul id="mobile-menu" aria-labelledby="expandMenu" role="menu">
+                <li><a href="#top" class="w3-btn w3-black w3-hover-cyan">Top</a></li>
+                <li><a href="#project" class="w3-btn w3-black w3-hover-cyan">Projects</a>
+                </li>
+                <li><a href="#about" class="w3-btn w3-black w3-hover-cyan">About</a></li>
+                <li><a href="#contact" class="w3-btn w3-black w3-hover-cyan">Contact
+                    Me</a></li>
+            </ul>
+        </nav>
+        <div class="res--links w3-display-left w3-margin-left">
             <a href="#top" class="w3-margin-left"> <img src="assets/icon/cup-cake-icon.png" alt="cupcake-icon"
             ></a>
             <a href="#about" class="w3-margin-left"> <img src="assets/icon/abouticon.png" alt="about-icon"
@@ -30,12 +41,26 @@
             ></a>
             <a href="#contact" class="w3-margin-left"> <img src="assets/icon/contact-icon.png" alt="contact-icon"></a>
         </div>
+        <a id="expandMenu" href="#" class="bar--icon w3-margin-left w3-display-topleft"
+           style="padding: 5px" aria-haspopup="true"
+           aria-controls="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </a>
         <div class="optional">
             <a class="w3-display-middle" href="https://harrydulaney.com">Harrydulaney.com</a>
         </div>
         <div class="w3-display-right w3-margin-right">
             <a href="https://www.github.com/harrydulaney">
                 <img src="assets/icon/githubback.png" alt="github-icon"
+                     style="float:right;"></a>
+            <a href="https://www.linkedin.com/in/harrydulaney">
+                <img src="assets/icon/linkedin_b_w_icon.png" alt="linkedin-icon" class="w3-margin-right"
+                     style="float:right;"></a>
+            <a href="#">
+                <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"
+                     class="w3-margin-right"
                      style="float:right;"></a>
         </div>
     </div>
@@ -45,47 +70,52 @@
     <main class="main--body">
         <!--Intro-->
         <section class="intro">
-            <div class="w3-cell-row">
-                <div class="w3-container w3-cell">
+            <div class="w3-row">
+                <div class="w3-half w3-container">
+                    <div class="intro--image">
+                        <img src="assets/img/harry_with_tobby.jpg" alt="harry-tobby-img">
+                    </div>
+                </div>
+                <div class="w3-half w3-container">
                     <p><strong>
                         <large>Hi There! <br> Thanks for coming to see what I am all about!</large>
                     </strong><br>
                         I'm Harry! I'm a graduate of <strong>Georgia State University,</strong> where I majored in
                         <strong>Computer Information Systems</strong> and <strong>Finance</strong> and
-                        found an amazing community of passionate technologists who helped me see how my passion for computing and
+                        found an amazing community of passionate technologists who helped me see how my passion for
+                        computing and
                         technical problem solving can be valuable to other people.<br>
-                        I love building from scratch, open-sourcing development projects, complex technical problems, continuous learning and taking things apart
+                        I love building from scratch, open-sourcing development projects, complex technical problems,
+                        continuous learning and taking things apart
                         to discover why they work, or don't work!<br> One of my biggest joys in life is helping friends
                         discover the power of computer programming and sharing my knowledge to see what they create.
-                        <strong>Please click around! Keep scrolling to check out my programming projects! And check back soon for my
-                        Java programming and web development tutorials!</strong>
+                        <strong>Please click around! Keep scrolling to check out my software projects! And check back
+                            soon for my
+                            Java programming and web development tutorials, if you're interested in building web pages
+                            like this one from scratch!</strong>
                     </p>
-                </div>
-                <div class="w3-container w3-cell">
-                    <div class="intro--image">
-                        <img src="assets/img/harry_with_tobby.jpg" alt="harry-tobby-img">
-                    </div>
                 </div>
             </div>
         </section>
         <hr>
-        <hr>
         <!-- Projects -->
         <section class="work--grid" id="project">
-            <div class="w3-container w3-cell-row">
-                <div class="w3-container w3-cell" style="width: 400px;">
-                    <div class="w3-card-4">
+            <div class="w3-row w3-auto" style="width: 100%;">
+
+                <div class="w3-half w3-container">
+                    <div class="w3-card-4" style="width: 350px">
                         <header class="w3-container">
                             <h2><strong>Music Discography Web App</strong></h2>
                         </header>
 
-                        <div class="w3-container">
-                            <img src="assets/img/deezer-logo-circle.png" class="w3-image" alt="deezer-img">
+                        <div class="w3-container w3-responsive">
+                            <img src="assets/img/deezer-logo-circle.png" class="w3-image w3-responsive"
+                                 alt="deezer-img">
                             <p>This is a passion project I started in March 2020.
                                 It's a Spring web application and Rest API client that utilizes Apache HttpClient
                                 interact with
                                 Deezer.com's open-access API.</p>
-                            <span class="hide">The search feature returns a list of
+                            <span class="hide--h">The search feature returns a list of
                                 Artists (Name, Picture, # of Deezer Fans) to choose from,
                                 matching the user's input string.
                                 Other features include: displaying discography of albums by the artist, and a album
@@ -98,13 +128,9 @@
 
                     </div>
                 </div>
-                <div class="w3-container w3-cell" style="width: 200px;">
-
-                </div>
-
-                <div class="w3-container w3-cell" style="width: 400px;">
+                <div class="w3-half w3-container">
                     <!-- Note Taker Android App -->
-                    <div class="w3-card-4">
+                    <div class="w3-card-4" style="width: 350px">
 
                         <header class="w3-container">
                             <h2><strong>NotePad Mobile App Android and iOS</strong></h2>
@@ -122,15 +148,16 @@
                     </div>
                 </div>
             </div>
-            <div class="w3-container w3-cell-row w3-padding-32">
+
+            <div class="w3-container w3-padding-48">
             </div>
             <!-- New Row-->
-            <div class="w3-container w3-cell-row">
-                <div class="w3-container w3-cell" style="width: 400px;height: 600px;">
-                    <div class="w3-card-4">
+            <div class="w3-row w3-auto" style="width: 100%">
+                <div class="w3-half w3-container">
+                    <div class="w3-card-4" style="width: 350px;">
                         <!-- Contact List Android-->
                         <header class="w3-container">
-                            <h2><strong>Dynamic Contact Mobile App w/ Google Maps</strong></h2>
+                            <h2><strong>Dynamic Contact List Mobile App w/ Google Maps</strong></h2>
                         </header>
 
                         <div class="w3-container">
@@ -145,19 +172,18 @@
 
                     </div>
                 </div>
-                <div class="w3-container w3-cell" style="width: 200px;">
 
-                </div>
-                <div class="w3-container w3-cell" style="width: 400px;height: 600px;">
-                    <div class="w3-card-4">
+
+                <div class="w3-half w3-container">
+                    <div class="w3-card-4" style="width:350px;">
                         <!-- SuperCommanderV2-->
                         <header class="w3-container">
                             <h2><strong>SuperCommander</strong></h2>
                         </header>
                         <div class="w3-container">
                             <img src="assets/img/SuperCommIMG.png" class="w3-image"
-                                 alt="SuperCommander Image">
-                            <p class="project--item-description">JavaFx + Spring desktop application for converting
+                                 alt="SuperCommander Image" style="width: 80%">
+                            <p>JavaFx + Spring desktop application for converting
                                 documents, spreadsheets, and images to user preferences.</p>
                         </div>
                         <a href="https://github.com/harrydulaney/SuperCommanderV2">
@@ -170,10 +196,13 @@
 
         </section>
         <hr>
-        <hr>
+
         <!-- About -->
         <section class="about" id="about">
             <h2><strong>ABOUT</strong></h2>
+            <div class="about--image">
+                <img src="assets/img/harry_star_bar.jpg" alt="star-bar-img" class="w3-image">
+            </div>
             <div class="about--banner">
                 <p><small>Favorite Quotes: </small></p>
                 <small><i>08-25-1991</i></small>
@@ -206,7 +235,7 @@
 
         <!-- Contact -->
         <section class="contact" id="contact">
-            <h2>CONTACT ME</h2>
+            <h2><strong>CONTACT ME</strong></h2>
             <div id="contact-form" class="contact-form">
                 <form method="POST" action="https://formspree.io/xbjzadpn">
                     <label for="name">Name: <span class="required">*</span></label>
@@ -254,10 +283,13 @@
     work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
     Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 </div>
+
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-3.5.1.slim.min.js"><\/script>')</script>
+<script src="assets/js/func-nu-page.js"></script>
 
 </body>
 </html>

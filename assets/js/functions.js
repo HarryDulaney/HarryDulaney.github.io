@@ -1,4 +1,4 @@
-
+//@author Harry Dulaney
 $( document ).ready(function() {
 
   // DOMMouseScroll included for firefox support
