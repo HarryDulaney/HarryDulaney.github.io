@@ -408,10 +408,12 @@ E85A4F*/
 }
 
 .about .about--image img {
-    height: calc(35vw + 50px);
-    max-height: 600px;
+    object-fit: cover;
+    margin: 10px 80px 20px 10px;
+    max-height: calc(75px + 4vh + 8vw);
     border: 2px solid rgb(130, 0, 0);
-    border-radius: 35% 35% 35% 35%;
+    border-radius: 25% 25% 25% 25%;
+
 }
 
 
