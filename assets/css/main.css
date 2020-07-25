@@ -410,7 +410,7 @@ E85A4F*/
 .about .about--image img {
     object-fit: cover;
     margin: 10px 80px 20px 10px;
-    max-height: calc(75px + 4vh + 8vw);
+    max-height: calc(100px + 4vh + 6vw);
     border: 2px solid rgb(130, 0, 0);
     border-radius: 25% 25% 25% 25%;
 
