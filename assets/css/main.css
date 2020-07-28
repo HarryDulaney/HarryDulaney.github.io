@@ -399,7 +399,7 @@ E85A4F*/
 /*}*/
 
 
-#mobile-padding, #mobile-padding1, #mobile-padding2 {
+#mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3 {
     display: none;
 }
 
@@ -420,14 +420,17 @@ E85A4F*/
     margin: 10%;
 }
 #card-4 {
-    margin: 20%;
+    margin: 10%;
 }
 #card-5 {
-    margin: 20%;
+    margin: 10%;
+}
+#card-6 {
+    margin: 10%;
 }
 
 @media (max-width: 600px) {
-    #mobile-padding, #mobile-padding1, #mobile-padding2 {
+    #mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3 {
         display: block;
     }
    #card-1 {
@@ -443,6 +446,9 @@ E85A4F*/
        margin: 0 auto;
    }
    #card-5 {
+       margin: 0 auto;
+   }
+   #card-6 {
        margin: 0 auto;
    }
 }
