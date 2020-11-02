@@ -369,8 +369,8 @@ body {
 }
 
 .intro .intro--image img {
-    height: calc(30vw + 10px);
-    max-height: 600px;
+    height: calc(30vw + 4vw);
+    max-height: 800px;
     border: 2px solid rgb(130, 0, 0);
     border-radius: 35% 35% 35% 35%;
 }
