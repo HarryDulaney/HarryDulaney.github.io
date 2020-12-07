@@ -50,12 +50,17 @@ audio, canvas, progress, video {
 }
 
 a {
-    color: #3e0202;
+    color: lavenderblush;
+    text-decoration: none;
+    transition: .5s ease-in-out;
+}
+#nav-title {
+    color: darkred;
     text-decoration: none;
     transition: .5s ease-in-out;
 }
 
-a:hover {
+a:hover, #nav-title:hover{
     color: #59fff6;
 
 }
@@ -259,7 +264,7 @@ td, th {
 
 
 body {
-    background-color: #EAE7DC;
+    background-color: lightskyblue;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -453,6 +458,7 @@ E85A4F*/
     text-align: center;
 
 }
+
 .work--grid .section--heading {
     font-size: xx-large;
 }

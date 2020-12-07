@@ -1,5 +1,6 @@
 //@author Harry Dulaney
 let open = 0;
+var themeMode = "dark_mode";
 $(document).ready(function () {
 
     $('#expandMenu').on('click', function () {
@@ -33,6 +34,15 @@ $(document).ready(function () {
 
         }
     });
+
+    if (themeMode === "dark_mode") {
+        $('.w3-card-4').css("background-color","midnightblue");
+        $('.section--heading').css("color","#0b023e");
+    } else {
+        $('.w3-card-4').css("background-color","#EAE7DC");
+        $('.section--heading').css("color","#024356");
+
+    }
 });
 
 $(window).on('resize', function () {

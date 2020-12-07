@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="prerender" href="https://powerful-hollows-10387.herokuapp.com/" as="embed">
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
 </head>
@@ -52,7 +53,7 @@
             <div class="bar"></div>
         </a>
         <div class="optional">
-            <a class="w3-display-middle" href="https://harrydulaney.com">Harrydulaney.com</a>
+            <a class="w3-display-middle" id="nav-title" href="https://harrydulaney.com">Harrydulaney.com</a>
         </div>
         <div class="w3-display-right w3-margin-right">
             <a href="https://www.github.com/harrydulaney">
@@ -101,15 +102,15 @@
             <!-- p1 -->
             <div id="work-row-1" class="w3-row-padding w3-auto" style="width: 100%;">
                 <div class="w3-mobile w3-col l4" >
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-1" style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-1">
                         <header class="w3-container">
                             <h2>
                                 <cardtext>Discography Web App</cardtext>
                             </h2>
                         </header>
                         <div class="w3-container">
-                            <img src="assets/img/deezer-logo-circle.png" class="w3-image"
-                                 alt="deezer-img" id="card-1-image">
+                            <img src="assets/img/deezer-logo-circle.png" class="w3-image w3-mobile"
+                                 alt="deezer-img">
                             <span class="hide--h" id="c1-details"><cardtext> Search your favorite music and browse
                                         discographies, album artwork, similar recording artists, and listen to song
                                         clips. Features include: displaying discography of albums by the artist, and
@@ -137,7 +138,7 @@
                     <div class="w3-modal-content w3-animate-zoom" style="width:fit-content">
                         <iframe role="application"
                                 src="https://powerful-hollows-10387.herokuapp.com/"
-                                style="height: 70vh;width: 50vw"></iframe>
+                                style="height: 80vh;width: 50vw"></iframe>
                         <span onclick="document.getElementById('web-app-discog-modal').style.display='none'"
                               class="w3-button w3-xlarge w3-transparent w3-display-topright"
                               title="Close">&times;</span>
@@ -155,8 +156,7 @@
                 <div id="mobile-padding2" class="w3-container w3-padding-16"></div>
 
                 <div class="w3-mobile w3-col l4">
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-2"
-                         style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-2">
                         <header class="w3-container">
 
                             <h2>
@@ -191,8 +191,7 @@
 
                 <div class="w3-mobile w3-col l4">
                     <!-- Note Pad Android App -->
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-3"
-                         style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-3">
 
                         <header class="w3-container w3-responsive">
                             <h2>
@@ -224,8 +223,7 @@
             <div id="work-row-2" class="w3-row-padding w3-auto" style="width: 100%">
                 <div class="w3-mobile w3-col l4">
                     <!-- Contact List Android-->
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-4"
-                         style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-4">
                         <header class="w3-container">
                             <h2>
                                 <cardtext>Dynamic Contact List Mobile App w/ Google Maps</cardtext>
@@ -252,8 +250,7 @@
                 <div id="mobile-padding" class="w3-container w3-padding-16"></div>
 
                 <div class="w3-mobile w3-col l4">
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-5"
-                         style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-5">
                         <!-- SuperCommanderV2-->
                         <header class="w3-container">
                             <h2>
@@ -281,8 +278,7 @@
                 <div id="mobile-padding3" class="w3-container w3-padding-16"></div>
 
                 <div class="w3-mobile w3-col l4">
-                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-6"
-                         style="background-color:midnightblue">
+                    <div class="w3-mobile w3-card-4 w3-round-medium w3-center" id="card-6">
                         <!-- Stock Picker Python-->
                         <header class="w3-container">
                             <h2>
