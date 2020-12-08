@@ -1,6 +1,5 @@
 # Project portfolio 
 
-
 [Check It Out Here](https://harrydulaney.github.io)
 
 ## Other Links:

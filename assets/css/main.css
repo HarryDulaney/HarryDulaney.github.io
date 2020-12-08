@@ -54,19 +54,20 @@ a {
     text-decoration: none;
     transition: .5s ease-in-out;
 }
+
 #nav-title {
-    color: darkred;
+    color: #05386B;
     text-decoration: none;
     transition: .5s ease-in-out;
 }
 
-a:hover, #nav-title:hover{
-    color: #59fff6;
+a:hover, #nav-title:hover {
+    color: blue;
 
 }
 
 spez {
-    color: #3e0202;
+    color: #05386B;
     text-decoration: none;
     transition: .5s ease-in-out;
 }
@@ -91,7 +92,7 @@ cardtext {
 }
 
 h2 > cardtext {
-    color: goldenrod;
+    color: white;
 }
 
 dfn {
@@ -156,7 +157,7 @@ img {
 h2 {
     display: block;
     text-align: center;
-    color: #533c3c;
+    color: #013A63;
     font-size: calc(10px + 0.5vw);
 }
 
@@ -185,8 +186,7 @@ figure {
 
 hr {
     height: calc(100px + 5vh);
-    color: #5e4e4e;
-    border: #fd2e43;
+    opacity: 0.0;
 }
 
 pre {
@@ -231,7 +231,7 @@ input {
 }
 
 fieldset {
-    border: 1px solid #c0c0c0;
+    border: 1px solid #013A63;
     margin: 0 2px;
     padding: 0.35em 0.625em 0.75em
 }
@@ -262,14 +262,21 @@ td, th {
     padding: 0
 }
 
+/*
+Forest Festival
+#05386B
+   #379683
+   #8EE4AF
+   #EDF5E1
+    background-color: #5CDB95;
 
+   */
 body {
-    background-color: lightskyblue;
+    background-color: #A9D6E5;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
     padding: 0;
-    color: #E85A4F;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%
 }
@@ -320,7 +327,7 @@ body {
     height: fit-content;
     min-height: 60px;
     max-height: 200px;
-    background-color: #EAE7DC;
+    background-color: #89C2D9;
     z-index: 2;
 
 }
@@ -333,7 +340,7 @@ body {
     display: block;
     width: 35px;
     height: 5px;
-    background-color: black;
+    background-color: #012A4A;
     margin: 6px 0;
 
 
@@ -349,17 +356,31 @@ body {
 }
 
 .nav--items div > a {
-    width: 50px;
+    width: 30px;
     height: auto;
 }
 
 .nav--items div a:active {
-    background-color: cyan;
+    background-color: #2C7DA0;
 }
 
 .nav--items div > a img {
-    width: 50px;
+    width: 25px;
     height: auto;
+}
+
+.nav--items .res--links > a {
+    font-size: larger;
+    color: #012A4A;
+    transition: .5s ease-in-out;
+}
+
+.nav--items .res--links > a:hover {
+    color: #2C7DA0;
+}
+
+.nav--items .res--links > a :active{
+    color: #2C7DA0;
 }
 
 /*.nav--items .w3-display-left > a {*/
@@ -377,7 +398,7 @@ body {
 }
 
 .nav--items a > img:hover {
-    background-color: #54eca5;
+    background-color: #2C7DA0;
     transition: .9s ease-in-out;
 
 }
@@ -404,7 +425,7 @@ body {
 }
 
 .intro p {
-    color: #90173b;
+    color: darkblue;
 }
 
 .intro h4 {
@@ -419,21 +440,20 @@ body {
 
 .intro h4 > a {
     font-size: calc(4px + 1vw);
-    color: #8e3e70;
+    color: darkblue;
     text-transform: capitalize;
     text-decoration: none;
     transition: color 2s;
 }
 
 .intro h4 > a:hover {
-    color: #af1409;
+    color: #05386B;
 }
 
 .intro .intro--image img {
     height: calc(30vw + 4vw);
     max-height: 800px;
-    border: 2px solid rgb(130, 0, 0);
-    border-radius: 35% 35% 35% 35%;
+    border-radius: 35% 2% 35% 2%;
 }
 
 .intro > p > a {
@@ -442,7 +462,9 @@ body {
 
 }
 
-/*D8C3A5
+/*
+Old Design
+D8C3A5
 EAE7DC
 E98074
 E85A4F*/
@@ -556,7 +578,7 @@ E85A4F*/
 
 .about--banner {
     text-align: left;
-    color: #610b32;
+    color: #242a4b;
 }
 
 .about--banner::before {
@@ -581,7 +603,7 @@ E85A4F*/
     transform: rotate(45deg);
     width: 10px;
     height: 10px;
-    background-color: #925656;
+    background-color: #242a4b;
 }
 
 .about--banner p {
@@ -642,7 +664,7 @@ E85A4F*/
 .about--banner a {
     padding: 5px 17px 5px 0;
     text-decoration: none;
-    color: #7b2727;
+    color: #05386B;
     font-weight: 700;
     text-transform: uppercase;
     background-color: transparent
@@ -679,8 +701,8 @@ E85A4F*/
     width: 150px;
     height: 75px;
     text-decoration: none;
-    color: #ac1e1e;
-    border: 1px solid #897a7e;
+    color: #0f33ff;
+    border: 1px solid darkcyan;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
@@ -753,7 +775,7 @@ E85A4F*/
     position: center;
     padding: 20px;
     margin: 50px auto;
-    border: 6px solid #bb0c0c;
+    border: 1px solid white;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;

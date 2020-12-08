@@ -36,7 +36,7 @@ $(document).ready(function () {
     });
 
     if (themeMode === "dark_mode") {
-        $('.w3-card-4').css("background-color","midnightblue");
+        $('.w3-card-4').css("background-color","#014F86");
         $('.section--heading').css("color","#0b023e");
     } else {
         $('.w3-card-4').css("background-color","#EAE7DC");
@@ -45,9 +45,9 @@ $(document).ready(function () {
     }
 });
 
-$(window).on('resize', function () {
-    if ($(window).width < 600) {
-
-    }
-
-});
+// $(window).on('resize', function () {
+//     if ($(window).width < 600) {
+//
+//     }
+//
+// });
