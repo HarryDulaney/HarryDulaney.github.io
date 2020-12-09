@@ -351,7 +351,7 @@ body {
     display: block;
     width: 35px;
     height: 5px;
-    background-color: #012A4A;
+    background-color: #61A5C2;
     margin: 6px 0;
 
 
@@ -369,13 +369,14 @@ body {
 .nav--items div > a {
     width: 30px;
     height: auto;
+    color: #61A5C2;
 }
 
 .nav--items div a:active {
     background-color: #2C7DA0;
 }
 
-.nav--items div > a img {
+.nav--items div > a > img {
     width: 25px;
     height: auto;
 }
@@ -408,11 +409,10 @@ body {
 
 }
 
-.nav--items a > img:hover {
-    background-color: #A9D6E5;
-    transition: .9s ease-in-out;
+/*.nav--items a > img:hover {*/
+/*    transition: .9s ease-in-out;*/
 
-}
+/*}*/
 
 .nav--items .bar--icon {
     display: none;
