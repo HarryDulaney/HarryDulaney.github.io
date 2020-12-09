@@ -491,6 +491,11 @@ E85A4F*/
     text-align: center;
 
 }
+.work--grid a > button {
+    color: #61A5C2;
+    text-decoration-color: darkblue;
+
+}
 
 
 #card-1 {
