@@ -491,10 +491,14 @@ E85A4F*/
     text-align: center;
 
 }
+
 .work--grid a > button {
     color: #61A5C2;
-    text-decoration-color: darkblue;
+    transition: .9s ease-in-out;
+}
 
+.work--grid a > button:hover {
+    color: #59fff6;
 }
 
 
