@@ -86,7 +86,7 @@ b, strong {
 }
 
 cardtext {
-    font-size: calc(0.7em + 0.1vw);
+    font-size: calc(0.7em + 0.2vw);
     color: #2C7DA0;
 
 }
