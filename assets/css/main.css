@@ -336,7 +336,7 @@ body {
     top: 0;
     width: 100%;
     height: fit-content;
-    min-height: 60px;
+    min-height: 40px;
     max-height: 200px;
     background-color: #012A4A;
     z-index: 2;
@@ -350,11 +350,18 @@ body {
 .nav--items .bar--icon .bar {
     display: block;
     width: 35px;
-    height: 5px;
+    height: 2px;
     background-color: #61A5C2;
-    margin: 6px 0;
+    margin-top: 2px;
+    margin-bottom: 6px;
 
-
+}
+.nav--items .bar--icon {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 4px;
+    align-content: center;
+    vertical-align: center;
 }
 
 .nav--items .mobile--nav {
