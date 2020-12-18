@@ -50,15 +50,20 @@ audio, canvas, progress, video {
 }
 
 a {
-    color: #014F86;
+    color: #82b1ff;;
     text-decoration: none;
-    transition: .5s ease-in-out;
+    transition: .5s ease-in;
 }
 
+a:hover {
+    transition: .9s ease-out;
+}
+
+
 #nav-title {
-    color: #05386B;
+    color: #718792;
     text-decoration: none;
-    transition: .5s ease-in-out;
+    transition: .9s ease-in-out;
 }
 
 a:hover, #nav-title:hover {
@@ -66,16 +71,13 @@ a:hover, #nav-title:hover {
 
 }
 
-spez {
-    color: #05386B;
-    text-decoration: none;
-    transition: .5s ease-in-out;
+/* (Primary #37474f #62727b #102027) (Secondary #b71c1c #f05545 #7f0000)
+    Text on Primary #4dd0e1  / Text on Secondary #fff176 */
+
+.work--grid .spez-card {
+    background-color: #1c313a;
 }
 
-spez:hover {
-    color: #59fff6;
-
-}
 
 large {
     font-size: 24px;
@@ -87,13 +89,12 @@ b, strong {
 
 cardtext {
     font-size: calc(0.7em + 0.2vw);
-    color: #2C7DA0;
-
+    color: #00acc1;
 }
 
 h2 > cardtext {
     font-size: 1.0em;
-    color: #89C2D9;
+    color: #00acc1;
 }
 
 dfn {
@@ -109,7 +110,7 @@ h1 {
     margin-top: 15vh;
     text-align: center;
     align-content: center;
-    color: #2A6F97;
+    color: #718792;
     font-size: calc(2em + 0.5vw + 0.5vh);
 
 }
@@ -273,17 +274,8 @@ td, th {
     padding: 0
 }
 
-/*
-Forest Festival
-#05386B
-   #379683
-   #8EE4AF
-   #EDF5E1
-    background-color: #5CDB95;
-
-   */
 body {
-    background-color: #A9D6E5;
+    background-color: #455a64;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -338,7 +330,7 @@ body {
     height: fit-content;
     min-height: 40px;
     max-height: 200px;
-    background-color: #012A4A;
+    background-color: #1c313a;
     z-index: 2;
 
 }
@@ -351,11 +343,11 @@ body {
     display: block;
     width: 35px;
     height: 2px;
-    background-color: #61A5C2;
+    background-color: #00acc1;
     margin-top: 2px;
     margin-bottom: 6px;
-
 }
+
 .nav--items .bar--icon {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -395,11 +387,11 @@ body {
 }
 
 .nav--items .res--links > a:hover {
-    color: #A9D6E5;
+    color: #00acc1;
 }
 
 .nav--items .res--links > a :active {
-    color: #A9D6E5;
+    color: #00acc1;
 }
 
 /*.nav--items .w3-display-left > a {*/
@@ -443,7 +435,7 @@ body {
 }
 
 .intro p {
-    color: #01497C;
+    color: #00acc1;
 }
 
 .intro h4 {
@@ -456,21 +448,9 @@ body {
     text-align: center;
 }
 
-.intro h4 > a {
-    font-size: calc(4px + 1vw);
-    color: #01497C;
-    text-transform: capitalize;
-    text-decoration: none;
-    transition: color 2s;
-}
-
-.intro h4 > a:hover {
-    color: #61A5C2;
-}
-
 .intro .intro--image img {
     height: calc(30vw + 4vw);
-    max-height: 800px;
+    max-height: 425px;
     border-radius: 35% 2% 35% 2%;
 }
 
@@ -480,12 +460,6 @@ body {
 
 }
 
-/*
-Old Design
-D8C3A5
-EAE7DC
-E98074
-E85A4F*/
 
 #mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3 {
     display: none;
@@ -499,13 +473,9 @@ E85A4F*/
 
 }
 
-.work--grid a > button {
-    color: #61A5C2;
+.work--grid > a button {
+    text-decoration-color: #82b1ff;
     transition: .9s ease-in-out;
-}
-
-.work--grid a > button:hover {
-    color: #59fff6;
 }
 
 
@@ -546,7 +516,7 @@ E85A4F*/
     }
 
     #card-1 img {
-        width: 50%;
+        width: 40%;
         height: auto;
     }
 
@@ -730,7 +700,7 @@ E85A4F*/
     height: 75px;
     text-decoration: none;
     color: #2A6F97;
-    border: 1px solid darkcyan;
+    border: 1px solid #76ff03;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
@@ -742,30 +712,26 @@ E85A4F*/
 
 .about--options > a:nth-child(1):hover {
     background-image: url("../icon/github-icon-3.png");
-    opacity: 50%;
 }
+
 
 .about--options > a:nth-child(2):hover {
     background-image: url("../icon/gsu-logo.jpg");
-    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(3):hover {
     background-image: url("../icon/icons-java-48.png");
-    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(4):hover {
     background-image: url("../icon/about-profesh.jpg");
-    opacity: 50%;
 
 }
 
 .about--options > a:nth-child(5):hover {
     background-image: url("../icon/immersive-atlanta.png");
-    opacity: 50%;
 }
 
 
@@ -803,7 +769,7 @@ E85A4F*/
     position: center;
     padding: 20px;
     margin: 50px auto;
-    border: 1px solid #61A5C2;
+    border: 1px solid #76ff03;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
