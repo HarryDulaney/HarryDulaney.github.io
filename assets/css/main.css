@@ -161,7 +161,6 @@ h1 {
     transform: rotateY(180deg);
 }
 
-
 img {
     border-radius: 5px 5px 0 0;
 }
@@ -546,7 +545,6 @@ body {
     display: block;
     position: relative;
 
-
 }
 
 .about .section--heading {
@@ -681,7 +679,6 @@ body {
     transition: left .2s ease-in-out
 }
 
-
 .about--options {
     display: -webkit-box;
     display: -webkit-flex;
@@ -734,7 +731,6 @@ body {
     background-image: url("../icon/immersive-atlanta.png");
 }
 
-
 .about--options a > h3 {
     position: relative;
     font-size: calc(7px + 0.6vw);
@@ -785,7 +781,6 @@ body {
     width: 450px;
     border: 1px solid #2d191c;
     padding: 4px;
-
 
 }
 
