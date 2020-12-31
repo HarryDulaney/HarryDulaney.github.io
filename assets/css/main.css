@@ -162,7 +162,7 @@ h1 {
 }
 
 img {
-    max-width:100%;
+    max-width: 100%;
     border-radius: 5px 5px 0 0;
 }
 
@@ -449,9 +449,81 @@ body {
 }
 
 .intro .intro--image img {
-    height: calc(30vw + 4vw);
-    max-height: 425px;
-    border-radius: 35% 2% 35% 2%;
+    height: calc(30vw + 4vh);
+    width: auto;
+    max-height: 350px;
+    z-index: -1;
+    border-radius: 50% 10% 50% 10%;
+
+}
+
+.intro .intro--image::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    left: 122px;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    border: 5px solid #8bff16;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.intro::after {
+    content: "";
+    position: absolute;
+    bottom: 200px;
+    left: 220px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    right: 150px;
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+    border: 5px solid #8bff16;
+    border-right-color: transparent;
+    border-bottom-color: transparent
+}
+
+.intro .intro--image::after {
+    content: "";
+    position: absolute;
+    bottom: 117px;
+    left: 420px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background-color: #8bff16;
+}
+
+.intro .intro--image::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 350px;
+    width: 30px;
+    height: 30px;
+    background-color: #8bff16;
+    border-radius: 50%;
+
+}
+
+.intro .intro--image::after {
+    content: "";
+    position: absolute;
+    bottom: 225px;
+    left: 250px;
+    width: 10px;
+    height: 10px;
+    background-color: #8bff16;
 }
 
 .intro > p > a {
@@ -569,9 +641,7 @@ body {
     max-height: calc(100px + 3vh + 6vw);
     border-radius: 40% 25% 40% 25%;
 
-
 }
-
 
 .about--banner {
     text-align: left;
@@ -724,7 +794,7 @@ body {
 }
 
 .about--options > a:nth-child(4):hover {
-    background-image: url("../icon/about-profesh.jpg");
+    background-image: url("../icon/linkedin_b_w_icon.png");
 
 }
 
