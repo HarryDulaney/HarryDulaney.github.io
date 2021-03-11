@@ -436,6 +436,7 @@ body {
 
 .intro p {
     color: #00acc1;
+    z-index: 10;
 }
 
 .intro h4 {
@@ -452,13 +453,14 @@ body {
     height: calc(30vw + 4vh);
     width: auto;
     max-height: 350px;
-    z-index: -1;
+    z-index: 10;
     border-radius: 50% 10% 50% 10%;
 
 }
 
 .intro .intro--image::before {
     content: "";
+    z-index: -10;
     position: absolute;
     top: 150px;
     left: 122px;
@@ -471,6 +473,7 @@ body {
 
 .intro::after {
     content: "";
+    z-index: -10;
     position: absolute;
     bottom: 200px;
     left: 220px;
@@ -494,6 +497,7 @@ body {
 
 .intro .intro--image::after {
     content: "";
+    z-index: -10;
     position: absolute;
     bottom: 117px;
     left: 420px;
@@ -506,9 +510,10 @@ body {
 
 .intro .intro--image::before {
     content: "";
+    z-index: 10;
     position: absolute;
     bottom: 10px;
-    left: 350px;
+    left: calc(150px + 5vw);
     width: 30px;
     height: 30px;
     background-color: #8bff16;
@@ -518,6 +523,7 @@ body {
 
 .intro .intro--image::after {
     content: "";
+    z-index: -10;
     position: absolute;
     bottom: 225px;
     left: 250px;
