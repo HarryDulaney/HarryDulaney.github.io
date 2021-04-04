@@ -232,6 +232,7 @@ h1 {
     font-size: calc(2em + 0.5vw + 0.5vh);
 
 }
+
 /* Flip card animation */
 .animation {
     -webkit-transition: all 0.3s ease;
@@ -657,7 +658,7 @@ body {
 }
 
 
-#mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3 {
+#mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3, #mobile-padding4, #mobile-padding5, #mobile-padding6 {
     display: none;
 }
 
@@ -713,51 +714,96 @@ body {
 
 
 @media (max-width: 600px) {
-    #mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3 {
+    #mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3, #mobile-padding4, #mobile-padding5, #mobile-padding6 {
         display: block;
     }
 
     #card-1 {
-        height: 50%;
-        margin-left: 3vw;
-        margin-right: 3vw;
+        margin-left: 6vw;
+        margin-right: 6vw;
     }
 
     #card-1 img {
-        width: 40%;
-        height: auto;
+        max-width: 75%;
+        margin: 0 auto;
+
     }
 
     #card-2 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-2 img {
+        max-width: 75%;
+
     }
 
     #card-3 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
     }
 
+    #card-3 img {
+        max-width: 40%;
+    }
+
+
     #card-4 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-4 img {
+        max-width: 50%;
+
     }
 
     #card-5 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-5 img {
+        max-width: 75%;
+
     }
 
     #card-6 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-6 img {
+        max-width: 75%;
     }
 
     #card-7 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-7 img {
     }
 
     #card-8 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-8 img {
+        max-width: 50%;
+        height: auto;
     }
 
     #card-9 {
-        margin: 0 auto;
+        margin-left: 6vw;
+        margin-right: 6vw;
+    }
+
+    #card-9 img {
+        height: 75%;
+
     }
 }
 
