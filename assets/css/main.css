@@ -657,12 +657,19 @@ body {
 
 }
 
+.intro .scroll--help-image img {
+    object-fit: fill;
+    margin: 0 15vw 20vh 1vh;
+    width: auto;
+    max-height: calc(50px + 4vh + 4vw);
+}
+
 
 #mobile-padding, #mobile-padding1, #mobile-padding2, #mobile-padding3, #mobile-padding4, #mobile-padding5, #mobile-padding6 {
     display: none;
 }
 
-
+/* Projects */
 .work--grid {
     display: block;
     position: relative;;
@@ -807,6 +814,7 @@ body {
     }
 }
 
+/* About */
 
 .about {
     display: block;
@@ -820,21 +828,10 @@ body {
 }
 
 .about .about--image img {
-    object-fit: cover;
-    margin: 10px 80px 20px 10px;
+    object-fit: fill;
+    margin: 1vh 15vw 20vh 1vh;
     width: auto;
-    max-height: calc(100px + 4vh + 4vw);
-    border-radius: 40% 25% 40% 25%;
-
-
-}
-
-.about .about--image img ::before {
-    object-fit: cover;
-    margin: 10px 80px 20px 10px;
-    max-height: calc(100px + 3vh + 6vw);
-    border-radius: 40% 25% 40% 25%;
-
+    max-height: calc(50px + 4vh + 4vw);
 }
 
 .about--banner {
@@ -952,14 +949,13 @@ body {
     -webkit-justify-content: space-around;
     -ms-flex-pack: justify;
     justify-content: space-evenly;
-    padding: 0;
     list-style: none
 }
 
 .about--options a {
     position: relative;
-    width: 150px;
-    height: 75px;
+    width: 175px;
+    height: 100px;
     text-decoration: none;
     color: #2A6F97;
     border: 1px solid #76ff03;
@@ -972,13 +968,26 @@ body {
 
 }
 
+.about--options > a:nth-child(1) {
+    margin-bottom: 3vh;
+
+}
+
 .about--options > a:nth-child(1):hover {
     background-image: url("../icon/github-icon-3.png");
 }
 
+.about--options > a:nth-child(2) {
+    margin-top: 3vh;
+}
 
 .about--options > a:nth-child(2):hover {
     background-image: url("../icon/gsu-logo.jpg");
+
+}
+
+.about--options > a:nth-child(3) {
+    margin-bottom: 3vh;
 
 }
 
@@ -987,13 +996,23 @@ body {
 
 }
 
+.about--options > a:nth-child(4) {
+    margin-top: 3vh;
+
+
+}
+
 .about--options > a:nth-child(4):hover {
     background-image: url("../icon/linkedin_b_w_icon.png");
 
 }
 
+.about--options > a:nth-child(5) {
+    margin-bottom: 3vh;
+}
+
 .about--options > a:nth-child(5):hover {
-    background-image: url("../icon/immersive-atlanta.png");
+    background-image: url("../img/harry_star_bar.jpg");
 }
 
 .about--options a > h3 {
@@ -1005,7 +1024,7 @@ body {
     transition: bottom .2s ease-in-out, left .2s ease-in-out
 }
 
-
+/* Contact */
 .contact {
     display: block;
     position: center;
@@ -1104,6 +1123,8 @@ body {
     margin-right: 0.5em;
     margin-left: 0.5em;
 }
+
+/* Screen size / Mobile */
 
 @media (max-width: 1180px) {
 
