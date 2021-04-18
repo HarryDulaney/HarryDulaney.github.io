@@ -105,123 +105,112 @@ h1 {
     font-size: 1.5em;
 }
 
-.tooltip-bottom {
-    position: relative;
-    display: inline-block;
 
-}
+/*#cardtip-2 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-.tooltip-bottom .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    top: 100%;
-    left: 50%;
-    margin-left: -60px;
-    background-color: #1c313a;
-    color: #00acc1;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
+/*#cardtip-3 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-.tooltip-bottom:hover .tooltiptext {
-    visibility: visible;
-    opacity: 0.85;
+/*#cardtip-4 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-}
+/*#cardtip-5 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    opacity: 0.85;*/
+/*}*/
 
+/*#cardtip-6 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 10;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-.tooltip-right {
-    position: relative;
-    display: inline-block;
+/*#cardtip-7 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 1;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-}
+/*#cardtip-8 {*/
+/*    display: inline;*/
+/*    width: 120px;*/
+/*    top: -5px;*/
+/*    right: 75%;*/
+/*    background-color: #1c313a;*/
+/*    color: #00acc1;*/
+/*    text-align: center;*/
+/*    padding: 5px 0;*/
+/*    border-radius: 6px;*/
+/*    position: absolute;*/
+/*    z-index: 1;*/
+/*    opacity: 0.85;*/
+/*}*/
 
-
-.tooltip-right .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    top: -5px;
-    left: 105%;
-    background-color: #1c313a;
-    color: #00acc1;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
-
-.tooltip-right:hover .tooltiptext {
-    visibility: visible;
-    opacity: 0.85;
-
-}
-
-
-.tooltip-left {
-    position: relative;
-    display: inline-block;
-
-}
-
-
-.tooltip-left .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    top: -5px;
-    right: 75%;
-    background-color: #1c313a;
-    color: #00acc1;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
-
-.tooltip-left:hover .tooltiptext {
-    visibility: visible;
-    opacity: 0.85;
-
-}
-
-.tooltip-top {
-    position: relative;
-    display: inline-block;
-
-}
-
-.tooltip-top .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    background-color: #1c313a;
-    color: #00acc1;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
-
-.tooltip-top:hover .tooltiptext {
-    visibility: visible;
-    opacity: 0.85;
-
-}
 
 .section--heading > h1 {
     display: block;
@@ -680,6 +669,26 @@ body {
 .work--grid > a button {
     text-decoration-color: #82b1ff;
     transition: .9s ease-in-out;
+}
+
+.tool--tip {
+    display: none;
+    position: relative;
+}
+
+
+.tool--tip .tooltip--text {
+    position: absolute;
+    width: 120px;
+    top: 20px;
+    right: 75%;
+    background-color: #335766;
+    color: #00acc1;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0.85;
 }
 
 
