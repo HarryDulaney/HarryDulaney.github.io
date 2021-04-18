@@ -36,10 +36,10 @@ $(document).ready(function () {
     });
     let tipped = 0;
     $('.spez-card').hover(function () {
-        const tooltip = $(this).find('.tool--tip');
+        const $tooltip = $(this).find('.tool--tip');
         if (tipped < 1) {
-            tooltip.fadeIn().show('slow', function () {
-                tooltip.delay(1000).fadeOut();
+            $tooltip.fadeIn().show('slow', function () {
+                $tooltip.delay(1000).fadeOut();
                 tipped++;
             });
         } else {
