@@ -34,11 +34,18 @@ $(document).ready(function () {
 
         }
     });
-});
+    let tipped = 0;
+    $('.spez-card').hover(function () {
+        const tooltip = $(this).find('.tool--tip');
+        if (tipped < 1) {
+            tooltip.fadeIn().show('slow', function () {
+                tooltip.delay(1000).fadeOut();
+                tipped++;
+            });
+        } else {
+            tipped = 0;
 
-// $(window).on('resize', function () {
-//     if ($(window).width < 600) {
-//
-//     }
-//
-// });
+        }
+    });
+
+});
