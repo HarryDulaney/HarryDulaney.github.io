@@ -1,4 +1,4 @@
-//@author Harry Dulaney
+/** @author Harry Dulaney */
 let open = 0;
 var themeMode = "dark_mode";
 $(document).ready(function () {
@@ -34,17 +34,17 @@ $(document).ready(function () {
 
         }
     });
-    let tipped = 0;
+    /** Display tooltip on hover over project cards */
     $('.spez-card').hover(function () {
         const $tooltip = $(this).find('.tool--tip');
-        if (tipped < 1) {
-            $tooltip.fadeIn().show('slow', function () {
-                $tooltip.delay(1000).fadeOut();
-                tipped++;
-            });
-        } else {
-            tipped = 0;
+        var tipCount = Number($tooltip.attr('data-count'));
 
+        if (tipCount < 1) {
+            $tooltip.delay(500).fadeIn().show(1000, function () {
+                $tooltip.delay(3000).fadeOut();
+                tipCount++;
+                $tooltip.attr('data-count', tipCount);
+            });
         }
     });
 
