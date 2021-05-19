@@ -9,7 +9,9 @@
     <meta name="keywords"
           content="Harry Dulaney IV, software developer, developer project portfolio, Software Engineer,Atlanta Software,
           Tech, Computer Science, web developer, Information Technology">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,46 +26,40 @@
 <body>
 
 <!-----------------------------------------------  Intro  ---------------------------------------------------->
-<nav class="navbar" id="navbar">
+<nav class="special--navbar" id="navbar">
     <div class="nav--items">
         <nav class="mobile--nav" id="mobile--navigation" style="margin-top: 40px;margin-left: 20px;">
             <ul class="mobile-menu" aria-labelledby="expandMenu" role="menu">
-                <li><a href="#top" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Top</a></li>
-                <li><a href="#project" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Projects</a>
-                </li>
-                <li><a href="#about" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">About</a></li>
-                <li><a href="#contact" class="w3-btn w3-round w3-blue-gray w3-hover-cyan">Contact Me</a></li>
+                <li><a href="#top">Top</a></li>
+                <li><a href="#project" class="">Projects</a></li>
+                <li><a href="#about" class="">About</a></li>
+                <li><a href="#contact" class="">Contact Me</a></li>
             </ul>
         </nav>
-        <div class="res--links w3-display-left w3-margin-left">
-            <a href="#top" class="w3-margin-left">Intro</a>
-            <a href="#project" class="w3-margin-left">Software</a>
-            <a href="#about" class="w3-margin-left">About Me</a>
-            <a href="#contact" class="w3-margin-left">Contact</a>
+        <div class="res--links align-middle m-1 p-1">
+            <a href="#top" class="m-sm-3" style="text-decoration: none">Intro</a>
+            <a href="#project" class="m-sm-3" style="text-decoration: none">Software</a>
+            <a href="#about" class="m-sm-3" style="text-decoration: none">About Me</a>
+            <a href="#contact" class="m-sm-3" style="text-decoration: none">Contact</a>
+            <div class="float-right align-middle">
+                <span class="optional" style="margin-right: 2rem;"><a href="https://harrydulaney.com"
+                                              class="justify-content-center"
+                                              style="text-decoration: none">harrydulaney.com</a></span>
+                <a class="m-1" href="https://www.github.com/harrydulaney">
+                    <img src="assets/icon/githubback.png" alt="github-icon"></a>
+                <a class="m-1" href="https://www.linkedin.com/in/harrydulaney">
+                    <img src="assets/icon/linkedin_b_w_icon.png" alt="linkedin-icon"></a>
+                <a class="m-1" href="https://www.facebook.com/HarryGDulaney">
+                    <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"></a>
+            </div>
         </div>
         <!-- Mobile Nav Icon -->
-        <a role="button" id="expandMenu" class="bar--icon w3-margin-left w3-display-topleft" aria-controls="mobile-menu"
+        <a role="button" id="expandMenu" class="bar--icon float-left" aria-controls="mobile-menu"
            aria-haspopup="true">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
-
         </a>
-        <div class="optional">
-            <a class="w3-display-middle" id="nav-title" href="https://harrydulaney.com">harrydulaney.com</a>
-        </div>
-        <div class="w3-display-right w3-margin-right">
-            <a href="https://www.github.com/harrydulaney">
-                <img src="assets/icon/githubback.png" alt="github-icon"
-                     style="float:right;"></a>
-            <a href="https://www.linkedin.com/in/harrydulaney">
-                <img src="assets/icon/linkedin_b_w_icon.png" alt="linkedin-icon" class="w3-margin-right"
-                     style="float:right;"></a>
-            <a href="https://www.facebook.com/HarryGDulaney">
-                <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"
-                     class="w3-margin-right"
-                     style="float:right;"></a>
-        </div>
     </div>
 </nav>
 
@@ -71,370 +67,458 @@
     <main class="main--body" id="body--main">
         <!--Intro-->
         <section class="intro">
-            <div class="w3-row">
-                <div class="w3-half w3-center w3-container">
-                    <div class="intro--image">
-                        <img src="assets/img/john-fowler-7Ym9rpYtSdA-unsplash.jpg" alt="welcome-img">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="intro--image">
+                            <img src="assets/img/john-fowler-7Ym9rpYtSdA-unsplash.jpg" alt="welcome-img">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <p><strong>
+                            <large style="font-size: calc(6vh + 3vw)">Welcome<br></large>
+                        </strong>
+                            <span style="font-size: calc(2.7vh + 1.5vw)">Thank you for coming to
+                            see what I'm up to. </span> <br>
+                        <p style="font-size: calc(1.9vh + 0.8vw)">My name is Harry Dulaney.
+                            I'm a software engineer and full stack developer based in Atlanta,
+                            Georgia.
+                        </p>
+                        <p style="font-size: calc(0.9vh + 0.8vw)">
+                            I only code on days that end in 'y'.
+                        </p>
+                        <br>
                     </div>
                 </div>
-                <div class="w3-half w3-container w3-left-align">
-                    <p><strong>
-                        <large style="font-size: calc(6vh + 3vw)">Welcome<br></large>
-                    </strong>
-                        <span style="font-size: calc(2.7vh + 1.5vw)">Thank you for coming to
-                            see what I'm up to. </span> <br>
-                    <p style="font-size: calc(1.9vh + 0.8vw)">My name is Harry Dulaney.
-                        I'm a professional software engineer and full stack developer based in Atlanta,
-                        Georgia.
-                    </p>
-                    <p style="font-size: calc(0.9vh + 0.8vw)">
-                        I only code on days that end in 'y'.
-                    </p>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div class="w3-row">
-                <div class="w3-right-align scroll--help-image">
-                    <img src="assets/img/spaceman_flying_upwards.png" alt="img-intro-spaceman"
-                         class="w3-image">
+                <div class="row">
+                    <div class="w3-right-align scroll--help-image">
+                        <img src="assets/img/spaceman_flying_upwards.png" alt="img-intro-spaceman"
+                             class="">
+                    </div>
                 </div>
             </div>
         </section>
+
         <!----------------------------------------------  Projects  ---------------------------------------------------->
         <span id="project"></span>
         <div class="section--heading">
             <h1>Software</h1>
         </div>
         <section class="work--grid">
-            <!-- p1 -->
-            <div id="work-row-1" class="w3-row-padding w3-auto" style="width: 100%;">
-                <div class="w3-mobile w3-col l4">
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-1">
-                        <div class="tool--tip" data-count="0">
-                            <span class="tooltip--text">Click to explore the code</span>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/open-data-web-app">
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>Discography Web App</cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container">
-                                <img src="assets/img/deezer-logo-circle.png" class="w3-image w3-mobile"
-                                     alt="deezer-img">
-                            </div>
-                            <dialog class="modal--information"></dialog>
-                            <span class="hide--h" id="c1-details"><cardtext> Search your favorite music and browse
-                                        discographies, album artwork, similar recording artists, and listen to song
-                                        clips. Features include: displaying discography of albums by the artist, and
-                                                                            a album details including mp3 clips of
-                                                                            tracks.</cardtext></span>
-                            <p class="card--info-block">
-                                <cardtext>Spring Web MVC,Apache HttpClient, Jackson
-                                    Data-bind, Thymeleaf, HTML, CSS, Bootstrap, Deezer API, Heroku
-                                </cardtext>
-                            </p>
-                            <span class="w3-cell-row">
-                        <a style="align-content: center;">
-                            <button
-                                    onclick="document.getElementById('web-app-discog-modal').style.display='inherit' "
-                                    type="button" class="w3-button w3-round">LAUNCH</button>
-                        </a>
-                        </span>
+
+            <div class="container">
+
+                <!-- Page Heading -->
+                <h1 class="my-4">Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+
+                <!-- Project One -->
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
                         </a>
                     </div>
-                </div>
-
-
-                <!-- Popup Modal for Discography Web App Deezer Api -->
-                <div id="web-app-discog-modal" class="w3-modal">
-                    <div class="w3-modal-content w3-animate-zoom" style="width:fit-content">
-                        <iframe role="application"
-                                src="https://powerful-hollows-10387.herokuapp.com/"
-                                style="height: 80vh;width: 50vw"></iframe>
-                        <span onclick="document.getElementById('web-app-discog-modal').style.display='none'"
-                              class="w3-button w3-xlarge w3-transparent w3-display-topright"
-                              title="Close">&times;</span>
-                    </div>
-                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                        <button onclick="document.getElementById('web-app-discog-modal').style.display='none'"
-                                type="button"
-                                class="w3-button w3-red">Close
-                        </button>
+                    <div class="col-md-5">
+                        <h3>Project One</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem
+                            expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni
+                            pariatur
+                            quos perspiciatis atque eveniet unde.</p>
+                        <a class="btn btn-primary" href="#">View Project</a>
                     </div>
                 </div>
+                <!-- /.row -->
 
+                <hr>
 
-                <!-- p2 -->
-                <div id="mobile-padding2" class="w3-container w3-padding-16"></div>
-                <div class="w3-mobile w3-col l4">
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-2">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/HarryDulaney.github.io">
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>&#8592;&#8593;&#8594;&#8595; THIS &#8598;&#8599;&#8600;&#8601;
-                                    </cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container">
-                                <img src="assets/img/scr_sht_harrydulaneycom.png" class="w3-image"
-                                     alt="hdul-com-img">
-                                <img src="assets/img/thisss--ss.png" class="w3-image"
-                                     alt="hdul-com-img">
-                                <p class="card--info-block">
-                                    <cardtext>HTML5, CSS3, JavaScript, JQuery, W3.CSS,
-                                        Hosted on GitHub
-                                        Pages,
-                                        GoDaddy DNS
-                                    </cardtext>
-                                </p>
-                            </div>
+                <!-- Project Two -->
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
                         </a>
                     </div>
-
-                </div>
-
-                <!-- p3 -->
-                <div id="mobile-padding1" class="w3-container w3-padding-16"></div>
-
-                <div class="w3-mobile w3-col l4">
-                    <!-- Note Pad Android App -->
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-3">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/Note-Taker-Android">
-                            <header class="w3-container w3-responsive">
-                                <h2>
-                                    <cardtext>Notes For Android</cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container">
-                                <img src="assets/img/Note_App_list.png"
-                                     alt="Note Taker App Pic" class="w3-image" style="width:50%">
-                                <p class="card--info-block">
-                                    <cardtext>Android SDK, Java, XML, Gradle, SQLite,
-                                        Firebase
-                                    </cardtext>
-                                </p>
-                            </div>
-                        </a>
-
+                    <div class="col-md-5">
+                        <h3>Project Two</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, odit velit cumque vero
+                            doloremque
+                            repellendus distinctio maiores rem expedita a nam vitae modi quidem similique ducimus!
+                            Velit,
+                            esse totam tempore.</p>
+                        <a class="btn btn-primary" href="#">View Project</a>
                     </div>
                 </div>
+                <!-- /.row -->
 
-            </div>
+                <hr>
 
-            <!-- p4 -->
-            <div class="w3-container w3-padding-16">
-            </div>
-            <!-- Start New Row-->
-            <div id="work-row-2" class="w3-row-padding w3-auto" style="width: 100%">
-                <div class="w3-mobile w3-col l4">
-                    <!-- Contact List Android-->
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-4">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/Contact-List-Android">
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>Dynamic Contact List Mobile App w/ Google Maps</cardtext>
-                                </h2>
-                                <div class="w3-container w3-responsive">
-                                    <img src="assets/img/map-view-regscreen.png" class="w3-image"
-                                         alt="Contact List App Pic" style="width: 50%;">
-                                    <p class="card--info-block">
-                                        <cardtext>Android SDK, Android Studio, Java, XML, Gradle, Android
-                                            Permissions,
-                                            Hardware Control(Camera, SMS, MMS, Phone), Google Maps, GCP, SQLite3
-                                        </cardtext>
-                                    </p>
-                                </div>
-                            </header>
+                <!-- Project Three -->
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
                         </a>
                     </div>
-
-                </div>
-                <!-- p5 -->
-
-                <div id="mobile-padding" class="w3-container w3-padding-16"></div>
-
-                <div class="w3-mobile w3-col l4">
-
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-5">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/harrydulaney/super-commander">
-                            <!-- File-Commander -->
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>File-Commander</cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container w3-responsive">
-                                <img src="assets/img/SuperCommIMG.png" class="w3-image"
-                                     alt="SuperCommander Image" style="width: 100%">
-                                <p class="card--info-block">
-                                    <cardtext>Java, Spring Boot, Spring Service
-                                        Architecture, JavaFx,
-                                        Apache
-                                        POI, Maven
-                                    </cardtext>
-                                </p>
-                            </div>
-                        </a>
-
+                    <div class="col-md-5">
+                        <h3>Project Three</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at,
+                            praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit
+                            excepturi
+                            amet commodi deleniti alias possimus!</p>
+                        <a class="btn btn-primary" href="#">View Project</a>
                     </div>
                 </div>
+                <!-- /.row -->
 
-                <!-- p6 -->
-                <div id="mobile-padding3" class="w3-container w3-padding-16"></div>
+                <hr>
 
-                <div class="w3-mobile w3-col l4">
+                <!-- Project Four -->
+                <div class="row">
 
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-6">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/harrydulaney/stock-predictor">
-
-                            <!-- Stock Picker Python-->
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>Stock-Predictor</cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container w3-responsive">
-                                <img src="assets/img/stock_picker_main.png" class="w3-image"
-                                     alt="stockpicker-img">
-                                <img src="assets/img/stock_pick_pic_two.png" class="w3-image"
-                                     alt="stockpicker2-img">
-                                <p class="card--info-block">
-                                    <cardtext>Python, Machine Learning, (LSTM)
-                                        Recursive Neural
-                                        Network,Customized Vader Lexicon, Beautiful Soup, Parsing HTML Tags
-                                    </cardtext>
-                                </p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-container w3-padding-16"></div>
-
-            <!-- Start New Row-->
-            <!-- p7 -->
-            <div id="work-row-3" class="w3-row-padding w3-auto" style="width: 100%">
-
-                <div class="w3-mobile w3-col l4">
-
-                    <!-- Spreadsheet-Buddy-->
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-7">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/Spreadsheet-Buddy">
-
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>Spreadsheet-Buddy
-                                        <br><small>Spreadsheet Editor (built with Java)</small></cardtext>
-                                </h2>
-                                <div class="w3-container w3-responsive">
-                                    <img src="assets/img/ssBuddyScreenShot.png" class="w3-image"
-                                         alt="SheetBuddy Screenshot" style="width: 75%;">
-                                    <p class="card--info-block">
-                                        <cardtext>Java, Apache POI, JavaFx, Spring, ControlsFx, FXML, FXWeaver, CSS
-                                        </cardtext>
-                                    </p>
-                                </div>
-                            </header>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- p8 -->
-                <div id="mobile-padding5" class="w3-container w3-padding-16"></div>
-                <div class="w3-mobile w3-col l4">
-
-                    <div class="spez-card w3-card-4 w3-round-medium w3-center" id="card-8">
-                        <div class="tool--tip" data-count="0">
-                            <data value="0">
-                                <span class="tooltip--text">Click to explore the code</span>
-                            </data>
-                        </div>
-                        <a target="_blank" href="https://github.com/HarryDulaney/intro-to-java-programming">
-
-                            <!-- Intro to Java Programming - Solutions -->
-                            <header class="w3-container">
-                                <h2>
-                                    <cardtext>Intro to Java Programming 10th Edition - Solutions</cardtext>
-                                </h2>
-                            </header>
-                            <div class="w3-container w3-responsive">
-                                <img src="assets/img/daniel_liang_intro_java_10th_card_image.jpg" class="w3-image"
-                                     alt="Intro Java 10th Image" style="width: 80%">
-                                <p class="card--info-block">
-                                    <cardtext>Java, Data Structures, Algorithms, Textbook Solutions</cardtext>
-                                </p>
-                            </div>
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
                         </a>
                     </div>
-                </div>
-
-                <!-- p9 -->
-                <div id="mobile-padding6" class="w3-container w3-padding-16"></div>
-
-                <div class="w3-mobile w3-col l4">
-                    <div class="w3-card-4 w3-round-medium w3-center" id="card-9">
-                        <!--                        &lt;!&ndash; Stock Picker Python&ndash;&gt;-->
-                        <!--                        <header class="w3-container">-->
-                        <!--                            <h2>-->
-                        <!--                                <cardtext>Stock-Prediction-Python</cardtext>-->
-                        <!--                            </h2>-->
-                        <!--                        </header>-->
-                        <!--                        <div class="w3-container w3-responsive">-->
-                        <!--                            <img src="assets/img/stock_picker_main.png" class="w3-image"-->
-                        <!--                                 alt="stockpicker-img">-->
-                        <!--                            <img src="assets/img/stock_pick_pic_two.png" class="w3-image"-->
-                        <!--                                 alt="stockpicker2-img">-->
-                        <!--                            <p class="card&#45;&#45;info-block">-->
-                        <!--                                <cardtext>Python, Machine Learning, (LSTM)-->
-                        <!--                                    Recursive Neural-->
-                        <!--                                    Network,Customized Vader Lexicon, Beautiful Soup, Parsing HTML Tags-->
-                        <!--                                </cardtext>-->
-                        <!--                            </p>-->
-                        <!--                        </div>-->
-                        <!--                        <a href="https://github.com/harrydulaney/">-->
-                        <!--                            <button type="button" class="w3-button">EXPLORE</button>-->
-                        <!--                        </a>-->
+                    <div class="col-md-5">
+                        <h3>Project Four</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur,
+                            officia
+                            rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius
+                            fugit
+                            quam in suscipit?</p>
+                        <a class="btn btn-primary" href="#">View Project</a>
                     </div>
                 </div>
+                <!-- /.row -->
+
+                <hr>
+
+                <!-- Pagination -->
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </section>
-        <hr>
+        <!-- /.container -->
+        <!--            <div class="cards&#45;&#45;container">-->
+        <!--                &lt;!&ndash; p1 &ndash;&gt;-->
+        <!--                <div class="card">-->
+        <!--                    <div class="card&#45;&#45;top" style="&#45;&#45;bg-img:url('img/deezer-logo-circle.png')"></div>-->
+        <!--                    <div class="card&#45;&#45;bottom">-->
+        <!--                        &lt;!&ndash;                        <a target="_blank" href="https://github.com/HarryDulaney/open-data-web-app">&ndash;&gt;-->
+        <!--                        <h1>-->
+        <!--                            Discography Web App-->
+        <!--                        </h1>-->
+        <!--                        <p>Spring Web MVC,Apache HttpClient, Jackson-->
+        <!--                            Data-bind, Thymeleaf, HTML, CSS, Bootstrap, Deezer API, Heroku-->
+        <!--                        </p>-->
+        <!--                        <dialog class="modal&#45;&#45;information"></dialog>-->
+        <!--                        <span>-->
+        <!--                                <a style="align-content:flex-end">-->
+        <!--                            <button onclick="document.getElementById('web-app-discog-modal').style.display='inherit' "-->
+        <!--                                    type="button" class="w3-button w3-round">LAUNCH</button>-->
+        <!--                        </a>-->
+        <!--                        </span>-->
+
+        <!--                        &lt;!&ndash;                        </a>&ndash;&gt;-->
+        <!--                    </div>-->
+
+        <!--                </div>-->
+
+        <!--                &lt;!&ndash; Popup Modal for Discography Web App Deezer Api &ndash;&gt;-->
+        <!--                <div id="web-app-discog-modal" class="w3-modal">-->
+        <!--                    <div class="w3-modal-content w3-animate-zoom" style="height: max-content;width:max-content">-->
+        <!--                        <iframe role="application"-->
+        <!--                                src="https://powerful-hollows-10387.herokuapp.com/"-->
+        <!--                                style="height: 80vh;width: auto"></iframe>-->
+        <!--                        <span onclick="document.getElementById('web-app-discog-modal').style.display='none'"-->
+        <!--                              class="w3-button w3-xlarge w3-transparent w3-display-topright"-->
+        <!--                              title="Close">&times;</span>-->
+        <!--                    </div>-->
+        <!--                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">-->
+        <!--                        <button onclick="document.getElementById('web-app-discog-modal').style.display='none'"-->
+        <!--                                type="button"-->
+        <!--                                class="w3-button w3-red">Close-->
+        <!--                        </button>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+
+        <!--                &lt;!&ndash; p2 &ndash;&gt;-->
+        <!--                <div class="card" style="&#45;&#45;bg-img: url('img/scr_sht_harrydulaneycom.png')">-->
+        <!--                    <h1>-->
+        <!--                        &#8592;&#8593;&#8594;&#8595; THIS &#8598;&#8599;&#8600;&#8601;-->
+        <!--                    </h1>-->
+        <!--                    <div class="tags">-->
+        <!--                        <div class="tag">HTML5</div>-->
+        <!--                        <div class="tag">CSS3</div>-->
+        <!--                        <div class="tag">JavaScript</div>-->
+        <!--                        <div class="tag">JQuery</div>-->
+        <!--                        <div class="tag">GitHub Pages-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                    <a target="_blank"-->
+        <!--                       href="https://github.com/HarryDulaney/HarryDulaney.github.io">-->
+        <!--                        <button type="button" class="w3-button w3-round">EXPLORE</button>-->
+        <!--                    </a>-->
+        <!--                    </span>-->
+        <!--                </div>-->
+
+
+        <!--                &lt;!&ndash; p3 &ndash;&gt;-->
+
+        <!--                &lt;!&ndash; Note Pad Android App &ndash;&gt;-->
+        <!--                <div class="card" style="&#45;&#45;bg-img: url('img/Note_App_list.png')">-->
+        <!--                    <h2>-->
+        <!--                        Notes For Android-->
+        <!--                    </h2>-->
+        <!--                    <p>-->
+        <!--                        Android SDK, Java, XML, Gradle, SQLite,-->
+        <!--                        Firebase-->
+        <!--                    </p>-->
+
+        <!--                    <a style="flex-direction: column;" target="_blank"-->
+        <!--                       href="https://github.com/HarryDulaney/Note-Taker-Android">-->
+        <!--                        <button type="button" class="w3-button w3-round">EXPLORE</button>-->
+        <!--                    </a>-->
+        <!--                    </span>-->
+        <!--                </div>-->
+
+        <!--            </div>-->
+        <!--        </section>-->
+
+        <!--            &lt;!&ndash; p4 &ndash;&gt;-->
+        <!--            <div class="w3-container w3-padding-16">-->
+        <!--            </div>-->
+        <!--            &lt;!&ndash; Start New Row&ndash;&gt;-->
+        <!--            <div id="work-row-2" class="w3-row-padding w3-auto" style="width: 100%">-->
+        <!--                <div class="w3-mobile w3-col l4">-->
+        <!--                    &lt;!&ndash; Contact List Android&ndash;&gt;-->
+        <!--                    <div class="spez-card" id="card-4">-->
+        <!--                        <div class="card&#45;&#45;content">-->
+        <!--                            <div class="tool&#45;&#45;tip" data-count="0">-->
+        <!--                                <span class="tooltip&#45;&#45;text">Click to explore the code</span>-->
+        <!--                            </div>-->
+        <!--                            <h2>-->
+        <!--                                <cardtext>Dynamic Contact List Mobile App w/ Google Maps</cardtext>-->
+        <!--                            </h2>-->
+        <!--                            <div class="card&#45;&#45;content-padding">-->
+        <!--                                <img src="assets/img/map-view-regscreen.png" class="card&#45;&#45;image"-->
+        <!--                                     alt="Contact List App Pic">-->
+        <!--                                <p class="card&#45;&#45;info-block">-->
+        <!--                                    <cardtext>Android SDK, Android Studio, Java, XML, Gradle, Android-->
+        <!--                                        Permissions,-->
+        <!--                                        Hardware Control(Camera, SMS, MMS, Phone), Google Maps, GCP, SQLite3-->
+        <!--                                    </cardtext>-->
+        <!--                                </p>-->
+        <!--                            </div>-->
+        <!--                            <span class="w3-cell-row">-->
+        <!--                        <a target="_blank" style="align-content: center"-->
+        <!--                           href="https://github.com/HarryDulaney/Contact-List-Android">-->
+        <!--                            <button type="button" class="w3-button w3-round">EXPLORE</button>-->
+        <!--                        </a>-->
+        <!--                        </span>-->
+        <!--                        </div>-->
+
+        <!--                        </a>-->
+        <!--                    </div>-->
+
+        <!--                </div>-->
+        <!--                &lt;!&ndash; p5 &ndash;&gt;-->
+
+        <!--                <div id="mobile-padding" class="w3-container w3-padding-16"></div>-->
+
+        <!--                <div class="w3-mobile w3-col l4">-->
+        <!--                    <div class="spez-card" id="card-5">-->
+        <!--                        <div class="card&#45;&#45;content">-->
+        <!--                            <div class="tool&#45;&#45;tip" data-count="0">-->
+        <!--                                <span class="tooltip&#45;&#45;text">Click to explore the code</span>-->
+        <!--                            </div>-->
+        <!--                            &lt;!&ndash; File-Commander &ndash;&gt;-->
+        <!--                            <h2>-->
+        <!--                                <cardtext>File-Commander</cardtext>-->
+        <!--                            </h2>-->
+        <!--                            <div class="card&#45;&#45;content-padding">-->
+        <!--                                <img src="assets/img/SuperCommIMG.png" class="card&#45;&#45;image"-->
+        <!--                                     alt="SuperCommander Image" style="width: 100%">-->
+        <!--                                <p class="card&#45;&#45;info-block">-->
+        <!--                                    <cardtext>Java, Spring Boot, Spring Service-->
+        <!--                                        Architecture, JavaFx,-->
+        <!--                                        Apache-->
+        <!--                                        POI, Maven-->
+        <!--                                    </cardtext>-->
+        <!--                                </p>-->
+        <!--                            </div>-->
+        <!--                            <span class="w3-cell-row">-->
+        <!--                            <a target="_blank" href="https://github.com/harrydulaney/super-commander">-->
+        <!--                                <button>EXPLORE</button>-->
+        <!--                            </a>-->
+        <!--                            </span>-->
+        <!--                        </div>-->
+
+
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                &lt;!&ndash; p6 &ndash;&gt;-->
+        <!--                <div id="mobile-padding3" class="w3-container w3-padding-16"></div>-->
+
+        <!--                <div class="w3-mobile w3-col l4">-->
+        <!--                    <div class="spez-card" id="card-6">-->
+        <!--                        <div class="card&#45;&#45;content">-->
+        <!--                            <div class="tool&#45;&#45;tip" data-count="0">-->
+        <!--                                <span class="tooltip&#45;&#45;text">Click to explore the code</span>-->
+        <!--                            </div>-->
+
+        <!--                            &lt;!&ndash; Stock Picker Python&ndash;&gt;-->
+        <!--                            <h2>-->
+        <!--                                <cardtext>Stock-Predictor</cardtext>-->
+        <!--                            </h2>-->
+        <!--                            <div class="card&#45;&#45;content-padding">-->
+        <!--                                <img src="assets/img/stock_picker_main.png" class="card&#45;&#45;image"-->
+        <!--                                     alt="stockpicker-img">-->
+        <!--                                <img src="assets/img/stock_pick_pic_two.png" class="card&#45;&#45;image"-->
+        <!--                                     alt="stockpicker2-img">-->
+        <!--                                <p class="card&#45;&#45;info-block">-->
+        <!--                                    <cardtext>Python, Machine Learning, (LSTM)-->
+        <!--                                        Recursive Neural-->
+        <!--                                        Network,Customized Vader Lexicon, Beautiful Soup, Parsing HTML Tags-->
+        <!--                                    </cardtext>-->
+        <!--                                </p>-->
+        <!--                            </div>-->
+        <!--                            <span class="w3-cell-row">-->
+        <!--                            <a target="_blank" href="https://github.com/harrydulaney/stock-predictor">-->
+        <!--                                <button>EXPLORE</button>-->
+        <!--                            </a>-->
+        <!--                                </span>-->
+
+        <!--                        </div>-->
+
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="w3-container w3-padding-16"></div>-->
+
+        <!--            &lt;!&ndash; Start New Row&ndash;&gt;-->
+        <!--            &lt;!&ndash; p7 &ndash;&gt;-->
+        <!--            <div id="work-row-3" class="w3-row-padding w3-auto" style="width: 100%">-->
+
+        <!--                <div class="w3-mobile w3-col l4">-->
+
+        <!--                    &lt;!&ndash; Spreadsheet-Buddy&ndash;&gt;-->
+        <!--                    <div class="spez-card" id="card-7">-->
+        <!--                        <div class="card&#45;&#45;content">-->
+        <!--                            <div class="tool&#45;&#45;tip" data-count="0">-->
+        <!--                                <span class="tooltip&#45;&#45;text">Click to explore the code</span>-->
+        <!--                            </div>-->
+
+        <!--                            <h2>-->
+        <!--                                <cardtext>Spreadsheet-Buddy-->
+        <!--                                    <br><small>Spreadsheet Editor (built with Java)</small></cardtext>-->
+        <!--                            </h2>-->
+        <!--                            <div class="card&#45;&#45;content-padding">-->
+        <!--                                <img src="assets/img/ssBuddyScreenShot.png" class="w3-image"-->
+        <!--                                     alt="SheetBuddy Screenshot" style="width: 75%;">-->
+        <!--                                <p class="card&#45;&#45;info-block">-->
+        <!--                                    <cardtext>Java, Apache POI, JavaFx, Spring, ControlsFx, FXML, FXWeaver, CSS-->
+        <!--                                    </cardtext>-->
+        <!--                                </p>-->
+        <!--                            </div>-->
+        <!--                            <span class="w3-cell-row">-->
+        <!--                            <a target="_blank" href="https://github.com/HarryDulaney/Spreadsheet-Buddy">-->
+        <!--                                <button>EXPLORE</button>-->
+        <!--                            </a>-->
+        <!--                        </span>-->
+        <!--                        </div>-->
+
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                &lt;!&ndash; p8 &ndash;&gt;-->
+        <!--                <div id="mobile-padding5" class="w3-container w3-padding-16"></div>-->
+        <!--                <div class="w3-mobile w3-col l4">-->
+
+        <!--                    <div class="spez-card" id="card-8">-->
+        <!--                        <div class="card&#45;&#45;content">-->
+        <!--                            <div class="tool&#45;&#45;tip" data-count="0">-->
+        <!--                                <span class="tooltip&#45;&#45;text">Click to explore the code</span>-->
+        <!--                            </div>-->
+        <!--                            &lt;!&ndash; Intro to Java Programming - Solutions &ndash;&gt;-->
+        <!--                            <h2>-->
+        <!--                                <cardtext>Intro to Java Programming 10th Edition - Solutions</cardtext>-->
+        <!--                            </h2>-->
+        <!--                            <div class="card&#45;&#45;content-padding">-->
+        <!--                                <img src="assets/img/daniel_liang_intro_java_10th_card_image.jpg" class="w3-image"-->
+        <!--                                     alt="Intro Java 10th Image" style="width: 80%">-->
+        <!--                                <p class="card&#45;&#45;info-block">-->
+        <!--                                    <cardtext>Java, Data Structures, Algorithms, Textbook Solutions</cardtext>-->
+        <!--                                </p>-->
+        <!--                            </div>-->
+        <!--                            <span class="w3-display-bottom w3-cell-row">-->
+        <!--                            <a target="_blank" href="https://github.com/HarryDulaney/intro-to-java-programming">-->
+        <!--                                <button>EXPLORE</button>-->
+        <!--                            </a>-->
+        <!--                         </span>-->
+
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                &lt;!&ndash; p9 &ndash;&gt;-->
+        <!--                <div id="mobile-padding6" class="w3-container w3-padding-16"></div>-->
+
+        <!--                <div class="w3-mobile w3-col l4">-->
+        <!--                    <div class="w3-card-4 w3-round-medium w3-center" id="card-9">-->
+        <!--                        &lt;!&ndash;                        &lt;!&ndash; Stock Picker Python&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        <header class="w3-container">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <h2>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                <cardtext>Stock-Prediction-Python</cardtext>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            </h2>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </header>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        <div class="w3-container w3-responsive">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <img src="assets/img/stock_picker_main.png" class="w3-image"&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                 alt="stockpicker-img">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <img src="assets/img/stock_pick_pic_two.png" class="w3-image"&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                 alt="stockpicker2-img">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <p class="card&#45;&#45;info-block">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                <cardtext>Python, Machine Learning, (LSTM)&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    Recursive Neural&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    Network,Customized Vader Lexicon, Beautiful Soup, Parsing HTML Tags&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                </cardtext>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            </p>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        <a href="https://github.com/harrydulaney/">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <button type="button" class="w3-button">EXPLORE</button>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </a>&ndash;&gt;-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        <hr>-->
 
         <!-----------------------------------------------  About Me  ---------------------------------------------------->
         <span id="about"></span>
@@ -542,12 +626,15 @@
     work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons
     Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
 </div>
-
-<script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-3.5.1.slim.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 <script src="assets/js/harrydulaneydotcom.js"></script>
 </body>
 </html>

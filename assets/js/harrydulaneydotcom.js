@@ -34,18 +34,17 @@ $(document).ready(function () {
 
         }
     });
-    /** Display tooltip on hover over project cards */
-    $('.spez-card').hover(function () {
-        const $tooltip = $(this).find('.tool--tip');
-        var tipCount = Number($tooltip.attr('data-count'));
-
-        if (tipCount < 1) {
-            $tooltip.delay(500).fadeIn().show(1000, function () {
-                $tooltip.delay(3000).fadeOut();
-                tipCount++;
-                $tooltip.attr('data-count', tipCount);
-            });
-        }
-    });
-
+    // /** Display tooltip on hover over project cards */
+    // $('.spez-tippable').hover(function () {
+    //     const $tooltip = $(this).find('.tool--tip');
+    //     var tipCount = Number($tooltip.attr('data-count'));
+    //
+    //     if (tipCount < 1) {
+    //         $tooltip.delay(500).fadeIn().show(1000, function () {
+    //             $tooltip.delay(3000).fadeOut();
+    //             tipCount++;
+    //             $tooltip.attr('data-count', tipCount);
+    //         });
+    //     }
+    // });
 });
