@@ -31,7 +31,6 @@
 }
 
 html {
-    box-sizing: border-box;
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -229,6 +228,7 @@ td, th {
     margin: 0;
     padding: 2vh 1vw 2vh 1vw;
     width: 100%;
+    overflow: hidden;
 
 }
 
@@ -241,7 +241,7 @@ td, th {
     height: fit-content;
     max-height: 185px;
     background-color: #1c313a;
-    z-index: 20;
+    z-index: 99999;
 
 }
 
@@ -337,11 +337,12 @@ td, th {
 .main-container .main--body {
     margin-top: calc(3% + 10vh);
     width: 100%;
+    overflow: hidden;
 }
 
 .intro p {
     color: #00acc1;
-    z-index: 10;
+    z-index: 25;
 }
 
 .intro h4 {
@@ -363,22 +364,28 @@ td, th {
 
 }
 
+
 .intro .intro--image::before {
     content: "";
-    z-index: -10;
+    z-index: 15;
     position: absolute;
     top: 150px;
-    left: 122px;
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
     border: 5px solid #8bff16;
     border-right-color: transparent;
-    border-bottom-color: transparent
+    border-bottom-color: transparent;
+    bottom: 10px;
+    left: calc(150px + 5vw);
+    width: 30px;
+    height: 30px;
+    background-color: #8bff16;
+    border-radius: 50%;
 }
 
 .intro::after {
     content: "";
-    z-index: -10;
+    z-index: 15;
     position: absolute;
     bottom: 200px;
     left: 220px;
@@ -402,38 +409,14 @@ td, th {
 
 .intro .intro--image::after {
     content: "";
-    z-index: -10;
+    z-index: 15;
     position: absolute;
-    bottom: 117px;
-    left: 420px;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    width: 15px;
-    height: 15px;
-    background-color: #8bff16;
-}
-
-.intro .intro--image::before {
-    content: "";
-    z-index: -10;
-    position: absolute;
-    bottom: 10px;
-    left: calc(150px + 5vw);
-    width: 30px;
-    height: 30px;
-    background-color: #8bff16;
-    border-radius: 50%;
-
-}
-
-.intro .intro--image::after {
-    content: "";
-    z-index: -10;
-    position: absolute;
-    bottom: 225px;
+    bottom: calc(5vh + 25px);
     left: 250px;
     width: 10px;
     height: 10px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
     background-color: #8bff16;
 }
 
