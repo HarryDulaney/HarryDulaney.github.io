@@ -356,9 +356,8 @@ td, th {
 }
 
 .intro .intro--image img {
-    height: calc(30vw + 4vh);
+    max-height: 40vh;
     width: auto;
-    max-height: 350px;
     z-index: 10;
     border-radius: 50% 10% 50% 10%;
 
