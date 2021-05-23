@@ -449,6 +449,10 @@ td, th {
 
 }
 
+.work--grid img{
+        border-radius: 8px 8px 8px 8px;
+}
+
 .cards--container {
     display: grid;
     justify-content: center;
