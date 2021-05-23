@@ -369,19 +369,19 @@ td, th {
 
 .intro .intro--image::before {
     content: "";
-    z-index: 15;
+    z-index: -15;
     position: absolute;
     top: 150px;
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
-    border: 5px solid #ff7b7b;
+    border: 5px solid rgba(255, 123, 123, 0);
     border-right-color: transparent;
     border-bottom-color: transparent;
     bottom: 10px;
-    left: calc(150px + 5vw);
-    width: 30px;
-    height: 30px;
-    background-color: #086c86;
+    left: calc(150px + 31vw);
+    width: 20px;
+    height: 20px;
+    background-color: #1a4541;
     border-radius: 50%;
 }
 
@@ -705,6 +705,12 @@ td, th {
     }
 }
 
+#TransitionHelperAbout .scroll--help-image img {
+    object-fit: fill;
+    width: auto;
+    max-height: calc(50px + 4vh + 4vw);
+}
+
 /* About */
 
 .about {
@@ -720,7 +726,7 @@ td, th {
 
 .about .about--image img {
     object-fit: fill;
-    margin: 1vh 15vw 20vh 1vh;
+    margin: 1vh 15vw 2vh 1vh;
     width: auto;
     max-height: calc(50px + 4vh + 4vw);
 }
