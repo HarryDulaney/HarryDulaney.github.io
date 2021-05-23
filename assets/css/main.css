@@ -90,17 +90,6 @@ h1 {
     font-size: 1.5em;
 }
 
-
-.section--heading > h1 {
-    display: block;
-    text-align: center;
-    align-content: center;
-    color: #1c313a;
-    font-size: calc(2em + 0.5vw + 0.5vh);
-
-}
-
-
 img {
     max-width: 100%;
     border-radius: 5px 5px 0 0;
@@ -245,8 +234,22 @@ td, th {
 
 }
 
-.section--heading h1 {
-    color: #00acc1;
+.section--heading > h1 {
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+    align-content: center;
+    color: #1c313a;
+    font-size: calc(2em + 0.5vw + 0.5vh);
+    opacity: 50%;
+    transition: color 2s, opacity 1s;
+}
+
+.section--heading > h1:hover {
+    color: #00fff4;
+    opacity: 100%;
+    transition: .9s ease-in-out;
+
 }
 
 .nav--items .res--links {
@@ -371,14 +374,14 @@ td, th {
     top: 150px;
     -webkit-transform: rotate(-25deg);
     transform: rotate(-25deg);
-    border: 5px solid #8bff16;
+    border: 5px solid #ff7b7b;
     border-right-color: transparent;
     border-bottom-color: transparent;
     bottom: 10px;
     left: calc(150px + 5vw);
     width: 30px;
     height: 30px;
-    background-color: #8bff16;
+    background-color: #086c86;
     border-radius: 50%;
 }
 
