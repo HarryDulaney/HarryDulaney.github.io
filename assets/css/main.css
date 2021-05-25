@@ -449,8 +449,21 @@ td, th {
 
 }
 
-.work--grid img{
-        border-radius: 8px 8px 8px 8px;
+.work--grid h3 {
+    color: #aef4fa;
+}
+
+.work--grid h4 {
+    color: #62e6f1;
+}
+
+.work--grid h5 {
+    color: #aef4fa;
+}
+
+
+.work--grid img {
+    border-radius: 8px 8px 8px 8px;
 }
 
 .cards--container {
@@ -567,52 +580,6 @@ td, th {
     z-index: 1;
     opacity: 0.85;
 }
-
-
-/*#card-1 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-2 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-3 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-3 .card--image {*/
-/*    width: 50%;*/
-/*}*/
-
-/*#card-4 {*/
-
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-4 .card--image {*/
-/*    width: 47%;*/
-/*}*/
-
-/*#card-5 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-6 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-7 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-8 {*/
-/*    margin: 10%;*/
-/*}*/
-
-/*#card-9 {*/
-/*    margin: 10%;*/
-/*}*/
 
 
 @media (max-width: 600px) {
