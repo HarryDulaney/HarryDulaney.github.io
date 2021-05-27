@@ -150,17 +150,18 @@
                 <div class="modal fade p-3 m-2" id="web-app-discog-modal" tabindex="-1" role="dialog"
                      aria-labelledby="web-app-discog-title" aria-hidden="true"
                      style="z-index: 999999;-webkit-flex-grow: revert">
-                    <div class="modal-dialog modal-dialog-centered" role="document"
-                         style="height: 85vh; min-width: 85vw;">
-                        <div class="modal-content m-0 p-0" style="height:100%;width: 100%">
+                    <div class="modal-dialog modal-dialog-centered" role="application"
+                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85%; min-width: 85%; ">
+                        <div class="modal-content m-0 p-0" style="display: -webkit-flex;display: -ms-flexbox;display:
+                        flex; height:100%;width: 100%">
+                            <div class="modal-body" style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto; ;padding: 0.1rem;">
+                                <iframe style="height:100%;width:100%;"
+                                        src="https://powerful-hollows-10387.herokuapp.com/"></iframe>
+                            </div>
                             <div class="justify-content-center">
-                                <button type="button" class="btn btn-sm btn-secondary mt-2 mb-0"
+                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"
                                         data-dismiss="modal">CLOSE
                                 </button>
-                            </div>
-                            <div class="modal-body">
-                                <iframe style="height:100%;width:100%;" role="application"
-                                        src="https://powerful-hollows-10387.herokuapp.com/"></iframe>
                             </div>
                         </div>
                     </div>
@@ -469,7 +470,7 @@
                     <input type="text" id="name" name="name" value="" placeholder="Your Name" required="required"/>
                     <br>
                     <label for="email">Email: <span class="required">*</span></label>
-                    <input type="email" id="email" name="_replyto" value="" placeholder="johndoe@example.com"
+                    <input type="email" id="email" name="_replyto" value="" placeholder="email.address@example.com"
                            required="required"/>
                     <br>
                     <label for="enquiry">Subject: </label>

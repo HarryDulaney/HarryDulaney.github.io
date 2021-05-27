@@ -99,7 +99,7 @@ h2 {
     display: block;
     text-align: center;
     color: #013A63;
-    font-size: calc(10px + 0.5vw);
+    font-size: calc(10px + 0.3vw + 0.2vh);
 }
 
 small {
@@ -126,8 +126,10 @@ figure {
 }
 
 hr {
-    height: calc(100px + 5vh);
-    opacity: 0.0;
+    height: 2px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    /*opacity: 0.0;*/
 }
 
 pre {
@@ -917,10 +919,10 @@ td, th {
     position: center;
     padding: 20px;
     margin: 50px auto;
-    border: 1px solid #76ff03;
-    -moz-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
+    /*border: 1px solid #76ff03;*/
+    /*-moz-border-radius: 15px;*/
+    /*-webkit-border-radius: 15px;*/
+    /*border-radius: 15px;*/
 
 }
 
