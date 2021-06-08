@@ -35,3 +35,14 @@ $(document).ready(function () {
         }
     });
 });
+
+function enableSubmitButton() {
+    document.getElementById("submit-button").disabled = false;
+    document.getElementById("submit-button").setAttribute("value", "Submit");
+}
+
+function disableSubmitButton() {
+    document.getElementById("submit-button").disabled = true;
+    // document.getElementById("submit-button").setAttribute("value", "Verify");
+
+}
