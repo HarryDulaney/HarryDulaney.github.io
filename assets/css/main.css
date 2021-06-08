@@ -963,7 +963,6 @@ td, th {
     display: block;
     width: 100px;
     -moz-margin-start: 15px;
-    color: #c21717;
     border: none;
     align-content: center;
     justify-content: center;
@@ -971,8 +970,12 @@ td, th {
     margin: 0 auto;
 }
 
+.contact .contact-form input[type="email"],input[type="text"] {
+    width: 250px;
+    margin: 0 auto;
+}
+
 .contact .contact-form input {
-    -webkit-text-fill-color: black;
     margin-top: 15px;
     margin-bottom: 15px;
 
