@@ -1,48 +1,40 @@
 /** @author Harry Dulaney */
-let open = 0;
-var themeMode = "dark_mode";
+var open = false;
 $(document).ready(function () {
 
-    $('#expandMenu').on('click', function () {
-        if (open === 0) {
-            $('#mobile--navigation').css('display', 'block');
-            $('#navbar').css('height', '200px');
-            open = 1;
-        } else if (open === 1) {
-            $('#mobile--navigation').css('display', 'none');
-            $('#navbar').css('height', 'fit-content');
-            open = 0;
-
+    $('.mobile-nav-toggle').on('click', function () {
+        if (!open) {
+            expandMobileMenu();
+            gsap.to('.bar',{rotation: 180, duration: 0.5});
+        } else if (open) {
+            retractMobileMenu();
+            gsap.to('.bar',{rotation: -180, duration: 0.5});
         }
 
     });
 
-    $('#navbar').on('dblclick', function () {
-        if (open === 1) {
-            $('#mobile--navigation').css('display', 'none');
-            $('#navbar').css('height', 'fit-content');
-            open = 0;
+    $(window).on('scroll', function () {
+        if (open) {
+            retractMobileMenu();
         }
     });
 
-
-    $('#body--main').on('click', function () {
-        if (open === 1) {
-            $('#mobile--navigation').css('display', 'none');
-            $('#navbar').css('height', 'fit-content');
-            open = 0;
-
+    $('.main--body').on('click', function () {
+        if (open) {
+            retractMobileMenu();
         }
     });
 });
 
-function enableSubmitButton() {
-    document.getElementById("submit-button").disabled = false;
-    document.getElementById("submit-button").setAttribute("value", "Submit");
+function retractMobileMenu() {
+    $('.mobile--nav').css('display', 'none');
+    $('.top--navbar').css('height', 'fit-content');
+    open = false;
 }
 
-function disableSubmitButton() {
-    document.getElementById("submit-button").disabled = true;
-    // document.getElementById("submit-button").setAttribute("value", "Verify");
+function expandMobileMenu() {
+    $('.mobile--nav').css('display', 'block');
+    $('.top--navbar').css('height', '200px');
+   open = true;
 
 }

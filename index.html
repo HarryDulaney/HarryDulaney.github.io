@@ -16,6 +16,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
           integrity="sha512-TktJbycEG5Van9KvrSHFUcYOKBroD7QCYkEe73HAutODCw9QTFcvF6fuxioYM1h6THNudK1GjVidazj6EslK4A=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link rel="prefetch" href="https://deezer-app.harrydulaney.com" as="embed">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,9 +29,9 @@
 <body>
 
 <!-----------------------------------------------  Intro  ---------------------------------------------------->
-<nav class="special--navbar" id="navbar">
+<nav class="top--navbar" id="navbar">
     <div class="nav--items">
-        <nav class="mobile--nav" id="mobile--navigation" style="margin-top: 40px;margin-left: 20px;">
+        <nav class="mobile--nav">
             <ul class="mobile-menu align-self-auto" aria-labelledby="expandMenu" role="menu">
                 <li><a href="#top" style="text-decoration: none">Top</a></li>
                 <li><a href="#project" style="text-decoration: none">Projects</a></li>
@@ -63,7 +64,7 @@
             <a class="m-1" href="https://www.facebook.com/HarryGDulaney">
                 <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"></a>
         </div>
-        <a role="button" id="expandMenu" class="bar--icon float-left" aria-controls="mobile-menu"
+        <a role="button" class="mobile-nav-toggle float-left" aria-controls="mobile-menu"
            aria-haspopup="true">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -76,7 +77,7 @@
        href="https://github.com/HarryDulaney/HarryDulaney.github.io"
        data-ribbon="Fork me on GitHub"
        title="Fork me on GitHub">Fork me on GitHub</a>
-    <main class="main--body" id="body--main">
+    <main class="main--body">
         <!--Intro-->
         <section class="intro">
             <div class="container">
@@ -588,8 +589,7 @@
             Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -598,6 +598,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script src="assets/js/harrydulaneydotcom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+        integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
+        crossorigin="anonymous"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
