@@ -37,7 +37,7 @@ html {
 }
 
 body {
-    background-color: #455a64;
+    background-color: #24495f;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -216,8 +216,7 @@ td, th {
 
 .main-container {
     display: block;
-    margin: 0;
-    padding: 2vh 1vw 2vh 1vw;
+    padding: 40px 1px 1px;
     width: 100%;
     overflow: hidden;
 
@@ -228,10 +227,12 @@ td, th {
     position: fixed;
     overflow: hidden;
     top: 0;
+    right: 0;
+    left: 0;
     width: 100%;
     height: fit-content;
-    max-height: 185px;
-    box-shadow: 0 9px 9px -9px rgba(198, 198, 198, 0.6);
+    max-height: 200px;
+    box-shadow: 0 9px 9px -9px rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     background-color: #1c313a;
     z-index: 99999;
@@ -268,18 +269,6 @@ td, th {
     display: inline-list-item;
 }
 
-.nav--items .mobile-nav-toggle .bar {
-    display: block;
-    width: 35px;
-    height: 2px;
-    background-color: #00acc1;
-    margin-top: 2px;
-    margin-bottom: 6px;
-}
-
-.nav--items .mobile-nav-toggle:hover {
-    cursor: pointer;
-}
 
 .nav--items .mobile-nav-toggle {
     display: inline-block;
@@ -335,6 +324,70 @@ td, th {
     display: none;
 }
 
+.nav--items .mobile-nav-toggle .bars {
+    display: block;
+    width: 30px;
+    height: 4px;
+    opacity: 1;
+    background-color: #00acc1;
+
+}
+
+.nav--items .mobile-nav-toggle .bars::before,
+.nav--items .mobile-nav-toggle .bars::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #00acc1;
+}
+
+.nav--items .mobile-nav-toggle .bars::before {
+    margin-top: 9px;
+    margin-bottom: 20px;
+}
+
+.nav--items .mobile-nav-toggle .bars::after {
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
+
+.nav--items .mobile-nav-toggle:hover {
+    cursor: pointer;
+}
+
+.nav--items .mobile-nav-toggle .close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.nav--items .mobile-nav-toggle .close::before,
+.nav--items .mobile-nav-toggle .close::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background-color: #00acc1;
+    transition: background .5s ease;
+}
+
+.nav--items .mobile-nav-toggle .close::before {
+    transform: rotate(-45deg);
+}
+
+.nav--items .mobile-nav-toggle .close::after {
+    transform: rotate(45deg);
+}
+
+.nav--items .mobile-nav-toggle .close:hover::before,
+.nav--items .mobile-nav-toggle .close:hover::after {
+    background: rgb(132, 215, 255);
+}
+
 @media screen and (max-width: 600px) {
     .res--links {
         display: none;
@@ -348,9 +401,13 @@ td, th {
 
 
 .main-container .main--body {
-    margin-top: calc(3% + 10vh);
+    /*margin-top: calc(3% + 10vh);*/
     width: 100%;
     overflow: hidden;
+}
+
+.intro--wrapper {
+    background-color: #03354c;
 }
 
 .intro p {

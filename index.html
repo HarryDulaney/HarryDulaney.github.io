@@ -29,18 +29,18 @@
 <body>
 
 <!-----------------------------------------------  Intro  ---------------------------------------------------->
-<nav class="top--navbar" id="navbar">
+<nav class="top--navbar">
     <div class="nav--items">
         <nav class="mobile--nav">
             <ul class="mobile-menu align-self-auto" aria-labelledby="expandMenu" role="menu">
-                <li><a href="#top" style="text-decoration: none">Top</a></li>
+                <li><a href="#top" style="text-decoration: none">Intro</a></li>
                 <li><a href="#project" style="text-decoration: none">Projects</a></li>
                 <li><a href="#about" style="text-decoration: none">About</a></li>
                 <li><a href="#contact" style="text-decoration: none">Contact Me</a></li>
             </ul>
         </nav>
         <div class="res--links align-middle m-1 p-1">
-            <a href="#top" class="m-sm-3" style="text-decoration: none">Top</a>
+            <a href="#top" class="m-sm-3" style="text-decoration: none">Intro</a>
             <a href="#project" class="m-sm-3" style="text-decoration: none">Projects</a>
             <a href="#about" class="m-sm-3" style="text-decoration: none">About Me</a>
             <a href="#contact" class="m-sm-3" style="text-decoration: none">Contact</a>
@@ -56,7 +56,7 @@
                     <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"></a>
             </div>
         </div>
-        <div class="mobile--title float-right ml-5" style="margin-top: 9px;">
+        <div class="mobile--title float-right ml-5" style="margin-top: 9px; margin-bottom: 6px;">
             <a class="m-1" href="https://www.github.com/harrydulaney">
                 <img src="assets/icon/githubback.png" alt="github-icon"></a>
             <a class="m-1" href="https://www.linkedin.com/in/harrydulaney">
@@ -66,20 +66,14 @@
         </div>
         <a role="button" class="mobile-nav-toggle float-left" aria-controls="mobile-menu"
            aria-haspopup="true">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <div class="bars"></div>
+            <div class="close"></div>
         </a>
     </div>
 </nav>
 <div class="main-container" id="top">
-    <a class="github-fork-ribbon" style="margin-top: 41px; z-index: 9999"
-       href="https://github.com/HarryDulaney/HarryDulaney.github.io"
-       data-ribbon="Fork me on GitHub"
-       title="Fork me on GitHub">Fork me on GitHub</a>
-    <main class="main--body">
-        <!--Intro-->
-        <section class="intro">
+    <div class="jumbotron jumbotron-fluid intro--wrapper">
+        <div class="intro">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -94,7 +88,7 @@
                         </strong>
                             <span style="font-size: calc(2.7vh + 1.5vw);z-index: 150;">to Harrydulaney.com.</span> <br>
                         <p style="font-size: calc(1.9vh + 0.8vw)">
-                            I'm a software engineer and full stack developer based in Atlanta,
+                            I'm a full-stack software developer based in Atlanta,
                             Georgia.
                         </p>
                         <p style="font-size: calc(0.9vh + 0.8vw); z-index: 135;">
@@ -110,7 +104,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <!--            <h1 class="display-4">Fluid jumbotron</h1>-->
+        <!--            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+    </div>
+    <main class="main--body">
+        <!--Intro-->
+
         <!-----------------------------------------------------------  Projects  ---------------------------------------------------------->
         <span id="project"></span><br><br>
         <div class="section--heading">
