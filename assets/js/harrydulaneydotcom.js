@@ -37,17 +37,18 @@ $(document).ready(function () {
 });
 
 function retractMobileMenu() {
-    gsap.to('.close', {opacity: 0, duration: 0.1});
-    mtl.to('.top--navbar', {height: 'fit-content', duration: 0.5})
-        .to('.mobile--nav', {display: 'none', duration: 0.1})
-        .to('.bars', {opacity: 1, duration: 0.3})
+    mtl.to('.close', {opacity: 0, duration: 0.2}, '-=0.5')
+        .to('.top--navbar', {height: '41px', duration: 0.2}, '-=0.5')
+        .to('.mobile--nav', {display: 'none', duration: 0.2}, '-=0.5')
+        .to('.bars', {opacity: 1, duration: 0.1}, '-=0.5')
+        .to('.top--navbar', {height: 'fit-content',duration:0.1}, '-=0.5');
     open = false;
 }
 
 function expandMobileMenu() {
-    gsap.to('.bars', {opacity: 0, duration: 0.3})
-    mtl.to('.top--navbar', {height: '185px', duration: 0.5})
-        .to('.mobile--nav', {display: 'block', duration: 0.1})
-        .to('.close', {opacity: 1, duration: 0.1});
+    mtl.to('.top--navbar', {height: '185px', duration: 0.1}, '-=0.5')
+        .to('.bars', {opacity: 0, duration: 0.1}, '-=0.5')
+        .to('.mobile--nav', {display: 'block', duration: 0.2}, '-=0.5')
+        .to('.close', {opacity: 1, duration: 0.2}, '-=0.5');
     open = true;
 }
