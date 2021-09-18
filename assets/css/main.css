@@ -600,6 +600,7 @@ td, th {
     object-fit: fill;
     margin: 1vh 15vw 2vh 1vh;
     width: auto;
+    opacity: 35%;
     max-height: calc(50px + 4vh + 4vw);
 }
 
