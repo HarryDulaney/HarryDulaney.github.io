@@ -14,17 +14,17 @@ $(document).ready(function () {
     var initialScrollPos = window.pageYOffset;
 
     $(window).on('scroll', function () {
-        //Mobile scroll behavior
-        if (max600.matches) {
-            if (open) {
-                retractMobileMenu();
-            }
+        if (open) {
+            retractMobileMenu();
+        }
+        if (max600.matches) { // Mobile scroll behavior
+            showNavbar();
         } else {
             // Regular Nav Bar behavior
             var currentScrollPos = window.pageYOffset;
             if (initialScrollPos > currentScrollPos) {
-                    expandNavbar();
-            } else {
+                showNavbar();
+            } else if (currentScrollPos >= 41) {
                 hideNavBar();
             }
             initialScrollPos = currentScrollPos;
@@ -66,12 +66,12 @@ function retractMobileMenu() {
     open = false;
 }
 
-function expandNavbar() {
-    $('.top--navbar').css('top','0px');
+function showNavbar() {
+    $('.top--navbar').css('top', '0px');
 }
 
 function hideNavBar() {
-    $('.top--navbar').css('top','-50px');
+    $('.top--navbar').css('top', '-50px');
 }
 
 

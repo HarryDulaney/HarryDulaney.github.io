@@ -12,10 +12,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
-          integrity="sha512-TktJbycEG5Van9KvrSHFUcYOKBroD7QCYkEe73HAutODCw9QTFcvF6fuxioYM1h6THNudK1GjVidazj6EslK4A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="prefetch" href="https://deezer-app.harrydulaney.com" as="embed">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -71,75 +67,77 @@
     </div>
 </nav>
 <div class="main-container" id="top">
+    <!--Intro-->
     <div class="jumbotron jumbotron-fluid intro--wrapper">
         <div class="intro">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="intro--image">
-                            <img class="img-fluid" src="assets/img/cat-astronaut.png"
+                            <img class="img-fluid" src="assets/img/1628285117616.jpg"
                                  alt="welcome-img">
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <p><strong>
-                            <large style="font-size: calc(6vh + 3vw);z-index: 150">Hi, Welcome! <br></large>
-                        </strong>
-                            <span style="font-size: calc(2.7vh + 1.5vw);z-index: 150;">I'm Harry Dulaney</span>
-                            <br>
-                        <p style="font-size: calc(1.9vh + 0.8vw)">
-                            I'm a full-stack Java developer based in Atlanta,
-                            Georgia.
-                        </p>
-                        <br>
+                        <p>
+                            <span style="font-size: calc(6vh + 3vw);z-index: 150">Hello,<br></span>
+                            <span style="font-size: calc(2vh + 0.9vw);z-index: 150;">I'm Harry - a Full Stack Software
+                                Developer based in Atlanta, Georgia.</span><br><br>
+                            <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
+                                Eseptus Lorues Unomo Fratezimi
+                                adfj;lakds jjflkj
+                            </span>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="w-100 scroll--help-image">
-                        <img src="assets/img/spaceman_flying_upwards.png" alt="img-intro-spaceman"
-                             class="float-right">
-                    </div>
+                    <br>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="w-100 scroll--help-image hide--h">
+            <img src="assets/img/spaceman_flying_upwards.png" alt="img-intro-spaceman" id="space-man-one"
+                 class="float-right">
+        </div>
+    </div>
     <main class="main--body">
-        <!--Intro-->
-
         <!-----------------------------------------------------------  Projects  ---------------------------------------------------------->
         <span id="project"></span><br><br>
         <div class="section--heading">
-            <h1>Projects</h1>
+            <h1></h1>
         </div>
         <br><br>
         <section class="work--grid">
             <div class="container">
                 <!------------------------------------- Deezer Web App -------------------------------------------->
-                <div class="row">
+                <div class="row p-2">
                     <div class="col-md-7">
-                        <img class="img-fluid mb-3 mb-md-0" src="assets/css/img/deezer-logo-circle.png"
+                        <img class="img-fluid mb-3 mb-md-0"
+                             src="https://raw.githubusercontent.com/HarryDulaney/deezer-example-web-app/master/img/Deezer-Web-App-Demo.gif"
                              alt="Deezer web app img" style="max-height: 225px">
                     </div>
                     <div class="col-md-5">
-                        <h3>Discog Web App</h3>
-                        <h5>with Deezer REST api</h5>
+                        <h3>Discography Web Application</h3>
+                        <h5>Deezer REST API Client</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Spring MVC</div>
-                            <div class="badge badge-secondary">Thymeleaf</div>
-                            <div class="badge badge-secondary">Apache HttpClient</div>
-                            <div class="badge badge-secondary">Deezer REST API</div>
-                            <div class="badge badge-secondary">Heroku Dyno</div>
-                            <div class="badge badge-secondary">Jackson Data-bind</div>
+
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">Spring</div>
+                            <div class="badge text-white">Thymeleaf</div>
+                            <div class="badge text-white">Apache HttpClient</div>
+                            <div class="badge text-white">Deployed on Heroku</div>
+                            <div class="badge text-white">Deezer Open Source API</div>
+                            <div class="badge text-white">Jackson Object Mapping</div>
                         </div>
-                        <div class="flex-d">
-                            <a type="button" class="text-white btn btn-primary btn-outline-danger"
+                        <div class="flex-d project--link">
+                            <a type="button" class="text-white btn btn-primary"
                                data-toggle="modal"
                                data-target="#web-app-discog-modal">
-                                Launch Now
+                                Launch App
                             </a>
-
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/deezer-example-web-app">Learn More</a>
+                            <a type="button" class="btn btn-light" target="_blank"
+                               href="https://github.com/HarryDulaney/deezer-example-web-app">
+                                GitHub Page
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -174,25 +172,20 @@
                              alt="Intro to java img" style="max-height: 225px">
                     </div>
                     <div class="col-md-5">
-                        <h3>Exercise Solutions
+                        <h3>Solutions to Programming Exercises
                         </h3>
                         <h4>Intro to Java Programming</h4>
-                        <h5>By Daniel Lang</h5>
-                        <h6>10th Edition</h6>
-                        <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Core Java</div>
-                            <div class="badge badge-secondary">Algorithms</div>
-                            <div class="badge badge-secondary">Data Structures</div>
-                            <div class="badge badge-secondary">Computer Science Fundamentals</div>
-                            <div class="badge badge-secondary">Programming Exercises</div>
-                            <div class="badge badge-secondary">Open-Source Learning Resources</div>
+                        <div class="d-inline-block mt-1 mb-1 p-1">
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">Algorithms</div>
+                            <div class="badge text-white">Data Structures</div>
+                            <div class="badge text-white">Computer Science Fundamentals</div>
+                            <div class="badge text-white">Programming Exercises</div>
+                            <div class="badge text-white">Open-Source Learning Resources</div>
                         </div>
                         <div class="flex-d">
-                            <a type="button" class="text-white btn btn-primary btn-outline-danger"
-                               href="https://github.com/HarryDulaney/intro-to-java-programming">
-                                Exercise Solutions</a>
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/intro-to-java-programming">Learn More</a>
+                            <a type="button" target="_blank" class="btn btn-light"
+                               href="https://github.com/HarryDulaney/intro-to-java-programming">Open Project Page</a>
                         </div>
                     </div>
                 </div>
@@ -206,17 +199,17 @@
                     <div class="col-md-5">
                         <h3>File Commander v1.0</h3>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Java</div>
-                            <div class="badge badge-secondary">Spring Boot</div>
-                            <div class="badge badge-secondary">Spring Service Architecture</div>
-                            <div class="badge badge-secondary">JavaFx</div>
-                            <div class="badge badge-secondary">Apache POI</div>
-                            <div class="badge badge-secondary">Maven</div>
-                            <div class="badge badge-secondary">PdfBox</div>
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">Spring Boot</div>
+                            <div class="badge text-white">Spring Service Architecture</div>
+                            <div class="badge text-white">JavaFx</div>
+                            <div class="badge text-white">Apache POI</div>
+                            <div class="badge text-white">Maven</div>
+                            <div class="badge text-white">PdfBox</div>
                         </div>
                         <div class="flex-d">
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/file-commander">Learn More</a>
+                            <a target="_blank" class="btn btn-light"
+                               href="https://harrydulaney.com/file-commander">GitHub Page</a>
                             <!--                            <a type="button" class="btn btn-primary disabled" data-toggle="modal"-->
                             <!--                               aria-disabled="true"-->
                             <!--                               data-target="#">-->
@@ -258,16 +251,16 @@
                     <div class="col-md-5">
                         <h3>Notes For Android</h3>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Android SDK</div>
-                            <div class="badge badge-secondary">Firebase</div>
-                            <div class="badge badge-secondary">Java</div>
-                            <div class="badge badge-secondary">XML Markup GUI</div>
-                            <div class="badge badge-secondary">Gradle</div>
-                            <div class="badge badge-secondary">SQLite</div>
+                            <div class="badge text-white">Android SDK</div>
+                            <div class="badge text-white">Firebase</div>
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">XML Markup GUI</div>
+                            <div class="badge text-white">Gradle</div>
+                            <div class="badge text-white">SQLite</div>
                         </div>
                         <div class="flex-d">
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/notes-android-app/">Learn More</a>
+                            <a target="_blank" class="btn btn-light"
+                               href="https://harrydulaney.com/notes-android-app/">GitHub Page</a>
                             <!--                            <a type="button" class="btn btn-primary disabled" data-toggle="modal"-->
                             <!--                               data-target="#" aria-disabled="true">-->
                             <!--                                Coming Soon-->
@@ -307,17 +300,17 @@
                     <div class="col-md-5">
                         <h3>Dynamic Contact List Mobile App</h3><h5>with Google Maps</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Android SDK</div>
-                            <div class="badge badge-secondary">Android Studio</div>
-                            <div class="badge badge-secondary">Java</div>
-                            <div class="badge badge-secondary">Hardware Controls(Camera, SMS, MMS, Phone)</div>
-                            <div class="badge badge-secondary">Google Maps SDK</div>
-                            <div class="badge badge-secondary">Google Cloud Platform</div>
-                            <div class="badge badge-secondary">SQLite3</div>
+                            <div class="badge text-white">Android SDK</div>
+                            <div class="badge text-white">Android Studio</div>
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">Hardware Controls(Camera, SMS, MMS, Phone)</div>
+                            <div class="badge text-white">Google Maps SDK</div>
+                            <div class="badge text-white">Google Cloud Platform</div>
+                            <div class="badge text-white">SQLite3</div>
                         </div>
                         <div class="flex-d">
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/Contact-List-Android/">Learn More</a>
+                            <a target="_blank" class="btn btn-light"
+                               href="https://harrydulaney.com/Contact-List-Android/">GitHub Page</a>
                             <!--                            <a type="button" class="btn btn-primary disabled" aria-disabled="true"-->
                             <!--                               data-toggle="modal"-->
                             <!--                               data-target="#">-->
@@ -358,16 +351,16 @@
                     <div class="col-md-5">
                         <h3>Stock Price Predictor</h3>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Python 3</div>
-                            <div class="badge badge-secondary">Machine Learning (LSTM)</div>
-                            <div class="badge badge-secondary">Recursive Neural Network</div>
-                            <div class="badge badge-secondary">Customized Vader Lexicon</div>
-                            <div class="badge badge-secondary">Beautiful Soup</div>
-                            <div class="badge badge-secondary">Web Scraping</div>
+                            <div class="badge text-white">Python 3</div>
+                            <div class="badge text-white">Machine Learning (LSTM)</div>
+                            <div class="badge text-white">Recursive Neural Network</div>
+                            <div class="badge text-white">Customized Vader Lexicon</div>
+                            <div class="badge text-white">Beautiful Soup</div>
+                            <div class="badge text-white">Web Scraping</div>
                         </div>
                         <div class="flex-d">
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/stock-predictor/">Learn More</a>
+                            <a target="_blank" class="btn btn-light"
+                               href="https://harrydulaney.com/stock-predictor/">GitHub Page</a>
                             <!--                            <a type="button" class="btn btn-primary disabled" data-toggle="modal" aria-disabled="true"-->
                             <!--                               data-target="#">-->
                             <!--                                Coming Soon-->
@@ -409,15 +402,15 @@
                         <h3>Java Spreadsheet Buddy</h3>
                         <h5></h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge badge-secondary">Java</div>
-                            <div class="badge badge-secondary">Spring</div>
-                            <div class="badge badge-secondary">ControlsFx</div>
-                            <div class="badge badge-secondary">JavaFx</div>
-                            <div class="badge badge-secondary">Apache POI</div>
+                            <div class="badge text-white">Java</div>
+                            <div class="badge text-white">Spring</div>
+                            <div class="badge text-white">ControlsFx</div>
+                            <div class="badge text-white">JavaFx</div>
+                            <div class="badge text-white">Apache POI</div>
                         </div>
                         <div class="flex-d">
-                            <a target="_blank" class="text-white btn btn-dark btn-outline-info"
-                               href="https://harrydulaney.com/Spreadsheet-Buddy">Learn More</a>
+                            <a target="_blank" class="btn btn-light"
+                               href="https://harrydulaney.com/Spreadsheet-Buddy">GitHub Page</a>
                             <!--                            <button type="button" class="btn btn-primary" data-toggle="modal"-->
                             <!--                                    data-target="#">-->
                             <!--                                Launch Now-->
@@ -459,7 +452,7 @@
         <!-----------------------------------------------  About Me  ---------------------------------------------------->
         <span id="about"></span><br><br>
         <div class="section--heading">
-            <h1>About</h1>
+            <h1></h1>
         </div>
         <section class="about">
             <div class="about--banner">
@@ -504,37 +497,46 @@
         <!-----------------------------------------------  Contact  ---------------------------------------------------->
         <span id="contact"></span><br><br>
         <div class="section--heading">
-            <h1>Contact</h1>
+            <h1></h1>
         </div>
         <section class="contact">
             <div id="contact-form" class="contact-form">
                 <form method="POST" action="https://formspree.io/xbjzadpn">
                     <div class="row">
-                        <p id="req-field-desc" class="badge-pill badge-dark ml-auto mr-auto"><span
+                        <p id="req-field-desc" class="text-white badge-pill ml-auto mr-auto"><span
                                 class="required">*
                         </span>
                             indicates a
                             required
                             field</p></div>
-                    <label for="name" class="text-white badge-pill badge-dark"> <span class="required">* </span>
-                        Name :</label>
-                    <input type="text" id="name" name="name" value="" placeholder="Your Name" required="required"/>
+                    <label for="name" class="text-white badge-pill"> <span class="required">* </span>
+                    </label>
+                    <input type="text" id="name" name="name" value=""
+                           style="background-color: lightblue;border-radius: 1%;"
+                           placeholder="Your Name" required="required"/>
                     <br>
-                    <label for="email" class="text-white badge-pill badge-dark"> <span class="required">* </span>
-                        Email :</label>
-                    <input type="email" id="email" name="_replyto" value="" placeholder="email.address@example.com"
+                    <label for="email" class="text-white badge-pill"> <span class="required">* </span>
+                    </label>
+                    <input type="email" id="email" name="_replyto" value=""
+                           style="background-color: lightblue;border-radius: 1%;"
+                           placeholder="email.address@example.com"
                            required="required"/>
                     <br>
-                    <label for="enquiry" class="text-white badge-pill badge-dark">Subject : </label>
-                    <select id="enquiry" name="enquiry" style="width: 250px;">
-                        <option value="resume request">Resume Request</option>
-                        <option value="general">General</option>
-                        <option value="just saying hi">Just Saying Hi</option>
+                    <label for="enquiry" class="text-white badge-pill"> '</label>
+                    <select id="enquiry" name="enquiry"
+                            style="width: 250px;background-color: lightblue;border-radius: 1%">
+                        <option label="Choose A Subject (No Subject)" value="No Subject" selected></option>
+                        <option value="Resume Request">Resume Request</option>
+                        <option value="General">General</option>
+                        <option value="Just Saying Hi">Just Saying Hi</option>
+                        <option value="I am a robot">I am a robot sending phishing emails</option>
                     </select>
                     <br>
-                    <label for="message" class="badge-pill badge-dark"> <span class="required">* </span>Message:</label>
+                    <label for="message"
+                           class="text-white"></label>
                     <div class="textarea--message"><textarea id="message" name="message"
-                                                             placeholder="Write your message here **"
+                                                             style="background-color: lightblue;border-radius: 1%;"
+                                                             placeholder="** Write your message here **"
                                                              required="required"
                                                              maxlength="200" data-minlength="20" rows="20"
                                                              cols="50"></textarea></div>
@@ -565,7 +567,7 @@
         </section>
     </main>
     <footer><p style="text-align: center;font-size: 15px; color: seashell">
-        ©2021 by Harry Dulaney<br></p></footer>
+        ©2021 Harry Dulaney<br></p></footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
