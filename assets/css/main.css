@@ -527,7 +527,7 @@ td, th {
 /* Projects */
 .work--grid {
     text-align: center;
-
+    overflow: hidden;
 }
 
 .work--grid h3 {
@@ -576,24 +576,65 @@ td, th {
     opacity: 0.85;
 }
 
-
-#TransitionHelperAbout .scroll--help-image img {
-    object-fit: fill;
-    width: auto;
-    max-height: calc(50px + 4vh + 4vw);
+/* About */
+#about {
+    content: "";
+    background-color: transparent;
 }
 
-/* About */
+/*    #diamond {
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-bottom-color: red;
+      position: relative;
+      top: -50px;
+    }
+    #diamond:after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top-color: red;
+    }*/
+.about--wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #022e42;
+    height: fit-content;
+    margin-top: 0;
+}
+
+.about--wrapper:after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: #0a3f62;
+    transform: skew(0deg, -19deg);
+}
+
+.about--wrapper:before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow-x:fragments;
+    background: #0a3f62;
+    transform: skew(0deg, 9deg);
+}
 
 .about {
     display: block;
     position: relative;
 
-}
-
-.about .section--heading {
-    margin-left: 50vw;
-    margin-right: 50vw;
 }
 
 .about .about--image img {

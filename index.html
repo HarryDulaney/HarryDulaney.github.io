@@ -13,6 +13,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="prefetch" href="https://deezer-app.harrydulaney.com" as="embed">
+    <link rel="prefetch" href="https://coin-portal.herokuapp.com" as="embed">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -83,20 +84,14 @@
                             <span style="font-size: calc(6vh + 3vw);z-index: 150">Hello,<br></span>
                             <span style="font-size: calc(2vh + 0.9vw);z-index: 150;">I'm Harry, a Full Stack
                                 Software
-                            Developer</span><br><br>
+                            Developer,</span><br><br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
-                               I'm passionate about writing clean, secure, and
-                                maintainable software.
+                               I am passionate about computer programming and creating
+                                innovative software solutions to complex real world problems.
                                 I also love riding bikes, exploring nature with my dogs, and
                         playing drums in an indie rock band here in Atlanta, Georgia.</span><br><br>
                             <span style="font-size: calc(0.9vh + 0.7vw);z-index: 150;">
-                                I keep this page updated with current passion projects and
-                                also maintain a portfolio of past project work.</span><br><br>
-                            <span style="font-size: calc(0.9vh + 0.7vw);z-index: 150;">
                                 Thanks for coming!
-                            </span>
-                            <span style="font-size: calc(0.9vh + 0.7vw);z-index: 150;"><br><br>
-                                Keep scrolling to see what I've been up to!
                             </span>
                     </div>
                     <br>
@@ -122,7 +117,7 @@
                 <!------------------------------------- Deezer Web App -------------------------------------------->
                 <div class="row p-2">
                     <div class="col-md-7">
-                        <img class="img-fluid mb-3 mb-md-0"
+                        <img class="img-fluid mb-3 mb-md-0" id="deezerGif"
                              src="https://raw.githubusercontent.com/HarryDulaney/deezer-example-web-app/master/img/Deezer-Web-App-Demo.gif"
                              alt="Deezer web app img" style="max-height: 225px">
                     </div>
@@ -135,7 +130,7 @@
                             <div class="badge text-white">Spring</div>
                             <div class="badge text-white">Thymeleaf</div>
                             <div class="badge text-white">Apache HttpClient</div>
-                            <div class="badge text-white">Deployed on Heroku</div>
+                            <div class="badge text-white">Heroku</div>
                             <div class="badge text-white">Deezer Open Source API</div>
                             <div class="badge text-white">Jackson Object Mapping</div>
                         </div>
@@ -201,6 +196,58 @@
                     </div>
                 </div>
                 <hr>
+
+                <!-------------------------- Coin Portal ----------------------->
+                <div class="row p-2">
+                    <div class="col-md-7">
+                        <img class="img-fluid mb-3 mb-md-0" id="coinPortalImage"
+                             src="assets/img/CoinPortalLogo1.png"
+                             alt="Coin Portal logo" style="max-height: 225px">
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Coin Portal</h3>
+                        <h5>Cryptocurrency and Blockchain Asset Portal</h5>
+                        <div class="d-inline-block mt-1 mb-1 p-2">
+                            <div class="badge text-white">Angular</div>
+                            <div class="badge text-white">Firebase</div>
+                            <div class="badge text-white">Rest API</div>
+                            <div class="badge text-white">TypeScript</div>
+                            <div class="badge text-white">JavaScript</div>
+                        </div>
+                        <div class="flex-d project--link">
+                            <a type="button" class="text-white btn btn-primary"
+                               data-toggle="modal"
+                               data-target="#coin-portal-app-modal">
+                                Launch App
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popup Modal for Coin Portal -->
+                <div class="modal fade p-3 m-2" id="coin-portal-app-modal" tabindex="-1" role="dialog"
+                     aria-labelledby="coin-portal-app-title" aria-hidden="true"
+                     style="z-index: 999999;">
+                    <div class="modal-dialog modal-dialog-centered" role="application"
+                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;
+                         min-width: 85vw; ">
+                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:
+                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">
+                            <div class="modal-body"
+                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">
+                                <iframe style="height:100%;width:100%; top:0;bottom:0;"
+                                        src="https://coin-portal.herokuapp.com"></iframe>
+                            </div>
+                            <div class="justify-content-center">
+                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"
+                                        data-dismiss="modal">CLOSE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+
                 <!----------------------------------------- File Commander ------------------------------------------->
                 <div class="row">
                     <div class="col-md-7">
@@ -229,28 +276,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- File Commander Modal -->
-                <!--                <div class="modal fade p-3 m-2" id="file-commander-modal" tabindex="-1" role="dialog"-->
-                <!--                     aria-labelledby="web-app-discog-title" aria-hidden="true"-->
-                <!--                     style="z-index: 999999;">-->
-                <!--                    <div class="modal-dialog modal-dialog-centered" role="application"-->
-                <!--                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;-->
-                <!--                         min-width: 85vw; ">-->
-                <!--                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:-->
-                <!--                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">-->
-                <!--                            <div class="modal-body"-->
-                <!--                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">-->
-                <!--                                <iframe style="height:100%;width:100%; top:0;bottom:0;"-->
-                <!--                                        src="https://deezer-app.harrydulaney.com"></iframe>-->
-                <!--                            </div>-->
-                <!--                            <div class="justify-content-center">-->
-                <!--                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"-->
-                <!--                                        data-dismiss="modal">CLOSE-->
-                <!--                                </button>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+
                 <hr>
 
                 <!---------------------------------- Note Pad Android App ------------------------------------>
@@ -279,28 +305,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Notes 4 Android App Modal -->
-                <!--                <div class="modal fade p-3 m-2" id="notes-4-android-modal" tabindex="-1" role="dialog"-->
-                <!--                     aria-labelledby="web-app-discog-title" aria-hidden="true"-->
-                <!--                     style="z-index: 999999;">-->
-                <!--                    <div class="modal-dialog modal-dialog-centered" role="application"-->
-                <!--                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;-->
-                <!--                         min-width: 85vw; ">-->
-                <!--                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:-->
-                <!--                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">-->
-                <!--                            <div class="modal-body"-->
-                <!--                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">-->
-                <!--                                <iframe style="height:100%;width:100%; top:0;bottom:0;"-->
-                <!--                                        src="https://deezer-app.harrydulaney.com"></iframe>-->
-                <!--                            </div>-->
-                <!--                            <div class="justify-content-center">-->
-                <!--                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"-->
-                <!--                                        data-dismiss="modal">CLOSE-->
-                <!--                                </button>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+
                 <hr>
                 <!--------------------------------  Contact List Android -------------------------------->
                 <div class="row">
@@ -330,28 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Contact List App Modal -->
-                <!--                <div class="modal fade p-3 m-2" id="contact-list-app-modal" tabindex="-1" role="dialog"-->
-                <!--                     aria-labelledby="web-app-discog-title" aria-hidden="true"-->
-                <!--                     style="z-index: 999999;">-->
-                <!--                    <div class="modal-dialog modal-dialog-centered" role="application"-->
-                <!--                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;-->
-                <!--                         min-width: 85vw; ">-->
-                <!--                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:-->
-                <!--                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">-->
-                <!--                            <div class="modal-body"-->
-                <!--                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">-->
-                <!--                                <iframe style="height:100%;width:100%; top:0;bottom:0;"-->
-                <!--                                        src="https://deezer-app.harrydulaney.com"></iframe>-->
-                <!--                            </div>-->
-                <!--                            <div class="justify-content-center">-->
-                <!--                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"-->
-                <!--                                        data-dismiss="modal">CLOSE-->
-                <!--                                </button>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+
                 <hr>
                 <!------------------------------------ Stock-Predictor ------------------------------------->
                 <div class="row">
@@ -379,132 +363,62 @@
                         </div>
                     </div>
                 </div>
-                <!-- Stock Predictor Project Modal -->
-                <!--                <div class="modal fade p-3 m-2" id="web-app-discog-modal" tabindex="-1" role="dialog"-->
-                <!--                     aria-labelledby="web-app-discog-title" aria-hidden="true"-->
-                <!--                     style="z-index: 999999;">-->
-                <!--                    <div class="modal-dialog modal-dialog-centered" role="application"-->
-                <!--                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;-->
-                <!--                         min-width: 85vw; ">-->
-                <!--                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:-->
-                <!--                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">-->
-                <!--                            <div class="modal-body"-->
-                <!--                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">-->
-                <!--                                <iframe style="height:100%;width:100%; top:0;bottom:0;"-->
-                <!--                                        src="https://deezer-app.harrydulaney.com"></iframe>-->
-                <!--                            </div>-->
-                <!--                            <div class="justify-content-center">-->
-                <!--                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"-->
-                <!--                                        data-dismiss="modal">CLOSE-->
-                <!--                                </button>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <hr>
-
-                <!-- Java Spreadsheet Buddy -->
-                <div class="row">
-                    <div class="col-md-7">
-                        <img class="img-fluid mb-3 mb-md-0" src="assets/img/ssActivePic.png"
-                             alt="SS Buddy img" style="max-height: 225px">
-                    </div>
-                    <div class="col-md-5">
-                        <h3>Java Spreadsheet Buddy</h3>
-                        <h5></h5>
-                        <div class="d-inline-block mt-1 mb-1 p-2">
-                            <div class="badge text-white">Java</div>
-                            <div class="badge text-white">Spring</div>
-                            <div class="badge text-white">ControlsFx</div>
-                            <div class="badge text-white">JavaFx</div>
-                            <div class="badge text-white">Apache POI</div>
-                        </div>
-                        <div class="flex-d">
-                            <a target="_blank" class="btn btn-light"
-                               href="https://harrydulaney.com/Spreadsheet-Buddy">GitHub Page</a>
-                            <!--                            <button type="button" class="btn btn-primary" data-toggle="modal"-->
-                            <!--                                    data-target="#">-->
-                            <!--                                Launch Now-->
-                            <!--                            </button>-->
-                        </div>
-                    </div>
-                </div>
-                <!--                <div class="modal fade p-3 m-2" id="spreadsheet-buddy-modal" tabindex="-1" role="dialog"-->
-                <!--                     aria-labelledby="web-app-discog-title" aria-hidden="true"-->
-                <!--                     style="z-index: 999999;">-->
-                <!--                    <div class="modal-dialog modal-dialog-centered" role="application"-->
-                <!--                         style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;-->
-                <!--                         min-width: 85vw; ">-->
-                <!--                        <div class="modal-content" style="display: -webkit-flex;display: -ms-flexbox;display:-->
-                <!--                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;">-->
-                <!--                            <div class="modal-body"-->
-                <!--                                 style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;">-->
-                <!--                                <iframe style="height:100%;width:100%; top:0;bottom:0;"-->
-                <!--                                        src="https://deezer-app.harrydulaney.com"></iframe>-->
-                <!--                            </div>-->
-                <!--                            <div class="justify-content-center">-->
-                <!--                                <button type="button" class="btn btn-sm btn-secondary mt-1 mb-1"-->
-                <!--                                        data-dismiss="modal">CLOSE-->
-                <!--                                </button>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
                 <hr>
 
             </div>
         </section>
-        <div class="row" id="TransitionHelperAbout">
-            <div class="w-100 scroll--help-image">
-                <img src="assets/img/detailed-drawing-astronaut.png" alt="img-pre-about-spaceman"
-                     class="float-right mr-5">
-            </div>
-        </div>
+
         <!-----------------------------------------------  About Me  ---------------------------------------------------->
-        <span id="about"></span><br><br>
-        <div class="section--heading">
+        <div class="section--heading" id="about">
             <h1></h1>
         </div>
-        <section class="about">
-            <div class="about--banner">
-                <p><small>Favorite Quotes: </small></p>
-                <small><i>08-25-1991</i></small>
-                <p>"I'm doing a (free) <br>operating system (just a hobby, won't be big and
-                    <br>professional like gnu) for 386(486) AT clones.<br>This has been brewing
-                    since april,<br> and is starting to get ready.<br> I'd like any feedback on
-                    things people like/dislike"<br><br><small>Linus Benedict Torvalds</small>
-                </p>
-            </div>
-
-            <div class="about--options">
-                <a target="_blank" href="https://www.github.com/harrydulaney">
-                    <h3>Software</h3>
-                </a>
-                <a target="_blank" href="https://meritpages.com/HarryDulaney">
-                    <h3>Education</h3>
-                </a>
-                <a target="_blank"
-                   href="https://www.youracclaim.com/badges/05eb6d6a-ab34-4a36-b70e-e43f9f242a75/linked_in_profile">
-                    <h3>Certification</h3>
-                </a>
-                <a target="_blank"
-                   href="https://www.linkedin.com/in/harrydulaney">
-                    <h3>Professional</h3>
-                </a>
-                <a target="_blank"
-                   href="https://www.facebook.com/SecretTownsBand">
-                    <h3>Music</h3>
-                </a>
-            </div>
-            <div class="row p-5">
-                <div class="float-right about--image">
-                    <img src="assets/img/astronaut-spaceman-space5e5f517ac66336.3388629815833050828126.png"
-                         alt="img-about-dec-1"
-                         class="img-fluid">
+        <div class="about--wrapper">
+            <div class="row">
+                <div class="w-100 scroll--help-image">
+                    <img src="assets/img/detailed-drawing-astronaut.png" alt="img-pre-about-spaceman"
+                         class="float-right mr-5">
                 </div>
             </div>
-        </section>
+            <section class="about">
+                <div class="about--banner">
+                    <p><small>Favorite Quotes: </small></p>
+                    <small><i>08-25-1991</i></small>
+                    <p>"I'm doing a (free) <br>operating system (just a hobby, won't be big and
+                        <br>professional like gnu) for 386(486) AT clones.<br>This has been brewing
+                        since april,<br> and is starting to get ready.<br> I'd like any feedback on
+                        things people like/dislike"<br><br><small>Linus Benedict Torvalds</small>
+                    </p>
+                </div>
 
+                <div class="about--options">
+                    <a target="_blank" href="https://www.github.com/harrydulaney">
+                        <h3>Software</h3>
+                    </a>
+                    <a target="_blank" href="https://meritpages.com/HarryDulaney">
+                        <h3>Education</h3>
+                    </a>
+                    <a target="_blank"
+                       href="https://www.youracclaim.com/badges/05eb6d6a-ab34-4a36-b70e-e43f9f242a75/linked_in_profile">
+                        <h3>Certification</h3>
+                    </a>
+                    <a target="_blank"
+                       href="https://www.linkedin.com/in/harrydulaney">
+                        <h3>Professional</h3>
+                    </a>
+                    <a target="_blank"
+                       href="https://www.facebook.com/SecretTownsBand">
+                        <h3>Music</h3>
+                    </a>
+                </div>
+                <div class="row p-5">
+                    <div class="float-right about--image">
+                        <img src="assets/img/astronaut-spaceman-space5e5f517ac66336.3388629815833050828126.png"
+                             alt="img-about-dec-1"
+                             class="img-fluid">
+                    </div>
+                </div>
+            </section>
+        </div>
         <!-----------------------------------------------  Contact  ---------------------------------------------------->
         <span id="contact"></span><br><br>
         <div class="section--heading">
@@ -533,7 +447,7 @@
                            placeholder="email.address@example.com"
                            required="required"/>
                     <br>
-                    <label for="enquiry" class="text-white badge-pill"> '</label>
+                    <label for="enquiry" class="text-white badge-pill"> </label>
                     <select id="enquiry" name="enquiry"
                             style="width: 250px;background-color: lightblue;border-radius: 1%">
                         <option label="Choose A Subject (No Subject)" value="No Subject" selected></option>

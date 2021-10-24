@@ -11,8 +11,8 @@ var min900 = window.matchMedia("(min-width: 900)");
 var min600 = window.matchMedia("(min-width: 600)");
 
 $(document).ready(function () {
-    var initialScrollPos = window.pageYOffset;
 
+    var initialScrollPos = window.pageYOffset;
     $(window).on('scroll', function () {
         if (open) {
             retractMobileMenu();
