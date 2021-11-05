@@ -74,6 +74,14 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
+function enableSubmitButton(token) {
+    $('#submit-button').prop('disabled', false);
+}
+
+function disableSubmitButton() {
+    $('#submit-button').prop('disabled', true);
+
+}
 
 function expandMobileMenu() {
     gsap.to('.top--navbar', {height: '185px', duration: 0.1})
