@@ -74,12 +74,12 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
-function enableSubmitButton() {
-    $('#submit-button').setAttribute('disabled', 'false');
+function enableSubmitButton(token) {
+    $('#submit-button').prop('disabled', false);
 }
 
 function disableSubmitButton() {
-    $('#submit-button').setAttribute('disabled', 'true');
+    $('#submit-button').prop('disabled', true);
 
 }
 
