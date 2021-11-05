@@ -438,18 +438,18 @@
                     </label>
                     <input type="text" id="name" name="name" value=""
                            style="background-color: lightblue;border-radius: 1%;"
-                           placeholder="Your Name" required="required"/>
+                           placeholder="Your Name" required/>
                     <br>
                     <label for="email" class="text-white badge-pill"> <span class="required">* </span>
                     </label>
                     <input type="email" id="email" name="_replyto" value=""
                            style="background-color: lightblue;border-radius: 1%;"
                            placeholder="email.address@example.com"
-                           required="required"/>
+                           required/>
                     <br>
                     <label for="enquiry" class="text-white badge-pill"> </label>
                     <select id="enquiry" name="enquiry"
-                            style="width: 250px;background-color: lightblue;border-radius: 1%">
+                            style="width: 250px;background-color: lightblue;border-radius: 1%" required>
                         <option label="Choose A Subject (No Subject)" value="No Subject" selected></option>
                         <option value="Resume Request">Resume Request</option>
                         <option value="General">General</option>
@@ -462,13 +462,14 @@
                     <div class="textarea--message"><textarea id="message" name="message"
                                                              style="background-color: lightblue;border-radius: 1%;"
                                                              placeholder="** Write your message here **"
-                                                             required="required"
                                                              maxlength="200" data-minlength="20" rows="20"
-                                                             cols="50"></textarea></div>
+                                                             cols="50" required></textarea>
+                    </div>
                     <br>
                     <span id="loading"></span>
                     <div class="row">
                         <div class="g-recaptcha"
+                             data-theme="dark"
                              data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
                              data-callback="enableSubmitButton" data-expired-callback="disableSubmitButton"
                              style="margin-left: auto;margin-right: auto"></div>
@@ -506,6 +507,6 @@
         integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
         crossorigin="anonymous"></script>
 <script src="assets/js/harrydulaneydotcom.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 </html>
