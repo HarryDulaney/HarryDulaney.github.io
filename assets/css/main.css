@@ -270,12 +270,16 @@ td, th {
 
 .nav--items .mobile--nav {
     display: none;
-    margin-top: 40px;
-    margin-left: 20px;
+    margin-top: 20px;
+    margin-left: 45px;
 }
 
 .nav--items .mobile--nav > ul > li {
     list-style-type: none;
+}
+
+.nav--items .mobile--nav > ul > li > a {
+    font-size: large;
 }
 
 .nav--items div > a {
@@ -626,7 +630,7 @@ td, th {
     left: 0;
     right: 0;
     height: 100%;
-    overflow-x:fragments;
+    overflow-x: fragments;
     background: #0a3f62;
     transform: skew(0deg, 9deg);
 }
