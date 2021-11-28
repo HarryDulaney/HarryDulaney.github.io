@@ -10,8 +10,8 @@ var max360 = window.matchMedia("(max-width: 360px)");
 var min900 = window.matchMedia("(min-width: 900)");
 var min600 = window.matchMedia("(min-width: 600)");
 
-$(document).ready(function () {
 
+$(document).ready(function () {
     var initialScrollPos = window.pageYOffset;
     $(window).on('scroll', function () {
         if (open) {
@@ -55,6 +55,7 @@ $(document).ready(function () {
         }
 
     });
+    getAllRepoStats();
 });
 
 function retractMobileMenu() {
@@ -91,3 +92,81 @@ function expandMobileMenu() {
     open = true;
 
 }
+
+/**
+ * Retrieve's stats on all repo's for my username and
+ * updates the document elements
+ */
+function getAllRepoStats() {
+    const API_BASE = 'https://api.github.com/users/harrydulaney';
+    const REPOS_URL = '/repos';
+    const CLONE_ACTIVITY_URL = '/graphs/clone-activity-data';
+    const VIEW_ACTIVITY_URL = '/graphs/traffic-data';
+    const INTRO_JAVA = 'intro-to-java-programming';
+    const DEEZER_APP = 'deezer-example-web-app';
+    const STOCK_PREDICTOR = 'stock-predictor';
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', API_BASE + REPOS_URL, true);
+
+    xhr.onload = function () {
+        const data = JSON.parse(this.response);
+        for (let i in data) {
+            /* Set Deezer Web App GitHub Stats */
+            if (data[i].name === DEEZER_APP) {
+                // let deezerStats = document.getElementById('deezer-app-stats');
+                // let deezerUpdateTime = deezerStats.getElementsByClassName('git-stats-datetime');
+
+                let deezerStars = document.getElementById('deezer-stars');
+                let deezerForks = document.getElementById('deezer-forks');
+                // let deezerWatchers = document.getElementById('deezer-watchers');
+
+                deezerStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                deezerForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                // deezerWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
+                /* Set Last Updated */
+                // const date = new Date().toISOString();
+                // deezerUpdateTime[0].innerHTML = (`<div><small>Last Updated: ${date}</small></div>`);
+
+
+            }
+            /* Set Intro to Java Programming GitHub Stats */
+            if (data[i].name === INTRO_JAVA) {
+                // let introJavaStats = document.getElementById('intro-java-app-stats');
+                // let introJavaUpdated = introJavaStats.getElementsByClassName('git-stats-datetime');
+
+                let introToJavaStars = document.getElementById('intro-java-program-stars');
+                let introToJavaForks = document.getElementById('intro-java-program-forks');
+                // let introToJavaWatchers = document.getElementById('intro-java-program-watchers');
+
+                introToJavaStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                introToJavaForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                // introToJavaWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
+
+                /* Set Last Updated */
+                // const date = new Date().toISOString();
+                // introJavaUpdated[0].innerHTML = (`<small>Last Updated: ${date}</small>`);
+
+            }
+            /* Set Stock Picker GitHub Stats */
+            if (data[i].name === STOCK_PREDICTOR) {
+                // let stockPredStats = document.getElementById('stock-predictor-stats');
+                // let updateTime = stockPredStats.getElementsByClassName('git-stats-datetime');
+
+                let stockPredStars = document.getElementById('stock-predictor-stars');
+                let stockPredForks = document.getElementById('stock-predictor-forks');
+                // let stockPredWatchers = document.getElementById('stock-predictor-watchers');
+
+                stockPredStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                stockPredForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                // stockPredWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
+                /* Set Last Updated */
+                // const date = new Date().toISOString();
+                // updateTime[0].innerHTML = (`<small>Last Updated: ${date}</small>`);
+            }
+        }
+
+    }
+    xhr.send();
+}
+
