@@ -295,6 +295,15 @@ td, th {
     width: 25px;
 }
 
+.nav--items div > .fork-on-github > img {
+    width: 4rem;
+    height: auto;
+    border-radius: 1px;
+    margin-right: 3rem;
+    margin-bottom: 0.4rem;
+
+}
+
 .nav--items .res--links > a {
     font-size: 1.1rem;
     color: #61A5C2;
