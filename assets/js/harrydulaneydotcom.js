@@ -103,6 +103,9 @@ function getAllRepoStats() {
     const CLONE_ACTIVITY_URL = '/graphs/clone-activity-data';
     const VIEW_ACTIVITY_URL = '/graphs/traffic-data';
     const INTRO_JAVA = 'intro-to-java-programming';
+    const NOTES_ANDROID = 'notes-android-app';
+    const CONTACT_LIST_APP = 'Contact-List-Android';
+    const FILE_COMM = 'file-commander';
     const DEEZER_APP = 'deezer-example-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
 
@@ -114,55 +117,97 @@ function getAllRepoStats() {
         for (let i in data) {
             /* Set Deezer Web App GitHub Stats */
             if (data[i].name === DEEZER_APP) {
-                // let deezerStats = document.getElementById('deezer-app-stats');
-                // let deezerUpdateTime = deezerStats.getElementsByClassName('git-stats-datetime');
+                let deezerStats = document.getElementById('deezer-app-stats');
+                let deezerUpdateTime = deezerStats.getElementsByClassName('git-stats-datetime');
 
                 let deezerStars = document.getElementById('deezer-stars');
                 let deezerForks = document.getElementById('deezer-forks');
-                // let deezerWatchers = document.getElementById('deezer-watchers');
 
                 deezerStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
                 deezerForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                // deezerWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
                 /* Set Last Updated */
-                // const date = new Date().toISOString();
-                // deezerUpdateTime[0].innerHTML = (`<div><small>Last Updated: ${date}</small></div>`);
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                deezerUpdateTime[0].innerHTML = (`<div>${date} ${time}</div>`);
 
 
             }
             /* Set Intro to Java Programming GitHub Stats */
             if (data[i].name === INTRO_JAVA) {
-                // let introJavaStats = document.getElementById('intro-java-app-stats');
-                // let introJavaUpdated = introJavaStats.getElementsByClassName('git-stats-datetime');
+                let introJavaStats = document.getElementById('intro-java-app-stats');
+                let introJavaUpdated = introJavaStats.getElementsByClassName('git-stats-datetime');
 
                 let introToJavaStars = document.getElementById('intro-java-program-stars');
                 let introToJavaForks = document.getElementById('intro-java-program-forks');
-                // let introToJavaWatchers = document.getElementById('intro-java-program-watchers');
 
                 introToJavaStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
                 introToJavaForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                // introToJavaWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
-
                 /* Set Last Updated */
-                // const date = new Date().toISOString();
-                // introJavaUpdated[0].innerHTML = (`<small>Last Updated: ${date}</small>`);
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                introJavaUpdated[0].innerHTML = (`<div>${date} ${time}</div>`);
 
+            }
+            /* Set File Commander GitHub Stats */
+            if (data[i].name === FILE_COMM) {
+                let fileCommStats = document.getElementById('file-commander-stats');
+                let fileCommUpdated = fileCommStats.getElementsByClassName('git-stats-datetime');
+
+                let fileCommStars = document.getElementById('file-commander-stars');
+                let fileCommForks = document.getElementById('file-commander-forks');
+
+                fileCommStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                fileCommForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                /* Set Last Updated */
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                fileCommUpdated[0].innerHTML = (`<div>${date} ${time}</div>`);
+
+            }
+            /* Set Notes 4 Android GitHub Stats */
+            if (data[i].name === CONTACT_LIST_APP) {
+                let contactAppStats = document.getElementById('contact-app-stats');
+                let contactAppUpdate = contactAppStats.getElementsByClassName('git-stats-datetime');
+
+                let contactAppStars = document.getElementById('contact-app-stars');
+                let contactAppForks = document.getElementById('contact-app-forks');
+
+                contactAppStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                contactAppForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                /* Set Last Updated */
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                contactAppUpdate[0].innerHTML = (`<div>${date} ${time}</div>`);
+            }
+            /* Set Contact List App GitHub Stats */
+            if (data[i].name === NOTES_ANDROID) {
+                let notesStats = document.getElementById('notes-4-android-stats');
+                let updateDateTime = notesStats.getElementsByClassName('git-stats-datetime');
+
+                let notesStars = document.getElementById('notes-4-android-stars');
+                let notesForks = document.getElementById('notes-4-android-forks');
+
+                notesStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                notesForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                /* Set Last Updated */
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                updateDateTime[0].innerHTML = (`<div>${date} ${time}</div>`);
             }
             /* Set Stock Picker GitHub Stats */
             if (data[i].name === STOCK_PREDICTOR) {
-                // let stockPredStats = document.getElementById('stock-predictor-stats');
-                // let updateTime = stockPredStats.getElementsByClassName('git-stats-datetime');
+                let stockPredStats = document.getElementById('stock-predictor-stats');
+                let updateTime = stockPredStats.getElementsByClassName('git-stats-datetime');
 
                 let stockPredStars = document.getElementById('stock-predictor-stars');
                 let stockPredForks = document.getElementById('stock-predictor-forks');
-                // let stockPredWatchers = document.getElementById('stock-predictor-watchers');
 
                 stockPredStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
                 stockPredForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                // stockPredWatchers.innerHTML = (`<strong>${data[i].watchers_count}</strong>`);
                 /* Set Last Updated */
-                // const date = new Date().toISOString();
-                // updateTime[0].innerHTML = (`<small>Last Updated: ${date}</small>`);
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                updateTime[0].innerHTML = (`<div>${date} ${time}</div>`);
             }
         }
 
