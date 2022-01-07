@@ -239,8 +239,8 @@ td, th {
     height: fit-content;
     min-height: 41px;
     max-height: 200px;
-    box-shadow: 0 9px 9px -9px rgba(255, 255, 255, 0.6);
-    background-color: #1c313a;
+    box-shadow: 0 9px 9px -9px rgba(255, 255, 255, 0.1);
+    background-color: #121f25;
     z-index: 99999;
     transition: all 100ms ease-in-out;
 }
@@ -250,7 +250,7 @@ td, th {
     margin-bottom: 3rem;
     text-align: center;
     align-content: center;
-    color: #1c313a;
+    color: #121f25;
     font-size: calc(2em + 0.5vw + 0.5vh);
     opacity: 50%;
     transition: color 2s, opacity 1s;
@@ -292,7 +292,7 @@ td, th {
 
 .nav--items div > a {
     width: 30px;
-    color: #61A5C2;
+    /* color: #ec0aac;*/
 }
 
 .nav--items div a:active {
@@ -314,18 +314,17 @@ td, th {
 
 .nav--items .res--links > a {
     font-size: 1.1rem;
-    color: #61A5C2;
-    transition: .5s ease-in-out;
-    /*transform: perspective(-5px);*/
+    transition: .2s ease-in-out;
+    color: #7dc3ff;
 }
 
 .nav--items .res--links > a:hover {
-    font-size: 1.2rem;
-    color: #0077c1;
+    font-size: 1.15rem;
+    color: #93dcff;
 }
 
 .nav--items .res--links > a :active {
-    color: #00acc1;
+    color: #93dcff;
 }
 
 .nav--items a > img {
@@ -339,9 +338,10 @@ td, th {
 .nav--items .mobile-nav-toggle .bars {
     display: block;
     width: 30px;
-    height: 4px;
+    height: 3px;
     opacity: 1;
-    background-color: #00acc1;
+    background-color: #93dcff;
+
 
 }
 
@@ -351,8 +351,8 @@ td, th {
     display: block;
     position: absolute;
     width: 30px;
-    height: 4px;
-    background-color: #00acc1;
+    height: 3px;
+    background-color: #93dcff;
 }
 
 .nav--items .mobile-nav-toggle .bars::before {
@@ -447,7 +447,7 @@ td, th {
 
 
 .intro p {
-    color: #00acc1;
+    color: #93dcff;
     z-index: 35;
 }
 
@@ -552,15 +552,15 @@ td, th {
 }
 
 .work--grid h3 {
-    color: #aef4fa;
+    color: #93dcff;
 }
 
 .work--grid h4 {
-    color: #62e6f1;
+    color: #93dcff;
 }
 
 .work--grid h5 {
-    color: #aef4fa;
+    color: #93dcff;
 }
 
 .work--grid .badge--image img {
@@ -668,7 +668,7 @@ td, th {
 
 .about--banner {
     text-align: left;
-    color: #242a4b;
+    color: #88bad9;
 }
 
 .about--banner::before {
@@ -709,7 +709,7 @@ td, th {
 }
 
 .about--banner p > small {
-    color: #2A6F97;
+    color: #93dcff;
 
 }
 
@@ -720,12 +720,12 @@ td, th {
 
 .about--banner p + small {
     margin-left: 15vw;
-    color: #2C7DA0;
+    color: #93dcff;
 }
 
 
 .about--banner p:hover {
-    color: #2C7DA0;
+    color: #93dcff;
 }
 
 .about--banner p::before {
