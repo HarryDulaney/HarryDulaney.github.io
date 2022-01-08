@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <script defer src="/assets/vendor/fa/all.js"></script>
     <link rel="prefetch" href="https://deezer-app.harrydulaney.com" as="embed">
-    <!--    <link rel="prefetch" href="https://coin-portal.herokuapp.com" as="embed">-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -681,7 +680,7 @@
             <h1></h1>
         </div>
 
-        <!-- Contact Section-->
+        <!-- Contact Section -->
         <section class="contact">
             <div class="container">
                 <h2 style="font-size: 2rem; margin-bottom: 4vw;" class="text-center text-uppercase text-secondary">
@@ -692,26 +691,21 @@
                         <form method="POST" action="https://formspree.io/xbjzadpn" id="contactForm">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..."
                                        required/>
                                 <label class="text-white" for="name">Full name</label>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                <input class="form-control" id="email" name="_replyto" type="email" placeholder="name@example.com"
                                        required/>
                                 <label class="text-white" for="email">Email address</label>
                             </div>
                             <!-- subject input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="subject" type="text"
-                                       placeholder="Interview Request"
-                                       required/>
-                                <label class="text-white" for="subject">Subject</label>
-                            </div>
+                                <input type="hidden" name="_subject" id="subject" value="Contact Form Submission">
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message"
+                                <textarea class="form-control" id="message" name="message"
                                           placeholder="Enter your message here..." style="height: 10rem"
                                           required></textarea>
                                 <label class="text-white" for="message">Message</label>
@@ -735,9 +729,6 @@
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <div class="form-button mr-2">
-                                    <input class="btn btn-primary btn-xl" type="reset" value="Clear">
-                                </div>
                                 <div class="form-button ml-2">
                                     <input class="btn btn-primary btn-xl" type="submit" value="Submit"
                                            id="submitButton"
