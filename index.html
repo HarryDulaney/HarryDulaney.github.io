@@ -98,7 +98,7 @@
                             <span style="font-size: calc(6vh + 3vw);z-index: 150">Hello </span>
                             <span style="font-size: calc(3vh + 0.9vw);z-index: 150;">I'm Harry,</span> <br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
-                                    I am a Full Stack Software Developer based in Atlanta, Georgia, USA.
+                                    I am a Full Stack Software Developer based in Atlanta, Georgia.
                                 </span>
                             <br><br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
@@ -133,7 +133,7 @@
                 <div class="row p-2">
                     <div class="col-md-7">
                         <img class="img-fluid mb-3 mb-md-0" id="deezerGif"
-                             src="assets/img/deezer_app_screen.png"
+                             src="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/deezer_app_screen.png"
                              alt="Deezer web app img" style="max-height: 225px">
                     </div>
                     <div class="col-md-5">
@@ -632,12 +632,12 @@
                     <p> I am passionate about software engineering <br> and am proficient in multiple programming
                         languages.<br><br>
                         I have two years of experience doing full stack + backend software development <br> at a big
-                        automobile and technology company,<br>
-                        where I've worked on large and small Agile teams<br> to rapidly code, integrate, and debug
-                        software for high value enterprise projects.<br><br>
-                        I'm enthusiastic about supporting open source software development and <br>
-                        in my free time I build passion projects,<br> and create/publish free<br>
-                        learning resources for the dev community at large.
+                        automobile and technology company.<br>
+                        I've worked on large and small Agile teams<br> to rapidly code, build, test, debug, and deploy
+                        innovative enterprise software solutions.<br><br>
+                        I'm enthusiastic about supporting open-source software development. <br>
+                        In my free time I build passion projects,<br> and create/ share<br>
+                        learning resources for the growing global developer community.
                     </p>
                 </div>
 
@@ -680,73 +680,95 @@
         <div class="section--heading">
             <h1></h1>
         </div>
-        <section class="contact">
-            <div id="contact-form" class="contact-form">
-                <form method="POST" action="https://formspree.io/xbjzadpn">
-                    <div class="row">
-                        <p id="req-field-desc" class="text-white badge-pill ml-auto mr-auto"><span
-                                class="required">*
-                        </span>
-                            indicates a
-                            required
-                            field</p></div>
-                    <label for="name" class="text-white badge-pill"> <span class="required">* </span>
-                    </label>
-                    <input type="text" id="name" name="name" value=""
-                           style="background-color: lightblue;border-radius: 1%;"
-                           placeholder="Your Name" required/>
-                    <br>
-                    <label for="email" class="text-white badge-pill"> <span class="required">* </span>
-                    </label>
-                    <input type="email" id="email" name="_replyto" value=""
-                           style="background-color: lightblue;border-radius: 1%;"
-                           placeholder="email.address@example.com"
-                           required/>
-                    <br>
-                    <label for="enquiry" class="text-white badge-pill"> </label>
-                    <select id="enquiry" name="enquiry"
-                            style="width: 250px;background-color: lightblue;border-radius: 1%" required>
-                        <option label="Choose A Subject (No Subject)" value="No Subject" selected></option>
-                        <option value="Resume Request">Resume Request</option>
-                        <option value="General">General</option>
-                        <option value="Just Saying Hi">Just Saying Hi</option>
-                        <option value="I am a robot">I am a robot sending phishing emails</option>
-                    </select>
-                    <br>
-                    <label for="message"
-                           class="text-white"></label>
-                    <div class="textarea--message"><textarea id="message" name="message"
-                                                             style="background-color: lightblue;border-radius: 1%;"
-                                                             placeholder="** Write your message here **"
-                                                             maxlength="200" data-minlength="20" rows="20"
-                                                             cols="50" required></textarea>
-                    </div>
-                    <br>
-                    <span id="loading"></span>
-                    <div class="row">
-                        <div class="g-recaptcha"
-                             data-theme="dark"
-                             data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
-                             data-callback="enableSubmitButton" data-expired-callback="disableSubmitButton"
-                             style="margin-left: auto;margin-right: auto"></div>
-                    </div>
-                    <br>
-                    <div class="form-button" style="align-content: center">
-                        <input class="btn btn-primary" type="submit" value="Submit" id="submit-button"
-                               disabled/></div>
-                </form>
-            </div>
 
-            <div class="contact--links">
-                <a href="https://www.github.com/harrydulaney">
-                    <img src="assets/icon/githubback.png" alt="github-icon"></a>
-                <a href="https://www.linkedin.com/in/harrydulaney">
-                    <img src="assets/icon/linkedin_b_w_icon.png" alt="linkedin-icon"></a>
-                <a href="https://www.facebook.com/HarryGDulaney">
-                    <img src="assets/icon/pngfind.com-facebook-icon-white-png-80848.png" alt="fb-icon"></a>
-                <br>
+        <!-- Contact Section-->
+        <section class="contact">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 8vw;" class="text-center text-uppercase text-secondary">
+                    Contact Me</h2>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <form method="POST" action="https://formspree.io/xbjzadpn">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                       data-sb-validations="required"/>
+                                <label class="text-white" for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                       data-sb-validations="required,email"/>
+                                <label class="text-white" for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.
+                                </div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- subject number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="subject" type="text" placeholder="Interview Request"
+                                       data-sb-validations="required"/>
+                                <label class="text-white" for="subject">Subject</label>
+                                <div class="invalid-feedback" data-sb-feedback="subject:required">Subject is required
+                                </div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text"
+                                          placeholder="Enter your message here..." style="height: 10rem"
+                                          data-sb-validations="required"></textarea>
+                                <label class="text-white" for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is
+                                    required.
+                                </div>
+                            </div>
+                            <!-- Submit success message-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending message!</div>
+                            </div>
+                            <br>
+                            <span id="loading"></span>
+                            <div class="row">
+                                <div class="g-recaptcha"
+                                     data-theme="dark"
+                                     data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
+                                     data-callback="enableSubmitButton" data-expired-callback="disableSubmitButton"
+                                     style="margin-left: auto;margin-right: auto"></div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-button">
+                                    <input class="btn btn-primary btn-xl" type="submit" value="Send" id="submitButton"
+                                           disabled/></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <a class="p-2" style="font-size: 4rem;color:white" href="https://www.github.com/harrydulaney"
+                   target="_blank">
+                    <i class="fab fa-linkedin"></i></a>
+                <a class="p-2" style="font-size: 4rem;color:white"
+                   href="https://www.linkedin.com/in/harrydulaney" target="_blank">
+                    <i class="fab fa-github-alt"></i></a>
+                <a class="p-2" style="font-size: 4rem;color:white" href="https://www.facebook.com/HarryGDulaney"
+                   target="_blank">
+                    <i class="fab fa-facebook-square"></i></a>
+                <br>
+            </div>
+        </div>
+
     </main>
     <footer><p style="text-align: center;font-size: 15px; color: seashell">
         ©2021 Harry Dulaney<br></p></footer>
