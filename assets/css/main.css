@@ -1,3 +1,8 @@
+:root {
+    --text-primary: #FFFFFF;
+}
+
+
 @font-face {
     font-family: 'Montserrat';
     src: url("fonts/Montserrat-Black.eot");
@@ -75,11 +80,6 @@ a:hover {
 a:hover, #nav-title:hover {
     color: #61A5C2;
 
-}
-
-
-large {
-    font-size: 24px;
 }
 
 b, strong {
@@ -215,17 +215,9 @@ td, th {
 
 .main-container {
     display: block;
-    padding: 41px 1px 1px 1px;
+    padding: 41px 0 0 0;
     width: 100%;
     overflow: hidden;
-}
-
-.contrib-number {
-    font-weight: 300;
-    line-height: 1.3em;
-    font-size: 24px;
-    display: block;
-    color: #a3dbe5;
 }
 
 .top--navbar {
@@ -239,7 +231,6 @@ td, th {
     height: fit-content;
     min-height: 41px;
     max-height: 200px;
-    box-shadow: 0 9px 9px -9px rgba(255, 255, 255, 0.1);
     background-color: #121f25;
     z-index: 99999;
     transition: all 100ms ease-in-out;
@@ -1081,4 +1072,3 @@ td, th {
         display: inline-block;
     }
 }
-
