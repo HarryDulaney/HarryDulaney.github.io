@@ -662,31 +662,6 @@ td, th {
     color: #88bad9;
 }
 
-.about--banner::before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: 200px;
-    z-index: -1;
-    -webkit-transform: rotate(-25deg);
-    transform: rotate(-25deg);
-    border: 5px solid #2A6F97;
-    border-right-color: transparent;
-    border-bottom-color: transparent
-}
-
-.about--banner::after {
-    content: "";
-    position: absolute;
-    top: 75px;
-    left: 200px;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    width: 10px;
-    height: 10px;
-    background-color: #242a4b;
-}
-
 .about--banner p {
     position: relative;
     margin: 2vh 0 6vh 15vw;
@@ -717,29 +692,6 @@ td, th {
 
 .about--banner p:hover {
     color: #93dcff;
-}
-
-.about--banner p::before {
-    content: "";
-    position: absolute;
-    top: 60px;
-    left: 168px;
-    width: 30px;
-    height: 30px;
-    background-color: #014F86;
-    border-radius: 50%;
-    z-index: -1;
-
-}
-
-.about--banner p::after {
-    content: "";
-    position: absolute;
-    top: 255px;
-    left: 255px;
-    width: 10px;
-    height: 10px;
-    background-color: #2A6F97;
 }
 
 .about--banner a {
@@ -781,7 +733,7 @@ td, th {
     height: 100px;
     text-decoration: none;
     color: #2A6F97;
-    border: 1px solid #76ff03;
+    border: 1px solid #148d75;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
@@ -852,7 +804,6 @@ td, th {
     display: block;
     position: center;
     align-content: center;
-    text-align: center;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -864,71 +815,6 @@ td, th {
 .contact h2 {
     text-align: center;
     margin-bottom: 5vh;
-}
-
-
-.contact .contact-form {
-    display: block;
-    position: center;
-    padding: 20px;
-    margin: 50px auto;
-    /*border: 1px solid #76ff03;*/
-    /*-moz-border-radius: 15px;*/
-    /*-webkit-border-radius: 15px;*/
-    /*border-radius: 15px;*/
-
-}
-
-.contact .contact-form > label {
-    display: block;
-    font-size: 15px;
-    text-align: center;
-    -webkit-text-fill-color: black;
-    margin: 15px;
-    width: 450px;
-    border: 1px solid #2d191c;
-    padding: 4px;
-
-}
-
-.contact .contact-form > select {
-    display: block;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    padding: 15px;
-}
-
-.contact .contact-form .textarea--message {
-    display: block;
-    align-content: center;
-    margin-right: auto;
-    margin-left: auto;
-    width: 50%;
-    height: auto;
-    text-align: center;
-    -webkit-text-fill-color: black;
-
-}
-
-
-.contact .contact-form input[type="submit"] {
-    display: block;
-    width: 100px;
-    -moz-margin-start: 15px;
-    border: none;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.contact .contact-form input[type="email"], input[type="text"] {
-    width: 250px;
-    margin: 0 auto;
-}
-
-.contact .contact-form input {
 }
 
 
