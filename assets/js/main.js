@@ -55,6 +55,10 @@ $(document).ready(function () {
         }
 
     });
+    // Setup contact form submitted callback
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', contactFormSubmitted);
+    // Setup Git status on project section
     getAllRepoStats();
 });
 
@@ -75,14 +79,6 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
-function enableSubmitButton(token) {
-    $('#submit-button').prop('disabled', false);
-}
-
-function disableSubmitButton() {
-    $('#submit-button').prop('disabled', true);
-
-}
 
 function expandMobileMenu() {
     gsap.to('.top--navbar', {height: '185px', duration: 0.1})
@@ -91,6 +87,19 @@ function expandMobileMenu() {
     gsap.to('.close', {opacity: 1, duration: 0.2});
     open = true;
 
+}
+
+/* Contact Form Handlers */
+function enableSubmitButton(token) {
+    $('#submitButton').prop('disabled', false);
+}
+
+function disableSubmitButton() {
+    $('#submitButton').prop('disabled', true);
+}
+
+function contactFormSubmitted() {
+    $('contact-form-alert').prop('display',true).delay(3000).fadeOut();
 }
 
 /**
