@@ -1,5 +1,4 @@
-/** @author Harry Dulaney */
-
+'use strict';
 var open = false;
 var mainNavVisible = true;
 var max1180 = window.matchMedia("(max-width: 1180px)");
@@ -10,8 +9,11 @@ var max360 = window.matchMedia("(max-width: 360px)");
 var min900 = window.matchMedia("(min-width: 900)");
 var min600 = window.matchMedia("(min-width: 600)");
 
-
+/**
+ * Main
+ */
 $(document).ready(function () {
+    'use strict';
     var initialScrollPos = window.pageYOffset;
     $(window).on('scroll', function () {
         if (open) {
@@ -96,12 +98,29 @@ function disableSubmitButton() {
     $('#submitButton').prop('disabled', true);
 }
 
+/* Project Section Expand Handlers */
+function toggleExpandProjects() {
+    let p = document.getElementById('more-projects-wrapper');
+    if (p.dataset.expanded === 'false') {
+        p.classList.remove('hide--h');
+        p.dataset.expanded = 'true';
+        let btn = document.getElementById('expandProjectsBtn');
+        btn.innerText = 'Show less projects...';
+    } else {
+        p.classList.add('hide--h');
+        p.dataset.expanded = 'false';
+        let btn = document.getElementById('expandProjectsBtn');
+        btn.innerText = 'Show more projects...';
+    }
+}
+
 
 /**
- * Retrieve's stats on all repo's for my username and
- * updates the document elements
+ * Retrieve stats on all repo's by username and
+ * update the DOM elements
  */
 function getAllRepoStats() {
+    'use strict';
     const API_BASE = 'https://api.github.com/users/harrydulaney';
     const REPOS_URL = '/repos';
     const CLONE_ACTIVITY_URL = '/graphs/clone-activity-data';
