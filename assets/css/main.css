@@ -1,5 +1,11 @@
 :root {
-    --text-primary: #FFFFFF;
+    --text-primary: #d4eefa;
+    --text-secondary: #b0f6ff;
+    --text-hover: #1aaff6;
+    --text-header: #adabab;
+    --bgcolor-primary: #121f25;
+    --bgcolor-secondary: #121f25;
+
 }
 
 
@@ -61,7 +67,7 @@ audio, canvas, progress, video {
 }
 
 a {
-    color: #82b1ff;;
+    color: var(--text-primary);
     text-decoration: none;
     transition: .5s ease-in;
 }
@@ -70,15 +76,19 @@ a:hover {
     transition: .9s ease-out;
 }
 
+.section--header {
+    color: var(--text-header);
+}
+
 
 #nav-title {
-    color: #718792;
+    color: var(--text-primary);
     text-decoration: none;
     transition: .9s ease-in-out;
 }
 
 a:hover, #nav-title:hover {
-    color: #61A5C2;
+    color: var(--text-hover);
 
 }
 
@@ -98,7 +108,7 @@ img {
 h2 {
     display: block;
     text-align: center;
-    color: #013A63;
+    color: var(--text-secondary);
     font-size: calc(10px + 0.3vw + 0.2vh);
 }
 
@@ -256,7 +266,7 @@ td, th {
     height: fit-content;
     min-height: 41px;
     max-height: 200px;
-    background-color: #121f25;
+    background-color: var(--bgcolor-primary);
     z-index: 99999;
     transition: all 100ms ease-in-out;
 }
@@ -266,14 +276,14 @@ td, th {
     margin-bottom: 3rem;
     text-align: center;
     align-content: center;
-    color: #121f25;
+    color: var(--text-hover);
     font-size: calc(2em + 0.5vw + 0.5vh);
     opacity: 50%;
     transition: color 2s, opacity 1s;
 }
 
 .section--heading > h1:hover {
-    color: #00fff4;
+    color: var(--text-hover);
     opacity: 100%;
     transition: .9s ease-in-out;
 
@@ -331,16 +341,16 @@ td, th {
 .nav--items .res--links > a {
     font-size: 1.1rem;
     transition: .2s ease-in-out;
-    color: #7dc3ff;
+    color: var(--text-primary);
 }
 
 .nav--items .res--links > a:hover {
     font-size: 1.15rem;
-    color: #93dcff;
+    color: var(--text-hover);
 }
 
 .nav--items .res--links > a :active {
-    color: #93dcff;
+    color: var(--text-hover);
 }
 
 .nav--items a > img {
@@ -356,7 +366,7 @@ td, th {
     width: 30px;
     height: 3px;
     opacity: 1;
-    background-color: #93dcff;
+    background-color: var(--text-primary);
 
 
 }
@@ -368,7 +378,7 @@ td, th {
     position: absolute;
     width: 30px;
     height: 3px;
-    background-color: #93dcff;
+    background-color: var(--text-primary);
 }
 
 .nav--items .mobile-nav-toggle .bars::before {
@@ -399,7 +409,7 @@ td, th {
     position: absolute;
     width: 30px;
     height: 4px;
-    background-color: #00acc1;
+    background-color: var(--text-primary);
     transition: background .5s ease;
 }
 
@@ -413,7 +423,7 @@ td, th {
 
 .nav--items .mobile-nav-toggle .close:hover::before,
 .nav--items .mobile-nav-toggle .close:hover::after {
-    background: rgb(132, 215, 255);
+    background: var(--text-primary);
 }
 
 @media screen and (max-width: 600px) {
@@ -435,7 +445,7 @@ td, th {
 .intro--wrapper {
     position: relative;
     overflow: hidden;
-    background-color: #022e42;
+    background-color: var(--bgcolor-primary);
     height: calc(100vh - 40px);
 }
 
@@ -552,7 +562,7 @@ td, th {
 .about--wrapper {
     position: relative;
     overflow: hidden;
-    background-color: #022e42;
+    background-color: var(--bgcolor-primary);
     height: fit-content;
     margin-top: 0;
 }
@@ -596,7 +606,9 @@ td, th {
 
 .about--banner {
     text-align: left;
-    color: #88bad9;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--text-primary);
 }
 
 .about--banner p {
@@ -612,29 +624,29 @@ td, th {
 }
 
 .about--banner p > small {
-    color: #93dcff;
+    color: var(--text-primary);
 
 }
 
 .about--banner p > small:hover {
-    color: #90caf9;
+    color: var(--text-hover);
 
 }
 
 .about--banner p + small {
     margin-left: 15vw;
-    color: #93dcff;
+    color: var(--text-primary);
 }
 
 
 .about--banner p:hover {
-    color: #93dcff;
+    color: var(--text-hover);
 }
 
 .about--banner a {
     padding: 5px 17px 5px 0;
     text-decoration: none;
-    color: #014F86;
+    color: var(--text-primary);
     font-weight: 700;
     text-transform: uppercase;
     background-color: transparent
