@@ -2,9 +2,10 @@
     --text-primary: #d4eefa;
     --text-secondary: #b0f6ff;
     --text-hover: #1aaff6;
-    --text-header: #adabab;
+    --text-header: #797cb6;
     --bgcolor-primary: #121f25;
     --bgcolor-secondary: #121f25;
+    --icon-hover: #a9a9a9;
 
 }
 
@@ -80,6 +81,17 @@ a:hover {
     color: var(--text-header);
 }
 
+.fa-github-alt:hover {
+    color: var(--text-hover) !important;
+}
+
+.fa-linkedin:hover {
+    color: var(--text-hover) !important;
+}
+
+.fa-facebook-square:hover {
+    color: var(--text-hover) !important;
+}
 
 #nav-title {
     color: var(--text-primary);
@@ -624,23 +636,13 @@ td, th {
 }
 
 .about--banner p > small {
-    color: var(--text-primary);
-
-}
-
-.about--banner p > small:hover {
-    color: var(--text-hover);
+    color: var(--text-header);
 
 }
 
 .about--banner p + small {
     margin-left: 15vw;
     color: var(--text-primary);
-}
-
-
-.about--banner p:hover {
-    color: var(--text-hover);
 }
 
 .about--banner a {
