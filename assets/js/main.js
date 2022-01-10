@@ -60,6 +60,9 @@ $(document).ready(function () {
 
     // Setup Git status on project section
     getAllRepoStats();
+    // let deezerImage = document.getElementById('deezerGif');
+    // deezerImage.addEventListener('mouseover', imageHoverEvent(deezerImage));
+
 });
 
 function retractMobileMenu() {
@@ -79,6 +82,23 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
+// function imageHoverEvent(imgElement) {
+//     const sourceImage = imgElement.dataset.gif;
+//     if (sourceImage) {
+//         const temp = imgElement.src;
+//         imgElement.src = sourceImage;
+//         imgElement.dataset.gif = temp;
+//     }
+// }
+//
+// function projectImgLeaveEvent() {
+//     const sourceImage = event.target.dataset.gif;
+//     if (sourceImage) {
+//         const temp = event.target.src;
+//         event.target.src = sourceImage;
+//         event.target.dataset.gif = temp;
+//     }
+// }
 
 function expandMobileMenu() {
     gsap.to('.top--navbar', {height: '185px', duration: 0.1})
@@ -129,7 +149,7 @@ function getAllRepoStats() {
     const NOTES_ANDROID = 'notes-android-app';
     const CONTACT_LIST_APP = 'Contact-List-Android';
     const FILE_COMM = 'file-commander';
-    const DEEZER_APP = 'deezer-example-web-app';
+    const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
 
     const xhr = new XMLHttpRequest();
