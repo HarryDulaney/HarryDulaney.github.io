@@ -1,11 +1,11 @@
 :root {
-    --text-primary: #d4eefa;
-    --text-secondary: #b0f6ff;
-    --text-hover: #1aaff6;
-    --text-header: #797cb6;
-    --bgcolor-primary: #121f25;
-    --bgcolor-secondary: #121f25;
-    --icon-hover: #a9a9a9;
+    --text-primary: #caf0f8;
+    --text-secondary: #ade8f4;
+    --text-hover: #0077b6;
+    --text-header: #90e0ef;
+    --bgcolor-primary: #03045e;
+    --bgcolor-secondary: #023e8a;
+    --icon-hover: var(--text-secondary);
 
 }
 
@@ -49,7 +49,8 @@ html {
 }
 
 body {
-    background-color: #0a3f62;
+    /*background-color: #0a3f62;*/
+    background-color: var(--bgcolor-secondary);
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     line-height: 1.5;
@@ -82,15 +83,15 @@ a:hover {
 }
 
 .fa-github-alt:hover {
-    color: var(--text-hover) !important;
+    color: var(--icon-hover) !important;
 }
 
 .fa-linkedin:hover {
-    color: var(--text-hover) !important;
+    color: var(--icon-hover) !important;
 }
 
 .fa-facebook-square:hover {
-    color: var(--text-hover) !important;
+    color: var(--icon-hover) !important;
 }
 
 #nav-title {
@@ -376,7 +377,9 @@ td, th {
 .nav--items .mobile-nav-toggle .bars {
     display: block;
     width: 30px;
-    height: 3px;
+    height: 4px;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
     opacity: 1;
     background-color: var(--text-primary);
 
@@ -389,18 +392,18 @@ td, th {
     display: block;
     position: absolute;
     width: 30px;
-    height: 3px;
+    height: 4px;
     background-color: var(--text-primary);
 }
 
 .nav--items .mobile-nav-toggle .bars::before {
-    margin-top: 9px;
-    margin-bottom: 20px;
+    margin-top: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 
 .nav--items .mobile-nav-toggle .bars::after {
-    margin-top: 18px;
-    margin-bottom: 5px;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .nav--items .mobile-nav-toggle:hover {
@@ -468,7 +471,8 @@ td, th {
     left: 0;
     right: 0;
     height: 100%;
-    background: #0a3f62;
+    background: var(--bgcolor-secondary);
+    /*background: #0a3f62;*/
     transform: skew(0deg, -19deg);
 }
 
@@ -479,7 +483,7 @@ td, th {
     left: 0;
     right: 0;
     height: 100%;
-    background: #0a3f62;
+    background: var(--bgcolor-secondary);
     transform: skew(0deg, 9deg);
 }
 
@@ -532,15 +536,15 @@ td, th {
 }
 
 .work--grid h3 {
-    color: #93dcff;
+    color: var(--text-header);
 }
 
 .work--grid h4 {
-    color: #93dcff;
+    color: var(--text-header);
 }
 
 .work--grid h5 {
-    color: #93dcff;
+    color: var(--text-header);
 }
 
 .work--grid .badge--image img {
@@ -553,7 +557,7 @@ td, th {
 }
 
 .work--grid > a button {
-    text-decoration-color: #82b1ff;
+    text-decoration-color: #3d3c3c;
     transition: .9s ease-in-out;
 }
 
@@ -586,7 +590,7 @@ td, th {
     left: 0;
     right: 0;
     height: 100%;
-    background: #0a3f62;
+    background: var(--bgcolor-secondary);
     transform: skew(0deg, -19deg);
 }
 
@@ -598,7 +602,7 @@ td, th {
     right: 0;
     height: 100%;
     overflow-x: fragments;
-    background: #0a3f62;
+    background: var(--bgcolor-secondary);
     transform: skew(0deg, 9deg);
 }
 
