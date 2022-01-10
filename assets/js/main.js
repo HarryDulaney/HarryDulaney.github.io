@@ -82,23 +82,23 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
-function imageHoverEvent(imgElement) {
-    const sourceImage = imgElement.dataset.gif;
-    if (sourceImage) {
-        const temp = imgElement.src;
-        imgElement.src = sourceImage;
-        imgElement.dataset.gif = temp;
-    }
-}
-
-function projectImgLeaveEvent() {
-    const sourceImage = event.target.dataset.gif;
-    if (sourceImage) {
-        const temp = event.target.src;
-        event.target.src = sourceImage;
-        event.target.dataset.gif = temp;
-    }
-}
+// function imageHoverEvent(imgElement) {
+//     const sourceImage = imgElement.dataset.gif;
+//     if (sourceImage) {
+//         const temp = imgElement.src;
+//         imgElement.src = sourceImage;
+//         imgElement.dataset.gif = temp;
+//     }
+// }
+//
+// function projectImgLeaveEvent() {
+//     const sourceImage = event.target.dataset.gif;
+//     if (sourceImage) {
+//         const temp = event.target.src;
+//         event.target.src = sourceImage;
+//         event.target.dataset.gif = temp;
+//     }
+// }
 
 function expandMobileMenu() {
     gsap.to('.top--navbar', {height: '185px', duration: 0.1})
