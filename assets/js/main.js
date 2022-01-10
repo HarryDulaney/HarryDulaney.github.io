@@ -60,14 +60,11 @@ $(document).ready(function () {
 
     // Setup Git status on project section
     getAllRepoStats();
-    // let deezerImage = document.getElementById('deezerGif');
-    // deezerImage.addEventListener('mouseover', imageHoverEvent(deezerImage));
 
 });
 
 function retractMobileMenu() {
     gsap.to('.close', {opacity: 0, duration: 0.2});
-    gsap.to('.top--navbar', {height: '40px', duration: 0.2});
     gsap.to('.mobile--nav', {display: 'none', duration: 0.2});
     gsap.to('.bars', {opacity: 1, duration: 0.1});
     gsap.to('.top--navbar', {height: 'fit-content', duration: 0.1});
@@ -82,26 +79,9 @@ function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
 
-// function imageHoverEvent(imgElement) {
-//     const sourceImage = imgElement.dataset.gif;
-//     if (sourceImage) {
-//         const temp = imgElement.src;
-//         imgElement.src = sourceImage;
-//         imgElement.dataset.gif = temp;
-//     }
-// }
-//
-// function projectImgLeaveEvent() {
-//     const sourceImage = event.target.dataset.gif;
-//     if (sourceImage) {
-//         const temp = event.target.src;
-//         event.target.src = sourceImage;
-//         event.target.dataset.gif = temp;
-//     }
-// }
 
 function expandMobileMenu() {
-    gsap.to('.top--navbar', {height: '185px', duration: 0.1})
+    gsap.to('.top--navbar', {height: '200px', duration: 0.1})
     gsap.to('.bars', {opacity: 0, duration: 0.1});
     gsap.to('.mobile--nav', {display: 'block', duration: 0.2})
     gsap.to('.close', {opacity: 1, duration: 0.2});
