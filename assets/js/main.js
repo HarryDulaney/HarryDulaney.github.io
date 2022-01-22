@@ -131,6 +131,7 @@ function getAllRepoStats() {
     const FILE_COMM = 'file-commander';
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
+    const SIM_AIR = 'airline-reservation-system';
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', API_BASE + REPOS_URL, true);
@@ -138,6 +139,21 @@ function getAllRepoStats() {
     xhr.onload = function () {
         const data = JSON.parse(this.response);
         for (let i in data) {
+            /* Set Air Sim Github Stats */
+            if (data[i].name === SIM_AIR) {
+                let simAirStats = document.getElementById('sim-air-app-stats');
+                let simAirUpdateTime = simAirStats.getElementsByClassName('git-stats-datetime');
+
+                let simAirStars = document.getElementById('sim-air-stars');
+                let simAirForks = document.getElementById('sim-air-forks');
+
+                simAirStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                simAirForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                /* Set Last Updated */
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                simAirUpdateTime[0].innerHTML = (`<div>${date} ${time}</div>`);
+            }
             /* Set Deezer Web App GitHub Stats */
             if (data[i].name === DEEZER_APP) {
                 let deezerStats = document.getElementById('deezer-app-stats');
