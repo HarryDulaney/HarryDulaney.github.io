@@ -82,7 +82,7 @@ a:hover {
     color: var(--text-header);
 }
 
-.fa-github-alt:hover {
+.fa-github-square:hover {
     color: var(--icon-hover) !important;
 }
 
