@@ -132,6 +132,7 @@ function getAllRepoStats() {
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
+    const COIN_EXPLORER = 'coin-explorer';
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', API_BASE + REPOS_URL, true);
@@ -185,6 +186,22 @@ function getAllRepoStats() {
                 const time = new Date().toLocaleTimeString();
                 const date = new Date().toLocaleDateString();
                 introJavaUpdated[0].innerHTML = (`<div>${date} ${time}</div>`);
+
+            }
+            /* Set Coin Explorer GitHub Stats */
+            if (data[i].name === COIN_EXPLORER) {
+                let stats = document.getElementById('coin-explorer-app-stats');
+                let updatedTime = stats.getElementsByClassName('git-stats-datetime');
+
+                let stars = document.getElementById('coin-explorer-stars');
+                let forks = document.getElementById('coin-explorer-forks');
+
+                stars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                forks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                /* Set Last Updated */
+                const time = new Date().toLocaleTimeString();
+                const date = new Date().toLocaleDateString();
+                updatedTime[0].innerHTML = (`<div>${date} ${time}</div>`);
 
             }
             /* Set File Commander GitHub Stats */
