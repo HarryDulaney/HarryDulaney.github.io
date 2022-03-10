@@ -123,6 +123,7 @@ function getAllRepoStats() {
     'use strict';
     const API_BASE = 'https://api.github.com/users/harrydulaney';
     const REPOS_URL = '/repos';
+    const PAGE_COUNT_QUERY = '?per_page=40';
     const CLONE_ACTIVITY_URL = '/graphs/clone-activity-data';
     const VIEW_ACTIVITY_URL = '/graphs/traffic-data';
     const INTRO_JAVA = 'intro-to-java-programming';
@@ -135,7 +136,7 @@ function getAllRepoStats() {
     const COIN_EXPLORER = 'coin-explorer';
 
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', API_BASE + REPOS_URL, true);
+    xhr.open('GET', API_BASE + REPOS_URL + PAGE_COUNT_QUERY, true);
 
     xhr.onload = function () {
         const data = JSON.parse(this.response);
