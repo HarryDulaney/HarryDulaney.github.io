@@ -57,9 +57,17 @@ $(document).ready(function () {
         }
 
     });
-
     // Setup Git status on project section
     getAllRepoStats();
+    // Initialize Blog Mode
+    $('#blog--link-page').on('click', function (e) {
+        openBlog();
+
+    });
+
+    $('#blog--link-mobile').on('click', function (e) {
+        openBlog();
+    });
 
 });
 
@@ -77,6 +85,20 @@ function showNavbar() {
 
 function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
+}
+
+function openBlog() {
+    var blogNode = document.getElementById('blog--container');
+    var mainContainer = document.getElementById('top');
+    mainContainer.style.display = 'none';
+    blogNode.classList.remove('hide--h');
+}
+
+function closeBlog() {
+    var blogNode = document.getElementById('blog--container');
+    var mainContainer = document.getElementById('top');
+    mainContainer.style.display = 'inherit';
+    blogNode.classList.add('hide--h');
 }
 
 
