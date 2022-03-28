@@ -1,5 +1,6 @@
 'use strict';
 var open = false;
+var blogMode = false;
 var mainNavVisible = true;
 var max1180 = window.matchMedia("(max-width: 1180px)");
 var max900 = window.matchMedia("(max-width: 900px)");
@@ -60,14 +61,20 @@ $(document).ready(function () {
     // Setup Git status on project section
     getAllRepoStats();
     // Initialize Blog Mode
-    $('#blog--link-page').on('click', function (e) {
+    $('#blog--link').on('click', function (e) {
         openBlog();
 
     });
 
-    $('#blog--link-mobile').on('click', function (e) {
-        openBlog();
+    $('#blog--link-content').on('mouseover', function (e) {
+        showArrow(this);
+
     });
+    $('#blog--link-content').on('mouseleave', function (e) {
+        hideArrow(this);
+
+    });
+
 
 });
 
@@ -292,5 +299,13 @@ function getAllRepoStats() {
 
     }
     xhr.send();
+}
+
+function showArrow(element) {
+    element.innerHtml = (`<i id="blog--link-content" class="fas fa-arrow-right"></i>`);
+}
+
+function hideArrow(element) {
+    element.innerHtml = (`<a id="blog--link-content">Blog</a>`);
 }
 

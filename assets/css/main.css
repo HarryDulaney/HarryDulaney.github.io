@@ -441,6 +441,7 @@ td, th {
     background: var(--text-primary);
 }
 
+
 @media screen and (max-width: 600px) {
     .res--links {
         display: none;
