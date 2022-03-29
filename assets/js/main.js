@@ -1,6 +1,6 @@
 'use strict';
 var open = false;
-var blogMode = false;
+var isBlog = false;
 var mainNavVisible = true;
 var max1180 = window.matchMedia("(max-width: 1180px)");
 var max900 = window.matchMedia("(max-width: 900px)");
@@ -61,16 +61,18 @@ $(document).ready(function () {
     // Setup Git status on project section
     getAllRepoStats();
     // Initialize Blog Mode
-    $('#blog--link').on('click', function (e) {
-        openBlog();
+    var blogLink = $('#blog--link');
 
+    blogLink.bind('click', function (e) {
+        openBlog();
     });
 
-    $('#blog--link-content').on('mouseover', function (e) {
+    blogLink.bind('mouseenter', function (e) {
         showArrow(this);
 
     });
-    $('#blog--link-content').on('mouseleave', function (e) {
+
+    blogLink.bind('mouseleave', function (e) {
         hideArrow(this);
 
     });
@@ -95,17 +97,28 @@ function hideNavBar() {
 }
 
 function openBlog() {
-    var blogNode = document.getElementById('blog--container');
-    var mainContainer = document.getElementById('top');
-    mainContainer.style.display = 'none';
-    blogNode.classList.remove('hide--h');
+    gsap.to('.top--navbar', {width: '100px', duration: 0.9});
+    gsap.to('.top--navbar', {display: 'none', duration: 1.1});
+    gsap.to('.main-container', {opacity: 0.7, duration: 1.1});
+    gsap.to('.main-container', {opacity: 0.5, duration: 1.2});
+    gsap.to('.main-container', {opacity: 0.3, duration: 1.3});
+    gsap.to('.main-container', {opacity: 0.2, duration: 1.4});
+    gsap.to('.main-container', {opacity: 0.1, duration: 1.5});
+    gsap.to('.main-container', {opacity: 0, duration: 1.6});
+    gsap.to('.main-container', {display: 'none', duration: 1.7});
+    gsap.to('.blog--render-frame', {opacity: 0.1, duration: 1.0});
+    gsap.to('.blog--render-frame', {display: 'inherit', duration: 1.1});
+    gsap.to('.blog--render-frame', {opacity: 0.3, duration: 1.3});
+    gsap.to('.blog--render-frame', {opacity: 0.6, duration: 1.4});
+    gsap.to('.blog--render-frame', {opacity: 0.8, duration: 1.7});
+    gsap.to('.blog--render-frame', {opacity: 1, duration: 1.8});
+    gsap.to('#footer', {display: 'none', duration: 1.0});
+    isBlog = true;
 }
 
 function closeBlog() {
-    var blogNode = document.getElementById('blog--container');
-    var mainContainer = document.getElementById('top');
-    mainContainer.style.display = 'inherit';
-    blogNode.classList.add('hide--h');
+
+    isBlog = true;
 }
 
 
@@ -302,10 +315,11 @@ function getAllRepoStats() {
 }
 
 function showArrow(element) {
-    element.innerHtml = (`<i id="blog--link-content" class="fas fa-arrow-right"></i>`);
+    gsap.to('#blog--link-arrow', {display: 'inherit', duration: 0.2})
+    gsap.to('#blog--link-arrow', {opacity: 1, duration: 0.5});
 }
 
 function hideArrow(element) {
-    element.innerHtml = (`<a id="blog--link-content">Blog</a>`);
+    gsap.to('#blog--link-arrow', {opacity: 0, duration: 0.5});
+    gsap.to('#blog--link-arrow', {display: 'none', duration: 0.2})
 }
-
