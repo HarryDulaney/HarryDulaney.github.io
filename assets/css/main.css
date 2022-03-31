@@ -6,7 +6,32 @@
     --bgcolor-primary: #0e121c;
     --bgcolor-secondary: #220164;
     --icon-hover: var(--text-secondary);
+}
 
+/*Indigo 50
+#E8EAF6
+#C5CAE9
+#9FA8DA
+#7986CB
+#5C6BC0
+#3F51B5
+#3949AB
+#303F9F
+#283593
+#1A237E
+#8C9EFF
+#536DFE
+#3D5AFE
+#304FFE*/
+
+[data-theme="dark"] {
+    --text-primary: #caf0f8;
+    --text-secondary: #ade8f4;
+    --text-hover: #0077b6;
+    --text-header: #90e0ef;
+    --bgcolor-primary: #0e121c;
+    --bgcolor-secondary: #220164;
+    --icon-hover: var(--text-secondary);
 }
 
 
@@ -227,6 +252,68 @@ table {
 td, th {
     padding: 0
 }
+
+
+.theme-switch-wrapper {
+    display: inline-block;
+    vertical-align: center;
+}
+
+em {
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+    content: element(#something);
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 
 .contact-form-alert {
     z-index: 99999;
@@ -718,50 +805,50 @@ td, th {
 
 }
 
-.about--options > a:nth-child(1) {
+.about--options > a:nth-child(2) {
     margin-bottom: 3vh;
 
 }
 
-.about--options > a:nth-child(1):hover {
+.about--options > a:nth-child(2):hover {
     background-image: url("../icon/github-icon-3.png");
 }
 
-.about--options > a:nth-child(2) {
+.about--options > a:nth-child(3) {
     margin-top: 3vh;
 }
 
-.about--options > a:nth-child(2):hover {
+.about--options > a:nth-child(3):hover {
     background-image: url("../icon/gsu-logo.jpg");
 
 }
 
-.about--options > a:nth-child(3) {
+.about--options > a:nth-child(4) {
     margin-bottom: 3vh;
 
 }
 
-.about--options > a:nth-child(3):hover {
+.about--options > a:nth-child(4):hover {
     background-image: url("../icon/icons-java-48.png");
 
 }
 
-.about--options > a:nth-child(4) {
+.about--options > a:nth-child(5) {
     margin-top: 3vh;
 
 
 }
 
-.about--options > a:nth-child(4):hover {
+.about--options > a:nth-child(5):hover {
     background-image: url("../icon/linkedin_b_w_icon.png");
 
 }
 
-.about--options > a:nth-child(5) {
+.about--options > a:nth-child(1) {
     margin-bottom: 3vh;
 }
 
-.about--options > a:nth-child(5):hover {
+.about--options > a:nth-child(1):hover {
     background-image: url("../img/harry_star_bar.jpg");
 }
 
@@ -772,6 +859,65 @@ td, th {
     text-transform: uppercase;
     -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
     transition: bottom .2s ease-in-out, left .2s ease-in-out
+}
+
+
+/* Downloads */
+#downloads {
+    content: "";
+    background-color: transparent;
+}
+
+
+.downloads {
+    display: block;
+    position: relative;
+
+}
+
+.download--banner {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--text-primary);
+}
+
+.download--banner p {
+    position: relative;
+    margin-top: 1vh;
+    font-size: calc(8px + 1vw);
+    padding: 0.5vw;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 2s;
+
+}
+
+.download--banner p > small {
+    color: var(--text-header);
+
+}
+
+.downloads .download--image img {
+    object-fit: fill;
+    margin-left:76vw;
+    width: auto;
+    opacity: 10%;
+    max-height: calc(5px + 4vh + 4vw);
+}
+
+
+.download--banner p {
+    color: var(--text-primary);
+}
+
+.download--banner a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent
 }
 
 /* Contact */

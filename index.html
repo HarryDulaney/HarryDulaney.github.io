@@ -48,9 +48,12 @@
             <a href="#project" class="m-sm-3" style="text-decoration: none">Projects</a>
             <a href="#about" class="m-sm-3" style="text-decoration: none">About Me</a>
             <a href="#contact" class="m-sm-3" style="text-decoration: none">Contact</a>
-            <a href="#" id="blog--link" class="m-sm-3" style="text-decoration: none;">
+            <a hidden href="#" id="blog--link" class="m-sm-3" style="text-decoration: none;">
                 <span>Blog</span>
                 <span id="blog--link-arrow" class="hide--h"><i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="#downloads" class="m-sm-3" style="text-decoration: none;">
+                <span>Resume</span>
             </a>
 
             <div class="float-right align-middle">
@@ -744,7 +747,7 @@
                     <p><small>About Me</small></p>
                     <p> I am passionate about software engineering <br> and am proficient with multiple programming
                         languages.<br>
-                        I have hands-on experience working on large and small Agile teams<br> to rapidly code, build,
+                        I have 2 years of professional experience working on Agile project teams<br> to rapidly code,
                         test, debug, and deploy innovative enterprise<br> software solutions.<br><br>
                         I'm enthusiastic about supporting open-source software projects. <br>
                         In free time I like to build projects like the ones above,<br>
@@ -753,6 +756,10 @@
                 </div>
 
                 <div class="about--options">
+                    <a target="_blank"
+                       href="https://secrettownsband.bandcamp.com/">
+                        <h3>Music</h3>
+                    </a>
                     <a target="_blank" href="https://www.github.com/harrydulaney">
                         <h3>Code</h3>
                     </a>
@@ -767,10 +774,7 @@
                        href="https://www.linkedin.com/in/harrydulaney">
                         <h3>Professional</h3>
                     </a>
-                    <a target="_blank"
-                       href="https://secrettownsband.bandcamp.com/">
-                        <h3>Music</h3>
-                    </a>
+
                 </div>
                 <div class="row p-5">
                     <div class="float-right about--image">
@@ -779,12 +783,38 @@
                              class="img-fluid">
                     </div>
                 </div>
+
                 <div class="container text-white text-center" style="margin-bottom: 2rem;">
                     <h3>GitHub Contribution Graph</h3>
                     <div class="calendar">
                     </div>
                 </div>
             </section>
+
+
+            <!-----------------------------------------------  Resume/ Downloads ---------------------------------------------------->
+            <div class="section--heading" id="downloads">
+                <h1></h1>
+            </div>
+            <div class="download--wrapper">
+                <section class="downloads">
+                    <div class="download--banner">
+                        <p>Downloads</p>
+                        <div class="row p-5 w-100 align-content-center">
+                            <div class="align-content-center text-center ml-5 w-100" style="cursor:pointer;">
+                                <a href="assets/img/HarryDulaneyResume.pdf" download="HarryDulaneyResume"
+                                   type="application/pdf" style="cursor: pointer;">
+                                    <img src="assets/img/resume_icon_img.png" alt="Harry Dulaney Resume" width="322"
+                                         height="409" style="cursor: pointer">
+                                    <i class="fas fa-download"></i>
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
 
 
         </div>
@@ -875,8 +905,8 @@
         </section>
     </main>
 </div>
-<div class="blog--render-frame">
-    <iframe src="http://localhost:3000"></iframe>
+<div hidden class="blog--render-frame">
+    <iframe src="https://dev-blog-olive.vercel.app/posts"></iframe>
 </div>
 <footer id="footer"><p style="text-align: center;font-size: 15px; color: seashell">
     ©2021 Harry Dulaney<br></p></footer>

@@ -58,6 +58,16 @@ $(document).ready(function () {
         }
 
     });
+    /* Handle user preference for theme */
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
     // Setup Git status on project section
     getAllRepoStats();
     // Initialize Blog Mode
@@ -323,3 +333,19 @@ function hideArrow(element) {
     gsap.to('#blog--link-arrow', {opacity: 0, duration: 0.5});
     gsap.to('#blog--link-arrow', {display: 'none', duration: 0.2})
 }
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
