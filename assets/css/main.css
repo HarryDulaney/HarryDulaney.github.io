@@ -708,7 +708,7 @@ input:checked + .slider:before {
     left: 0;
     right: 0;
     height: 100%;
-    overflow-x: fragments;
+    overflow-x: clip;
     background: var(--bgcolor-secondary);
     transform: skew(0deg, 9deg);
 }
@@ -884,11 +884,10 @@ input:checked + .slider:before {
 
 .download--banner p {
     position: relative;
-    margin-top: 1vh;
+    margin-top: 3vh;
     font-size: calc(8px + 1vw);
     padding: 0.5vw;
     font-weight: 400;
-    cursor: pointer;
     line-height: 1;
     transition: color 2s;
 
@@ -900,13 +899,30 @@ input:checked + .slider:before {
 }
 
 .downloads .download--image img {
-    object-fit: fill;
-    margin-left:76vw;
-    width: auto;
-    opacity: 10%;
-    max-height: calc(5px + 4vh + 4vw);
+    cursor: pointer;
+    opacity: 1;
+    height: auto;
+    border-radius: 5% 5% 5% 5%;
+    transition: .5s ease;
+    backface-visibility: hidden;
 }
 
+.downloads #resume--download-icon {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    height: 5%;
+    width: auto;
+    text-align: center;
+}
+
+.downloads .download--image:hover #resume--download-icon {
+    opacity: 0.8;
+}
+
+.downloads .download--image:hover img {
+    opacity: 0.3;
+}
 
 .download--banner p {
     color: var(--text-primary);

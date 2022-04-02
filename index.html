@@ -799,16 +799,18 @@
             <div class="download--wrapper">
                 <section class="downloads">
                     <div class="download--banner">
-                        <p>Downloads</p>
-                        <div class="row p-5 w-100 align-content-center">
-                            <div class="align-content-center text-center ml-5 w-100" style="cursor:pointer;">
+                        <div class="row d-flex justify-content-center">
+                            <h2 style="font-size: 2rem; margin-bottom: 2vw;" class="text-center section--header">
+                                Downloads</h2></div>
+                        <div class="row p-5 w-100 align-content-center text-center">
+                            <div class="align-content-center text-center w-100">
                                 <a href="assets/img/HarryDulaneyResume.pdf" download="HarryDulaneyResume"
-                                   type="application/pdf" style="cursor: pointer;">
+                                   type="application/pdf"
+                                   class="download--image">
                                     <img src="assets/img/resume_icon_img.png" alt="Harry Dulaney Resume" width="322"
                                          height="409" style="cursor: pointer">
-                                    <i class="fas fa-download"></i>
+                                    <i class="fas fa-download text-center" id="resume--download-icon"></i>
                                 </a>
-
                             </div>
                         </div>
 
@@ -908,6 +910,7 @@
 <div hidden class="blog--render-frame">
     <iframe src="https://dev-blog-olive.vercel.app/posts"></iframe>
 </div>
+
 <footer id="footer"><p style="text-align: center;font-size: 15px; color: seashell">
     ©2021 Harry Dulaney<br></p></footer>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
