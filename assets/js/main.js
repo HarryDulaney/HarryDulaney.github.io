@@ -334,7 +334,7 @@ function hideArrow(element) {
     gsap.to('#blog--link-arrow', {display: 'none', duration: 0.2})
 }
 
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -348,4 +348,4 @@ function switchTheme(e) {
     }
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+// toggleSwitch.addEventListener('change', switchTheme, false);

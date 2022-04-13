@@ -668,6 +668,11 @@ input:checked + .slider:before {
     transition: .9s ease-in-out;
 }
 
+.work--grid .project--image {
+    max-height:300px;
+    /*width: auto !important;*/
+}
+
 .contrib-number {
     font-weight: 300;
     line-height: 1.3em;
