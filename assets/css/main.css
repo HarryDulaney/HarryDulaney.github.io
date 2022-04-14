@@ -1,36 +1,21 @@
 :root {
     --text-primary: #caf0f8;
-    --text-secondary: #ade8f4;
+    --text-secondary: #86A8E7;
     --text-hover: #0077b6;
     --text-header: #90e0ef;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #220164;
+    --bgcolor-secondary: #191a1d;
     --icon-hover: var(--text-secondary);
 }
 
-/*Indigo 50
-#E8EAF6
-#C5CAE9
-#9FA8DA
-#7986CB
-#5C6BC0
-#3F51B5
-#3949AB
-#303F9F
-#283593
-#1A237E
-#8C9EFF
-#536DFE
-#3D5AFE
-#304FFE*/
 
 [data-theme="dark"] {
     --text-primary: #caf0f8;
-    --text-secondary: #ade8f4;
+    --text-secondary: #86A8E7;
     --text-hover: #0077b6;
     --text-header: #90e0ef;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #220164;
+    --bgcolor-secondary: #191a1d;
     --icon-hover: var(--text-secondary);
 }
 
@@ -337,7 +322,7 @@ input:checked + .slider:before {
 }
 
 .close--btn:hover {
-    color: #021842;
+    color: var(--text-hover);
 }
 
 .hide--h {
