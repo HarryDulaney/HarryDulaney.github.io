@@ -1,22 +1,22 @@
 :root {
     --text-primary: #caf0f8;
-    --text-secondary: #86A8E7;
-    --text-hover: #0077b6;
-    --text-header: #90e0ef;
+    --text-secondary: #cedfff;
+    --text-hover: #4800ff;
+    --text-header: #b7ceff;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #191a1d;
-    --icon-hover: var(--text-secondary);
+    --bgcolor-secondary: #1a1b1f;
+    --icon-hover: var(--text-hover);
 }
 
 
 [data-theme="dark"] {
     --text-primary: #caf0f8;
-    --text-secondary: #86A8E7;
-    --text-hover: #0077b6;
-    --text-header: #90e0ef;
+    --text-secondary: #cedfff;
+    --text-hover: #001393;
+    --text-header: #b7ceff;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #191a1d;
-    --icon-hover: var(--text-secondary);
+    --bgcolor-secondary: #1a1b1f;
+    --icon-hover: var(--text-hover);
 }
 
 
@@ -598,8 +598,8 @@ input:checked + .slider:before {
 }
 
 .intro .intro--image img {
-    height: calc(25vh + 3vw);
-    width: auto;
+    width: 45vh;
+    height: auto;
     z-index: 10;
     border-radius: 50%;
 
@@ -708,6 +708,11 @@ input:checked + .slider:before {
     position: relative;
 
 }
+#skill-chart-wrapper {
+    height: auto;
+    width: 5vw;
+}
+
 
 .about .about--image img {
     object-fit: fill;

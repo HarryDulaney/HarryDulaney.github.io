@@ -48,10 +48,10 @@
             <a href="#project" class="m-sm-3" style="text-decoration: none">Projects</a>
             <a href="#about" class="m-sm-3" style="text-decoration: none">About Me</a>
             <a href="#contact" class="m-sm-3" style="text-decoration: none">Contact</a>
-            <a hidden href="#" id="blog--link" class="m-sm-3" style="text-decoration: none;">
-                <span>Blog</span>
-                <span id="blog--link-arrow" class="hide--h"><i class="fas fa-arrow-right"></i></span>
-            </a>
+<!--            <a href="#" id="blog&#45;&#45;link" class="m-sm-3" style="text-decoration: none;">-->
+<!--                <span>Blog</span>-->
+<!--                <span id="blog&#45;&#45;link-arrow" class="hide&#45;&#45;h"><i class="fas fa-arrow-right"></i></span>-->
+<!--            </a>-->
             <a href="#downloads" class="m-sm-3" style="text-decoration: none;">
                 <span>Resume</span>
             </a>
@@ -101,11 +101,11 @@
     <div class="jumbotron jumbotron-fluid intro--wrapper">
         <div class="intro">
             <div class="container">
-                <div class="row">
+                <div class="row w-100 m-0 p-0">
                     <div class="col-md-4">
                         <div class="intro--image">
-                            <img class="img-fluid" src="assets/img/1628285117616.jpg"
-                                 alt="welcome-img">
+                            <img class="img-fluid" src="assets/img/harry_profile_pic_new-removebg-preview.png"
+                                 alt="welcome-img" width="772" height="758">
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -113,12 +113,12 @@
                             <span style="font-size: calc(6vh + 3vw);z-index: 150">Hello </span>
                             <span style="font-size: calc(3vh + 0.9vw);z-index: 150;">I'm Harry,</span> <br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
-                                    I am a Full Stack Software Developer based in Atlanta, GA, USA.
+                                    I'm a Full Stack Software Engineer based in Atlanta, GA, USA.
                                 </span>
                             <br><br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
-                               I'm passionate about software engineering, polyglot programming, and building things to learn how they work.
-                                I built this webpage as a central hub for projects and as a portal to
+                               I'm passionate about computer science, polyglot programming, web development and building things to learn how they work.
+                                I created this webpage as a hub for projects and as a central portal to
                                 my content online. </span><br><br>
                             <span style="font-size: calc(0.9vh + 0.7vw);z-index: 150;">
                                 Thanks for coming!
@@ -157,10 +157,11 @@
                         <h5>Java + Spring Boot Web Application</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
                             <div class="badge text-white">Java</div>
-                            <div class="badge text-white">Spring Boot</div>
                             <div class="badge text-white">JavaScript</div>
+                            <div class="badge text-white">AJAX</div>
+                            <div class="badge text-white">Spring Boot</div>
                             <div class="badge text-white">Thymeleaf</div>
-                            <div class="badge text-white">Heroku</div>
+                            <div class="badge text-white">OAuth2.0</div>
                             <div class="badge text-white">Okta Java SDK</div>
                         </div>
                         <div class="project--link">
@@ -227,8 +228,9 @@
                         <h5>Deezer REST API Client</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
                             <div class="badge text-white">Java</div>
-                            <div class="badge text-white">Spring</div>
-                            <div class="badge text-white">Thymeleaf</div>
+                            <div class="badge text-white">Spring Boot</div>
+                            <div class="badge text-white">Spring Security</div>
+                            <div class="badge text-white">Spring MVC (Thymeleaf)</div>
                             <div class="badge text-white">Apache HttpClient</div>
                             <div class="badge text-white">Heroku</div>
                             <div class="badge text-white">Deezer Open Source API</div>
@@ -392,11 +394,10 @@
                             Tokens</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
                             <div class="badge text-white">Angular</div>
-                            <div class="badge text-white">CoinGecko API v3</div>
-                            <div class="badge text-white">Rest API</div>
-                            <div class="badge text-white">TypeScript</div>
                             <div class="badge text-white">JavaScript</div>
-                            <div class="badge text-white">Material Design</div>
+                            <div class="badge text-white">Node.js</div>
+                            <div class="badge text-white">Express.js</div>
+                            <div class="badge text-white">PrimeNg</div>
                         </div>
                         <div class="project--link">
                             <a href="https://www.coinetc.net" type="button" target="_blank"
@@ -745,9 +746,10 @@
             <section class="about">
                 <div class="about--banner">
                     <p><small>About Me</small></p>
-                    <p> I am passionate about software engineering <br> and am proficient with multiple programming
+                    <p> I have a bottomless reservoir of curiosity for software and computing <br> and am proficient with multiple programming
                         languages.<br>
-                        I have 2 years of professional experience working on Agile project teams<br> to rapidly code,
+                        <span id="insertYearsExperience"></span>
+                        <br> to rapidly code,
                         test, debug, and deploy innovative enterprise<br> software solutions.<br><br>
                         I'm enthusiastic about supporting open-source software projects. <br>
                         In free time I like to build projects like the ones above,<br>
@@ -776,12 +778,9 @@
                     </a>
 
                 </div>
-                <div class="row p-5">
-                    <div class="float-right about--image">
-                        <img src="assets/img/astronaut-spaceman-space5e5f517ac66336.3388629815833050828126.png"
-                             alt="img-about-dec-1"
-                             class="img-fluid">
-                    </div>
+
+                <div class="container p-0 m-0" id="skill-chart-wrapper">
+                    <canvas id="skill-chart"></canvas>
                 </div>
 
                 <div class="container text-white text-center" style="margin-bottom: 2rem;">
@@ -790,6 +789,14 @@
                     </div>
                 </div>
             </section>
+
+            <div class="row p-1 text-center" style="height: fit-content;">
+                <div class="about--image" style="height: fit-content;">
+                    <img src="assets/img/astronaut-spaceman-space5e5f517ac66336.3388629815833050828126.png"
+                         alt="img-about-dec-1"
+                         style="height: auto;width: 20%; opacity: 0.5;">
+                </div>
+            </div>
 
 
             <!-----------------------------------------------  Resume/ Downloads ---------------------------------------------------->
@@ -907,9 +914,9 @@
         </section>
     </main>
 </div>
-<div hidden class="blog--render-frame">
-    <iframe src="https://dev-blog-olive.vercel.app/posts"></iframe>
-</div>
+<!--<div hidden class="blog&#45;&#45;render-frame">-->
+<!--    <iframe src="https://dev-blog-olive.vercel.app/posts"></iframe>-->
+<!--</div>-->
 
 <footer id="footer"><p style="text-align: center;font-size: 15px; color: seashell">
     ©2021 Harry Dulaney<br></p></footer>
@@ -921,8 +928,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+        integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 <script src="assets/vendor/github-calendar.min.js"></script>
-<script async defer src="assets/js/github-graph.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
         integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
         crossorigin="anonymous"></script>

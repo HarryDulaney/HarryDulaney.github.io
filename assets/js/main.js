@@ -10,6 +10,7 @@ var max360 = window.matchMedia("(max-width: 360px)");
 var min900 = window.matchMedia("(min-width: 900)");
 var min600 = window.matchMedia("(min-width: 600)");
 
+
 /**
  * Main
  */
@@ -67,28 +68,26 @@ $(document).ready(function () {
             toggleSwitch.checked = true;
         }
     }
-
-    // Setup Git status on project section
+    let startDate = new Date(2020, 4, 1);
+    let elapsedTimeMillis = Date.now() - startDate.getTime();
+    let elapsedTimeYears = elapsedTimeMillis / 31557600000; // Divide by millis in one year
+    let yearsExpSnippet = 'I have ' + (elapsedTimeYears).toFixed(1) + ' years of professional experience working on Agile project teams';
+    renderAboutMe(yearsExpSnippet);
+    // Fetch and initialize Git status' on projects
     getAllRepoStats();
+    // Draw skill charts
+    // initSkillCharts();
     // Initialize Blog Mode
-    var blogLink = $('#blog--link');
-
-    blogLink.bind('click', function (e) {
-        openBlog();
-    });
-
-    blogLink.bind('mouseenter', function (e) {
-        showArrow(this);
-
-    });
-
-    blogLink.bind('mouseleave', function (e) {
-        hideArrow(this);
-
-    });
-
+    // initBlogView();
+// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+// toggleSwitch.addEventListener('change', switchTheme, false);
 
 });
+
+function renderAboutMe(text) {
+    let element = document.getElementById('insertYearsExperience');
+    element.innerText = text;
+}
 
 function retractMobileMenu() {
     gsap.to('.close', {opacity: 0, duration: 0.2});
@@ -127,7 +126,6 @@ function openBlog() {
 }
 
 function closeBlog() {
-
     isBlog = true;
 }
 
@@ -174,10 +172,10 @@ function toggleExpandProjects() {
 function getAllRepoStats() {
     'use strict';
     const API_BASE = 'https://api.github.com/users/harrydulaney';
+    const API_REPOS_BASE = 'https://api.github.com/repos/harrydulaney/REPO_NAME';
+    const VIEWS_COUNT = '/traffic/popular/referrers';
     const REPOS_URL = '/repos';
     const PAGE_COUNT_QUERY = '?per_page=40';
-    const CLONE_ACTIVITY_URL = '/graphs/clone-activity-data';
-    const VIEW_ACTIVITY_URL = '/graphs/traffic-data';
     const INTRO_JAVA = 'intro-to-java-programming';
     const NOTES_ANDROID = 'notes-android-app';
     const CONTACT_LIST_APP = 'Contact-List-Android';
@@ -322,6 +320,12 @@ function getAllRepoStats() {
 
     }
     xhr.send();
+
+    GitHubCalendar(".calendar", "harrydulaney", {
+        responsive: true,
+        tooltips: true,
+    });
+
 }
 
 function showArrow(element) {
@@ -334,7 +338,6 @@ function hideArrow(element) {
     gsap.to('#blog--link-arrow', {display: 'none', duration: 0.2})
 }
 
-// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {
     if (e.target.checked) {
@@ -348,4 +351,74 @@ function switchTheme(e) {
     }
 }
 
-// toggleSwitch.addEventListener('change', switchTheme, false);
+function initSkillCharts() {
+    drawJavaSkillChart();
+}
+
+function drawJavaSkillChart() {
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        borderAlign: 'center'
+    }
+    const javaSkillConfig = {
+        labels: ['Java',
+            // 'JavaScript/TypeScript',
+            // 'Spring',
+            // 'Angular',
+            // 'SQL',
+            // 'Web Development'
+        ],
+        datasets: [{
+            label: 'Years',
+            data: [3, 1],
+            backgroundColor: [
+                'rgba(255,0,0,0.38)',
+                'rgb(54, 162, 235,0)',
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const ctx = document.getElementById('skill-chart');
+    const image = new Image();
+    image.src = 'https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/icon/icons-java-48.png';
+    image.style.width = '5px';
+    image.style.height = 'auto';
+    const plugin = {
+        id: 'custom_canvas_background_image',
+        beforeDraw: (chart) => {
+            if (image.complete) {
+                const ctx = chart.ctx;
+                const {top, left, width, height} = chart.chartArea;
+                const x = left + width / 2 - image.width / 2;
+                const y = top + height / 2 - image.height / 2;
+                ctx.drawImage(image, x, y);
+            } else {
+                image.onload = () => chart.draw();
+            }
+        }
+    };
+    const javaChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: javaSkillConfig,
+        options: options,
+    });
+}
+
+function initBlogView() {
+    var blogLink = $('#blog--link');
+    blogLink.bind('click', function (e) {
+        openBlog();
+    });
+    blogLink.bind('mouseenter', function (e) {
+        showArrow(this);
+    });
+    blogLink.bind('mouseleave', function (e) {
+        hideArrow(this);
+    });
+}
+
