@@ -2,9 +2,10 @@
     --text-primary: #caf0f8;
     --text-secondary: #cedfff;
     --text-hover: #4800ff;
-    --text-header: #b7ceff;
+    --text-header: #f5f6fc;
+    --text-sub-header: #cdd9e5;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #1a1b1f;
+    --bgcolor-secondary: #22272e;
     --icon-hover: var(--text-hover);
 }
 
@@ -636,7 +637,8 @@ input:checked + .slider:before {
 }
 
 .work--grid h5 {
-    color: var(--text-header);
+    color: var(--text-sub-header);
+    font-size: 1.2rem;
 }
 
 .work--grid .badge--image img {
