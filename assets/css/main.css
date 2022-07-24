@@ -4,8 +4,8 @@
     --text-hover: #4800ff;
     --text-header: #f5f6fc;
     --text-sub-header: #cdd9e5;
-    --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #22272e;
+    --bgcolor-primary: rgba(6, 18, 35, 0.94);
+    --bgcolor-secondary: #0e0e0e;
     --icon-hover: var(--text-hover);
 }
 
@@ -13,10 +13,11 @@
 [data-theme="dark"] {
     --text-primary: #caf0f8;
     --text-secondary: #cedfff;
-    --text-hover: #001393;
-    --text-header: #b7ceff;
+    --text-hover: #4800ff;
+    --text-header: #f5f6fc;
+    --text-sub-header: #cdd9e5;
     --bgcolor-primary: #0e121c;
-    --bgcolor-secondary: #1a1b1f;
+    --bgcolor-secondary: #22272e;
     --icon-hover: var(--text-hover);
 }
 
@@ -238,7 +239,39 @@ table {
 td, th {
     padding: 0
 }
+/* --------------------------------- Background image overlays ---------------------------------- */
+.wolf-img-overlay {
+    position: relative; /* Sit on top of the page content */
+    display: block;
+    background: url("../img/wolf__blue_painted.png") no-repeat right;
+    background-size: contain;
+    /*background-blend-mode: lighten;*/
+    z-index: 0;
+}
 
+.splash-two-overlay {
+    position: relative;
+    display: block;
+    background: url("../img/purple__splash.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
+}
+
+.astronaut-flying-towards-overlay {
+    position: relative;
+    display: block;
+    background: url("../img/astronaut-flying-towards-viewerpng.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
+}
+
+.splash-one-overlay {
+    position: relative;
+    display: block;
+    background: url("../img/blue__splash.png") no-repeat center;
+    background-size: cover;
+    z-index: 0;
+}
 
 .theme-switch-wrapper {
     display: inline-block;
@@ -351,8 +384,10 @@ input:checked + .slider:before {
     width: 100%;
     height: fit-content;
     min-height: 41px;
-    max-height: 200px;
+    max-height: 275px;
     background-color: var(--bgcolor-primary);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     z-index: 99999;
     transition: all 100ms ease-in-out;
 }
@@ -391,7 +426,6 @@ input:checked + .slider:before {
 .nav--items .mobile--nav {
     display: none;
     margin-top: 20px;
-    margin-left: 45px;
 }
 
 .nav--items .mobile--nav > ul > li {
@@ -399,7 +433,8 @@ input:checked + .slider:before {
 }
 
 .nav--items .mobile--nav > ul > li > a {
-    font-size: large;
+    font-size: 1.2rem;
+    margin-left: 1rem;
 }
 
 .nav--items div > a {
@@ -416,7 +451,7 @@ input:checked + .slider:before {
 }
 
 .nav--items div > .fork-on-github > img {
-    width: 4rem;
+    width: 3.5rem;
     height: auto;
     border-radius: 1px;
     margin-right: 3rem;
@@ -514,22 +549,32 @@ input:checked + .slider:before {
     background: var(--text-primary);
 }
 
-.blog--render-frame {
-    display: none;
+
+.blog-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.blog-container iframe {
     position: absolute;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -50px;
     padding: 0;
     margin: 0;
-}
-
-.blog--render-frame iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
     border: 0;
 }
 
@@ -585,6 +630,8 @@ input:checked + .slider:before {
     color: var(--text-primary);
     z-index: 35;
 }
+
+
 
 .intro h4 {
     text-align: center;
@@ -776,6 +823,14 @@ input:checked + .slider:before {
     transition: left .2s ease-in-out
 }
 
+.about .about--banner .banner--image img {
+    width: 35vh;
+    height: auto;
+    z-index: 10;
+    border-radius: 10%;
+
+}
+
 .about--options {
     display: -webkit-box;
     display: -webkit-flex;
@@ -784,7 +839,8 @@ input:checked + .slider:before {
     -webkit-justify-content: space-around;
     -ms-flex-pack: justify;
     justify-content: space-evenly;
-    list-style: none
+    list-style: none;
+    margin-top: 5vh;
 }
 
 .about--options a {
@@ -911,6 +967,16 @@ input:checked + .slider:before {
     margin-bottom: 50px;
 }
 
+.contact .cat--background-layout {
+    position: relative; /* Sit on top of the page content */
+    display: block;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    background-image: url("../img/cat-astronaut.png");
+    background-blend-mode: overlay;
+    z-index: 0;
+}
+
 
 .contact h2 {
     text-align: center;
@@ -938,6 +1004,12 @@ input:checked + .slider:before {
 }
 
 /* Screen size / Mobile */
+@media (max-width: 986px) {
+    .nav--items div > .fork-on-github > img {
+        display: none;
+    }
+
+}
 
 @media (max-width: 1180px) {
 
