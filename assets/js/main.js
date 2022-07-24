@@ -1,22 +1,22 @@
+/**
+ * main.js is the entry point and main module for harrydulaney.com
+ * @author Harry Dulaney
+ * @since  0.3.0
+ */
+
+
 'use strict';
+
 var open = false;
 var isBlog = false;
-var mainNavVisible = true;
-var max1180 = window.matchMedia("(max-width: 1180px)");
-var max900 = window.matchMedia("(max-width: 900px)");
-var max767 = window.matchMedia("(max-width: 767)");
 var max600 = window.matchMedia("(max-width: 600px)");
-var max360 = window.matchMedia("(max-width: 360px)");
-var min900 = window.matchMedia("(min-width: 900)");
-var min600 = window.matchMedia("(min-width: 600)");
 
 
 /**
- * Main
+ * Initialize
  */
 $(document).ready(function () {
-    'use strict';
-    var initialScrollPos = window.pageYOffset;
+    var initialScrollPos = window.scrollY;
     $(window).on('scroll', function () {
         if (open) {
             retractMobileMenu();
@@ -25,7 +25,7 @@ $(document).ready(function () {
             showNavbar();
         } else {
             // Regular Nav Bar behavior
-            var currentScrollPos = window.pageYOffset;
+            var currentScrollPos = window.scrollY;
             if (initialScrollPos > currentScrollPos) {
                 showNavbar();
             } else if (currentScrollPos >= 41) {
@@ -44,30 +44,33 @@ $(document).ready(function () {
                 retractMobileMenu();
             }
         }
-
-
     });
 
-    $('.main--body').on('click', function () {
+    $('.main-container').on('click', function () {
         //Mobile body click behavior
         if (max600.matches) {
             if (open) {
                 retractMobileMenu();
             }
-        } else {
-            // Regular Nav Behavior
         }
 
     });
-    /* Handle user preference for theme */
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
 
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
+    $('#mobile-menu-intro,#mobile-menu-project,#mobile-menu-about,#mobile-menu-contact, #mobile-menu-downloads').on('click', function () {
+        if (open) {
+            retractMobileMenu();
         }
-    }
+    });
+    /* Handle user preference for theme */
+    // const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    // if (currentTheme) {
+    //     document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // if (currentTheme === 'dark') {
+    //     toggleSwitch.checked = true;
+    // }
+    // }
+    /* Calculate + render years of experience */
     let startDate = new Date(2020, 4, 1);
     let elapsedTimeMillis = Date.now() - startDate.getTime();
     let elapsedTimeYears = elapsedTimeMillis / 31557600000; // Divide by millis in one year
@@ -78,7 +81,7 @@ $(document).ready(function () {
     // Draw skill charts
     // initSkillCharts();
     // Initialize Blog Mode
-    // initBlogView();
+    initBlogView();
 // const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 // toggleSwitch.addEventListener('change', switchTheme, false);
 
@@ -87,6 +90,15 @@ $(document).ready(function () {
 function renderAboutMe(text) {
     let element = document.getElementById('insertYearsExperience');
     element.innerText = text;
+}
+
+function expandMobileMenu() {
+    gsap.to('.top--navbar', {height: 'fit-content', duration: 0.1})
+    gsap.to('.bars', {opacity: 0, duration: 0.1});
+    gsap.to('.mobile--nav', {display: 'block', duration: 0.2})
+    gsap.to('.close', {opacity: 1, duration: 0.2});
+    open = true;
+
 }
 
 function retractMobileMenu() {
@@ -106,37 +118,36 @@ function hideNavBar() {
 }
 
 function openBlog() {
-    gsap.to('.top--navbar', {width: '100px', duration: 0.9});
-    gsap.to('.top--navbar', {display: 'none', duration: 1.1});
-    gsap.to('.main-container', {opacity: 0.7, duration: 1.1});
-    gsap.to('.main-container', {opacity: 0.5, duration: 1.2});
-    gsap.to('.main-container', {opacity: 0.3, duration: 1.3});
-    gsap.to('.main-container', {opacity: 0.2, duration: 1.4});
-    gsap.to('.main-container', {opacity: 0.1, duration: 1.5});
-    gsap.to('.main-container', {opacity: 0, duration: 1.6});
-    gsap.to('.main-container', {display: 'none', duration: 1.7});
-    gsap.to('.blog--render-frame', {opacity: 0.1, duration: 1.0});
-    gsap.to('.blog--render-frame', {display: 'inherit', duration: 1.1});
-    gsap.to('.blog--render-frame', {opacity: 0.3, duration: 1.3});
-    gsap.to('.blog--render-frame', {opacity: 0.6, duration: 1.4});
-    gsap.to('.blog--render-frame', {opacity: 0.8, duration: 1.7});
-    gsap.to('.blog--render-frame', {opacity: 1, duration: 1.8});
-    gsap.to('#footer', {display: 'none', duration: 1.0});
+    var tl = gsap.timeline();
+    tl.add(gsap.to('.main-container', {duration: 0.5, translateX: '-100%'}));
+    tl.add(gsap.set('.main-container', {display: 'none'}));
+    tl.add(gsap.from('.blog-container', {display: 'block', translateX: '200%', duration: 0.5}));
+    tl.add(gsap.to('.blog-container', {
+        display: 'block',
+        duration: 0.5,
+        translateX: 0
+    }));
+
+
+    tl.add(gsap.to('#nav-menu-downloads', {display: 'none', duration: 0.1}));
+    tl.add(gsap.to('#nav-menu-intro', {display: 'none', duration: 0.1}));
+    tl.add(gsap.to('#nav-menu-project', {display: 'none', duration: 0.1}));
+    tl.add(gsap.to('#nav-menu-contact', {display: 'none', duration: 0.1}));
+    tl.add(gsap.to('#nav-menu-about', {display: 'none', duration: 0.1}));
+    tl.play().then(() => {
+        document.getElementById('blog--link').innerHTML = `<a href="" id="blog--link" class="m-sm-3" style="text-decoration: none;">
+                <span id="blog--link-arrow"><i class="fas fa-arrow-left"></i></span>
+                <span>Home</span>
+            </a>`;
+    });
+
+
     isBlog = true;
 }
 
 function closeBlog() {
-    isBlog = true;
-}
 
-
-function expandMobileMenu() {
-    gsap.to('.top--navbar', {height: '200px', duration: 0.1})
-    gsap.to('.bars', {opacity: 0, duration: 0.1});
-    gsap.to('.mobile--nav', {display: 'block', duration: 0.2})
-    gsap.to('.close', {opacity: 1, duration: 0.2});
-    open = true;
-
+    isBlog = false;
 }
 
 /* Contact Form Handlers */
@@ -170,7 +181,6 @@ function toggleExpandProjects() {
  * update the DOM elements
  */
 function getAllRepoStats() {
-    'use strict';
     const API_BASE = 'https://api.github.com/users/harrydulaney';
     const API_REPOS_BASE = 'https://api.github.com/repos/harrydulaney/REPO_NAME';
     const VIEWS_COUNT = '/traffic/popular/referrers';
@@ -335,69 +345,37 @@ function switchTheme(e) {
     }
 }
 
-function initSkillCharts() {
-    drawJavaSkillChart();
-}
-
-function drawJavaSkillChart() {
-    const options = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        },
-        borderAlign: 'center'
-    }
-    const javaSkillConfig = {
-        labels: ['Java',
-            // 'JavaScript/TypeScript',
-            // 'Spring',
-            // 'Angular',
-            // 'SQL',
-            // 'Web Development'
-        ],
-        datasets: [{
-            label: 'Years',
-            data: [3, 1],
-            backgroundColor: [
-                'rgba(255,0,0,0.38)',
-                'rgb(54, 162, 235,0)',
-            ],
-            hoverOffset: 4
-        }]
-    };
-
-    const ctx = document.getElementById('skill-chart');
-    const image = new Image();
-    image.src = 'https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/icon/icons-java-48.png';
-    image.style.width = '5px';
-    image.style.height = 'auto';
-    const plugin = {
-        id: 'custom_canvas_background_image',
-        beforeDraw: (chart) => {
-            if (image.complete) {
-                const ctx = chart.ctx;
-                const {top, left, width, height} = chart.chartArea;
-                const x = left + width / 2 - image.width / 2;
-                const y = top + height / 2 - image.height / 2;
-                ctx.drawImage(image, x, y);
-            } else {
-                image.onload = () => chart.draw();
-            }
-        }
-    };
-    const javaChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: javaSkillConfig,
-        options: options,
-    });
-}
-
 function initBlogView() {
-    var blogLink = $('#blog--link');
+    const blogLink = $('#blog--link');
     blogLink.bind('click', function (e) {
         openBlog();
     });
+    const blogLinkMobile = $('#blog--link-mobile');
+    blogLinkMobile.bind('click', function (e) {
+        openBlog();
+        // Set Navbar to react to scroll behavior from blog iframe
+        var blogContainer = $('.blog-container');
+        var initialScrollPos = blogContainer.scrollTop;
+        blogContainer.on('scroll', function () {
+            if (open) {
+                retractMobileMenu();
+            }
+            if (max600.matches) { // Mobile scroll behavior
+                showNavbar();
+            } else {
+                // Regular Nav Bar behavior
+                var currentScrollPos = blogContainer.scrollTop;
+                if (initialScrollPos > currentScrollPos) {
+                    showNavbar();
+                } else if (currentScrollPos >= 41) {
+                    hideNavBar();
+                }
+                initialScrollPos = currentScrollPos;
+            }
+        });
+        retractMobileMenu();
+    });
+
     blogLink.bind('mouseenter', function (e) {
         showArrow(this);
     });
@@ -405,4 +383,3 @@ function initBlogView() {
         hideArrow(this);
     });
 }
-

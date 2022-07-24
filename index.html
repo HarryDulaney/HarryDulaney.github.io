@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link crossorigin="use-credentials" rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
@@ -35,33 +35,36 @@
 <nav class="top--navbar">
     <div class="nav--items">
         <nav class="mobile--nav">
-            <ul class="mobile-menu align-self-auto" aria-labelledby="expandMenu" role="menu">
-                <li><a href="#top" style="text-decoration: none">Intro</a></li>
-                <li><a href="#project" style="text-decoration: none">Projects</a></li>
-                <li><a href="#about" style="text-decoration: none">About</a></li>
-                <li><a href="#contact" style="text-decoration: none">Contact Me</a></li>
+            <ul class="mobile-menu" aria-labelledby="expandMenu" role="menu">
+                <li><a href="#top" style="text-decoration: none" id="mobile-menu-intro">Intro</a></li>
+                <li><a href="#project" style="text-decoration: none" id="mobile-menu-project">Projects</a></li>
+                <li><a href="#about" style="text-decoration: none" id="mobile-menu-about">About Me</a></li>
+                <li><a href="#contact" style="text-decoration: none" id="mobile-menu-contact">Contact</a></li>
+                <li><a href="#downloads" style="text-decoration: none" id="mobile-menu-downloads">Resume</a></li>
+                <!--
+                                <li><a id="blog&#45;&#45;link-mobile" href="#" style="text-decoration: none">Blog</a></li>
+                -->
 
             </ul>
         </nav>
         <div id="home--links" class="res--links align-middle m-1 p-1">
-            <a href="#top" class="m-sm-3" style="text-decoration: none">Intro</a>
-            <a href="#project" class="m-sm-3" style="text-decoration: none">Projects</a>
-            <a href="#about" class="m-sm-3" style="text-decoration: none">About Me</a>
-            <a href="#contact" class="m-sm-3" style="text-decoration: none">Contact</a>
-            <!--            <a href="#" id="blog&#45;&#45;link" class="m-sm-3" style="text-decoration: none;">-->
-            <!--                <span>Blog</span>-->
-            <!--                <span id="blog&#45;&#45;link-arrow" class="hide&#45;&#45;h"><i class="fas fa-arrow-right"></i></span>-->
-            <!--            </a>-->
-            <a href="#downloads" class="m-sm-3" style="text-decoration: none;">
+            <a href="#top" class="m-sm-3" style="text-decoration: none" id="nav-menu-intro">Intro</a>
+            <a href="#project" class="m-sm-3" style="text-decoration: none" id="nav-menu-project">Projects</a>
+            <a href="#about" class="m-sm-3" style="text-decoration: none" id="nav-menu-about">About Me</a>
+            <a href="#contact" class="m-sm-3" style="text-decoration: none" id="nav-menu-contact">Contact</a>
+            <a href="#downloads" class="m-sm-3" style="text-decoration: none;" id="nav-menu-downloads">
                 <span>Resume</span>
             </a>
+            <!--         <a href="#" id="blog&#45;&#45;link" class="m-sm-3" style="text-decoration: none;">
+                         <span>Blog</span>
+                         <span id="blog&#45;&#45;link-arrow" class="hide&#45;&#45;h"><i class="fas fa-arrow-right"></i></span>
+                     </a>-->
 
             <div class="float-right align-middle">
                 <a href="https://github.com/HarryDulaney/HarryDulaney.github.io" target="_blank"
                    class="fork-on-github"><img src="assets/icon/fork-me-on-github.png"
                                                alt="fork me on github icon"></a>
                 <span class="optional" style="margin-right: 3rem;"><a href="https://harrydulaney.com"
-                                                                      class="justify-content-center"
                                                                       style="text-decoration: none">harrydulaney.com</a></span>
                 <a class="m-1" style="font-size: 1.4rem;color:white"
                    href="https://www.github.com/harrydulaney"
@@ -96,16 +99,20 @@
         </a>
     </div>
 </nav>
+<div class="blog-container hide--h" hidden>
+    <iframe id="blog--iframe" src="https://blog.harrydulaney.com/posts"
+            allowtransparency="false"></iframe>
+</div>
 <div class="main-container" id="top">
     <!--Intro-->
-    <div class="jumbotron jumbotron-fluid intro--wrapper">
+    <div class="jumbotron jumbotron-fluid intro--wrapper splash-one-overlay">
         <div class="intro">
             <div class="container">
                 <div class="row w-100 m-0 p-0">
                     <div class="col-md-4">
                         <div class="intro--image">
-                            <img class="img-fluid" src="assets/img/harry_profile_pic_new-removebg-preview.png"
-                                 alt="welcome-img" width="772" height="758">
+                            <img class="img-fluid" src="assets/img/wolf__blue_painted.png"
+                                 alt="welcome-img" width="650" height="634">
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -117,9 +124,10 @@
                                 </span>
                             <br><br>
                             <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
-                               I'm passionate about computer science, polyglot programming, web development and building things to learn how they work.
-                                I created this webpage as a hub for projects and as a central portal to
-                                my content online. </span><br><br>
+                                I'm passionate about computer science, programming (Java, Angular, JavaScript), web development,
+                                and building things to learn how they work.
+                                I created this webpage to showcase new projects and as a central portal to
+                                share content online. </span><br><br>
                             <span style="font-size: calc(0.9vh + 0.7vw);z-index: 150;">
                                 Thanks for coming!
                             </span>
@@ -141,23 +149,25 @@
         <br><br>
         <section class="work--grid">
             <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <h2 style="font-size: 2rem; margin-bottom: 8vw;" class="text-center section--header">
+                <div class="row d-flex justify-content-center splash-two-overlay" style="margin-bottom: 6vw">
+                    <h2 style="font-size: 2rem; margin-bottom: 2vw;vertical-align: center"
+                        class="text-center section--header">
                         Featured Projects</h2></div>
 
 
-                <!------------------------------------------------ Coins Etc. ---------------------------------------------------->
+                <!------------------------------------------------ Pfolie ---------------------------------------------------->
                 <div class="row p-2">
                     <div class="col-md-7">
-                        <img alt="Coin Portal logo" class="project--image img-fluid mb-3 mb-md-0"
+                        <img alt="Pfolie logo" class="project--image img-fluid mb-3 mb-md-0"
                              id="coinPortalImage"
                              src="assets/img/coin-explorer-main-new.png">
                     </div>
                     <div class="col-md-5">
-                        <h3>Coinetc.</h3>
-                        <h5>Online portal with trending news stories, the latest asset prices, and market data on over
-                            13,000
-                            Cryptocurrencies</h5>
+                        <h3>PFolie</h3>
+                        <h5>Financial portfolio manager and asset tracker, features include:
+                            aggregated trending news, current and historical asset prices, interactive charts, and
+                            market data
+                            13,000 Cryptocurrencies</h5>
                         <div class="d-inline-block mt-1 mb-1 p-2">
                             <div class="badge text-white">Angular</div>
                             <div class="badge text-white">JavaScript</div>
@@ -169,7 +179,7 @@
                             <div class="badge text-white">PrimeNg</div>
                         </div>
                         <div class="flex-d">
-                            <a href="https://www.coinetc.net" type="button" target="_blank"
+                            <a href="https://www.pfolie.com" type="button" target="_blank"
                                class="text-white btn btn-primary">
                                 Launch App <i class="fas fa-rocket"></i>
                             </a>
@@ -714,19 +724,36 @@
                          class="float-right mr-5">
                 </div>
             </div>
-            <section class="about">
+            <section class="about astronaut-flying-towards-overlay">
                 <div class="about--banner">
-                    <p><small>About Me</small></p>
-                    <p> I have a bottomless reservoir of curiosity for software and computing <br> and am proficient
-                        with multiple programming
-                        languages.<br>
-                        <span id="insertYearsExperience"></span>
-                        <br> to rapidly code,
-                        test, debug, and deploy innovative enterprise<br> software solutions.<br><br>
-                        I'm enthusiastic about supporting open-source software projects. <br>
-                        In free time I like to build projects like the ones above,<br>
-                        tinker with DIY electronics, play/ record music,<br> and find new hiking spots to
-                        explore with my dogs.<br>
+                    <div class="container">
+                        <div class="row w-100">
+                            <span style="font-size: calc(3vh + 1vw);z-index: 150; text-align: center; width: 100%;margin-top:-80px">About Me</span>
+                            <br><br>
+                        </div>
+                        <div class="row w-100 m-1 p-1">
+                            <div class="col-md-4">
+                                <div class="banner--image">
+                                    <img class="img-fluid" src="assets/img/harry_profile_pic_new-removebg-preview.png"
+                                         alt="about-me-harry-img" width="504" height="495">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                    <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
+                                I have a bottomless reservoir of curiosity for software and computing
+                                    and am proficient with multiple programming languages.
+                                    <span id="insertYearsExperience"></span> to rapidly code, test, debug, and deploy
+                                    innovative enterprise software
+                                    solutions. I'm enthusiastic about supporting open-source software projects.
+                                    In free time I like to build projects like the ones above,
+                                    tinker with DIY electronics, play/ record music, and find new hiking spots to
+                                    explore with my dogs.
+                                </span><br><br>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="about--options">
@@ -769,8 +796,6 @@
                          style="height: auto;width: 20%; opacity: 0.5;">
                 </div>
             </div>
-            <hr>
-
 
             <!-----------------------------------------------  Resume/ Downloads ---------------------------------------------------->
             <div class="section--header" id="downloads">
@@ -780,14 +805,14 @@
             </div>
             <div class="download--wrapper">
                 <section class="downloads">
-                    <div class="row p-5 w-100 align-content-center text-center">
-                            <a href="assets/img/HarryDulaneyResume.pdf" download="HarryDulaneyResume"
-                               type="application/pdf"
-                               class="download--image">
-                                <img src="assets/img/resume_icon_img.png" alt="Harry Dulaney Resume" width="322"
-                                     height="409" style="cursor: pointer">
-                                <i class="fas fa-download" id="resume--download-icon"></i>
-                            </a>
+                    <div class="row p-5 w-100 align-content-center text-center ml-1">
+                        <a href="assets/img/HarryDulaneyResume.pdf" download="HarryDulaneyResume"
+                           type="application/pdf"
+                           class="download--image">
+                            <img src="assets/img/resume_icon_img.png" alt="Harry Dulaney Resume" width="164"
+                                 height="205" style="cursor: pointer">
+                            <i class="fas fa-download" id="resume--download-icon"></i>
+                        </a>
                     </div>
 
                 </section>
@@ -803,7 +828,7 @@
 
         <!-- Contact Section -->
         <section class="contact">
-            <div class="container">
+            <div class="container cat--background-layout">
                 <div class="container">
                     <div class="row d-flex justify-content-center">
                         <a class="mr-3" style="font-size: 4rem;color:white"
@@ -882,9 +907,7 @@
         </section>
     </main>
 </div>
-<!--<div hidden class="blog&#45;&#45;render-frame">-->
-<!--    <iframe src="https://dev-blog-olive.vercel.app/posts"></iframe>-->
-<!--</div>-->
+
 
 <footer id="footer"><p style="text-align: center;font-size: 15px; color: seashell">
     ©2021 Harry Dulaney<br></p></footer>
@@ -904,6 +927,5 @@
         crossorigin="anonymous"></script>
 <script async defer src="assets/js/main.js"></script>
 <script async defer src="https://www.google.com/recaptcha/api.js"></script>
-
 </body>
 </html>
