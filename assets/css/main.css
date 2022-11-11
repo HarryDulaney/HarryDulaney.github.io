@@ -106,6 +106,10 @@ a:hover {
     color: var(--icon-hover) !important;
 }
 
+.fa-twitter-square:hover {
+    color: var(--icon-hover) !important;
+}
+
 #nav-title {
     color: var(--text-primary);
     text-decoration: none;
