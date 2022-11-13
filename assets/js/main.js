@@ -71,7 +71,7 @@ $(document).ready(function () {
     // }
     // }
     /* Calculate + render years of experience */
-    let startDate = new Date(2020, 4, 1);
+    const startDate = new Date(2020, 4, 1);
     let elapsedTimeMillis = Date.now() - startDate.getTime();
     let elapsedTimeYears = elapsedTimeMillis / 31557600000; // Divide by millis in one year
     let yearsExpSnippet = 'I have ' + (elapsedTimeYears).toFixed(1) + ' years of professional experience working on Agile project teams';
@@ -128,7 +128,6 @@ function openBlog() {
         translateX: 0
     }));
 
-
     tl.add(gsap.to('#nav-menu-downloads', { display: 'none', duration: 0.1 }));
     tl.add(gsap.to('#nav-menu-intro', { display: 'none', duration: 0.1 }));
     tl.add(gsap.to('#nav-menu-project', { display: 'none', duration: 0.1 }));
@@ -141,12 +140,10 @@ function openBlog() {
             </a>`;
     });
 
-
     isBlog = true;
 }
 
 function closeBlog() {
-
     isBlog = false;
 }
 
@@ -194,7 +191,7 @@ function getAllRepoStats() {
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
-    const COIN_EXPLORER = 'coin-explorer';
+    const PFOLIE = 'pfolie';
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', API_BASE + REPOS_URL + PAGE_COUNT_QUERY, true);
@@ -229,7 +226,7 @@ function getAllRepoStats() {
                     const t2 = new Date().toLocaleTimeString();
                     const d2 = new Date().toLocaleDateString();
                     secertTownsUpdateTime[0].innerHTML = (`<div>${d2} ${t2}</div>`);
-                    break
+                    break;
 
                 case DEEZER_APP:
                     /* Set Deezer Web App Github Stats */
@@ -243,6 +240,7 @@ function getAllRepoStats() {
                     const t3 = new Date().toLocaleTimeString();
                     const d3 = new Date().toLocaleDateString();
                     deezerUpdateTime[0].innerHTML = (`<div>${d3} ${t3}</div>`);
+                    break;
 
                 case INTRO_JAVA:
                     /* Set Intro to Java Programming GitHub Stats */
@@ -256,6 +254,7 @@ function getAllRepoStats() {
                     const t4 = new Date().toLocaleTimeString();
                     const d4 = new Date().toLocaleDateString();
                     introJavaUpdated[0].innerHTML = (`<div>${d4} ${t4}</div>`);
+                    break;
 
                 case FILE_COMM:
                     /* Set File Commander GitHub Stats */
@@ -269,7 +268,7 @@ function getAllRepoStats() {
                     const t5 = new Date().toLocaleTimeString();
                     const d5 = new Date().toLocaleDateString();
                     fileCommUpdated[0].innerHTML = (`<div>${d5} ${t5}</div>`);
-                    break
+                    break;
 
                 case CONTACT_LIST_APP:
                     /* Set Contact List App GitHub Stats */
@@ -283,7 +282,7 @@ function getAllRepoStats() {
                     const t6 = new Date().toLocaleTimeString();
                     const d6 = new Date().toLocaleDateString();
                     contactAppUpdate[0].innerHTML = (`<div>${d6} ${t6}</div>`);
-                    break
+                    break;
 
                 case NOTES_ANDROID:
                     /* Set Notes 4 Android GitHub Stats */
@@ -297,7 +296,7 @@ function getAllRepoStats() {
                     const t7 = new Date().toLocaleTimeString();
                     const d7 = new Date().toLocaleDateString();
                     updateDateTime[0].innerHTML = (`<div>${d7} ${t7}</div>`);
-                    break
+                    break;
 
                 case STOCK_PREDICTOR:
                     /* Set Stock Picker GitHub Stats */
@@ -311,9 +310,20 @@ function getAllRepoStats() {
                     const t8 = new Date().toLocaleTimeString();
                     const d8 = new Date().toLocaleDateString();
                     updateTime[0].innerHTML = (`<div>${d8} ${t8}</div>`);
-                    break
+                    break;
 
-                default:
+                case PFOLIE:
+                    /* Set Pfolie GitHub Stats */
+                    let pfolieAppStats = document.getElementById('pfolie-app-stats');
+                    let pfolieTime = pfolieAppStats.getElementsByClassName('git-stats-datetime');
+                    let pfolieStars = document.getElementById('pfolie-stars');
+                    let pfolieForks = document.getElementById('pfolie-forks');
+                    pfolieStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                    pfolieForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                    /* Set Last Updated */
+                    const t9 = new Date().toLocaleTimeString();
+                    const d9 = new Date().toLocaleDateString();
+                    pfolieTime[0].innerHTML = (`<div>${d9} ${t9}</div>`);
                     break;
             }
         }
