@@ -94,19 +94,23 @@ a:hover {
     color: var(--text-header);
 }
 
-.fa-github-square:hover {
+a .fa-github:hover {
     color: var(--icon-hover) !important;
 }
 
-.fa-linkedin:hover {
+a .fa-linkedin:hover {
     color: var(--icon-hover) !important;
 }
 
-.fa-facebook-square:hover {
+a .fa-facebook:hover {
     color: var(--icon-hover) !important;
 }
 
-.fa-twitter-square:hover {
+a .fa-twitter:hover {
+    color: var(--icon-hover) !important;
+}
+
+a .fa-stack-overflow:hover {
     color: var(--icon-hover) !important;
 }
 
@@ -195,7 +199,6 @@ button, select {
 }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    -webkit-appearance: button;
     cursor: pointer
 }
 
@@ -328,10 +331,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-.slider.round {
-    border-radius: 34px;
-    content: element(#something);
-}
 
 .slider.round:before {
     border-radius: 50%;
