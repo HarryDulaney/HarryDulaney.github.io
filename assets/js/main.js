@@ -184,14 +184,12 @@ function getAllRepoStats() {
     const REPOS_URL = '/repos';
     const PAGE_COUNT_QUERY = '?per_page=40';
     const INTRO_JAVA = 'intro-to-java-programming';
-    const SECRET_TOWNS = 'secrettowns'
     const NOTES_ANDROID = 'notes-android-app';
     const CONTACT_LIST_APP = 'Contact-List-Android';
     const FILE_COMM = 'file-commander';
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
-    const PFOLIE = 'pfolie';
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', API_BASE + REPOS_URL + PAGE_COUNT_QUERY, true);
@@ -212,20 +210,6 @@ function getAllRepoStats() {
                     const t1 = new Date().toLocaleTimeString();
                     const d1 = new Date().toLocaleDateString();
                     simAirUpdateTime[0].innerHTML = (`<div>${t1} ${d1}</div>`);
-                    break;
-
-                case SECRET_TOWNS:
-                    /* Set Secrettowns.con Github Stats */
-                    let secretTownsStats = document.getElementById('secret-towns-stats');
-                    let secertTownsUpdateTime = secretTownsStats.getElementsByClassName('git-stats-datetime');
-                    let secretTownsStars = document.getElementById('secret-towns-stars');
-                    let secretTownsForks = document.getElementById('secret-towns-forks');
-                    secretTownsStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    secretTownsForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t2 = new Date().toLocaleTimeString();
-                    const d2 = new Date().toLocaleDateString();
-                    secertTownsUpdateTime[0].innerHTML = (`<div>${d2} ${t2}</div>`);
                     break;
 
                 case DEEZER_APP:
@@ -311,20 +295,7 @@ function getAllRepoStats() {
                     const d8 = new Date().toLocaleDateString();
                     updateTime[0].innerHTML = (`<div>${d8} ${t8}</div>`);
                     break;
-
-                case PFOLIE:
-                    /* Set Pfolie GitHub Stats */
-                    let pfolieAppStats = document.getElementById('pfolie-app-stats');
-                    let pfolieTime = pfolieAppStats.getElementsByClassName('git-stats-datetime');
-                    let pfolieStars = document.getElementById('pfolie-stars');
-                    let pfolieForks = document.getElementById('pfolie-forks');
-                    pfolieStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    pfolieForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t9 = new Date().toLocaleTimeString();
-                    const d9 = new Date().toLocaleDateString();
-                    pfolieTime[0].innerHTML = (`<div>${d9} ${t9}</div>`);
-                    break;
+   
             }
         }
 
