@@ -179,7 +179,6 @@ function toggleExpandProjects() {
  */
 function getAllRepoStats() {
     const API_BASE = 'https://api.github.com/users/harrydulaney';
-    const API_REPOS_BASE = 'https://api.github.com/repos/harrydulaney/REPO_NAME';
     const VIEWS_COUNT = '/traffic/popular/referrers';
     const REPOS_URL = '/repos';
     const PAGE_COUNT_QUERY = '?per_page=40';
