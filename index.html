@@ -46,22 +46,30 @@
     >
     <link
         rel="stylesheet"
-        href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-    />
-    <link
-        rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous"
     >
     <link
         rel="stylesheet"
-        href="assets/css/main.css"
+        href="./assets/css/styles.css"
     >
-    <script
-        defer
-        src="/assets/vendor/fa/all.js"
-    ></script>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -105,42 +113,57 @@
     <nav class="top--navbar">
         <div class="nav--items">
             <nav class="mobile--nav">
-                <ul
-                    class="mobile-menu"
-                    aria-labelledby="expandMenu"
-                    role="menu"
-                >
-                    <li><a
-                            href="#top"
-                            style="text-decoration: none"
-                            id="mobile-menu-intro"
-                        >Intro</a></li>
-                    <li><a
-                            href="#project"
-                            style="text-decoration: none"
-                            id="mobile-menu-project"
-                        >Projects</a></li>
-                    <li><a
-                            href="#about"
-                            style="text-decoration: none"
-                            id="mobile-menu-about"
-                        >About Me</a></li>
-                    <li><a
-                            href="#contact"
-                            style="text-decoration: none"
-                            id="mobile-menu-contact"
-                        >Contact</a></li>
-                    <li><a
-                            href="#downloads"
-                            style="text-decoration: none"
-                            id="mobile-menu-downloads"
-                        >Resume</a></li>
-                    <!--
-                                <li><a id="blog&#45;&#45;link-mobile" href="#" style="text-decoration: none">Blog</a></li>
-                -->
+                <div class="row w-100">
+                    <div class="float-left w-50">
+                        <ul
+                            class="mobile-menu"
+                            aria-labelledby="expandMenu"
+                            role="menu"
+                        >
+                            <li><a
+                                    href="#top"
+                                    id="mobile-menu-intro"
+                                >Intro</a></li>
+                            <li><a
+                                    href="#project"
+                                    id="mobile-menu-project"
+                                >Projects</a></li>
+                            <li><a
+                                    href="#about"
+                                    id="mobile-menu-about"
+                                >About Me</a></li>
+                            <li><a
+                                    href="#contact"
+                                    id="mobile-menu-contact"
+                                >Contact</a></li>
+                            <li><a
+                                    href="#downloads"
+                                    id="mobile-menu-downloads"
+                                >Resume</a></li>
 
-                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="float-right w-50 p-5 mt-5 ms-5">
+                        <div class="theme-switch-container">
+                            <label
+                                id="theme-switch-label-id"
+                                class="switch"
+                            >
+                                <input
+                                    type="checkbox"
+                                    onchange="toggleTheme()"
+                                    id="theme-switch-id"
+                                >
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
             </nav>
+
             <div
                 id="home--links"
                 class="res--links align-middle m-1 p-1"
@@ -148,41 +171,44 @@
                 <a
                     href="#top"
                     class="m-sm-3"
-                    style="text-decoration: none"
                     id="nav-menu-intro"
                 >Intro</a>
                 <a
                     href="#project"
                     class="m-sm-3"
-                    style="text-decoration: none"
                     id="nav-menu-project"
                 >Projects</a>
                 <a
                     href="#about"
                     class="m-sm-3"
-                    style="text-decoration: none"
                     id="nav-menu-about"
                 >About Me</a>
                 <a
                     href="#contact"
                     class="m-sm-3"
-                    style="text-decoration: none"
                     id="nav-menu-contact"
                 >Contact</a>
                 <a
                     href="#downloads"
                     class="m-sm-3"
-                    style="text-decoration: none;"
                     id="nav-menu-downloads"
                 >
-                    <span>Resume</span>
+                    Resume
                 </a>
-                <!--         <a href="#" id="blog&#45;&#45;link" class="m-sm-3" style="text-decoration: none;">
-                         <span>Blog</span>
-                         <span id="blog&#45;&#45;link-arrow" class="hide&#45;&#45;h"><i class="fas fa-arrow-right"></i></span>
-                     </a>-->
-
-                <div class="float-right align-middle">
+                <div class="theme-switch-container">
+                    <label
+                        id="theme-switch-label-id"
+                        class="switch"
+                    >
+                        <input
+                            type="checkbox"
+                            onchange="toggleTheme()"
+                            id="theme-switch-id"
+                        >
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="float-right align-middle social--full">
                     <a
                         href="https://github.com/HarryDulaney/HarryDulaney.github.io"
                         target="_blank"
@@ -191,48 +217,37 @@
                             src="assets/icon/fork-me-on-github.png"
                             alt="fork me on github icon"
                         ></a>
-                    <span
-                        class="optional"
-                        style="margin-right: 3rem"
-                    ><a
-                            href="https://harrydulaney.com"
-                            style="text-decoration: none;"
-                        >harrydulaney.com</a></span>
+                    <span class="home--nav-link"><a href="https://harrydulaney.com">harrydulaney.com</a></span>
                     <a
-                        class="m-1"
-                        style="font-size: 1.4rem;color:white;text-decoration: none;"
+                        class="social--link"
                         href="https://www.github.com/harrydulaney"
                         target="_blank"
                     >
                         <i class="fab fa-github"></i>
                     </a>
                     <a
-                        class="m-1"
-                        style="font-size: 1.4rem;color:white;text-decoration: none;"
+                        class="social--link"
                         href="https://www.linkedin.com/in/harrydulaney"
                         target="_blank"
                     >
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a
-                        class="m-1"
-                        style="font-size: 1.4rem;color:white;text-decoration: none;"
+                        class="social--link"
                         href="https://www.facebook.com/HarryGDulaney"
                         target="_blank"
                     >
                         <i class="fab fa-facebook"></i>
                     </a>
                     <a
-                        class="m-1"
-                        style="font-size: 1.4rem;color:white;text-decoration: none;"
+                        class="social--link"
                         href="https://www.twitter.com/DulaneyHarry"
                         target="_blank"
                     >
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a
-                        class="m-1"
-                        style="font-size: 1.4rem;color:white;text-decoration: none;"
+                        class="social--link"
                         href="https://stackoverflow.com/users/11600831/harry-dulaney"
                         target="_blank"
                     >
@@ -246,7 +261,6 @@
             >
                 <a
                     class="m-1 p-1"
-                    style="font-size: 1.6rem;color:white;text-decoration: none;"
                     href="https://www.github.com/harrydulaney"
                     target="_blank"
                 >
@@ -254,7 +268,6 @@
                 </a>
                 <a
                     class="m-1 p-1"
-                    style="font-size: 1.6rem;color:white;text-decoration: none;"
                     href="https://www.linkedin.com/in/harrydulaney"
                     target="_blank"
                 >
@@ -262,7 +275,6 @@
                 </a>
                 <a
                     class="m-1 p-1"
-                    style="font-size: 1.6rem;color:white;text-decoration: none;"
                     href="https://www.facebook.com/HarryGDulaney"
                     target="_blank"
                 >
@@ -270,7 +282,6 @@
                 </a>
                 <a
                     class="m-1 p-1"
-                    style="font-size: 1.6rem;color:white;text-decoration: none;"
                     href="https://www.twitter.com/DulaneyHarry"
                     target="_blank"
                 >
@@ -278,7 +289,6 @@
                 </a>
                 <a
                     class="m-1 mr-3 p-1"
-                    style="font-size: 1.6rem;color:white;text-decoration: none;"
                     href="https://stackoverflow.com/users/11600831/harry-dulaney"
                     target="_blank"
                 >
@@ -391,19 +401,19 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Pfolie.com</h3>
-                            <h6>Creator, Programmer, Designer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Programmer, Designer, Maintainer</h6>
                             <h5>Financial portfolio manager and asset tracker, features include:
                                 aggregated trending news, current and historical asset prices, interactive charts, and
                                 market data on 13,000+ cryptocurrencies</h5>
                             <div class="d-inline-block mt-1 mb-1 p-2">
-                                <div class="badge text-white">Angular</div>
-                                <div class="badge text-white">JavaScript</div>
-                                <div class="badge text-white">Node.js</div>
-                                <div class="badge text-white">Express.js</div>
-                                <div class="badge text-white">Chart.js</div>
-                                <div class="badge text-white">Firebase</div>
-                                <div class="badge text-white">Postgresql</div>
-                                <div class="badge text-white">PrimeNg</div>
+                                <div class="badge">Angular</div>
+                                <div class="badge">JavaScript</div>
+                                <div class="badge">Node.js</div>
+                                <div class="badge">Express.js</div>
+                                <div class="badge">Chart.js</div>
+                                <div class="badge">Firebase</div>
+                                <div class="badge">Postgresql</div>
+                                <div class="badge">PrimeNg</div>
                             </div>
                             <div class="project--link">
                                 <a
@@ -420,7 +430,6 @@
                     <hr>
 
 
-
                     <!-------------------------------------------- Intro to Java Programming Solutions ----------------------------------------->
                     <div class="row">
                         <div class="col-md-7">
@@ -432,15 +441,15 @@
                         </div>
                         <div class="col-md-5">
                             <h4>Solutions to Programming Exercises</h4>
-                            <h6>Creator, Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Programmer, Maintainer</h6>
                             <h5>Daniel Liang’s, Java Programming (10th Edition) </h5>
                             <div class="d-inline-block mt-1 mb-1 p-1">
-                                <div class="badge text-white">Java</div>
-                                <div class="badge text-white">Algorithms</div>
-                                <div class="badge text-white">Data Structures</div>
-                                <div class="badge text-white">Computer Science Fundamentals</div>
-                                <div class="badge text-white">Algorithm Analysis and Optimization</div>
-                                <div class="badge text-white">GUI programming</div>
+                                <div class="badge">Java</div>
+                                <div class="badge">Algorithms</div>
+                                <div class="badge">Data Structures</div>
+                                <div class="badge">Computer Science Fundamentals</div>
+                                <div class="badge">Algorithm Analysis and Optimization</div>
+                                <div class="badge">GUI programming</div>
                             </div>
                             <div class="flex-d">
                                 <a
@@ -456,8 +465,8 @@
                                 id="intro-java-app-stats"
                             >
                                 <br>
-                                <div class="container-fluid">
-                                    <div class="row text-center text-white justify-content-center">
+                                <div class="container-fluid git-stats-label-text">
+                                    <div class="row text-center justify-content-center">
                                         GitHub Stats
                                     </div>
                                     <div class="row text-center">
@@ -469,7 +478,7 @@
                                                         src="assets/icon/stargazer-icon.svg"
                                                     />
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="intro-java-program-stars"
                                                     ></div>
                                                 </div>
@@ -478,12 +487,9 @@
                                         <div class="col">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <img
-                                                        alt="fork-icon"
-                                                        src="assets/icon/git-fork-icon.svg"
-                                                    />
+                                                    <i class="fas fa-code-branch pt-2"></i>
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="intro-java-program-forks"
                                                     ></div>
                                                 </div>
@@ -494,21 +500,18 @@
                                     <div class="row text-center">
                                         <div class="container">
                                             <div class="row justify-content-center">
-                                                <div
-                                                    class="text-white"
-                                                    style="font-size: x-small"
-                                                >Updated:</div>
+                                                <div style="font-size: x-small">Updated:</div>
                                             </div>
                                             <div class="row justify-content-center">
                                                 <div
-                                                    class="git-stats-datetime text-white"
+                                                    class="git-stats-datetime"
                                                     style="font-size: x-small"
                                                 ></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row text-center text-white justify-content-center git-stats-datetime">
+                                <div class="row text-center justify-content-center git-stats-datetime">
                                 </div>
                             </div>
                         </div>
@@ -528,18 +531,18 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Airline Reservation System</h3>
-                            <h6>Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Programmer, Maintainer</h6>
                             <h5>Web App with Admin and User roles that simulates a flight reservation system. Users can
                                 book, track, delete, and edit
                                 reservations, and Admins can add new, edit, delete, and update flights.</h5>
                             <div class="d-inline-block mt-1 mb-1 p-2">
-                                <div class="badge text-white">Java</div>
-                                <div class="badge text-white">JavaScript</div>
-                                <div class="badge text-white">AJAX</div>
-                                <div class="badge text-white">Spring Boot</div>
-                                <div class="badge text-white">Thymeleaf</div>
-                                <div class="badge text-white">OAuth2.0</div>
-                                <div class="badge text-white">Okta Java SDK</div>
+                                <div class="badge">Java</div>
+                                <div class="badge">JavaScript</div>
+                                <div class="badge">AJAX</div>
+                                <div class="badge">Spring Boot</div>
+                                <div class="badge">Thymeleaf</div>
+                                <div class="badge">OAuth2.0</div>
+                                <div class="badge">Okta Java SDK</div>
                             </div>
                             <div class="project--link">
                                 <a
@@ -556,8 +559,8 @@
                                 id="sim-air-app-stats"
                             >
                                 <br>
-                                <div class="container-fluid">
-                                    <div class="row text-center text-white justify-content-center">
+                                <div class="container-fluid git-stats-label-text">
+                                    <div class="row text-center justify-content-center">
                                         GitHub Stats
                                     </div>
                                     <div class="row text-center">
@@ -569,7 +572,7 @@
                                                         src="assets/icon/stargazer-icon.svg"
                                                     />
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="sim-air-stars"
                                                     ></div>
                                                 </div>
@@ -578,12 +581,9 @@
                                         <div class="col">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <img
-                                                        alt="fork-icon"
-                                                        src="assets/icon/git-fork-icon.svg"
-                                                    />
+                                                    <i class="fas fa-code-branch pt-2"></i>
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="sim-air-forks"
                                                     ></div>
                                                 </div>
@@ -593,14 +593,11 @@
                                     <div class="row text-center">
                                         <div class="container">
                                             <div class="row justify-content-center">
-                                                <div
-                                                    class="text-white"
-                                                    style="font-size: x-small"
-                                                >Updated:</div>
+                                                <div style="font-size: x-small">Updated:</div>
                                             </div>
                                             <div class="row justify-content-center">
                                                 <div
-                                                    class="git-stats-datetime text-white"
+                                                    class="git-stats-datetime"
                                                     style="font-size: x-small"
                                                 ></div>
                                             </div>
@@ -626,21 +623,21 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Music and Discography Application</h3>
-                            <h6>Creator, Designer, Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Designer, Programmer, Maintainer</h6>
                             <h5>Web application that utilizes Deezer's open-source API for Artist, Album, and Track
                                 data.
                                 Users can search for recording artists, listen to tracks, see album artwork/ album info,
                                 and
                                 discover new music.</h5>
                             <div class="d-inline-block mt-1 mb-1 p-2">
-                                <div class="badge text-white">Java</div>
-                                <div class="badge text-white">Spring Boot</div>
-                                <div class="badge text-white">Spring Security</div>
-                                <div class="badge text-white">Spring MVC (Thymeleaf)</div>
-                                <div class="badge text-white">Apache HttpClient</div>
-                                <div class="badge text-white">Heroku</div>
-                                <div class="badge text-white">Deezer Open Source API</div>
-                                <div class="badge text-white">Jackson Object Mapping</div>
+                                <div class="badge">Java</div>
+                                <div class="badge">Spring Boot</div>
+                                <div class="badge">Spring Security</div>
+                                <div class="badge">Spring MVC (Thymeleaf)</div>
+                                <div class="badge">Apache HttpClient</div>
+                                <div class="badge">Heroku</div>
+                                <div class="badge">Deezer Open Source API</div>
+                                <div class="badge">Jackson Object Mapping</div>
                             </div>
                             <div class="project--link">
                                 <a
@@ -665,8 +662,8 @@
                                 id="deezer-app-stats"
                             >
                                 <br>
-                                <div class="container-fluid">
-                                    <div class="row text-center text-white justify-content-center">
+                                <div class="container-fluid git-stats-label-text">
+                                    <div class="row text-center justify-content-center">
                                         GitHub Stats
                                     </div>
                                     <div class="row text-center">
@@ -678,7 +675,7 @@
                                                         src="assets/icon/stargazer-icon.svg"
                                                     />
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="deezer-stars"
                                                     ></div>
                                                 </div>
@@ -687,12 +684,9 @@
                                         <div class="col">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <img
-                                                        alt="fork-icon"
-                                                        src="assets/icon/git-fork-icon.svg"
-                                                    />
+                                                    <i class="fas fa-code-branch pt-2"></i>
                                                     <div
-                                                        class="text-white p-1"
+                                                        class="p-1"
                                                         id="deezer-forks"
                                                     ></div>
                                                 </div>
@@ -702,14 +696,11 @@
                                     <div class="row text-center">
                                         <div class="container">
                                             <div class="row justify-content-center">
-                                                <div
-                                                    class="text-white"
-                                                    style="font-size: x-small"
-                                                >Updated:</div>
+                                                <div style="font-size: x-small">Updated:</div>
                                             </div>
                                             <div class="row justify-content-center">
                                                 <div
-                                                    class="git-stats-datetime text-white"
+                                                    class="git-stats-datetime"
                                                     style="font-size: x-small"
                                                 ></div>
                                             </div>
@@ -777,17 +768,17 @@
                         </div>
                         <div class="col-md-5">
                             <h3>SecretTowns.com</h3>
-                            <h6>Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Programmer, Maintainer</h6>
                             <h5>Custom animated webpage for the indie rock band Secret Towns. Artwork by Luke Thorton
                             </h5>
                             <div class="d-inline-block mt-1 mb-1 p-2">
-                                <div class="badge text-white">JavaScript</div>
-                                <div class="badge text-white">Vue.js</div>
-                                <div class="badge text-white">Canvas API</div>
-                                <div class="badge text-white">Animation API</div>
-                                <div class="badge text-white">Green Sock (GSAP)</div>
-                                <div class="badge text-white">Vercel</div>
-                                <div class="badge text-white">GitOps</div>
+                                <div class="badge">JavaScript</div>
+                                <div class="badge">Vue.js</div>
+                                <div class="badge">Canvas API</div>
+                                <div class="badge">Animation API</div>
+                                <div class="badge">Green Sock (GSAP)</div>
+                                <div class="badge">Vercel</div>
+                                <div class="badge">GitOps</div>
 
                             </div>
                             <div class="project--link">
@@ -832,14 +823,14 @@
                             </div>
                             <div class="col-md-5">
                                 <h3>Notes For Android</h3>
-                                <h6>Creator, Designer, Programmer, Maintainer</h6>
+                                <h6 class="project--sub-text">Creator, Designer, Programmer, Maintainer</h6>
                                 <div class="d-inline-block mt-1 mb-1 p-2">
-                                    <div class="badge text-white">Android SDK</div>
-                                    <div class="badge text-white">Firebase</div>
-                                    <div class="badge text-white">Java</div>
-                                    <div class="badge text-white">XML Markup GUI</div>
-                                    <div class="badge text-white">Gradle</div>
-                                    <div class="badge text-white">SQLite</div>
+                                    <div class="badge">Android SDK</div>
+                                    <div class="badge">Firebase</div>
+                                    <div class="badge">Java</div>
+                                    <div class="badge">XML GUI</div>
+                                    <div class="badge">Gradle</div>
+                                    <div class="badge">SQLite</div>
                                 </div>
                                 <div class="flex-d">
                                     <a
@@ -855,8 +846,8 @@
                                     id="notes-4-android-stats"
                                 >
                                     <br>
-                                    <div class="container-fluid">
-                                        <div class="row text-center text-white justify-content-center">
+                                    <div class="container-fluid git-stats-label-text">
+                                        <div class="row text-center justify-content-center">
                                             GitHub Stats
                                         </div>
                                         <div class="row text-center">
@@ -868,7 +859,7 @@
                                                             src="assets/icon/stargazer-icon.svg"
                                                         />
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="notes-4-android-stars"
                                                         ></div>
                                                     </div>
@@ -877,12 +868,9 @@
                                             <div class="col">
                                                 <div class="container">
                                                     <div class="row justify-content-center">
-                                                        <img
-                                                            alt="fork-icon"
-                                                            src="assets/icon/git-fork-icon.svg"
-                                                        />
+                                                        <i class="fas fa-code-branch pt-2"></i>
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="notes-4-android-forks"
                                                         ></div>
                                                     </div>
@@ -892,14 +880,11 @@
                                         <div class="row text-center">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <div
-                                                        class="text-white"
-                                                        style="font-size: x-small"
-                                                    >Updated:</div>
+                                                    <div style="font-size: x-small">Updated:</div>
                                                 </div>
                                                 <div class="row justify-content-center">
                                                     <div
-                                                        class="git-stats-datetime text-white"
+                                                        class="git-stats-datetime"
                                                         style="font-size: x-small"
                                                     ></div>
                                                 </div>
@@ -923,15 +908,15 @@
                             </div>
                             <div class="col-md-5">
                                 <h3>File Commander v1.0</h3>
-                                <h6>Creator, Designer, Programmer, Maintainer</h6>
+                                <h6 class="project--sub-text">Creator, Designer, Programmer, Maintainer</h6>
                                 <div class="d-inline-block mt-1 mb-1 p-2">
-                                    <div class="badge text-white">Java</div>
-                                    <div class="badge text-white">Spring Boot</div>
-                                    <div class="badge text-white">Spring Service Architecture</div>
-                                    <div class="badge text-white">JavaFx</div>
-                                    <div class="badge text-white">Apache POI</div>
-                                    <div class="badge text-white">Maven</div>
-                                    <div class="badge text-white">PdfBox</div>
+                                    <div class="badge">Java</div>
+                                    <div class="badge">Spring Boot</div>
+                                    <div class="badge">Spring Service Architecture</div>
+                                    <div class="badge">JavaFx</div>
+                                    <div class="badge">Apache POI</div>
+                                    <div class="badge">Maven</div>
+                                    <div class="badge">PdfBox</div>
                                 </div>
                                 <div class="flex-d">
                                     <a
@@ -946,8 +931,8 @@
                                     id="file-commander-stats"
                                 >
                                     <br>
-                                    <div class="container-fluid">
-                                        <div class="row text-center text-white justify-content-center">
+                                    <div class="container-fluid git-stats-label-text">
+                                        <div class="row text-center justify-content-center">
                                             GitHub Stats
                                         </div>
                                         <div class="row text-center">
@@ -959,7 +944,7 @@
                                                             src="assets/icon/stargazer-icon.svg"
                                                         />
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="file-commander-stars"
                                                         ></div>
                                                     </div>
@@ -968,12 +953,9 @@
                                             <div class="col">
                                                 <div class="container">
                                                     <div class="row justify-content-center">
-                                                        <img
-                                                            alt="fork-icon"
-                                                            src="assets/icon/git-fork-icon.svg"
-                                                        />
+                                                        <i class="fas fa-code-branch pt-2"></i>
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="file-commander-forks"
                                                         ></div>
                                                     </div>
@@ -983,14 +965,11 @@
                                         <div class="row text-center">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <div
-                                                        class="text-white"
-                                                        style="font-size: x-small"
-                                                    >Updated:</div>
+                                                    <div style="font-size: x-small">Updated:</div>
                                                 </div>
                                                 <div class="row justify-content-center">
                                                     <div
-                                                        class="git-stats-datetime text-white"
+                                                        class="git-stats-datetime"
                                                         style="font-size: x-small"
                                                     ></div>
                                                 </div>
@@ -1015,16 +994,16 @@
                             </div>
                             <div class="col-md-5">
                                 <h3>Dynamic Contact List Mobile App</h3>
-                                <h6>Programmer</h6>
+                                <h6 class="project--sub-text">Programmer</h6>
                                 <h5>with Google Maps</h5>
                                 <div class="d-inline-block mt-1 mb-1 p-2">
-                                    <div class="badge text-white">Android SDK</div>
-                                    <div class="badge text-white">Android Studio</div>
-                                    <div class="badge text-white">Java</div>
-                                    <div class="badge text-white">Hardware Controls(Camera, SMS, MMS, Phone)</div>
-                                    <div class="badge text-white">Google Maps SDK</div>
-                                    <div class="badge text-white">Google Cloud Platform</div>
-                                    <div class="badge text-white">SQLite3</div>
+                                    <div class="badge">Android SDK</div>
+                                    <div class="badge">Android Studio</div>
+                                    <div class="badge">Java</div>
+                                    <div class="badge">Hardware Controls(Camera, SMS, MMS, Phone)</div>
+                                    <div class="badge">Google Maps SDK</div>
+                                    <div class="badge">Google Cloud Platform</div>
+                                    <div class="badge">SQLite3</div>
                                 </div>
                                 <div class="flex-d">
                                     <a
@@ -1040,8 +1019,8 @@
                                     id="contact-app-stats"
                                 >
                                     <br>
-                                    <div class="container-fluid">
-                                        <div class="row text-center text-white justify-content-center">
+                                    <div class="container-fluid git-stats-label-text">
+                                        <div class="row text-center justify-content-center">
                                             GitHub Stats
                                         </div>
                                         <div class="row text-center">
@@ -1053,7 +1032,7 @@
                                                             src="assets/icon/stargazer-icon.svg"
                                                         />
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="contact-app-stars"
                                                         ></div>
                                                     </div>
@@ -1062,12 +1041,9 @@
                                             <div class="col">
                                                 <div class="container">
                                                     <div class="row justify-content-center">
-                                                        <img
-                                                            alt="fork-icon"
-                                                            src="assets/icon/git-fork-icon.svg"
-                                                        />
+                                                        <i class="fas fa-code-branch pt-2"></i>
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="contact-app-forks"
                                                         ></div>
                                                     </div>
@@ -1077,14 +1053,11 @@
                                         <div class="row text-center">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <div
-                                                        class="text-white"
-                                                        style="font-size: x-small"
-                                                    >Updated:</div>
+                                                    <div style="font-size: x-small">Updated:</div>
                                                 </div>
                                                 <div class="row justify-content-center">
                                                     <div
-                                                        class="git-stats-datetime text-white"
+                                                        class="git-stats-datetime"
                                                         style="font-size: x-small"
                                                     ></div>
                                                 </div>
@@ -1107,14 +1080,14 @@
                             </div>
                             <div class="col-md-5">
                                 <h3>Stock Price Predictor</h3>
-                                <h6>Programmer</h6>
+                                <h6 class="project--sub-text">Programmer</h6>
                                 <div class="d-inline-block mt-1 mb-1 p-2">
-                                    <div class="badge text-white">Python 3</div>
-                                    <div class="badge text-white">Machine Learning (LSTM)</div>
-                                    <div class="badge text-white">Recursive Neural Network</div>
-                                    <div class="badge text-white">Customized Vader Lexicon</div>
-                                    <div class="badge text-white">Beautiful Soup</div>
-                                    <div class="badge text-white">Web Scraping</div>
+                                    <div class="badge">Python 3</div>
+                                    <div class="badge">Machine Learning (LSTM)</div>
+                                    <div class="badge">Recursive Neural Network</div>
+                                    <div class="badge">Customized Vader Lexicon</div>
+                                    <div class="badge">Beautiful Soup</div>
+                                    <div class="badge">Web Scraping</div>
                                 </div>
 
                                 <a
@@ -1128,8 +1101,8 @@
                                     id="stock-predictor-stats"
                                 >
                                     <br>
-                                    <div class="container-fluid">
-                                        <div class="row text-center text-white justify-content-center">
+                                    <div class="container-fluid git-stats-label-text">
+                                        <div class="row text-center justify-content-center">
                                             GitHub Stats
                                         </div>
                                         <div class="row text-center">
@@ -1141,7 +1114,7 @@
                                                             src="assets/icon/stargazer-icon.svg"
                                                         />
                                                         <div
-                                                            class="text-white p-1"
+                                                            class="p-1"
                                                             id="stock-predictor-stars"
                                                         ></div>
                                                     </div>
@@ -1150,12 +1123,9 @@
                                             <div class="col">
                                                 <div class="container">
                                                     <div class="row justify-content-center">
-                                                        <img
-                                                            alt="fork-icon"
-                                                            src="assets/icon/git-fork-icon.svg"
-                                                        />
+                                                        <i class="fas fa-code-branch pt-2"></i>
                                                         <div
-                                                            class="text-white p-1"
+                                                            class=" p-1"
                                                             id="stock-predictor-forks"
                                                         ></div>
                                                     </div>
@@ -1166,14 +1136,11 @@
                                         <div class="row text-center">
                                             <div class="container">
                                                 <div class="row justify-content-center">
-                                                    <div
-                                                        class="text-white"
-                                                        style="font-size: x-small"
-                                                    >Updated:</div>
+                                                    <div style="font-size: x-small">Updated:</div>
                                                 </div>
                                                 <div class="row justify-content-center">
                                                     <div
-                                                        class="git-stats-datetime text-white"
+                                                        class="git-stats-datetime"
                                                         style="font-size: x-small"
                                                     ></div>
                                                 </div>
@@ -1281,21 +1248,187 @@
 
                     </div>
 
-                    <div
-                        class="container p-0 m-0"
-                        id="skill-chart-wrapper"
+                    <!-- Top Skills -->
+                    <section
+                        class="section skills"
+                        id="skills"
                     >
-                        <canvas id="skill-chart"></canvas>
-                    </div>
+                        <div class="container">
+                            <div class="row section-title justify-content-between">
+                                <h2 style="font-size: small;margin-left: 1rem;">0</h2>
+                                <h2>Top Skills</h2>
+                                <h2 style="font-size: small;margin-right: 1rem">10+</h2>
+                            </div>
+                            <ul class="skills-list">
+                                <li
+                                    class="skills-item"
+                                    id="web-dev-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Web Development</h3>
 
-                    <div
-                        class="container text-white text-center"
-                        style="margin-bottom: 2rem;"
-                    >
-                        <h3>GitHub Contribution Graph</h3>
-                        <div class="calendar">
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+
+                                <li
+                                    class="skills-item"
+                                    id="js-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">JavaScript</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+                                <li
+                                    class="skills-item"
+                                    id="java-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Java</h3>
+                                        <data class="skills-data"></data>
+                                    </div>
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+                                <li
+                                    class="skills-item"
+                                    id="spring-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Spring</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+
+
+                                <li
+                                    class="skills-item"
+                                    id="angular-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Angular</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+                                <li
+                                    class="skills-item"
+                                    id="microservice-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Microservices</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+                                <li
+                                    class="skills-item"
+                                    id="azure-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Azure</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+
+                                <li
+                                    class="skills-item"
+                                    id="k8-skill-exp-elapsed"
+                                >
+                                    <div
+                                        class="wrapper"
+                                        data-years="0"
+                                    >
+                                        <h3 class="skills-title">Kubernetes</h3>
+
+                                        <data class="skills-data"></data>
+                                    </div>
+
+                                    <div class="skills-progress-box">
+                                        <div
+                                            class="skills-progress"
+                                            data-years="0"
+                                        ></div>
+                                    </div>
+                                </li>
+                            </ul>
+
                         </div>
-                    </div>
+                    </section>
+
+
+
                 </section>
 
                 <div
@@ -1414,7 +1547,7 @@
                                         required
                                     />
                                     <label
-                                        class="text-white"
+                                        class="contact-form-label-text"
                                         for="name"
                                     >Full name</label>
                                 </div>
@@ -1429,7 +1562,7 @@
                                         required
                                     />
                                     <label
-                                        class="text-white"
+                                        class="contact-form-label-text"
                                         for="email"
                                     >Email address</label>
                                 </div>
@@ -1451,7 +1584,7 @@
                                         required
                                     ></textarea>
                                     <label
-                                        class="text-white"
+                                        class="contact-form-label-text"
                                         for="message"
                                     >Message</label>
                                 </div>
@@ -1517,27 +1650,14 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"
     ></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
-        integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc="
-        crossorigin="anonymous"
-    ></script>
-    <script src="assets/vendor/github-calendar.min.js"></script>
+    </script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
         integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
         crossorigin="anonymous"
     ></script>
-    <script
-        async
-        defer
-        src="assets/js/main.js"
-    ></script>
-    <script
-        async
-        defer
-        src="https://www.google.com/recaptcha/api.js"
-    ></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 
 </html>
