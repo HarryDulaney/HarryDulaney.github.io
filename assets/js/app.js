@@ -71,7 +71,7 @@ $(document).ready(function () {
     });
 
     /* Calculate + render years of experience */
-    const fullTimeStartDate = new Date(2020, 4, 1);
+    const fullTimeStartDate = new Date(2019, 4, 1);
     const javaStartDate = new Date(2017, 1, 1);
     const springStartDate = new Date(2017, 4, 1);
     const javaScriptStartDate = new Date(2010, 4, 1);
