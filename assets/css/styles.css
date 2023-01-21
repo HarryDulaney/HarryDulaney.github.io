@@ -819,11 +819,14 @@ input:checked+.slider:before {
     padding-left: 1rem;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 3vh;
 
 }
 
 .skills .section-title {
     margin-top: 3rem !important;
+    margin-bottom: 1rem !important;
+    ;
     width: 100% !important;
 }
 
@@ -1379,6 +1382,8 @@ ul .skills-list {
     justify-content: space-evenly;
     list-style: none;
     margin-top: 5vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .about--options a {
@@ -1478,7 +1483,7 @@ ul .skills-list {
 .downloads #resume--download-icon {
     position: absolute;
     transition: .5s ease;
-    height: 80%;
+    font-size: 10.2rem !important;
     opacity: 0;
     width: auto;
     bottom: 0;
