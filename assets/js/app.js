@@ -74,32 +74,32 @@ $(document).ready(function () {
     const fullTimeStartDate = new Date(2019, 4, 1);
     const javaStartDate = new Date(2017, 1, 1);
     const springStartDate = new Date(2017, 4, 1);
-    const javaScriptStartDate = new Date(2010, 4, 1);
+    const javaScriptStartDate = new Date(2014, 4, 1);
     const angularStartDate = new Date(2019, 1, 1);
     const azureCloudStartDate = new Date(2020, 9, 1);
     const kubernetesStartDate = new Date(2021, 4, 1);
     const microServicesStartDate = new Date(2020, 9, 1);
-    const webDevelopmentStartDate = new Date(2010, 1, 1);
+    const webDevelopmentStartDate = new Date(2014, 1, 1);
 
-
+    const restApiStartDate = new Date(2017, 6, 1);
 
 
     renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-        azureCloudStartDate, kubernetesStartDate, microServicesStartDate, webDevelopmentStartDate);
+        azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
     // Fetch and initialize Git status' on projects
     getAllRepoStats();
 
 });
 
 function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-    azureCloudStartDate, kubernetesStartDate, microServicesStartDate, webDevelopmentStartDate) {
+    azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate) {
     /* Set About Me main paragraph years of work experience data */
     let fullTimeElapsedTime = Date.now() - fullTimeStartDate.getTime();
     let fullTimeElapsedYears = fullTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years of professional experience working on Agile project teams';
     let fullTimeWorkElement = document.getElementById('insertYearsExperience');
     fullTimeWorkElement.innerText = fullTimeWorkMessage;
-    /* Set Top Skills years of work experience Java */
+    /* Java */
     let javaTimeElapsedTime = Date.now() - javaStartDate.getTime();
     let javaTimeElapsedYears = javaTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let javaTimeElapsedFormated = javaTimeElapsedYears.toFixed(1);
@@ -112,7 +112,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let javaDataEl = javaProgressBarElement.querySelector('.skills-progress');
     javaDataEl.dataset.years = javaTimeElapsedFormated;
 
-    /* Set Top Skills years of work experience Spring */
+    /* Spring */
     let springTimeElapsedTime = Date.now() - springStartDate.getTime();
     let springTimeElapsedYears = springTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let springTimeFormated = (springTimeElapsedYears).toFixed(1);
@@ -125,7 +125,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let springDataEl = springProgressBarElement.querySelector('.skills-progress');
     springDataEl.dataset.years = springTimeFormated;
 
-    /* Set Top Skills years of work experience JavaScript */
+    /* JavaScript */
     let jsStartElapsedTime = Date.now() - javaScriptStartDate.getTime();
     let jsStartElapsedYears = jsStartElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let jsTimeWorkFormated = (jsStartElapsedYears).toFixed(1);
@@ -138,7 +138,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let jsDataEl = jsProgressBarElement.querySelector('.skills-progress');
     jsDataEl.dataset.years = jsTimeWorkFormated;
 
-    /* Set Top Skills years of work experience Angular */
+    /* Angular */
     let angularElapsedTime = Date.now() - angularStartDate.getTime();
     let angularElapsedYears = angularElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let angularElapsedTimeFormated = (angularElapsedYears).toFixed(1);
@@ -151,7 +151,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let angularDataEl = angularProgressBarElement.querySelector('.skills-progress');
     angularDataEl.dataset.years = angularElapsedTimeFormated;
 
-    /* Set Top Skills years of work experience Azure */
+    /* Azure */
     let azureElapsedTime = Date.now() - azureCloudStartDate.getTime();
     let azureElapsedYears = azureElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let azureElapsedTimeFormated = (azureElapsedYears).toFixed(1);
@@ -164,7 +164,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let azureDataEl = azureProgressBarElement.querySelector('.skills-progress');
     azureDataEl.dataset.years = azureElapsedTimeFormated;
 
-    /* Set Top Skills years of work experience K8s */
+    /* K8s */
     let kubElapsedTime = Date.now() - kubernetesStartDate.getTime();
     let kubElapsedTimeYears = kubElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let kubElapsedFormatted = (kubElapsedTimeYears).toFixed(1);
@@ -177,7 +177,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let kubDataEl = kubProgressBarElement.querySelector('.skills-progress');
     kubDataEl.dataset.years = kubElapsedFormatted;
 
-    /* Set Top Skills years of work experience Microservices */
+    /* Microservices Design Patterns */
     let microServicesElapsedTime = Date.now() - microServicesStartDate.getTime();
     let msElapsedTimeYears = microServicesElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let msElapsedFormated = (msElapsedTimeYears).toFixed(1);
@@ -190,7 +190,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let msDataEl = msProgressBarElement.querySelector('.skills-progress');
     msDataEl.dataset.years = msElapsedFormated;
 
-    /* Set Top Skills years of work experience Web Dev */
+    /* Web Development */
     let webDevTimeElapsedTime = Date.now() - webDevelopmentStartDate.getTime();
     let webDevElapsedTimeYears = webDevTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
     let webDevElapsedTimeFormated = (webDevElapsedTimeYears).toFixed(1);
@@ -202,6 +202,19 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     let webDevProgressBarElement = webDevSkillElement.querySelector('.skills-progress-box');
     let webDevDataEl = webDevProgressBarElement.querySelector('.skills-progress');
     webDevDataEl.dataset.years = webDevElapsedTimeFormated;
+
+    /* Rest APIs */
+    let restApisElapsedTime = Date.now() - restApiStartDate.getTime();
+    let restApisElapsedYears = restApisElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
+    let restApisElapsedFormated = (restApisElapsedYears).toFixed(1);
+    let restApisSkillElement = document.getElementById('rest-apis-skill-exp-elapsed');
+    let restApisWrapperElement = restApisSkillElement.querySelector('.wrapper');
+    restApisWrapperElement.dataset.years = restApisElapsedFormated;
+    let restApiSkillDataElement = restApisSkillElement.querySelector('.skills-data');
+    restApiSkillDataElement.innerText = restApisElapsedFormated + ' years';
+    let restApiProgressBarElement = restApisSkillElement.querySelector('.skills-progress-box');
+    let restApiDataEl = restApiProgressBarElement.querySelector('.skills-progress');
+    restApiDataEl.dataset.years = restApisElapsedFormated;
 
 }
 
