@@ -285,17 +285,9 @@ th {
     display: block;
     background: url("../img/wolf__blue_painted.png") no-repeat right;
     background-size: contain;
-    /*background-blend-mode: lighten;*/
     z-index: 0;
 }
 
-.splash-two-overlay {
-    position: relative;
-    display: block;
-    background: url("../img/purple__splash.png") no-repeat center;
-    background-size: contain;
-    z-index: 0;
-}
 
 .astronaut-flying-towards-overlay {
     position: relative;
@@ -668,6 +660,7 @@ input:checked+.slider:before {
 }
 
 
+
 @media screen and (max-width: 600px) {
     .res--links {
         display: none;
@@ -698,8 +691,8 @@ input:checked+.slider:before {
     left: 0;
     right: 0;
     height: 100%;
+    z-index: -10;
     background: var(--bgcolor-secondary);
-    /*background: #0a3f62;*/
     transform: skew(0deg, -19deg);
     transition: var(--theme-transition);
 }
