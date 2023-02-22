@@ -309,7 +309,6 @@ th {
 
 .theme-switch-container {
     display: inline-flex;
-    width: 2%;
     background: var(--color-secondary);
     flex-direction: column;
     justify-content: center;
@@ -491,8 +490,7 @@ input:checked+.slider:before {
     display: inline-list-item;
 }
 
-switch
-.nav--items .mobile-nav-toggle {
+switch .nav--items .mobile-nav-toggle {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -537,7 +535,7 @@ switch
 }
 
 .nav--items .home--nav-link {
-    margin-right: 0.5rem;
+    margin-right: 3rem;
 }
 
 .nav--items .res--links>a {
@@ -547,7 +545,6 @@ switch
 }
 
 .nav--items .res--links>a:hover {
-    font-size: 1.15rem;
     color: var(--text-hover);
 }
 

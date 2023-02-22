@@ -181,19 +181,7 @@
                 class="res--links align-middle m-1 p-1"
             >
                 <span class="home--nav-link"><a href="https://harrydulaney.com">harrydulaney.com</a></span>
-                <div class="theme-switch-container">
-                    <label
-                        id="theme-switch-label-id"
-                        class="switch"
-                    >
-                        <input
-                            type="checkbox"
-                            onchange="toggleTheme()"
-                            id="theme-switch-id"
-                        >
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+
                 <a
                     href="#top"
                     class="m-sm-3"
@@ -221,7 +209,21 @@
                 >
                     Resume
                 </a>
-
+                <span class="ml-5">
+                    <div class="theme-switch-container">
+                        <label
+                            id="theme-switch-label-id"
+                            class="switch"
+                        >
+                            <input
+                                type="checkbox"
+                                onchange="toggleTheme()"
+                                id="theme-switch-id"
+                            >
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </span>
                 <div class="float-right align-middle social--full">
                     <a
                         href="https://github.com/HarryDulaney/HarryDulaney.github.io"
@@ -309,6 +311,7 @@
                 </a>
             </div>
             <a
+                style="padding-left: 1rem"
                 role="button"
                 class="mobile-nav-toggle float-left"
                 aria-controls="mobile-menu"
@@ -333,7 +336,7 @@
         class="main-container"
         id="top"
     >
-        <!--Intro-->
+        <!--------------------------------------- Intro ------------------------------------------->
         <div class="jumbotron jumbotron-fluid intro--wrapper splash-one-overlay">
             <div class="intro">
                 <div class="container">
@@ -414,7 +417,7 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Pfolie.com</h3>
-                            <h6 class="project--sub-text">Creator, Programmer, Designer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Developer, Designer, Maintainer</h6>
                             <h5>Financial portfolio manager and asset tracker, features include:
                                 aggregated trending news, current and historical asset prices, interactive charts, and
                                 market data on 13,000+ cryptocurrencies</h5>
@@ -454,7 +457,7 @@
                         </div>
                         <div class="col-md-5">
                             <h4>Solutions to Programming Exercises</h4>
-                            <h6 class="project--sub-text">Creator, Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Developer, Programmer, Maintainer</h6>
                             <h5>Daniel Liang’s, Java Programming (10th Edition) </h5>
                             <div class="d-inline-block mt-1 mb-1 p-1">
                                 <div class="badge">Java</div>
@@ -532,6 +535,49 @@
                     <hr>
 
 
+
+                    <!------------------------------------------------ Secret Towns .com ---------------------------------------------------->
+                    <div class="row p-2">
+                        <div class="col-md-7">
+                            <img
+                                alt="Secret Towns Home Page Screenshot image"
+                                class="project--image img-fluid mb-3 mb-md-0"
+                                id="secretTownsDotComImg"
+                                src="assets/img/secret-towns-com-ss.png"
+                            >
+                        </div>
+                        <div class="col-md-5">
+                            <h3>SecretTowns.com</h3>
+                            <h6 class="project--sub-text">Developer, Programmer, Maintainer</h6>
+                            <h5>Custom animated webpage for the indie rock band Secret Towns. Artwork by Luke Thorton
+                            </h5>
+                            <div class="d-inline-block mt-1 mb-1 p-2">
+                                <div class="badge">JavaScript</div>
+                                <div class="badge">Vue.js</div>
+                                <div class="badge">Canvas API</div>
+                                <div class="badge">Animation API</div>
+                                <div class="badge">Green Sock (GSAP)</div>
+                                <div class="badge">Vercel</div>
+                                <div class="badge">GitOps</div>
+
+                            </div>
+                            <div class="project--link">
+                                <a
+                                    type="button"
+                                    class="text-white btn btn-primary"
+                                    target="_blank"
+                                    href="https://www.secrettowns.com"
+                                >
+                                    Launch App <i class="fa fa-rocket"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+
+
+
                     <!------------------------------------- Air Sim App -------------------------------------------->
                     <div class="row p-2">
                         <div class="col-md-7">
@@ -544,7 +590,7 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Airline Reservation System</h3>
-                            <h6 class="project--sub-text">Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Developer, Programmer, Maintainer</h6>
                             <h5>Web App with Admin and User roles that simulates a flight reservation system. Users can
                                 book, track, delete, and edit
                                 reservations, and Admins can add new, edit, delete, and update flights.</h5>
@@ -636,7 +682,7 @@
                         </div>
                         <div class="col-md-5">
                             <h3>Music and Discography Application</h3>
-                            <h6 class="project--sub-text">Creator, Designer, Programmer, Maintainer</h6>
+                            <h6 class="project--sub-text">Creator, Designer, Developer, Maintainer</h6>
                             <h5>Web application that utilizes Deezer's open-source API for Artist, Album, and Track
                                 data.
                                 Users can search for recording artists, listen to tracks, see album artwork/ album info,
@@ -762,47 +808,6 @@
                                     >CLOSE
                                     </button>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-
-
-                    <!------------------------------------------------ Secret Towns .com ---------------------------------------------------->
-                    <div class="row p-2">
-                        <div class="col-md-7">
-                            <img
-                                alt="Secret Towns Home Page Screenshot image"
-                                class="project--image img-fluid mb-3 mb-md-0"
-                                id="secretTownsDotComImg"
-                                src="assets/img/secret-towns-com-ss.png"
-                            >
-                        </div>
-                        <div class="col-md-5">
-                            <h3>SecretTowns.com</h3>
-                            <h6 class="project--sub-text">Programmer, Maintainer</h6>
-                            <h5>Custom animated webpage for the indie rock band Secret Towns. Artwork by Luke Thorton
-                            </h5>
-                            <div class="d-inline-block mt-1 mb-1 p-2">
-                                <div class="badge">JavaScript</div>
-                                <div class="badge">Vue.js</div>
-                                <div class="badge">Canvas API</div>
-                                <div class="badge">Animation API</div>
-                                <div class="badge">Green Sock (GSAP)</div>
-                                <div class="badge">Vercel</div>
-                                <div class="badge">GitOps</div>
-
-                            </div>
-                            <div class="project--link">
-                                <a
-                                    type="button"
-                                    class="text-white btn btn-primary"
-                                    target="_blank"
-                                    href="https://www.secrettowns.com"
-                                >
-                                    Launch App <i class="fa fa-rocket"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
