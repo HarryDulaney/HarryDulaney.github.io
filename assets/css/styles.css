@@ -309,6 +309,7 @@ th {
 
 .theme-switch-container {
     display: inline-flex;
+    width: 2%;
     background: var(--color-secondary);
     flex-direction: column;
     justify-content: center;
