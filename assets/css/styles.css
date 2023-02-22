@@ -309,7 +309,7 @@ th {
 
 .theme-switch-container {
     display: inline-flex;
-    width: 10%;
+    width: 2%;
     background: var(--color-secondary);
     flex-direction: column;
     justify-content: center;
@@ -491,7 +491,7 @@ input:checked+.slider:before {
     display: inline-list-item;
 }
 
-
+switch
 .nav--items .mobile-nav-toggle {
     display: inline-block;
     padding-top: 5px;
@@ -537,7 +537,7 @@ input:checked+.slider:before {
 }
 
 .nav--items .home--nav-link {
-    margin-right: 3rem;
+    margin-right: 0.5rem;
 }
 
 .nav--items .res--links>a {
@@ -708,6 +708,7 @@ input:checked+.slider:before {
     transform: skew(0deg, 9deg);
     transition: var(--theme-transition);
 }
+
 
 
 .intro p {
