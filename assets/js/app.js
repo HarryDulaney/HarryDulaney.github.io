@@ -28,6 +28,7 @@ $(document).ready(function () {
     $(window).on('scroll', function () {
         if (open) {
             retractMobileMenu();
+            $('#mobile-nav-icon').removeClass('open');
         }
         if (max600.matches) { // Mobile scroll behavior
             showNavbar();
@@ -46,12 +47,16 @@ $(document).ready(function () {
     $('.mobile-nav-toggle').on('click', function () {
         //Mobile nav click behavior
         if (max600.matches) {
+            $('#mobile-nav-icon').toggleClass('open');
             if (!open) {
                 expandMobileMenu();
             } else if (open) {
                 retractMobileMenu();
+                $('#mobile-nav-icon').removeClass('open');
+
             }
         }
+
     });
 
     $('.main-container').on('click', function () {
@@ -59,6 +64,8 @@ $(document).ready(function () {
         if (max600.matches) {
             if (open) {
                 retractMobileMenu();
+                $('#mobile-nav-icon').removeClass('open');
+
             }
         }
 
@@ -67,6 +74,8 @@ $(document).ready(function () {
     $('#mobile-menu-intro,#mobile-menu-project,#mobile-menu-about,#mobile-menu-contact, #mobile-menu-downloads').on('click', function () {
         if (open) {
             retractMobileMenu();
+            $('#mobile-nav-icon').removeClass('open');
+
         }
     });
 
@@ -219,18 +228,14 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
 }
 
 function expandMobileMenu() {
-    gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 })
-    gsap.to('.bars', { opacity: 0, duration: 0.1 });
-    gsap.to('.mobile--nav', { display: 'block', duration: 0.2 })
-    gsap.to('.close', { opacity: 1, duration: 0.2 });
+    gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
+    gsap.to('.mobile--nav', { display: 'block', duration: 0.2 });
     open = true;
 
 }
 
 function retractMobileMenu() {
-    gsap.to('.close', { opacity: 0, duration: 0.2 });
     gsap.to('.mobile--nav', { display: 'none', duration: 0.2 });
-    gsap.to('.bars', { opacity: 1, duration: 0.1 });
     gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
     open = false;
 }
