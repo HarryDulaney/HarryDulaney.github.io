@@ -74,7 +74,6 @@ html {
 }
 
 body {
-    /*background-color: #0a3f62;*/
     background-color: var(--bgcolor-secondary);
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
@@ -125,7 +124,7 @@ a :hover {
     color: var(--text-sub-title) !important;
 }
 
-.work--grid .badge {
+.projects--grid .badge {
     color: var(--text-contrast) !important;
 }
 
@@ -167,31 +166,10 @@ small {
     font-size: 90%
 }
 
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline
-}
-
-sup {
-    top: -0.5em
-}
-
-sub {
-    bottom: -0.25em
-}
-
-figure {
-    margin: 1em 40px
-}
-
 hr {
     height: 2px;
     margin-top: 4rem;
     margin-bottom: 4rem;
-    /*opacity: 0.0;*/
 }
 
 pre {
@@ -207,8 +185,7 @@ samp {
 }
 
 button,
-input,
-optgroup {
+input {
     color: inherit;
     font: inherit;
     margin: 0
@@ -262,20 +239,6 @@ textarea {
     box-sizing: border-box;
     width: 100%;
     overflow: auto;
-}
-
-optgroup {
-    font-weight: bold
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-td,
-th {
-    padding: 0
 }
 
 /* --------------------------------- Background image overlays ---------------------------------- */
@@ -440,6 +403,8 @@ input:checked+.slider:before {
     overflow: hidden;
 }
 
+/* ------------------------------------------------ Navbar + Nav Items ---------------------------------------------------- */
+
 .top--navbar {
     display: inline-block;
     position: fixed;
@@ -490,7 +455,7 @@ input:checked+.slider:before {
     display: inline-list-item;
 }
 
-switch .nav--items .mobile-nav-toggle {
+switch .nav--items .mobile-nav-toggle #mobile-nav-icon {
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -560,73 +525,90 @@ switch .nav--items .mobile-nav-toggle {
     display: none;
 }
 
-.nav--items .mobile-nav-toggle .bars {
+/* -------------------------------------------- Mobile Menu Buttons ---------------------------------------------- */
+
+.nav--items .mobile-nav-toggle {
     display: block;
-    width: 30px;
+    position: absolute;
+    padding-left: 1rem !important;
+    cursor: pointer;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+
+/* ------------------------------------ Mobile nav icon animatied -------------------------------- */
+
+.nav--items .mobile-nav-toggle #mobile-nav-icon {
+    width: 45px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.nav--items .mobile-nav-toggle #mobile-nav-icon span {
+    display: block;
+    position: absolute;
     height: 4px;
-    margin-top: 0.4rem;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    background-color: var(--text-primary);
+    border-radius: 9px;
     opacity: 1;
-    background-color: var(--text-primary);
-
-
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
 
-.nav--items .mobile-nav-toggle .bars::before,
-.nav--items .mobile-nav-toggle .bars::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 4px;
-    background-color: var(--text-primary);
+.nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(1) {
+    top: 0px;
 }
 
-.nav--items .mobile-nav-toggle .bars::before {
-    margin-top: 0.6rem;
-    margin-bottom: 0.5rem;
+.nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(2) {
+    top: 10px;
 }
 
-.nav--items .mobile-nav-toggle .bars::after {
-    margin-top: 1.2rem;
-    margin-bottom: 1rem;
+.nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(3) {
+    top: 20px;
 }
 
-.nav--items .mobile-nav-toggle:hover {
-    cursor: pointer;
+.nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(1) {
+    top: 10px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
 }
 
-.nav--items .mobile-nav-toggle .close {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    cursor: pointer;
+.nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(2) {
     opacity: 0;
+    left: -60px;
 }
 
-.nav--items .mobile-nav-toggle .close::before,
-.nav--items .mobile-nav-toggle .close::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 4px;
-    background-color: var(--text-primary);
-    transition: background .5s ease;
+.nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(3) {
+    top: 10px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
 }
 
-.nav--items .mobile-nav-toggle .close::before {
-    transform: rotate(-45deg);
-}
 
-.nav--items .mobile-nav-toggle .close::after {
-    transform: rotate(45deg);
-}
 
-.nav--items .mobile-nav-toggle .close:hover::before,
-.nav--items .mobile-nav-toggle .close:hover::after {
-    background: var(--text-primary);
-}
-
+/* ------------------------------------------------ Blog ---------------------------------------------------- */
 
 .blog-container {
     position: fixed;
@@ -663,7 +645,7 @@ switch .nav--items .mobile-nav-toggle {
         display: none;
     }
 
-    .nav--items .mobile-nav-toggle {
+    .nav--items .mobile-nav-toggle #mobile-nav-icon {
         display: block;
         margin-top: 6px;
     }
@@ -674,12 +656,14 @@ switch .nav--items .mobile-nav-toggle {
     overflow: hidden;
 }
 
+/*  -------------------------------------------------- Intro ------------------------------------------------------  */
 .intro--wrapper {
     position: relative;
     overflow: hidden;
     background-color: var(--bgcolor-primary);
     height: calc(100vh - 40px);
 }
+
 
 .intro--wrapper:after {
     content: '';
@@ -706,41 +690,42 @@ switch .nav--items .mobile-nav-toggle {
     transition: var(--theme-transition);
 }
 
-
-
-.intro p {
+.intro--wrapper #intro-message-body {
     color: var(--text-primary);
-    z-index: 35;
+    z-index: 999999999 !important;
     transition: var(--theme-transition);
 }
 
-
-
-.intro h4 {
-    text-align: center;
-    z-index: 35;
-    transition: var(--theme-transition);
+.intro--wrapper #intro-message-body .ex-large-text {
+    font-size: calc(6vh + 3vw) !important;
 }
 
-.intro h2 {
-    display: block;
-    position: relative;
-    text-align: center;
-    z-index: 35;
+.intro--wrapper #intro-message-body .med-large-text {
+    font-size: calc(3vh + 0.5vw) !important;
+}
+
+.intro--wrapper #intro-message-body .med-med-text {
+    font-size: calc(1vh + 1vw) !important;
+}
+
+.intro--wrapper #intro-message-body .med-main-message-text {
+    font-size: calc(1.5vh + 0.7vw) !important;
+}
+
+.intro--wrapper #intro-message-body .sub--med-med-text {
+    font-size: calc(0.9vh + 0.7vw) !important;
+}
+
+.intro {
+    padding: calc(0.1vh + 2vw);
+    margin-top: calc(0.1vh + 2vw);
 }
 
 .intro .intro--image img {
-    width: 45vh;
+    width: 40vh;
     height: auto;
     z-index: 10;
     border-radius: 50%;
-
-}
-
-
-.intro>p>a {
-    font-size: 20px;
-    text-align: center;
 
 }
 
@@ -753,42 +738,41 @@ switch .nav--items .mobile-nav-toggle {
     transition: 1s ease-in;
 }
 
-/* Projects */
-.work--grid {
+/* -------------------------------------------------------- Projects -------------------------------------------------------- */
+.projects--grid {
     text-align: center;
     overflow: hidden;
 }
 
-.work--grid h3 {
+.projects--grid h3 {
     color: var(--text-header);
 }
 
-.work--grid h4 {
+.projects--grid h4 {
     color: var(--text-header);
 }
 
-.work--grid h5 {
+.projects--grid h5 {
     color: var(--text-sub-header);
     font-size: 1.2rem;
 }
 
-.work--grid .badge--image img {
+.projects--grid .badge--image img {
     height: 9vh;
     width: auto;
 }
 
-.work--grid img {
+.projects--grid img {
     border-radius: 8px 8px 8px 8px;
 }
 
-.work--grid>a button {
+.projects--grid>a button {
     text-decoration-color: #3d3c3c;
     transition: .9s ease-in-out;
 }
 
-.work--grid .project--image {
+.projects--grid .project--image {
     max-height: 300px;
-    /*width: auto !important;*/
 }
 
 .contrib-number {
@@ -799,7 +783,7 @@ switch .nav--items .mobile-nav-toggle {
     color: #ffffff;
 }
 
-/* Top Skills */
+/* --------------------------------------------- Top Skills ---------------------------------------------- */
 .section .container {
     display: flex !important;
     justify-content: center !important;
@@ -1237,7 +1221,7 @@ ul .skills-list {
 
 
 
-/* About */
+/* ----------------------------------------------- About ----------------------------------------------- */
 #about {
     content: "";
     background-color: transparent;
@@ -1450,7 +1434,7 @@ ul .skills-list {
 }
 
 
-/* Downloads */
+/* ------------------------------------- Downloads + Resume --------------------------------------- */
 #downloads {
     content: "";
     background-color: transparent;

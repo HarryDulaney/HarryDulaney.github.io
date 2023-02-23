@@ -310,16 +310,15 @@
                     <i class="fab fa-stack-overflow"></i>
                 </a>
             </div>
-            <a
-                style="padding-left: 1rem"
-                role="button"
-                class="mobile-nav-toggle float-left"
-                aria-controls="mobile-menu"
-                aria-haspopup="true"
-            >
-                <div class="bars"></div>
-                <div class="close"></div>
-            </a>
+
+            <!-- ----------------------- Mobile Menu Expand Bar --------------------------------- -->
+            <div class="mobile-nav-toggle float-left">
+                <div id="mobile-nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </nav>
     <div
@@ -337,7 +336,7 @@
         id="top"
     >
         <!--------------------------------------- Intro ------------------------------------------->
-        <div class="jumbotron jumbotron-fluid intro--wrapper splash-one-overlay">
+        <div class="intro--wrapper splash-one-overlay">
             <div class="intro">
                 <div class="container">
                     <div class="row w-100 m-0 p-0">
@@ -350,25 +349,27 @@
                                 >
                             </div>
                         </div>
-                        <div class="col-md-8">
+                        <div
+                            id="intro-message-body"
+                            class="col-md-8"
+                        >
                             <p>
-                                <span style="font-size: calc(6vh + 3vw);">Hello </span>
-                                <span style="font-size: calc(3vh + 0.9vw);">I'm Harry,</span> <br>
-                                <span style="font-size: calc(1vh + 0.9vw);">
+                                <span class="ex-large-text">Hello </span>
+                                <span class="med-large-text text-nowrap">I'm Harry,</span> <br>
+                                <span class="med-med-text">
                                     I'm a Full Stack Software Developer based in Atlanta, GA, USA.
                                 </span><br><br>
 
-                                <span style="font-size: calc(0.7vh + 0.9vw);">
-                                    I have extensive, hands-on experience using utilizing Agile software development
-                                    principals
-                                    to deliver robust enterprise software. I am passionate about designing outstanding
-                                    user experiences
-                                    and building scalable, maintainable, and secure software.
-                                    I have experience working with a variety of technologies including Java, Spring,
+                                <span class="med-main-message-text">
+                                    I have extensive, hands-on experience developing robust enterprise web application
+                                    software. I am passionate about designing outstanding user experiences and building
+                                    scalable, maintainable, and secure
+                                    software systems. I have experience working with a variety of technologies including
+                                    Java, Spring,
                                     Nodejs, JavaScript, Angular, and Kubernetes.
                                 </span><br><br>
-                                <span style="font-size: calc(0.9vh + 0.7vw);">
-                                    Thanks for coming.
+                                <span class="sub--med-med-text">
+                                    Keep scrolling to see what I've been working on...
                                 </span>
                             </p>
                         </div>
@@ -391,7 +392,7 @@
             <!-----------------------------------------------------------  Projects  ---------------------------------------------------------->
             <span id="project"></span><br><br>
             <br><br>
-            <section class="work--grid">
+            <section class="projects--grid">
                 <div class="container">
                     <div
                         class="row d-flex justify-content-center"
