@@ -24,6 +24,10 @@ var max600 = window.matchMedia("(max-width: 600px)");
  * Main method, on document ready
  */
 $(document).ready(function () {
+    $(window).on('resize', function () {
+        initializeTheme();
+    });
+
     initializeTheme();
 
     var initialScrollPos = window.scrollY;
