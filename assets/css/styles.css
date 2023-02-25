@@ -1392,7 +1392,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(2):hover {
-    background-image: url("../icon/github-icon-3.png");
+    background-image: url("../icon/git-icon.png");
 }
 
 .about--options>a:nth-child(3) {
