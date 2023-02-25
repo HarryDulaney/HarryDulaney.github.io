@@ -128,6 +128,13 @@ a :hover {
     color: var(--text-contrast) !important;
 }
 
+.projects--grid .section--header {
+    color: var(--text-header);
+    font-size: 2rem;
+    margin-bottom: 2vw;
+    vertical-align: center;
+}
+
 #nav-title {
     color: var(--text-primary);
     text-decoration: none;
@@ -327,9 +334,10 @@ textarea {
     -webkit-transition: var(--theme-transition);
     transition: var(--theme-transition);
     box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    background: rgb(65, 65, 65) url('../icon/night-mode-icon.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 1.6rem;
 }
 
 input:checked+.slider {
@@ -344,9 +352,10 @@ input:checked+.slider:before {
     -webkit-transform: translateX(1rem);
     -ms-transform: translateX(1rem);
     transform: translateX(1rem);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background: rgb(232, 232, 232) url('../icon/sun.png');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 1.6rem;
 }
 
 /* Rounded sliders */
@@ -417,8 +426,8 @@ input:checked+.slider:before {
     min-height: 41px;
     max-height: 275px;
     background-color: var(--bgcolor-primary);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     z-index: 99999;
     transition: all 100ms ease-in-out;
 }
