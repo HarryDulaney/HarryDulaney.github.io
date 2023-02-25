@@ -334,7 +334,7 @@ textarea {
     -webkit-transition: var(--theme-transition);
     transition: var(--theme-transition);
     box-shadow: 0 0px 15px #2020203d;
-    background: rgb(65, 65, 65) url('../icon/night-mode-icon.png');
+    background: white url('../icon/night-mode-icon.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1.6rem;
@@ -352,7 +352,7 @@ input:checked+.slider:before {
     -webkit-transform: translateX(1rem);
     -ms-transform: translateX(1rem);
     transform: translateX(1rem);
-    background: rgb(232, 232, 232) url('../icon/sun.png');
+    background: white url('../icon/sun.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1.6rem;
@@ -458,10 +458,6 @@ input:checked+.slider:before {
 
 .nav--items .social--full .social--link :hover {
     color: var(--icon-hover);
-}
-
-.nav--items .res--links {
-    display: inline-list-item;
 }
 
 switch .nav--items .mobile-nav-toggle #mobile-nav-icon {

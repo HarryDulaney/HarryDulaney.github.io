@@ -10,6 +10,7 @@ const THEME_STORAGE_KEY = 'harry-dulaney-com-theme-preference';
 const LIGHT_THEME_NAME = 'light';
 const DARK_THEME_NAME = 'dark';
 const THEME_SWITCH_ID = 'theme-switch-id';
+const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
 
 const MILLIS_PER_YEAR = 31557600000;
@@ -24,6 +25,7 @@ var max600 = window.matchMedia("(max-width: 600px)");
  */
 $(document).ready(function () {
     initializeTheme();
+
     var initialScrollPos = window.scrollY;
     $(window).on('scroll', function () {
         if (open) {
@@ -91,7 +93,6 @@ $(document).ready(function () {
     const webDevelopmentStartDate = new Date(2014, 1, 1);
 
     const restApiStartDate = new Date(2017, 6, 1);
-
 
     renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
         azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
@@ -420,24 +421,29 @@ function hideArrow(element) {
  */
 function initializeTheme() {
     var themeName = localStorage.getItem(THEME_STORAGE_KEY);
-    if (themeName !== null) {
+    if (themeName === null) {
+        document.getElementById(THEME_SWITCH_ID).checked = false;
+        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
+        // localStorage.themeName is null, set to Dark as default
+        themeName = DARK_THEME_NAME;
+        storeTheme(themeName);
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
-        if (themeName === LIGHT_THEME_NAME) {
-            document.getElementById(THEME_SWITCH_ID).checked = true;
-            setLightTheme();
+        setDarkTheme();
 
-        } else {
-            document.getElementById(THEME_SWITCH_ID).checked = false;
-            setDarkTheme();
 
-        }
-        return;
+
+    } else if (themeName === LIGHT_THEME_NAME) {
+        document.getElementById(THEME_SWITCH_ID).checked = true;
+        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = true;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
+        setLightTheme();
+
+    } else if (themeName === DARK_THEME_NAME) {
+        document.getElementById(THEME_SWITCH_ID).checked = false;
+        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
+        setDarkTheme();
     }
-    // localStorage.themeName is null, set to Dark as default
-    themeName = DARK_THEME_NAME;
-    setTheme(themeName);
-    document.getElementById(THEME_SWITCH_ID).checked = false;
-
 
 }
 
@@ -446,25 +452,21 @@ function initializeTheme() {
  */
 function toggleTheme() {
     if (localStorage.getItem(THEME_STORAGE_KEY) === LIGHT_THEME_NAME) {
-        setTheme(DARK_THEME_NAME);
-        document.getElementById(THEME_SWITCH_ID).checked = false;
+        storeTheme(DARK_THEME_NAME);
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, DARK_THEME_NAME);
+        setDarkTheme();
     } else {
-        setTheme(LIGHT_THEME_NAME);
-        document.getElementById(THEME_SWITCH_ID).checked = true;
+        storeTheme(LIGHT_THEME_NAME);
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, LIGHT_THEME_NAME);
+        setLightTheme();
     }
 }
 
 /** 
  * Save user preference for theme
  */
-function setTheme(themeName) {
+function storeTheme(themeName) {
     localStorage.setItem(THEME_STORAGE_KEY, themeName);
-    document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
-    if (themeName === LIGHT_THEME_NAME) {
-        setLightTheme();
-    } else {
-        setDarkTheme();
-    }
 }
 
 function setLightTheme() {
