@@ -255,11 +255,13 @@ function hideNavBar() {
 
 /* Contact Form Handlers */
 function enableSubmitButton(token) {
-    $('#submitButton').prop('disabled', false);
+    $('#submit-button-label').prop('disabled', false);
+    $('#submit-button-label').toggleClass('disabled');
 }
 
 function disableSubmitButton() {
-    $('#submitButton').prop('disabled', true);
+    $('#submit-button-label').prop('disabled', true);
+    $('#submit-button-label').toggleClass('disabled');
 }
 
 /* Project Section Expand Handler */
