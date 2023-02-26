@@ -834,7 +834,7 @@
                                 <img
                                     alt="Notes 4 Android IMG"
                                     class="project--image img-fluid mb-3 mb-md-0"
-                                    src="assets/css/img/Note_App_list.png"
+                                    src="assets/img/Note_App_list.png"
                                 >
                             </div>
                             <div class="col-md-5">
@@ -1194,9 +1194,7 @@
                     <div class="about--banner">
                         <div class="container">
                             <div class="row w-100">
-                                <span
-                                    style="font-size: calc(3vh + 1vw);z-index: 150; text-align: center; width: 100%;margin-top:-80px"
-                                >about me.</span>
+                                <span id="about-me-section-header">about me.</span>
                                 <br><br>
                             </div>
                             <div class="row w-100 m-1 p-1">
@@ -1204,7 +1202,7 @@
                                     <div class="banner--image">
                                         <img
                                             class="img-fluid"
-                                            src="assets/img/harry_profile_pic_new-removebg-preview.png"
+                                            src="assets/img/harry-and-milo-about-picture.jpg"
                                             alt="about-me-harry-img"
                                             width="504"
                                             height="495"
@@ -1212,12 +1210,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <span style="font-size: calc(1vh + 0.9vw);z-index: 150;">
+                                    <span style="font-size: calc(1.5vh + 0.7vw);z-index: 150; ">
                                         I have a bottomless reservoir of curiosity for software and computing
                                         and am proficient with multiple programming languages.
                                         <span id="insertYearsExperience"></span> to rapidly code, test, debug, and
-                                        deploy
-                                        innovative enterprise software
+                                        deploy innovative enterprise software
                                         solutions. I'm enthusiastic about supporting open-source software projects.
                                         In free time I like to build projects like the ones above,
                                         tinker with DIY electronics, play/ record music, and find new hiking spots to
@@ -1271,9 +1268,9 @@
                     >
                         <div class="container">
                             <div class="row section-title justify-content-between">
-                                <h2 style="font-size: small;margin-left: 1rem;">0</h2>
+                                <h2>0</h2>
                                 <h2>Top Skills</h2>
-                                <h2 style="font-size: small;margin-right: 1rem">10+</h2>
+                                <h2>10+</h2>
                             </div>
                             <ul class="skills-list">
                                 <li
@@ -1470,10 +1467,7 @@
                     class="row p-1 text-center"
                     style="height: fit-content;"
                 >
-                    <div
-                        class="about--image"
-                        style="height: fit-content;"
-                    >
+                    <div class="about--astronaut-image">
                         <img
                             src="assets/img/astronaut-spaceman-space5e5f517ac66336.3388629815833050828126.png"
                             alt="img-about-dec-1"
@@ -1525,41 +1519,10 @@
             <!-- Contact Section -->
             <section class="contact">
                 <div class="container cat--background-layout">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <a
-                                class="mr-3"
-                                style="font-size: 4rem"
-                                href="https://www.github.com/harrydulaney"
-                                target="_blank"
-                            >
-                                <i class="fab fa-github-square"></i></a>
-                            <a
-                                style="font-size: 4rem"
-                                href="https://www.linkedin.com/in/harrydulaney"
-                                target="_blank"
-                            >
-                                <i class="fab fa-linkedin"></i></a>
-                            <a
-                                class="ml-3"
-                                style="font-size: 4rem"
-                                href="https://www.facebook.com/HarryGDulaney"
-                                target="_blank"
-                            >
-                                <i class="fab fa-facebook-square"></i></a>
-                            <br>
-                        </div>
+                    <div class="row justify-content-center">
+                        <h2>contact.</h2>
                     </div>
-                    <h2
-                        style="font-size: 2rem;"
-                        class="text-center section--header"
-                    >
-                        connect</h2>
-                    <h2
-                        style="font-size: 2rem; margin-bottom: 6vh;"
-                        class="text-center section--header"
-                    >
-                        or contact</h2>
+
                     <!-- Contact Section Form-->
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-xl-7">
@@ -1643,28 +1606,64 @@
                                     ></div>
                                 </div>
                                 <br>
-                                <div class="d-flex justify-content-center">
-                                    <div class="form-button ml-2">
-                                        <input
-                                            class="btn btn-primary btn-xl"
-                                            type="submit"
-                                            value="Submit"
-                                            id="submitButton"
-                                            disabled
-                                        />
-                                    </div>
-                                </div>
+
                             </form>
                         </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <div class="form-button ml-2">
+                        <input
+                            class="btn btn-primary btn-xl"
+                            type="submit"
+                            value="Submit"
+                            id="submitButton"
+                            disabled
+                        />
                     </div>
                 </div>
             </section>
         </main>
     </div>
-
-
     <footer id="footer">
-        <p style="text-align: center;font-size: 15px; color: seashell">
+        <div class="container social-footer-wrappper">
+            <div class="row d-flex justify-content-center">
+                <a
+                    class="mr-3"
+                    href="https://www.github.com/harrydulaney"
+                    target="_blank"
+                >
+                    <i class="fab fa-github"></i></a>
+                <a
+                    href="https://www.linkedin.com/in/harrydulaney"
+                    target="_blank"
+                >
+                    <i class="fab fa-linkedin"></i></a>
+                <a
+                    class="ml-3"
+                    href="https://www.facebook.com/HarryGDulaney"
+                    target="_blank"
+                >
+                    <i class="fab fa-facebook"></i></a>
+                <a
+                    class="ml-3"
+                    href="https://www.twitter.com/DulaneyHarry"
+                    target="_blank"
+                >
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                    class="ml-3"
+                    href="https://stackoverflow.com/users/11600831/harry-dulaney"
+                    target="_blank"
+                >
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+                <br>
+            </div>
+        </div>
+
+        <p class="copyright-stamp">
             ©2021-2023 Harry Dulaney<br></p>
     </footer>
     <script
