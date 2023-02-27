@@ -1530,6 +1530,8 @@
                                 method="POST"
                                 action="https://formspree.io/xbjzadpn"
                                 id="contact-form"
+                                enctype="text/plain"
+                                name="contact-form"
                             >
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
@@ -1586,7 +1588,9 @@
                                 <!-- Submit Form Button, inside form tag (called from <label>Submit</label>) -->
                                 <input
                                     type="submit"
+                                    value="Submit"
                                     form="contact-form"
+                                    name="submit-form"
                                     id="submit-form"
                                     hidden
                                     aria-hidden="true"
@@ -1625,6 +1629,7 @@
                         <div
                             for="submit-form"
                             class="btn btn-primary btn-xl disabled"
+                            style="cursor: pointer"
                             tabindex="0"
                             id="submit-button-label"
                             disabled
