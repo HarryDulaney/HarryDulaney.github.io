@@ -19,7 +19,7 @@
     >
     <meta
         name="description"
-        content="Harry Dulaney Professional Portfolio"
+        content="Harry Dulaney's Professional Portfolio webpage"
     />
     <meta
         name="title"
@@ -33,12 +33,12 @@
     <meta
         name="image"
         property="og:image"
-        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page_screen_shot_intro-new.png"
+        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page-preview.png"
     />
     <meta
         name="description"
         property="og:description"
-        content="Harry Dulaney Webpage"
+        content="The official webpage and web professional portfolio for Harry Dulaney"
     />
     <meta
         name="author"
@@ -120,6 +120,13 @@
 </script>
 
 <body>
+    <div class="intro--arrow-container">
+        <div
+            id="intro-arrow"
+            class="intro--arrow"
+        ><i class="fas fa-arrow-down"></i></div>
+    </div>
+
 
     <!-----------------------------------------------  Intro  ---------------------------------------------------->
     <nav class="top--navbar">
@@ -357,18 +364,17 @@
                                 <span class="ex-large-text">Hello </span>
                                 <span class="med-large-text text-nowrap">I'm Harry,</span> <br>
                                 <span class="med-med-text">
-                                    I'm a Full Stack Software Developer based in Atlanta, GA, USA.
+                                    a Full Stack Software Developer based in Atlanta, GA, USA.
                                 </span><br><br>
 
                                 <span class="med-main-message-text">
-                                    I have extensive, hands-on experience developing robust enterprise web application
-                                    software. I am passionate about designing outstanding user experiences and building
-                                    scalable, maintainable, and secure
-                                    software systems. I have experience working with a variety of technologies including
-                                    Java, Spring,
-                                    Nodejs, JavaScript, Angular, and Kubernetes.
+                                    I am passtionate about utilizing my experience with full stack web development
+                                    to build robust software products.
+                                    I believe strongly in leveraging best practices and industry standards
+                                    to design the most scalable, maintainable, and
+                                    secure software systems possible.
                                 </span><br><br>
-                                <span class="sub--med-med-text">
+                                <span class="keep-scrolling-message sub--med-med-text">
                                     Keep scrolling to see what I've been working on...
                                 </span>
                             </p>
@@ -1210,15 +1216,18 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <span style="font-size: calc(1.5vh + 0.7vw);z-index: 150; ">
-                                        I have a bottomless reservoir of curiosity for software and computing
-                                        and am proficient with multiple programming languages.
-                                        <span id="insertYearsExperience"></span> to rapidly code, test, debug, and
-                                        deploy innovative enterprise software
-                                        solutions. I'm enthusiastic about supporting open-source software projects.
-                                        In free time I like to build projects like the ones above,
-                                        tinker with DIY electronics, play/ record music, and find new hiking spots to
-                                        explore with my dogs.
+                                    <span class="about-me-content-body">
+                                        I am a bottomless reservoir of curiosity for software engineering, application
+                                        design, and computer science.
+                                        <span id="insertYearsExperience"></span> designing, coding, testing, debugging,
+                                        deploying, and maintaining enterprise software. In that time I've gained
+                                        extensive experience as a full stack developer using a variety of programming
+                                        languages and tools primarily: Java, Spring, JavaScript, NodeJs, Angular, SQL,
+                                        Python, Azure, and Kubernetes. I'm enthusiastic in supporting open-source
+                                        software and contribute to several projects in my free time. My passion for
+                                        learning is huge and I am always looking for opportunities to grow and pick up
+                                        new skills. Some other hobbies include, building guitar pedals, playing and
+                                        recording music, traveling, and road biking.
                                     </span><br><br>
                                 </div>
                                 <br>
@@ -1518,127 +1527,122 @@
 
             <!-- Contact Section -->
             <section class="contact">
-                <div class="container cat--background-layout">
-                    <div class="row justify-content-center">
-                        <h2>contact.</h2>
-                    </div>
+                <div class=" background-cover-art">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <h2>contact.</h2>
+                        </div>
 
-                    <!-- -------------------------- Contact Form ---------------------- -->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8 col-xl-7">
-                            <form
-                                method="POST"
-                                action="https://formspree.io/xbjzadpn"
-                                id="contact-form"
-                                enctype="text/plain"
-                                name="contact-form"
-                            >
-                                <!-- Name input-->
-                                <div class="form-floating mb-3">
-                                    <input
-                                        class="form-control"
-                                        id="name"
-                                        name="name"
-                                        type="text"
-                                        placeholder="Enter your name..."
-                                        required
-                                    />
-                                    <label
-                                        class="contact-form-label-text"
-                                        for="name"
-                                    >Full name</label>
-                                </div>
-                                <!-- Email address input-->
-                                <div class="form-floating mb-3">
-                                    <input
-                                        class="form-control"
-                                        id="email"
-                                        name="_replyto"
-                                        type="email"
-                                        placeholder="name@example.com"
-                                        required
-                                    />
-                                    <label
-                                        class="contact-form-label-text"
-                                        for="email"
-                                    >Email address</label>
-                                </div>
-                                <!-- subject input-->
-                                <input
-                                    type="hidden"
-                                    name="_subject"
-                                    id="subject"
-                                    value="Contact Form Submission"
+                        <!-- -------------------------- Contact Form ---------------------- -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-7">
+                                <form
+                                    method="POST"
+                                    action="https://formspree.io/xbjzadpn"
+                                    id="contact-form"
+                                    name="contact-form"
                                 >
-                                <!-- Message input-->
-                                <div class="form-floating mb-3">
-                                    <textarea
-                                        class="form-control"
-                                        id="message"
-                                        name="message"
-                                        placeholder="Enter your message here..."
-                                        style="height: 10rem"
-                                        required
-                                    ></textarea>
-                                    <label
-                                        class="contact-form-label-text"
-                                        for="message"
-                                    >Message</label>
-                                </div>
-                                <!-- Submit Form Button, inside form tag (called from <label>Submit</label>) -->
-                                <input
-                                    type="submit"
-                                    value="Submit"
-                                    form="contact-form"
-                                    name="submit-form"
-                                    id="submit-form"
-                                    hidden
-                                    aria-hidden="true"
-                                />
-                                <br>
-                                <div class="row">
-                                    <div class="w-100">
-                                        <div class="contact-form-alert hide--h">
-                                            <span
-                                                class="close--btn"
-                                                onclick="this.parentElement.style.display='none';"
-                                            >&times;</span>
-                                            Success! Your message has been submitted!
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            type="text"
+                                            placeholder="Enter your name..."
+                                            required
+                                        />
+                                        <label
+                                            class="contact-form-label-text"
+                                            for="name"
+                                        >Full name</label>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input
+                                            class="form-control"
+                                            id="email"
+                                            name="_replyto"
+                                            type="email"
+                                            placeholder="name@example.com"
+                                            required
+                                        />
+                                        <label
+                                            class="contact-form-label-text"
+                                            for="email"
+                                        >Email address</label>
+                                    </div>
+                                    <!-- subject input-->
+                                    <input
+                                        type="hidden"
+                                        name="_subject"
+                                        id="subject"
+                                        value="Contact Form Submission"
+                                    >
+                                    <!-- Message input-->
+                                    <div class="form-floating mb-3">
+                                        <textarea
+                                            class="form-control"
+                                            id="message"
+                                            name="message"
+                                            placeholder="Enter your message here..."
+                                            style="height: 10rem"
+                                            required
+                                        ></textarea>
+                                        <label
+                                            class="contact-form-label-text"
+                                            for="message"
+                                        >Message</label>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="w-100">
+                                            <div class="contact-form-alert hide--h">
+                                                <span
+                                                    class="close--btn"
+                                                    onclick="this.parentElement.style.display='none';"
+                                                >&times;</span>
+                                                Success! Your message has been submitted!
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div
-                                        class="g-recaptcha"
-                                        data-theme="dark"
-                                        data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
-                                        data-callback="enableSubmitButton"
-                                        data-expired-callback="disableSubmitButton"
-                                        style="margin-left: auto;margin-right: auto"
-                                    ></div>
-                                </div>
-                                <br>
+                                    <div class="row">
+                                        <div
+                                            class="g-recaptcha"
+                                            data-theme="dark"
+                                            data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
+                                            data-callback="enableSubmitButton"
+                                            data-expired-callback="disableSubmitButton"
+                                            style="margin-left: auto;margin-right: auto"
+                                        ></div>
+                                    </div>
+                                    <br>
+                                    <div class="d-flex justify-content-center mt-2">
+                                        <div class="form-button ml-2">
+                                            <!-- ---------------------------------- Visable Submit Button -------------------------------- -->
+                                            <input
+                                                type="submit"
+                                                value="Submit"
+                                                form="contact-form"
+                                                id="submit-form"
+                                                for="submit-form"
+                                                class="btn btn-primary btn-xl"
+                                                disabled
+                                            >
+                                        </div>
+
+                                    </div>
+                            </div>
+
 
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-2">
-                    <div class="form-button ml-2">
-                        <!-- ---------------------------------- Visable Submit Button -------------------------------- -->
-                        <div
-                            for="submit-form"
-                            class="btn btn-primary btn-xl disabled"
-                            style="cursor: pointer"
-                            tabindex="0"
-                            id="submit-button-label"
-                            disabled
-                        >Submit</div>
+    </div>
 
-                    </div>
-                </div>
-            </section>
-        </main>
+    </section>
+    </main>
     </div>
     <footer id="footer">
         <div class="container social-footer-wrappper">

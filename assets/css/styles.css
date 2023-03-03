@@ -2,6 +2,7 @@
     --text-primary: #caf0f8;
     --text-secondary: #cedfff;
     --text-contrast: #ffffff;
+    --text-high-contrast: #2f2f2f;
     --text-hover: #4800ff;
     --text-header: #f5f6fc;
     --text-sub-header: #cdd9e5;
@@ -18,6 +19,7 @@
     --text-primary: #000000;
     --text-secondary: #11203c;
     --text-contrast: #000000;
+    --text-high-contrast: #fff1f1;
     --text-hover: #2323ff;
     --text-header: #001068;
     --text-sub-title: #3b3a3a;
@@ -178,7 +180,7 @@ a :hover {
 #footer .copyright-stamp {
     text-align: center;
     -webkit-text-align: center;
-    font-size: 20px;
+    font-size: 0.9rem !important;
     color: var(--text-contrast);
 }
 
@@ -410,7 +412,7 @@ textarea {
 }
 
 input:checked+.slider {
-    background-color: #2196f3;
+    background-color: #001c33;
 }
 
 input:focus+.slider {
@@ -645,103 +647,12 @@ input:checked+.slider:before {
     border: 0;
 }
 
-
-
 /* -------------------------------------------- Mobile Menu Buttons ---------------------------------------------- */
 
 .nav--items .mobile-nav-toggle {
     display: none;
 
 }
-
-
-@media screen and (max-width: 600px) {
-    .res--links {
-        display: none;
-    }
-
-    .nav--items .mobile-nav-toggle {
-        display: inline-block;
-        position: absolute;
-        padding-left: 1rem !important;
-        cursor: pointer;
-        padding-top: 1rem !important;
-        padding-bottom: 0.5rem;
-    }
-
-
-    /* ------------------------------------ Mobile nav icon animatied -------------------------------- */
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon {
-        width: 45px;
-        position: relative;
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transition: .5s ease-in-out;
-        -webkit-transition: .5s ease-in-out;
-        -moz-transition: .5s ease-in-out;
-        -o-transition: .5s ease-in-out;
-        cursor: pointer;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon span {
-        display: block;
-        position: absolute;
-        height: 4px;
-        width: 100%;
-        background-color: var(--text-primary);
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: .25s ease-in-out;
-        -moz-transition: .25s ease-in-out;
-        -o-transition: .25s ease-in-out;
-        transition: .25s ease-in-out;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(1) {
-        top: 0px;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(2) {
-        top: 10px;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(3) {
-        top: 20px;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(1) {
-        top: 10px;
-        -webkit-transform: rotate(135deg);
-        -moz-transform: rotate(135deg);
-        -o-transform: rotate(135deg);
-        transform: rotate(135deg);
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(2) {
-        opacity: 0;
-        left: -60px;
-    }
-
-    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(3) {
-        top: 10px;
-        -webkit-transform: rotate(-135deg);
-        -moz-transform: rotate(-135deg);
-        -o-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-
-}
-
-
-
 
 /*  -------------------------------------------------- Intro ------------------------------------------------------  */
 .intro--wrapper {
@@ -817,6 +728,32 @@ input:checked+.slider:before {
 .intro--wrapper #intro-message-body .sub--med-med-text {
     font-size: calc(0.9vh + 0.7vw) !important;
 }
+
+
+.intro--arrow-container {
+    position: absolute;
+    bottom: 0;
+    height: 20vh !important;
+    width: 100%;
+}
+
+.keep-scrolling-message {
+    opacity: 0;
+}
+
+
+.intro--arrow-container .intro--arrow {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    z-index: 9999 !important;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+    font-size: calc(10vh + 0.7vw) !important;
+    color: var(--text-primary);
+}
+
 
 .intro {
     padding: calc(0.1vh + 2vw);
@@ -1474,6 +1411,11 @@ ul .skills-list {
 
 }
 
+.about .about--banner .about-me-content-body {
+    font-size: calc(1.5vh + 0.7vw) !important;
+    z-index: 150 !important;
+}
+
 .about--options {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1622,16 +1564,14 @@ ul .skills-list {
     color: var(--text-header) !important;
 }
 
-.contact .cat--background-layout {
-    position: relative;
-    /* Sit on top of the page content */
-    display: block;
+.contact .background-cover-art {
     width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    background-image: url("../img/cat-astronaut.png");
-    background-blend-mode: overlay;
+    height: auto;
+    background-image: url("../img/graphics/graphic_hero_contact-us@2x-1024x677.webp");
+    background-position-y: 8vh;
+    background-position-x: 36vw;
+    background-repeat: no-repeat;
+    background-size: contain;
     z-index: 0;
 }
 
@@ -1657,9 +1597,7 @@ ul .skills-list {
 }
 
 
-
 @media (max-width: 1180px) {
-
     .nav--items>a {
         text-decoration: none;
     }
@@ -1715,6 +1653,7 @@ ul .skills-list {
         width: 100%;
         height: 50%;
     }
+
 }
 
 @media (max-width: 767px) {
@@ -1733,6 +1672,87 @@ ul .skills-list {
 }
 
 @media (max-width: 600px) {
+    .res--links {
+        display: none;
+    }
+
+    .nav--items .mobile-nav-toggle {
+        display: inline-block;
+        position: absolute;
+        padding-left: 1rem !important;
+        cursor: pointer;
+        padding-top: 1rem !important;
+        padding-bottom: 0.5rem;
+    }
+
+    /* ------------------------------------ Mobile nav icon animatied -------------------------------- */
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon {
+        width: 45px;
+        position: relative;
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: var(--text-primary);
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(1) {
+        top: 0px;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(2) {
+        top: 10px;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon span:nth-child(3) {
+        top: 20px;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(1) {
+        top: 10px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon.open span:nth-child(3) {
+        top: 10px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
     .contact .contact-form .textarea--message {
         width: 100%;
         height: 25%;

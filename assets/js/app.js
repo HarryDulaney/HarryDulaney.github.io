@@ -12,13 +12,12 @@ const DARK_THEME_NAME = 'dark';
 const THEME_SWITCH_ID = 'theme-switch-id';
 const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
-
 const MILLIS_PER_YEAR = 31557600000;
 
 var open = false;
 var isBlog = false;
 var max600 = window.matchMedia("(max-width: 600px)");
-
+var introArrowTimer = null;
 
 /**
  * Main method, on document ready
@@ -29,8 +28,14 @@ $(document).ready(function () {
     });
 
     initializeTheme();
-
     var initialScrollPos = window.scrollY;
+
+    if (getPixelScrolledFromTop() === 0) {
+        initializeScrollArrow(); // Reset scroll arrow bounce timer
+    } else {
+        hideScrollArrow(); // Turn off scroll arrow bounce timer
+    }
+
     $(window).on('scroll', function () {
         if (open) {
             retractMobileMenu();
@@ -48,6 +53,15 @@ $(document).ready(function () {
             }
             initialScrollPos = currentScrollPos;
         }
+
+        hideScrollArrow(); // Turn off scroll arrow when scrolling
+        /* Handle turn off or reset intro scroll arrow bounce */
+        if (getPixelScrolledFromTop() === 0) {
+            initializeScrollArrow(); // Reset scroll arrow bounce timer
+        } else {
+            hideScrollArrow(); // Turn off scroll arrow bounce timer
+        }
+
     });
 
     $('.mobile-nav-toggle').on('click', function () {
@@ -110,7 +124,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     /* Set About Me main paragraph years of work experience data */
     let fullTimeElapsedTime = Date.now() - fullTimeStartDate.getTime();
     let fullTimeElapsedYears = fullTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
-    let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years of professional experience working on Agile project teams';
+    let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years experience working as a software engineer on Agile project teams ';
     let fullTimeWorkElement = document.getElementById('insertYearsExperience');
     fullTimeWorkElement.innerText = fullTimeWorkMessage;
     /* Java */
@@ -232,6 +246,27 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
 
 }
 
+function hideScrollArrow() {
+    let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
+    let message = document.querySelector('.keep-scrolling-message');
+    gsap.to(arrow, { opacity: 0, ease: 'easeOut' });
+    gsap.to(arrow, { bottom: 0, ease: 'easeOut', yoyo: false });
+    gsap.to(message, { opacity: 0, ease: 'easeOut' });
+    introArrowTimer = null;
+}
+
+function initializeScrollArrow() {
+    /* Set display intro arrow after 5 seconds */
+    let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
+    let message = document.querySelector('.keep-scrolling-message');
+    introArrowTimer = setTimeout(() => {
+        gsap.to(arrow, { opacity: 0.3, ease: 'easeIn' });
+        gsap.to(message, { opacity: 1, ease: 'easeIn' });
+        gsap.from(arrow, { bottom: 0, ease: Bounce.easeInOut });
+        gsap.to(arrow, { bottom: 60, ease: Bounce.easeInOut, repeat: -1, yoyo: true });
+    }, 5000);
+}
+
 function expandMobileMenu() {
     gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
     gsap.to('.mobile--nav', { display: 'block', duration: 0.2 });
@@ -264,6 +299,17 @@ function disableSubmitButton() {
     $('#submit-button-label').toggleClass('disabled');
 }
 
+/**
+ * 
+ * @returns number of pixels scrolled vertically from top of page
+ */
+function getPixelScrolledFromTop() {
+    var y = (window.pageYOffset !== undefined)
+        ? window.pageYOffset
+        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    return y;
+}
+
 /* Project Section Expand Handler */
 function toggleExpandProjects() {
     let p = document.getElementById('more-projects-wrapper');
@@ -279,7 +325,6 @@ function toggleExpandProjects() {
         btn.innerText = 'Show more projects...';
     }
 }
-
 
 /**
  * Retrieve stats on all repo's by username and
@@ -435,8 +480,6 @@ function initializeTheme() {
         storeTheme(themeName);
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
         setDarkTheme();
-
-
 
     } else if (themeName === LIGHT_THEME_NAME) {
         document.getElementById(THEME_SWITCH_ID).checked = true;
