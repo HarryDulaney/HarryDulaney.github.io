@@ -1694,6 +1694,14 @@ ul .skills-list {
         display: none;
     }
 
+    .nav--items .home--nav-link-mobile {
+        display: flex;
+        position: absolute;
+        width: 100vw !important;
+        top:10px;
+        padding: 10px !important;
+    }
+
     .nav--items .mobile-nav-toggle {
         display: inline-block;
         position: absolute;
