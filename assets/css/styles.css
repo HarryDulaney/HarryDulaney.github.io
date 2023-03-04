@@ -177,6 +177,11 @@ a :hover {
     color: var(--text-hover);
 }
 
+
+#footer .social-footer-wrappper .med-text {
+    font-size: medium;
+}
+
 #footer .copyright-stamp {
     text-align: center;
     -webkit-text-align: center;
@@ -309,7 +314,7 @@ textarea {
 .astronaut-flying-towards-overlay {
     position: relative;
     display: block;
-    background: url("../img/astronaut-flying-towards-view.png") no-repeat center;
+    background: url("../img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center;
     background-size: contain;
     z-index: 0;
 }
@@ -1366,19 +1371,17 @@ ul .skills-list {
 
 }
 
-.about .about--astronaut-image {
-    height: fit-content !important;
-    z-index: 9999999999999 !important;
-
-}
-
-.about .about--astronaut-image img {
-    object-fit: fill;
-    margin: 1vh 15vw 2vh 1vh;
-    z-index: 9999999999999 !important;
-    width: auto;
-    opacity: 35%;
+#about--image-transition {
     max-height: calc(50px + 4vh + 4vw);
+    height: auto;
+    width: 20% !important;
+    height: auto;
+    z-index: 9999 !important;
+    object-fit: fill;
+    margin-left: 5vw !important;
+    margin-top: 5vh !important;
+    z-index: 9999 !important;
+    opacity: 35% !important;
 }
 
 .about--banner {
