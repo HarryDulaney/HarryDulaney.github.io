@@ -560,11 +560,11 @@ function setLightTheme() {
     $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
     $('.intro--wrapper').css('height', 'calc(100vh - 40px)');
 
-    $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/astronaut-flying-towards-viewer-light-theme.png") no-repeat center');
-    $('.astronaut-flying-towards-overlay ').css('position', 'relative');
-    $('.astronaut-flying-towards-overlay ').css('display', 'block');
-    $('.astronaut-flying-towards-overlay ').css('background-size', 'contain');
-    $('.astronaut-flying-towards-overlay ').css('z-index', '0');
+    $('.astronaut-flying-towards-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
+    $('.astronaut-flying-towards-overlay').css('position', 'relative');
+    $('.astronaut-flying-towards-overlay').css('display', 'block');
+    $('.astronaut-flying-towards-overlay').css('background-size', 'contain');
+    $('.astronaut-flying-towards-overlay').css('z-index', '0');
 
     var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text');
     gitStatusTextStyle.forEach(element => {
@@ -590,7 +590,7 @@ function setDarkTheme() {
     $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
     $('.intro--wrapper').css('height', 'calc(100vh - 40px)');
 
-    $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/astronaut-flying-towards-view.png") no-repeat center');
+    $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
     $('.astronaut-flying-towards-overlay ').css('position', 'relative');
     $('.astronaut-flying-towards-overlay ').css('display', 'block');
     $('.astronaut-flying-towards-overlay ').css('background-size', 'contain');
