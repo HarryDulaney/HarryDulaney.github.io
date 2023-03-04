@@ -751,12 +751,13 @@ input:checked+.slider:before {
 }
 
 .intro .intro--image img {
-    margin-top: 3rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     width: 100% !important;
-    height: auto;
+    height: 100% !important;
     z-index: 10;
-    border-radius: 50%;
-
 }
 
 .projects--scroll-help-image {
@@ -1587,7 +1588,7 @@ ul .skills-list {
     height: auto;
     background-image: url("../img/graphics/undraw_contact_us_re_4qqt.svg");
     background-position-y: 8vh;
-    background-position-x: 34vw; 
+    background-position-x: 34vw;
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
