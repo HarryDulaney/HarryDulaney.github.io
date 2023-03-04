@@ -759,6 +759,21 @@ input:checked+.slider:before {
 
 }
 
+.projects--scroll-help-image {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.projects--scroll-help-image img {
+    max-height: calc(50px + 4vh + 4vw);
+    object-fit: fill;
+    z-index: 999;
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
 .scroll--help-image img {
     object-fit: fill;
     z-index: 999;
@@ -1339,11 +1354,14 @@ ul .skills-list {
 
 .about .about--astronaut-image {
     height: fit-content !important;
+    z-index: 9999999999999 !important;
+
 }
 
 .about .about--astronaut-image img {
     object-fit: fill;
     margin: 1vh 15vw 2vh 1vh;
+    z-index: 9999999999999 !important;
     width: auto;
     opacity: 35%;
     max-height: calc(50px + 4vh + 4vw);
@@ -1362,7 +1380,7 @@ ul .skills-list {
 
 .about--banner #about-me-section-header {
     font-size: calc(3vh + 1vw);
-    z-index: 150;
+    z-index: 9999999999999 !important;
     text-align: center;
     width: 100%;
     margin-top: -80px
@@ -1567,9 +1585,9 @@ ul .skills-list {
 .contact .background-cover-art {
     width: 100%;
     height: auto;
-    background-image: url("../img/graphics/graphic_hero_contact-us@2x-1024x677.webp");
+    background-image: url("../img/graphics/undraw_contact_us_re_4qqt.svg");
     background-position-y: 8vh;
-    background-position-x: 36vw;
+    background-position-x: 34vw; 
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
