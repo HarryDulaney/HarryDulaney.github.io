@@ -305,15 +305,6 @@ textarea {
 }
 
 /* --------------------------------- Background image overlays ---------------------------------- */
-.wolf-img-overlay {
-    position: relative;
-    /* Sit on top of the page content */
-    display: block;
-    background: url("../img/wolf__blue_painted.png") no-repeat right;
-    background-size: contain;
-    z-index: 0;
-}
-
 
 .astronaut-flying-towards-overlay {
     position: relative;
@@ -760,7 +751,8 @@ input:checked+.slider:before {
 }
 
 .intro .intro--image img {
-    width: 40vh;
+    margin-top: 3rem !important;
+    width: 100% !important;
     height: auto;
     z-index: 10;
     border-radius: 50%;
@@ -1403,6 +1395,7 @@ ul .skills-list {
 }
 
 .about .about--banner .banner--image img {
+    margin-bottom: 1rem !important;
     width: 35vh;
     height: auto;
     z-index: 10;
@@ -1413,6 +1406,14 @@ ul .skills-list {
 .about .about--banner .about-me-content-body {
     font-size: calc(1.5vh + 0.7vw) !important;
     z-index: 150 !important;
+}
+
+.about .about--banner .about-me-content-body p {
+    margin-bottom: 0.2rem !important;
+}
+
+.about .about--banner .about-me-content-body .new-paragraph {
+    text-indent: 3ch !important;
 }
 
 .about--options {
