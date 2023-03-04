@@ -751,12 +751,13 @@ input:checked+.slider:before {
 }
 
 .intro .intro--image img {
-    margin-top: 3rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     width: 100% !important;
-    height: auto;
+    height: 100% !important;
     z-index: 10;
-    border-radius: 50%;
-
 }
 
 .projects--scroll-help-image {
@@ -768,6 +769,19 @@ input:checked+.slider:before {
     max-height: calc(50px + 4vh + 4vw);
     object-fit: fill;
     z-index: 999;
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
+.about--scroll-help-image img {
+    object-fit: fill;
+    z-index: 999;
+    padding: 0.3rem !important;
+    margin: 0 5vw 5vh 1vh;
+    opacity: 99.9%;
+    max-height: calc(50px + 4vh + 4vw);
     transition: 1s ease-in;
     -webkit-transition: 1s ease-in;
     -moz-transition: 1s ease-in;
@@ -1587,7 +1601,7 @@ ul .skills-list {
     height: auto;
     background-image: url("../img/graphics/undraw_contact_us_re_4qqt.svg");
     background-position-y: 8vh;
-    background-position-x: 34vw; 
+    background-position-x: 34vw;
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 0;
@@ -1674,22 +1688,8 @@ ul .skills-list {
 
 }
 
-@media (max-width: 767px) {
-    .nav--items>a {
-        text-decoration: none;
-    }
 
-    .contact .contact-form .textarea--message {
-        width: 100%;
-        height: 50%;
-    }
-
-    .mobile--title {
-        display: none;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 846px) {
     .res--links {
         display: none;
     }
@@ -1782,4 +1782,15 @@ ul .skills-list {
         color: var(--text-primary)
     }
 
+}
+
+@media (max-width: 767px) {
+    .nav--items>a {
+        text-decoration: none;
+    }
+
+    .contact .contact-form .textarea--message {
+        width: 100%;
+        height: 50%;
+    }
 }

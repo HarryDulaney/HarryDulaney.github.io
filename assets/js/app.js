@@ -17,7 +17,7 @@ const INTRO_SCROLL_ANIMATION_DELAY = 15 * 1000; // 15 seconds
 
 var open = false;
 var isBlog = false;
-var max600 = window.matchMedia("(max-width: 600px)");
+var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -33,17 +33,20 @@ $(document).ready(function () {
     var initialScrollPos = window.scrollY;
 
     if (getPixelScrolledFromTop() === 0) {
-        initializeScrollArrow(); // Reset scroll arrow bounce timer
+        initializeScrollArrow();
     } else {
-        hideScrollArrow(); // Turn off scroll arrow bounce timer
+        hideScrollArrow();
     }
 
     $(window).on('scroll', function () {
+        hideScrollArrow(); // Hide scroll arrow on scroll
+
         if (open) {
             retractMobileMenu();
             $('#mobile-nav-icon').removeClass('open');
         }
-        if (max600.matches) { // Mobile scroll behavior
+
+        if (isMobile.matches) { // Mobile scroll behavior
             showNavbar();
         } else {
             // Regular Nav Bar behavior
@@ -56,19 +59,17 @@ $(document).ready(function () {
             initialScrollPos = currentScrollPos;
         }
 
-        hideScrollArrow(); // Turn off scroll arrow when scrolling
         /* Handle turn off or reset intro scroll arrow bounce */
         if (getPixelScrolledFromTop() === 0) {
-            initializeScrollArrow(); // Reset scroll arrow bounce timer
-        } else {
-            hideScrollArrow(); // Turn off scroll arrow bounce timer
+            initializeScrollArrow();
         }
 
     });
 
     $('.mobile-nav-toggle').on('click', function () {
+        hideScrollArrow();
         //Mobile nav click behavior
-        if (max600.matches) {
+        if (isMobile.matches) {
             $('#mobile-nav-icon').toggleClass('open');
             if (!open) {
                 expandMobileMenu();
@@ -82,8 +83,9 @@ $(document).ready(function () {
     });
 
     $('.main-container').on('click', function () {
+        hideScrollArrow();
         //Mobile body click behavior
-        if (max600.matches) {
+        if (isMobile.matches) {
             if (open) {
                 retractMobileMenu();
                 $('#mobile-nav-icon').removeClass('open');
