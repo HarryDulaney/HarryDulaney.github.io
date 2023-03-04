@@ -775,6 +775,19 @@ input:checked+.slider:before {
     -o-transition: 1s ease-in;
 }
 
+.about--scroll-help-image img {
+    object-fit: fill;
+    z-index: 999;
+    padding: 0.3rem !important;
+    margin: 0 5vw 5vh 1vh;
+    opacity: 99.9%;
+    max-height: calc(50px + 4vh + 4vw);
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
 .scroll--help-image img {
     object-fit: fill;
     z-index: 999;
@@ -1675,22 +1688,8 @@ ul .skills-list {
 
 }
 
-@media (max-width: 767px) {
-    .nav--items>a {
-        text-decoration: none;
-    }
 
-    .contact .contact-form .textarea--message {
-        width: 100%;
-        height: 50%;
-    }
-
-    .mobile--title {
-        display: none;
-    }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 846px) {
     .res--links {
         display: none;
     }
@@ -1783,4 +1782,15 @@ ul .skills-list {
         color: var(--text-primary)
     }
 
+}
+
+@media (max-width: 767px) {
+    .nav--items>a {
+        text-decoration: none;
+    }
+
+    .contact .contact-form .textarea--message {
+        width: 100%;
+        height: 50%;
+    }
 }
