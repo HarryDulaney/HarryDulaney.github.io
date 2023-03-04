@@ -28,7 +28,7 @@
     --icon-primary: var(--text-primary);
     --bgcolor-secondary: #f3f3fe;
     --icon-hover: var(--text-hover);
-    --theme-transition: 0.5s ease-in;
+    --theme-transition: 0.5s ease-out;
     transition: var(--theme-transition);
 }
 
@@ -733,7 +733,6 @@ input:checked+.slider:before {
 .intro--arrow-container {
     position: absolute;
     bottom: 0;
-    height: 20vh !important;
     width: 100%;
 }
 
