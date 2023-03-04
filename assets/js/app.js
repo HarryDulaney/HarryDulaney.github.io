@@ -18,6 +18,7 @@ var open = false;
 var isBlog = false;
 var max600 = window.matchMedia("(max-width: 600px)");
 var introArrowTimer = null;
+var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
 
 /**
  * Main method, on document ready
@@ -248,24 +249,27 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
 function hideScrollArrow() {
     let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
+    gsap.to(arrow, { bottom: 0, ease: 'easeOut' });
     gsap.to(arrow, { opacity: 0, ease: 'easeOut' });
-    gsap.to(arrow, { bottom: 0, ease: 'easeOut', yoyo: false });
     gsap.to(message, { opacity: 0, ease: 'easeOut' });
+    introAnimationTimeline.pause();
+
     introArrowTimer = null;
 }
 /**
  * Initialize the scroll arrow on Intro section
+ * Timeout waits 10 seconds before starting the animation
  */
 function initializeScrollArrow() {
-    /* Set display intro arrow after 5 seconds */
     let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
     introArrowTimer = setTimeout(() => {
         gsap.to(arrow, { opacity: 0.3, ease: 'easeIn' });
         gsap.to(message, { opacity: 0.5, ease: 'easeIn' });
-        gsap.from(arrow, { bottom: 0, ease: Bounce.easeInOut });
-        gsap.to(arrow, { bottom: 60, ease: Bounce.easeInOut, repeat: -1, yoyo: true });
-    }, 10000);
+        introAnimationTimeline.from(arrow, { bottom: 0, ease: Bounce.easeIn, duration: 0.2 });
+        introAnimationTimeline.to(arrow, { bottom: 60, ease: Bounce.easeOut, duration: 0.3 });
+        introAnimationTimeline.play()
+    }, 7000);
 }
 
 /**
