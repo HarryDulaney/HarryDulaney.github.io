@@ -265,7 +265,7 @@ function initializeScrollArrow() {
         gsap.to(message, { opacity: 0.5, ease: 'easeIn' });
         gsap.from(arrow, { bottom: 0, ease: Bounce.easeInOut });
         gsap.to(arrow, { bottom: 60, ease: Bounce.easeInOut, repeat: -1, yoyo: true });
-    }, 8000);
+    }, 10000);
 }
 
 /**
