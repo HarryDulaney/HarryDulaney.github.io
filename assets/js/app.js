@@ -13,6 +13,7 @@ const THEME_SWITCH_ID = 'theme-switch-id';
 const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
 const MILLIS_PER_YEAR = 31557600000;
+const INTRO_SCROLL_ANIMATION_DELAY = 15 * 1000; // 15 seconds
 
 var open = false;
 var isBlog = false;
@@ -264,12 +265,11 @@ function initializeScrollArrow() {
     let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
     introArrowTimer = setTimeout(() => {
-        gsap.to(arrow, { opacity: 0.3, ease: 'easeIn' });
-        gsap.to(message, { opacity: 0.5, ease: 'easeIn' });
-        introAnimationTimeline.from(arrow, { bottom: 0, ease: Bounce.easeIn, duration: 0.2 });
-        introAnimationTimeline.to(arrow, { bottom: 60, ease: Bounce.easeOut, duration: 0.3 });
+        gsap.set(arrow, { opacity: 0.3, ease: 'easeIn' });
+        gsap.set(message, { opacity: 0.5, ease: 'easeIn' });
+        introAnimationTimeline.to(arrow, { bottom: 80 }, { bottom: 0, ease: Bounce.easeOut, duration: 1.2 })
         introAnimationTimeline.play()
-    }, 7000);
+    }, INTRO_SCROLL_ANIMATION_DELAY);
 }
 
 /**
