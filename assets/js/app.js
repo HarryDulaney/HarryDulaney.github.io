@@ -109,7 +109,6 @@ $(document).ready(function () {
     const kubernetesStartDate = new Date(2021, 4, 1);
     const microServicesStartDate = new Date(2020, 9, 1);
     const webDevelopmentStartDate = new Date(2014, 1, 1);
-
     const restApiStartDate = new Date(2017, 6, 1);
 
     renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
@@ -254,19 +253,24 @@ function hideScrollArrow() {
     gsap.to(message, { opacity: 0, ease: 'easeOut' });
     introArrowTimer = null;
 }
-
+/**
+ * Initialize the scroll arrow on Intro section
+ */
 function initializeScrollArrow() {
     /* Set display intro arrow after 5 seconds */
     let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
     introArrowTimer = setTimeout(() => {
         gsap.to(arrow, { opacity: 0.3, ease: 'easeIn' });
-        gsap.to(message, { opacity: 1, ease: 'easeIn' });
+        gsap.to(message, { opacity: 0.5, ease: 'easeIn' });
         gsap.from(arrow, { bottom: 0, ease: Bounce.easeInOut });
         gsap.to(arrow, { bottom: 60, ease: Bounce.easeInOut, repeat: -1, yoyo: true });
-    }, 5000);
+    }, 8000);
 }
 
+/**
+ * Expand the mobile menu navigation
+ */
 function expandMobileMenu() {
     gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
     gsap.to('.mobile--nav', { display: 'block', duration: 0.2 });
@@ -274,33 +278,48 @@ function expandMobileMenu() {
 
 }
 
+/**
+ * Retract the mobile menu navigation to start position
+ */
 function retractMobileMenu() {
     gsap.to('.mobile--nav', { display: 'none', duration: 0.2 });
     gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
     open = false;
 }
 
+/**
+ * Make the navbar visible
+ */
 function showNavbar() {
     $('.top--navbar').css('top', '0px');
 }
 
+/**
+ * Disappear the navbar
+ */
 function hideNavBar() {
     $('.top--navbar').css('top', '-50px');
 }
-
-/* Contact Form Handlers */
+/* ---------------  Contact Form Handlering--------------- */
+/**
+ * Enable the Contact Form Submit Button
+ * @param {*} token 
+ */
 function enableSubmitButton(token) {
     $('#submit-button-label').prop('disabled', false);
     $('#submit-button-label').toggleClass('disabled');
 }
 
+/**
+ * Disable the Contact Form Submit Button
+ */
 function disableSubmitButton() {
     $('#submit-button-label').prop('disabled', true);
     $('#submit-button-label').toggleClass('disabled');
 }
 
 /**
- * 
+ * Get current value of the scroll Y offset postion (scroll position)
  * @returns number of pixels scrolled vertically from top of page
  */
 function getPixelScrolledFromTop() {
@@ -310,7 +329,10 @@ function getPixelScrolledFromTop() {
     return y;
 }
 
-/* Project Section Expand Handler */
+/**
+ * Toggle expanded state of the projects section
+ * Show's and hides the extended list of projects
+ */
 function toggleExpandProjects() {
     let p = document.getElementById('more-projects-wrapper');
     if (p.dataset.expanded === 'false') {
@@ -327,8 +349,10 @@ function toggleExpandProjects() {
 }
 
 /**
- * Retrieve stats on all repo's by username and
- * update the DOM elements
+ * Fetch and set Github Stats for the
+ * Projects section.
+ * 
+ * Uses github api based on username and repo names
  */
 function getAllRepoStats() {
     const API_BASE = 'https://api.github.com/users/harrydulaney';
@@ -456,12 +480,12 @@ function getAllRepoStats() {
 
 }
 
-function showArrow(element) {
+function showBlogArrow(element) {
     gsap.to('#blog--link-arrow', { display: 'inherit', duration: 0.2 })
     gsap.to('#blog--link-arrow', { opacity: 1, duration: 0.5 });
 }
 
-function hideArrow(element) {
+function hideBlogArrow(element) {
     gsap.to('#blog--link-arrow', { opacity: 0, duration: 0.5 });
     gsap.to('#blog--link-arrow', { display: 'none', duration: 0.2 })
 }
