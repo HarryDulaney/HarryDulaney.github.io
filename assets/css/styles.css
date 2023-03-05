@@ -1748,11 +1748,51 @@ ul .skills-list {
         display: none;
     }
 
-    .nav--items .home--nav-link-mobile {
+    .mobile-right-side-menu {
         display: flex;
         position: absolute;
-        top: 25px;
-        left: 70vw;
+        top: 1.5rem;
+        right: 1rem;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: baseline;
+    }
+
+
+    .theme-switch-container {
+        display: inline-flex;
+        margin-top: 1rem;
+        width: 100% !important;
+    }
+
+    .mobile--title {
+        display: inline-block;
+        font-size: 1.6rem;
+        color: var(--text-primary)
+    }
+
+    .nav--items .mobile-right-side-menu .home--nav-link-mobile {
+        width: 100% !important;
+
+    }
+
+    .nav--items .mobile-right-side-menu .fork-me-mobile-item {
+        display: inline-flex;
+        width: 100% !important;
+        height: 100% !important;
+        justify-content: end !important;
+    }
+
+    .nav--items .mobile-right-side-menu .fork-on-github-mobile {
+        width: 4rem !important;
+    }
+
+    .nav--items .mobile-right-side-menu .fork-on-github-mobile img {
+        height: auto !important;
+        width: 100% !important;
+        margin-top: 1rem !important;
+        border-radius: 0% !important;
     }
 
     .nav--items .mobile-nav-toggle {
@@ -1832,51 +1872,11 @@ ul .skills-list {
         transform: rotate(-135deg);
     }
 
-    .contact .contact-form .textarea--message {
-        width: 100%;
-        height: 25%;
-    }
-
-    .mobile--title {
-        display: inline-block;
-        font-size: 1.6rem;
-        color: var(--text-primary)
-    }
-
 }
 
 @media (max-width: 767px) {
-    .nav--items>a {
-        text-decoration: none;
-    }
-
     .contact .contact-form .textarea--message {
         width: 100%;
         height: 50%;
-    }
-
-    .nav--items .home--nav-link-mobile {
-        display: flex;
-        position: absolute;
-        top: 25px;
-        left: 65vw;
-    }
-}
-
-@media (max-width: 600px) {
-    .nav--items>a {
-        text-decoration: none;
-    }
-
-    .contact .contact-form .textarea--message {
-        width: 100%;
-        height: 50%;
-    }
-
-    .nav--items .home--nav-link-mobile {
-        display: flex;
-        position: absolute;
-        top: 25px;
-        left: 55vw;
     }
 }
