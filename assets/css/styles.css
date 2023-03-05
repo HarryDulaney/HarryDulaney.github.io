@@ -10,6 +10,7 @@
     --bgcolor-primary: rgba(6, 18, 35, 0.94);
     --bgcolor-secondary: #0e0e0e;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
+    --card-bgcolor: rgba(6, 18, 35, 0.94);
     --icon-primary: var(--text-primary);
     --icon-hover: var(--text-hover);
     --theme-transition: 0.5s ease-out;
@@ -29,6 +30,7 @@
     --icon-primary: var(--text-primary);
     --bgcolor-secondary: #f3f3fe;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
+    --card-bgcolor: rgba(217, 231, 250, 0.94);
     --icon-hover: var(--text-hover);
     --theme-transition: 0.5s ease-out;
     transition: var(--theme-transition);
@@ -857,6 +859,20 @@ input+.slider:before {
 .projects--grid .badge--image img {
     height: 9vh;
     width: auto;
+}
+
+.projects--grid .project--card {
+    margin: 0 0 1rem 0;
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--card-bgcolor);
+    transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -o-transition: .6s ease-in-out;
+}
+
+.projects--grid .project--card:hover {
+    transform: scale(1.02);
 }
 
 .projects--grid img {
