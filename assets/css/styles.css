@@ -9,6 +9,7 @@
     --text-sub-title: #9a8a8a;
     --bgcolor-primary: rgba(6, 18, 35, 0.94);
     --bgcolor-secondary: #0e0e0e;
+    --bgcolor-common: rgba(6, 18, 35, 0.94);
     --icon-primary: var(--text-primary);
     --icon-hover: var(--text-hover);
     --theme-transition: 0.5s ease-out;
@@ -27,6 +28,7 @@
     --bgcolor-primary: rgba(217, 231, 250, 0.94);
     --icon-primary: var(--text-primary);
     --bgcolor-secondary: #f3f3fe;
+    --bgcolor-common: rgba(6, 18, 35, 0.94);
     --icon-hover: var(--text-hover);
     --theme-transition: 0.5s ease-out;
     transition: var(--theme-transition);
@@ -338,7 +340,6 @@ textarea {
 
 .theme-switch-container {
     display: inline-flex;
-    background: var(--color-secondary);
     flex-direction: column;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
@@ -348,20 +349,12 @@ textarea {
     -webkit-align-items: center;
 }
 
-.theme-switch-container button {
-    color: var(--font-color);
-    background: var(--color-primary);
-    padding: 10px 20px;
-    border: 0;
-    border-radius: 5px;
-}
+
 
 /* The switch - the box around the slider */
 .switch {
     position: relative;
-    display: inline-block;
-    width: 2.6rem;
-    height: 1.4rem;
+    cursor: pointer;
 }
 
 /* Hide default HTML checkbox */
@@ -371,59 +364,93 @@ textarea {
     height: 0;
 }
 
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: var(--theme-transition);
-    -webkit-transition: var(--theme-transition);
-    -moz-transition: var(--theme-transition);
-    -o-transition: var(--theme-transition);
-}
-
+/* Default - Moon Icon */
 .slider:before {
     position: absolute;
-    content: "";
-    height: 1.8rem;
-    width: 1.8rem;
-    left: 0px;
+    font-size: 1.3rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 100;
+    content: "\f186";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 8px;
     bottom: 4px;
     top: 0;
     bottom: 0;
-    margin: auto 0;
+    color: var(--text-hover);
     transition: var(--theme-transition);
     -webkit-transition: var(--theme-transition);
     -moz-transition: var(--theme-transition);
     -o-transition: var(--theme-transition);
-    box-shadow: 0 0px 15px #2020203d;
-    background: white url('../icon/night-mode-icon.png');
+    background: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-input:checked+.slider {
-    background-color: #001c33;
+/* Dark Theme Active - Moon Icon */
+.slider::after {
+    position: absolute;
+    font-size: 1.3rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f186";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    color: var(--text-hover);
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196f3;
+/* Dark Theme Inactive - Moon Icon */
+input:checked+.slider:after {
+    font-weight: 900;
+    color: #000000;
+
 }
 
+/* Light Theme Active - Sun Icon */
 input:checked+.slider:before {
     transform: translateX(1rem);
     -webkit-transform: translateX(1rem);
     -ms-transform: translateX(1rem);
     -moz-transform: translateX(1rem);
-    background: white url('../icon/sun-light-theme-icon.png');
+    font-size: 1.3rem;
+    color: var(--text-hover);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f185";
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+}
+
+/* Light Theme Inactive - Sun Icon */
+input+.slider:before {
+    transform: translateX(1rem);
+    -webkit-transform: translateX(1rem);
+    -ms-transform: translateX(1rem);
+    -moz-transform: translateX(1rem);
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    content: "\f185";
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 /* Rounded sliders */
@@ -435,6 +462,9 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
+.slider.round::after {
+    border-radius: 50%;
+}
 
 /*  ------------------------------------------- Contact ------------------------------------------------------ */
 
