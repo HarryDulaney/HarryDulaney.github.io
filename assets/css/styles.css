@@ -342,12 +342,15 @@ textarea {
 
 .theme-switch-container {
     display: inline-flex;
+    padding: 0;
+    margin: 0;
     flex-direction: column;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -o-flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
+    vertical-align: middle !important;
     -webkit-align-items: center;
 }
 
@@ -357,6 +360,8 @@ textarea {
 .switch {
     position: relative;
     cursor: pointer;
+    vertical-align: middle !important;
+    margin-top: -1px;
 }
 
 /* Hide default HTML checkbox */
