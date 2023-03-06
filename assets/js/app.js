@@ -20,7 +20,7 @@ var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-
+var recaptchaResult = null;
 /**
  * Main method, on document ready
  */
@@ -312,6 +312,7 @@ function hideNavBar() {
  * @param {*} token 
  */
 function enableSubmitButton(token) {
+    recaptchaResult = token;
     $('#submit-button-contact-form').prop('disabled', false);
 }
 
@@ -320,6 +321,37 @@ function enableSubmitButton(token) {
  */
 function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
+}
+
+function submitContactForm() {
+    const formSpreeUrl = 'https://formspree.io/xbjzadpn';
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        _replyto: formData.get('_replyto'),
+        _subject: formData.get('_subject'),
+        message: formData.get('message'),
+        'g-recaptcha-response': recaptchaResult
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.open('POST', formSpreeUrl, true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200 || xhr.status === 302) {
+            // Success
+            form.reset();
+        } else {
+            // Error
+            console.log('Error: ' + xhr.status);
+        }
+    }
+
+    xhr.send(JSON.stringify(data));
 }
 
 /**

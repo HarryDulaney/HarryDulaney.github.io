@@ -1545,11 +1545,7 @@
                         <!-- -------------------------- Contact Form ---------------------- -->
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-xl-7">
-                                <form
-                                    method="POST"
-                                    action="https://formspree.io/xbjzadpn"
-                                    id="contact-form"
-                                >
+                                <form id="contact-form">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input
@@ -1633,6 +1629,8 @@
                                                 value="Submit"
                                                 id="submit-button-contact-form"
                                                 for="contact-form"
+                                                formaction="submitContactForm"
+                                                formtarget="_blank"
                                                 class="btn btn-primary btn-xl"
                                                 disabled
                                             >
