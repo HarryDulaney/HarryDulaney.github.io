@@ -649,37 +649,6 @@ input+.slider:before {
     border-radius: 50%;
 }
 
-
-/* ------------------------------------------------ Blog ---------------------------------------------------- */
-
-.blog-container {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: -50px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
-.blog-container iframe {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: -50px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
 /* -------------------------------------------- Mobile Menu Buttons ---------------------------------------------- */
 
 .nav--items .mobile-nav-toggle {

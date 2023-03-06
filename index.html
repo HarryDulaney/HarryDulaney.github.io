@@ -55,15 +55,6 @@
         href="./assets/css/styles.css"
     >
     <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-    <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -343,16 +334,6 @@
             </div>
         </div>
     </nav>
-    <div
-        class="blog-container hide--h"
-        hidden
-    >
-        <iframe
-            id="blog--iframe"
-            src="https://blog.harrydulaney.com/posts"
-            allowtransparency="false"
-        ></iframe>
-    </div>
     <div
         class="main-container"
         id="top"
@@ -1568,7 +1549,6 @@
                                     method="POST"
                                     action="https://formspree.io/xbjzadpn"
                                     id="contact-form"
-                                    name="contact-form"
                                 >
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
@@ -1651,9 +1631,8 @@
                                             <input
                                                 type="submit"
                                                 value="Submit"
-                                                form="contact-form"
-                                                id="submit-form"
-                                                for="submit-form"
+                                                id="submit-button-contact-form"
+                                                for="contact-form"
                                                 class="btn btn-primary btn-xl"
                                                 disabled
                                             >
@@ -1721,7 +1700,7 @@
         </div>
 
         <p class="copyright-stamp">
-            ©2021-2023 Harry Dulaney<br></p>
+            ©2020-2023 Harry Dulaney<br></p>
     </footer>
     <script
         src="https://code.jquery.com/jquery-3.6.0.js"
