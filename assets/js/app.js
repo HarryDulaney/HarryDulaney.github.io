@@ -344,9 +344,20 @@ function submitContactForm() {
     xhr.onload = function () {
         if (xhr.status === 200 || xhr.status === 302) {
             // Success
+            console.log('Success: ' + xhr.status);
             form.reset();
+            var successAlert = document.getElementById('contact-success-alert');
+            successAlert.classList.remove('hide--h');
+            successAlert.classList.add('show--h');
+            successAlert.classList.remove('show--h');
+            successAlert.classList.add('hide--h');
         } else {
             // Error
+            var errorAlert = document.getElementById('contact-error-alert');
+            errorAlert.classList.remove('hide--h');
+            errorAlert.classList.add('show--h');
+            errorAlert.classList.remove('show--h');
+            errorAlert.classList.add('hide--h');
             console.log('Error: ' + xhr.status);
         }
     }

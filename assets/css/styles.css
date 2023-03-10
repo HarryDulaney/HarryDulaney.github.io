@@ -475,17 +475,31 @@ input+.slider:before {
 
 /*  ------------------------------------------- Contact ------------------------------------------------------ */
 
-.contact-form-alert {
+#contact-success-alert {
     z-index: 99999;
     padding: 20px;
-    background-color: #5e257a;
+    background-color: #74ce77;
     color: white;
     opacity: 1;
-    transition: opacity 0.6s;
-    -webkit-transition: opacity 0.6s;
-    -moz-transition: opacity 0.6s;
-    -o-transition: opacity 0.6s;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+
 }
+
+#contact-error-alert {
+    z-index: 99999;
+    padding: 20px;
+    background-color: #ce7474;
+    color: white;
+    opacity: 1;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+}
+
 
 .close--btn {
     margin-left: 15px;

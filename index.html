@@ -1601,7 +1601,24 @@
                                     <br>
                                     <div class="row">
                                         <div class="w-100">
-                                            <div class="contact-form-alert hide--h">
+                                            <div
+                                                id="contact-success-alert"
+                                                class="hide--h"
+                                            >
+                                                <span
+                                                    class="close--btn"
+                                                    onclick="this.parentElement.style.display='none';"
+                                                >&times;</span>
+                                                Success! Your message has been submitted!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="w-100">
+                                            <div
+                                                id="contact-error-alert"
+                                                class="hide--h"
+                                            >
                                                 <span
                                                     class="close--btn"
                                                     onclick="this.parentElement.style.display='none';"
