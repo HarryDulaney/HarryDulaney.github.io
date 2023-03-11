@@ -1545,7 +1545,12 @@
                         <!-- -------------------------- Contact Form ---------------------- -->
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-xl-7">
-                                <form id="contact-form">
+                                <form
+                                    id="contact-form"
+                                    action="javascript:;"
+                                    onsubmit="submitContactForm(this)"
+                                >
+
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input
@@ -1646,8 +1651,6 @@
                                                 value="Submit"
                                                 id="submit-button-contact-form"
                                                 for="contact-form"
-                                                formaction="submitContactForm"
-                                                formtarget="_blank"
                                                 class="btn btn-primary btn-xl"
                                                 disabled
                                             >

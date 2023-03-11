@@ -323,7 +323,7 @@ function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
 }
 
-function submitContactForm() {
+function submitContactForm(rawForm) {
     const formSpreeUrl = 'https://formspree.io/xbjzadpn';
     const form = document.getElementById('contact-form');
     const formData = new FormData(form);
