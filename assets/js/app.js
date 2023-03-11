@@ -29,6 +29,7 @@ $(document).ready(function () {
     });
 
     initializeTheme();
+    initContactForm();
     var initialScrollPos = window.scrollY;
 
     if (getPixelScrolledFromTop() === 0) {
@@ -321,47 +322,50 @@ function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
 }
 
-function submitContactForm(rawForm) {
-    const formSpreeUrl = 'https://formspree.io/xbjzadpn';
-    const form = document.getElementById('contact-form');
-    const recaptcha = window.localStorage.getItem('_grecaptcha');
-    const formData = new FormData(form);
-    const data = {
-        name: formData.get('name'),
-        _replyto: formData.get('_replyto'),
-        _subject: formData.get('_subject'),
-        message: formData.get('message'),
-        'g-recaptcha-response': recaptcha
-    };
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', formSpreeUrl, true);
+function initContactForm() {
+    var form = document.getElementById('contact-form');
+    form.addEventListener("submit", submitContactForm);
+}
 
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader('Accept', 'application/json');
-
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200 || xhr.status === 302) {
-                // Success
-                console.log('Success: ' + xhr.status);
-                form.reset();
-                var successAlert = document.getElementById('contact-success-alert');
-                successAlert.classList.remove('hide--h');
-                successAlert.classList.add('show--h');
-                successAlert.classList.remove('show--h');
-                successAlert.classList.add('hide--h');
-            } else {
-                // Error
-                var errorAlert = document.getElementById('contact-error-alert');
-                errorAlert.classList.remove('hide--h');
-                errorAlert.classList.add('show--h');
-                errorAlert.classList.remove('show--h');
-                errorAlert.classList.add('hide--h');
-                console.log('Error: ' + xhr.status);
-            }
+async function submitContactForm(event) {
+    event.preventDefault();
+    var status = document.getElementById("contact-form-status-alert");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
         }
-    }
-    xhr.send(JSON.stringify(data));
+    }).then(response => {
+        if (response.ok) {
+            // Success
+            status.classList.remove('hide--h');
+            status.classList.add('show--h');
+            status.classList.remove('show--h');
+            status.classList.add('hide--h');
+            form.reset();
+        } else {
+            // Error
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    console.log('Unknown error occurred on contact form...');
+                    const errorStatus = data["errors"].map(error => error["message"]).join(", ")
+                    window.alert("Error: " + errorStatus);
+                    console.log('Unknown error occurred on contact form...');
+                    form.reset();
+                } else {
+                    console.log('Unknown error occurred on contact form...');
+                    window.alert("Something went wrong! Please try again later.");
+                    form.reset();
+                }
+            })
+        }
+    }).catch(error => {
+        console.log('Unknown error occurred on contact form...' + error);
+        window.alert("Something went wrong! Please try again later.");
+        form.reset();
+    });
 }
 
 /**

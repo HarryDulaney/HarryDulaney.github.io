@@ -1547,8 +1547,8 @@
                             <div class="col-lg-8 col-xl-7">
                                 <form
                                     id="contact-form"
-                                    action="javascript:;"
-                                    onsubmit="submitContactForm(this)"
+                                    action="https://formspree.io/xbjzadpn"
+                                    method="POST"
                                 >
 
                                     <!-- Name input-->
@@ -1607,31 +1607,19 @@
                                     <div class="row">
                                         <div class="w-100">
                                             <div
-                                                id="contact-success-alert"
+                                                id="contact-form-status-alert"
                                                 class="hide--h"
                                             >
                                                 <span
                                                     class="close--btn"
                                                     onclick="this.parentElement.style.display='none';"
                                                 >&times;</span>
-                                                Success! Your message has been submitted!
+                                                Success, I received your message! I'll get back to you as soon as
+                                                possible.
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="w-100">
-                                            <div
-                                                id="contact-error-alert"
-                                                class="hide--h"
-                                            >
-                                                <span
-                                                    class="close--btn"
-                                                    onclick="this.parentElement.style.display='none';"
-                                                >&times;</span>
-                                                Success! Your message has been submitted!
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="row">
                                         <div
                                             class="g-recaptcha"
