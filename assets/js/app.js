@@ -332,6 +332,8 @@ async function submitContactForm(event) {
     var form = document.getElementById('contact-form');
     var successStatus = document.getElementById("contact-form-status-alert");
     var errorStatus = document.getElementById("contact-form-status-alert-error");
+    var submitButton = document.getElementById("submit-button-contact-form");
+
     var data = new FormData(event.target);
     fetch(event.target.action, {
         method: form.method,
@@ -344,6 +346,7 @@ async function submitContactForm(event) {
             // Success
             successStatus.style.display = 'inherit';
             form.reset();
+            submitButton.setAttribute('disabled', true);
         } else {
             // Error
             response.json().then(data => {
@@ -351,15 +354,18 @@ async function submitContactForm(event) {
                     errorStatus.style.display = 'inherit';
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
+                    submitButton.setAttribute('disabled', true);
                 } else {
                     errorStatus.style.display = 'inherit';
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
+                    submitButton.setAttribute('disabled', true);
                 }
             })
         }
     }).catch(error => {
         errorStatus.style.display = 'inherit';
+        submitButton.setAttribute('disabled', true);
         form.reset();
     });
 }
