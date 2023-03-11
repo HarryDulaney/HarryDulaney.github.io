@@ -336,33 +336,39 @@ function submitContactForm() {
     };
 
     const xhr = new XMLHttpRequest();
+
+    //Send the proper header information along with the request
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200 || xhr.status === 302) {
+                // Success
+                console.log('Success: ' + xhr.status);
+                form.reset();
+                var successAlert = document.getElementById('contact-success-alert');
+                successAlert.classList.remove('hide--h');
+                successAlert.classList.add('show--h');
+                successAlert.classList.remove('show--h');
+                successAlert.classList.add('hide--h');
+            } else {
+                // Error
+                var errorAlert = document.getElementById('contact-error-alert');
+                errorAlert.classList.remove('hide--h');
+                errorAlert.classList.add('show--h');
+                errorAlert.classList.remove('show--h');
+                errorAlert.classList.add('hide--h');
+                console.log('Error: ' + xhr.status);
+            }
+        }
+    }
+    xhr.send(JSON.stringify(data));
+
     xhr.setRequestHeader('Accept', 'application/json');
-    xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.open('POST', formSpreeUrl, true);
 
-    xhr.onload = function () {
-        if (xhr.status === 200 || xhr.status === 302) {
-            // Success
-            console.log('Success: ' + xhr.status);
-            form.reset();
-            var successAlert = document.getElementById('contact-success-alert');
-            successAlert.classList.remove('hide--h');
-            successAlert.classList.add('show--h');
-            successAlert.classList.remove('show--h');
-            successAlert.classList.add('hide--h');
-        } else {
-            // Error
-            var errorAlert = document.getElementById('contact-error-alert');
-            errorAlert.classList.remove('hide--h');
-            errorAlert.classList.add('show--h');
-            errorAlert.classList.remove('show--h');
-            errorAlert.classList.add('hide--h');
-            console.log('Error: ' + xhr.status);
-        }
-    }
 
-    xhr.send(JSON.stringify(data));
 }
 
 /**
