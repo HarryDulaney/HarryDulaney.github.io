@@ -336,9 +336,10 @@ function submitContactForm() {
     };
 
     const xhr = new XMLHttpRequest();
+    xhr.open('POST', formSpreeUrl, true);
 
-    //Send the proper header information along with the request
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader('Accept', 'application/json');
 
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -363,12 +364,6 @@ function submitContactForm() {
         }
     }
     xhr.send(JSON.stringify(data));
-
-    xhr.setRequestHeader('Accept', 'application/json');
-
-    xhr.open('POST', formSpreeUrl, true);
-
-
 }
 
 /**
