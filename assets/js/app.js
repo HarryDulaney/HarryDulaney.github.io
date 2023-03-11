@@ -13,7 +13,7 @@ const THEME_SWITCH_ID = 'theme-switch-id';
 const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
 const MILLIS_PER_YEAR = 31557600000;
-const INTRO_SCROLL_ANIMATION_DELAY = 15 * 1000; // 15 seconds
+const INTRO_SCROLL_ANIMATION_DELAY = 20 * 1000; // 20 seconds
 
 var open = false;
 var isBlog = false;
