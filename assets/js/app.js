@@ -330,7 +330,8 @@ function initContactForm() {
 async function submitContactForm(event) {
     event.preventDefault();
     var form = document.getElementById('contact-form');
-    var status = document.getElementById("contact-form-status-alert");
+    var successStatus = document.getElementById("contact-form-status-alert");
+    var errorStatus = document.getElementById("contact-form-status-alert-error");
     var data = new FormData(event.target);
     fetch(event.target.action, {
         method: form.method,
@@ -341,30 +342,24 @@ async function submitContactForm(event) {
     }).then(response => {
         if (response.ok) {
             // Success
-            status.classList.remove('hide--h');
-            status.classList.add('show--h');
-            status.classList.remove('show--h');
-            status.classList.add('hide--h');
+            successStatus.style.display = 'inherit';
             form.reset();
         } else {
             // Error
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
-                    console.log('Unknown error occurred on contact form...');
-                    const errorStatus = data["errors"].map(error => error["message"]).join(", ")
-                    window.alert("Error: " + errorStatus);
+                    errorStatus.style.display = 'inherit';
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
                 } else {
+                    errorStatus.style.display = 'inherit';
                     console.log('Unknown error occurred on contact form...');
-                    window.alert("Something went wrong! Please try again later.");
                     form.reset();
                 }
             })
         }
     }).catch(error => {
-        console.log('Unknown error occurred on contact form...' + error);
-        window.alert("Something went wrong! Please try again later.");
+        errorStatus.style.display = 'inherit';
         form.reset();
     });
 }
