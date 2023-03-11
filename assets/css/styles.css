@@ -128,14 +128,20 @@ a :hover {
     color: var(--icon-hover) !important;
 }
 
+.g-recaptcha {
+    margin: 0 auto !important;
+    padding: 1rem !important;
+
+}
+
 .section--header {
     color: var(--text-header);
 }
 
 .contact h2 {
     color: var(--text-header);
-    font-size: calc(3vh + 1vw);
-    margin-bottom: calc(8vh + 2vw);
+    font-size: 2.2rem;
+    margin-bottom: 12vh;
     z-index: 150;
 }
 
@@ -153,7 +159,7 @@ a :hover {
 
 .projects--grid .section--header {
     color: var(--text-header);
-    font-size: calc(3vh + 1vw);
+    font-size: 2.2 rem;
     margin-bottom: 2vw;
     vertical-align: center;
     z-index: 150;
@@ -168,7 +174,7 @@ a :hover {
 
 #footer .social-footer-wrappper {
     color: var(--text-sub-header);
-    font-size: calc(3vh + 1vw);
+    font-size: 2.2rem;
     padding: 1rem;
     z-index: 150;
     width: 100%;
@@ -177,7 +183,7 @@ a :hover {
 #footer .social-footer-wrappper .tag--page-self-link {
     color: var(--text-sub-header);
     transition: .5s ease-in;
-    font-size: calc(2vh + 1vw);
+    font-size: 1.8rem;
     padding: 1rem;
 }
 
@@ -681,7 +687,7 @@ input+.slider:before {
     position: relative;
     overflow: hidden;
     background-color: var(--bgcolor-primary);
-    height: calc(100vh - 40px);
+    height: 90vh
 }
 
 
@@ -1436,7 +1442,7 @@ ul .skills-list {
 }
 
 .about--banner #about-me-section-header {
-    font-size: calc(3vh + 1vw);
+    font-size: 2.2rem;
     z-index: 9999999999999 !important;
     text-align: center;
     width: 100%;
@@ -1622,6 +1628,11 @@ ul .skills-list {
     opacity: 0.3;
 }
 
+
+#message {
+    height: 10rem !important;
+}
+
 /* Contact */
 .contact {
     display: block;
@@ -1787,10 +1798,9 @@ ul .skills-list {
     .nav--items .mobile-nav-toggle {
         display: inline-block;
         position: absolute;
-        padding-left: 1rem !important;
+        padding: 1rem !important;
         cursor: pointer;
-        padding-top: 1rem !important;
-        padding-bottom: 0.5rem;
+
     }
 
     /* ------------------------------------ Mobile nav icon animatied -------------------------------- */
@@ -1808,6 +1818,11 @@ ul .skills-list {
         -o-transition: .5s ease-in-out;
         cursor: pointer;
     }
+
+    .nav--items .mobile-nav-toggle #mobile-nav-icon {
+        width: 30px !important;
+    }
+
 
     .nav--items .mobile-nav-toggle #mobile-nav-icon span {
         display: block;
@@ -1868,4 +1883,30 @@ ul .skills-list {
         width: 100%;
         height: 50%;
     }
+
+    .intro .intro--image img {
+        margin-top: 0px !important;
+        max-width: 80% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .intro .intro--image img {
+        margin-top: 0px !important;
+        max-width: 60% !important;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .mobile--title {
+        font-size: 1.4rem !important;
+    }
+
+
+    .nav--items .mobile--nav>.row .float-left>ul>li>a {
+        font-size: 1rem !important;
+        margin-left: 0.1rem !important;
+    }
+
 }
