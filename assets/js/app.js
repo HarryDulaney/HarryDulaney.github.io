@@ -20,7 +20,6 @@ var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-var recaptchaResult = null;
 /**
  * Main method, on document ready
  */
@@ -312,7 +311,6 @@ function hideNavBar() {
  * @param {*} token 
  */
 function enableSubmitButton(token) {
-    recaptchaResult = token;
     $('#submit-button-contact-form').prop('disabled', false);
 }
 
@@ -326,19 +324,19 @@ function disableSubmitButton() {
 function submitContactForm(rawForm) {
     const formSpreeUrl = 'https://formspree.io/xbjzadpn';
     const form = document.getElementById('contact-form');
+    const recaptcha = window.localStorage.getItem('_grecaptcha');
     const formData = new FormData(form);
     const data = {
         name: formData.get('name'),
         _replyto: formData.get('_replyto'),
         _subject: formData.get('_subject'),
         message: formData.get('message'),
-        'g-recaptcha-response': recaptchaResult
+        'g-recaptcha-response': recaptcha
     };
-
     const xhr = new XMLHttpRequest();
     xhr.open('POST', formSpreeUrl, true);
 
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader('Accept', 'application/json');
 
     xhr.onreadystatechange = () => {
