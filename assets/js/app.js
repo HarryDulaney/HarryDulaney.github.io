@@ -13,14 +13,14 @@ const THEME_SWITCH_ID = 'theme-switch-id';
 const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
 const MILLIS_PER_YEAR = 31557600000;
-const INTRO_SCROLL_ANIMATION_DELAY = 15 * 1000; // 15 seconds
+const INTRO_SCROLL_ANIMATION_DELAY = 20 * 1000; // 20 seconds
 
 var open = false;
 var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-
+var recaptchaResult = null;
 /**
  * Main method, on document ready
  */
@@ -312,6 +312,7 @@ function hideNavBar() {
  * @param {*} token 
  */
 function enableSubmitButton(token) {
+    recaptchaResult = token;
     $('#submit-button-contact-form').prop('disabled', false);
 }
 
@@ -320,6 +321,48 @@ function enableSubmitButton(token) {
  */
 function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
+}
+
+function submitContactForm() {
+    const formSpreeUrl = 'https://formspree.io/xbjzadpn';
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        _replyto: formData.get('_replyto'),
+        _subject: formData.get('_subject'),
+        message: formData.get('message'),
+        'g-recaptcha-response': recaptchaResult
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.open('POST', formSpreeUrl, true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200 || xhr.status === 302) {
+            // Success
+            console.log('Success: ' + xhr.status);
+            form.reset();
+            var successAlert = document.getElementById('contact-success-alert');
+            successAlert.classList.remove('hide--h');
+            successAlert.classList.add('show--h');
+            successAlert.classList.remove('show--h');
+            successAlert.classList.add('hide--h');
+        } else {
+            // Error
+            var errorAlert = document.getElementById('contact-error-alert');
+            errorAlert.classList.remove('hide--h');
+            errorAlert.classList.add('show--h');
+            errorAlert.classList.remove('show--h');
+            errorAlert.classList.add('hide--h');
+            console.log('Error: ' + xhr.status);
+        }
+    }
+
+    xhr.send(JSON.stringify(data));
 }
 
 /**

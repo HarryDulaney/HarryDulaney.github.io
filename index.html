@@ -347,7 +347,7 @@
                             <div class="intro--image">
                                 <img
                                     class="img-fluid"
-                                    src="assets/img/graphics/undraw_programming_re_kg9v.svg"
+                                    src="assets/img/graphics/undraw_developer_activity_re_39tg-REDHAIR.svg"
                                     alt="welcome-img"
                                 >
                             </div>
@@ -357,18 +357,18 @@
                             class="col-md-8"
                         >
                             <p>
-                                <span class="ex-large-text">Hello </span>
+                                <span class="ex-large-text">Hi </span>
                                 <span class="med-large-text text-nowrap">I'm Harry,</span> <br>
                                 <span class="med-med-text">
                                     a Full Stack Software Developer based in Atlanta, GA, USA.
                                 </span><br><br>
 
                                 <span class="med-main-message-text">
-                                    I am passionate about utilizing my experience with full stack web development
-                                    to build robust software products.
-                                    I believe strongly in leveraging best practices and industry standards
-                                    to design the most scalable, maintainable, and
-                                    secure software systems possible.
+                                    I'm an experienced software engineer with a passion for designing and building
+                                    robust enterprise systems. I specialize in Java and JavaScript development and have
+                                    extensive experience building full stack web applications, microservices and REST
+                                    Api's. I believe strongly in following best practices to build secure, scalable,
+                                    and maintainable software.
                                 </span><br><br>
                                 <span class="keep-scrolling-message sub--med-med-text">
                                     Keep scrolling to see what I've been working on...
@@ -1545,11 +1545,7 @@
                         <!-- -------------------------- Contact Form ---------------------- -->
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-xl-7">
-                                <form
-                                    method="POST"
-                                    action="https://formspree.io/xbjzadpn"
-                                    id="contact-form"
-                                >
+                                <form id="contact-form">
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
                                         <input
@@ -1605,7 +1601,24 @@
                                     <br>
                                     <div class="row">
                                         <div class="w-100">
-                                            <div class="contact-form-alert hide--h">
+                                            <div
+                                                id="contact-success-alert"
+                                                class="hide--h"
+                                            >
+                                                <span
+                                                    class="close--btn"
+                                                    onclick="this.parentElement.style.display='none';"
+                                                >&times;</span>
+                                                Success! Your message has been submitted!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="w-100">
+                                            <div
+                                                id="contact-error-alert"
+                                                class="hide--h"
+                                            >
                                                 <span
                                                     class="close--btn"
                                                     onclick="this.parentElement.style.display='none';"
@@ -1633,6 +1646,8 @@
                                                 value="Submit"
                                                 id="submit-button-contact-form"
                                                 for="contact-form"
+                                                formaction="submitContactForm"
+                                                formtarget="_blank"
                                                 class="btn btn-primary btn-xl"
                                                 disabled
                                             >
