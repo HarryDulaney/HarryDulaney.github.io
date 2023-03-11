@@ -329,6 +329,7 @@ function initContactForm() {
 
 async function submitContactForm(event) {
     event.preventDefault();
+    var form = document.getElementById('contact-form');
     var status = document.getElementById("contact-form-status-alert");
     var data = new FormData(event.target);
     fetch(event.target.action, {
