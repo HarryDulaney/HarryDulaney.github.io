@@ -419,116 +419,136 @@ function getAllRepoStats() {
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', API_BASE + REPOS_URL + PAGE_COUNT_QUERY, true);
-
-    xhr.onload = function () {
-        const data = JSON.parse(this.response);
-        for (let i in data) {
-            switch (data[i].name) {
-                case SIM_AIR:
-                    /* Set Air Sim Github Stats */
-                    let simAirStats = document.getElementById('sim-air-app-stats');
-                    let simAirUpdateTime = simAirStats.getElementsByClassName('git-stats-datetime');
-                    let simAirStars = document.getElementById('sim-air-stars');
-                    let simAirForks = document.getElementById('sim-air-forks');
-                    simAirStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    simAirForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t1 = new Date().toLocaleTimeString();
-                    const d1 = new Date().toLocaleDateString();
-                    simAirUpdateTime[0].innerHTML = (`<div>${t1} ${d1}</div>`);
-                    break;
-
-                case DEEZER_APP:
-                    /* Set Deezer Web App Github Stats */
-                    let deezerStats = document.getElementById('deezer-app-stats');
-                    let deezerUpdateTime = deezerStats.getElementsByClassName('git-stats-datetime');
-                    let deezerStars = document.getElementById('deezer-stars');
-                    let deezerForks = document.getElementById('deezer-forks');
-                    deezerStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    deezerForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t3 = new Date().toLocaleTimeString();
-                    const d3 = new Date().toLocaleDateString();
-                    deezerUpdateTime[0].innerHTML = (`<div>${d3} ${t3}</div>`);
-                    break;
-
-                case INTRO_JAVA:
-                    /* Set Intro to Java Programming GitHub Stats */
-                    let introJavaStats = document.getElementById('intro-java-app-stats');
-                    let introJavaUpdated = introJavaStats.getElementsByClassName('git-stats-datetime');
-                    let introToJavaStars = document.getElementById('intro-java-program-stars');
-                    let introToJavaForks = document.getElementById('intro-java-program-forks');
-                    introToJavaStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    introToJavaForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t4 = new Date().toLocaleTimeString();
-                    const d4 = new Date().toLocaleDateString();
-                    introJavaUpdated[0].innerHTML = (`<div>${d4} ${t4}</div>`);
-                    break;
-
-                case FILE_COMM:
-                    /* Set File Commander GitHub Stats */
-                    let fileCommStats = document.getElementById('file-commander-stats');
-                    let fileCommUpdated = fileCommStats.getElementsByClassName('git-stats-datetime');
-                    let fileCommStars = document.getElementById('file-commander-stars');
-                    let fileCommForks = document.getElementById('file-commander-forks');
-                    fileCommStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    fileCommForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t5 = new Date().toLocaleTimeString();
-                    const d5 = new Date().toLocaleDateString();
-                    fileCommUpdated[0].innerHTML = (`<div>${d5} ${t5}</div>`);
-                    break;
-
-                case CONTACT_LIST_APP:
-                    /* Set Contact List App GitHub Stats */
-                    let contactAppStats = document.getElementById('contact-app-stats');
-                    let contactAppUpdate = contactAppStats.getElementsByClassName('git-stats-datetime');
-                    let contactAppStars = document.getElementById('contact-app-stars');
-                    let contactAppForks = document.getElementById('contact-app-forks');
-                    contactAppStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    contactAppForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t6 = new Date().toLocaleTimeString();
-                    const d6 = new Date().toLocaleDateString();
-                    contactAppUpdate[0].innerHTML = (`<div>${d6} ${t6}</div>`);
-                    break;
-
-                case NOTES_ANDROID:
-                    /* Set Notes 4 Android GitHub Stats */
-                    let notesStats = document.getElementById('notes-4-android-stats');
-                    let updateDateTime = notesStats.getElementsByClassName('git-stats-datetime');
-                    let notesStars = document.getElementById('notes-4-android-stars');
-                    let notesForks = document.getElementById('notes-4-android-forks');
-                    notesStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    notesForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t7 = new Date().toLocaleTimeString();
-                    const d7 = new Date().toLocaleDateString();
-                    updateDateTime[0].innerHTML = (`<div>${d7} ${t7}</div>`);
-                    break;
-
-                case STOCK_PREDICTOR:
-                    /* Set Stock Picker GitHub Stats */
-                    let stockPredStats = document.getElementById('stock-predictor-stats');
-                    let updateTime = stockPredStats.getElementsByClassName('git-stats-datetime');
-                    let stockPredStars = document.getElementById('stock-predictor-stars');
-                    let stockPredForks = document.getElementById('stock-predictor-forks');
-                    stockPredStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                    stockPredForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                    /* Set Last Updated */
-                    const t8 = new Date().toLocaleTimeString();
-                    const d8 = new Date().toLocaleDateString();
-                    updateTime[0].innerHTML = (`<div>${d8} ${t8}</div>`);
-                    break;
-
-            }
+    fetch(API_BASE + REPOS_URL + PAGE_COUNT_QUERY, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
         }
+    }).then(response => {
+        if (response.ok) {
+            // Success
+            response.json().then(data => {
+                for (let i in data) {
+                    switch (data[i].name) {
+                        case SIM_AIR:
+                            /* Set Air Sim Github Stats */
+                            let simAirStats = document.getElementById('sim-air-app-stats');
+                            let simAirUpdateTime = simAirStats.getElementsByClassName('git-stats-datetime');
+                            let simAirStars = document.getElementById('sim-air-stars');
+                            let simAirForks = document.getElementById('sim-air-forks');
+                            simAirStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            simAirForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t1 = new Date().toLocaleTimeString();
+                            const d1 = new Date().toLocaleDateString();
+                            simAirUpdateTime[0].innerHTML = (`<div>${t1} ${d1}</div>`);
+                            break;
 
-    }
-    xhr.send();
+                        case DEEZER_APP:
+                            /* Set Deezer Web App Github Stats */
+                            let deezerStats = document.getElementById('deezer-app-stats');
+                            let deezerUpdateTime = deezerStats.getElementsByClassName('git-stats-datetime');
+                            let deezerStars = document.getElementById('deezer-stars');
+                            let deezerForks = document.getElementById('deezer-forks');
+                            deezerStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            deezerForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t3 = new Date().toLocaleTimeString();
+                            const d3 = new Date().toLocaleDateString();
+                            deezerUpdateTime[0].innerHTML = (`<div>${d3} ${t3}</div>`);
+                            break;
+
+                        case INTRO_JAVA:
+                            /* Set Intro to Java Programming GitHub Stats */
+                            let introJavaStats = document.getElementById('intro-java-app-stats');
+                            let introJavaUpdated = introJavaStats.getElementsByClassName('git-stats-datetime');
+                            let introToJavaStars = document.getElementById('intro-java-program-stars');
+                            let introToJavaForks = document.getElementById('intro-java-program-forks');
+                            introToJavaStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            introToJavaForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t4 = new Date().toLocaleTimeString();
+                            const d4 = new Date().toLocaleDateString();
+                            introJavaUpdated[0].innerHTML = (`<div>${d4} ${t4}</div>`);
+                            break;
+
+                        case FILE_COMM:
+                            /* Set File Commander GitHub Stats */
+                            let fileCommStats = document.getElementById('file-commander-stats');
+                            let fileCommUpdated = fileCommStats.getElementsByClassName('git-stats-datetime');
+                            let fileCommStars = document.getElementById('file-commander-stars');
+                            let fileCommForks = document.getElementById('file-commander-forks');
+                            fileCommStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            fileCommForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t5 = new Date().toLocaleTimeString();
+                            const d5 = new Date().toLocaleDateString();
+                            fileCommUpdated[0].innerHTML = (`<div>${d5} ${t5}</div>`);
+                            break;
+
+                        case CONTACT_LIST_APP:
+                            /* Set Contact List App GitHub Stats */
+                            let contactAppStats = document.getElementById('contact-app-stats');
+                            let contactAppUpdate = contactAppStats.getElementsByClassName('git-stats-datetime');
+                            let contactAppStars = document.getElementById('contact-app-stars');
+                            let contactAppForks = document.getElementById('contact-app-forks');
+                            contactAppStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            contactAppForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t6 = new Date().toLocaleTimeString();
+                            const d6 = new Date().toLocaleDateString();
+                            contactAppUpdate[0].innerHTML = (`<div>${d6} ${t6}</div>`);
+                            break;
+
+                        case NOTES_ANDROID:
+                            /* Set Notes 4 Android GitHub Stats */
+                            let notesStats = document.getElementById('notes-4-android-stats');
+                            let updateDateTime = notesStats.getElementsByClassName('git-stats-datetime');
+                            let notesStars = document.getElementById('notes-4-android-stars');
+                            let notesForks = document.getElementById('notes-4-android-forks');
+                            notesStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            notesForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t7 = new Date().toLocaleTimeString();
+                            const d7 = new Date().toLocaleDateString();
+                            updateDateTime[0].innerHTML = (`<div>${d7} ${t7}</div>`);
+                            break;
+
+                        case STOCK_PREDICTOR:
+                            /* Set Stock Picker GitHub Stats */
+                            let stockPredStats = document.getElementById('stock-predictor-stats');
+                            let updateTime = stockPredStats.getElementsByClassName('git-stats-datetime');
+                            let stockPredStars = document.getElementById('stock-predictor-stars');
+                            let stockPredForks = document.getElementById('stock-predictor-forks');
+                            stockPredStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            stockPredForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const t8 = new Date().toLocaleTimeString();
+                            const d8 = new Date().toLocaleDateString();
+                            updateTime[0].innerHTML = (`<div>${d8} ${t8}</div>`);
+                            break;
+
+                    }
+                }
+            });
+
+        } else {
+            // Error
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    console.log('Following error\'s occurred while calling GitHub API...');
+                    data.errors.forEach(error => {
+                        console.log(error);
+                    });
+                } else {
+                    console.log('Unknown error occurred while calling GitHub API...');
+                }
+            })
+        }
+    }).catch(error => {
+        console.log('Unknown error occurred while calling GitHub API...');
+    });
+
 
 }
 
