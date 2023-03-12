@@ -159,7 +159,7 @@ a :hover {
 
 .projects--grid .section--header {
     color: var(--text-header);
-    font-size: 2.2 rem;
+    font-size: 2.2rem;
     margin-bottom: 2vw;
     vertical-align: center;
     z-index: 150;
@@ -240,7 +240,7 @@ h2 {
     display: block;
     text-align: center;
     color: var(--text-secondary);
-    font-size: calc(10px + 0.3vw + 0.2vh);
+    font-size: 1.5rem;
 }
 
 small {
@@ -578,31 +578,6 @@ input+.slider:before {
     -o-transition: all 100ms ease-in-out;
 }
 
-.section--heading>h1 {
-    display: block;
-    margin-bottom: 3rem;
-    text-align: center;
-    align-content: center;
-    -webkit-align-content: center;
-    color: var(--text-hover);
-    font-size: calc(2em + 0.5vw + 0.5vh);
-    opacity: 50%;
-    transition: color 2s, opacity 1s;
-    -webkit-transition: color 2s, opacity 1s;
-    -moz-transition: color 2s, opacity 1s;
-    -o-transition: color 2s, opacity 1s;
-}
-
-.section--heading>h1:hover {
-    color: var(--text-hover);
-    opacity: 100%;
-    transition: .9s ease-in-out;
-    -webkit-transition: .9s ease-in-out;
-    -moz-transition: .9s ease-in-out;
-    -o-transition: .9s ease-in-out;
-
-}
-
 .nav--items .social--full .social--link {
     margin: 0.5rem;
     font-size: 1.4rem;
@@ -738,23 +713,23 @@ input+.slider:before {
 }
 
 .intro--wrapper #intro-message-body .ex-large-text {
-    font-size: calc(6vh + 3vw) !important;
+    font-size: 5rem !important;
 }
 
 .intro--wrapper #intro-message-body .med-large-text {
-    font-size: calc(3vh + 0.5vw) !important;
+    font-size: 2rem !important;
 }
 
 .intro--wrapper #intro-message-body .med-med-text {
-    font-size: calc(1vh + 1vw) !important;
+    font-size: 1.4em !important;
 }
 
 .intro--wrapper #intro-message-body .med-main-message-text {
-    font-size: calc(1.5vh + 0.7vw) !important;
+    font-size: 1.4rem !important;
 }
 
 .intro--wrapper #intro-message-body .sub--med-med-text {
-    font-size: calc(0.9vh + 0.7vw) !important;
+    font-size: 0.8rem !important;
 }
 
 
@@ -783,8 +758,8 @@ input+.slider:before {
 
 
 .intro {
-    padding: calc(0.1vh + 2vw);
-    margin-top: calc(0.1vh + 2vw);
+    padding: 1vw;
+    margin-top: 5vh;
 }
 
 .intro .intro--image img {
@@ -1485,7 +1460,7 @@ ul .skills-list {
 }
 
 .about .about--banner .about-me-content-body {
-    font-size: calc(1.5vh + 0.7vw) !important;
+    font-size: 1.2rem !important;
     z-index: 150 !important;
 }
 
@@ -1574,7 +1549,7 @@ ul .skills-list {
 
 .about--options a>h3 {
     position: relative;
-    font-size: calc(7px + 0.6vw);
+    font-size: 0.7rem;
     bottom: 0;
     text-transform: uppercase;
     -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
@@ -1713,6 +1688,7 @@ ul .skills-list {
     .nav--items div>.fork-on-github>img {
         display: none;
     }
+
 
 }
 
@@ -1884,9 +1860,34 @@ ul .skills-list {
         height: 50%;
     }
 
+    .intro {
+        margin-top: 1vh;
+    }
+
     .intro .intro--image img {
         margin-top: 0px !important;
         max-width: 80% !important;
+    }
+
+
+    .intro--wrapper #intro-message-body .ex-large-text {
+        font-size: 3rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-large-text {
+        font-size: 1.5rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-med-text {
+        font-size: 0.9em !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-main-message-text {
+        font-size: 0.9rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .sub--med-med-text {
+        font-size: 0.6rem !important;
     }
 }
 
