@@ -141,7 +141,6 @@ a :hover {
 .contact h2 {
     color: var(--text-header);
     font-size: 2.2rem;
-    margin-bottom: 12vh;
     z-index: 150;
 }
 
@@ -487,31 +486,21 @@ input+.slider:before {
 
 #contact-form-status-alert {
     z-index: 99999999999999999;
-    display: none;
+    opacity: 0;
     padding: 1.2rem;
     background-color: var(--alert-success);
     color: var(--text-contrast);
     border-radius: 10px 10px 10px 10px;
-    opacity: 1;
-    transition: 1s;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -o-transition: 1s;
 
 }
 
 #contact-form-status-alert-error {
     z-index: 99999999999999999;
-    display: none;
     padding: 1.2rem;
     background-color: var(--alert-error);
     color: var(--text-contrast);
     border-radius: 10px 10px 10px 10px;
-    opacity: 1;
-    transition: 1s;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -o-transition: 1s;
+    opacity: 0;
 
 }
 
