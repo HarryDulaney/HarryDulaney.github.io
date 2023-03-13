@@ -332,7 +332,6 @@ async function submitContactForm(event) {
     var form = document.getElementById('contact-form');
     var successStatus = document.getElementById("contact-form-status-alert");
     var errorStatus = document.getElementById("contact-form-status-alert-error");
-    var submitButton = document.getElementById("submit-button-contact-form");
 
     var data = new FormData(event.target);
     fetch(event.target.action, {
@@ -346,7 +345,6 @@ async function submitContactForm(event) {
             // Success
             gsap.to(successStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
             form.reset();
-            submitButton.setAttribute('disabled', true);
         } else {
             // Error
             response.json().then(data => {
@@ -354,18 +352,15 @@ async function submitContactForm(event) {
                     gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
-                    submitButton.setAttribute('disabled', true);
                 } else {
                     gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
-                    submitButton.setAttribute('disabled', true);
                 }
             })
         }
     }).catch(error => {
         gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
-        submitButton.setAttribute('disabled', true);
         form.reset();
     });
 }
