@@ -344,19 +344,19 @@ async function submitContactForm(event) {
     }).then(response => {
         if (response.ok) {
             // Success
-            gsap.to(successStatus, { opacity: '1', ease: Ease.easeIn, duration: 0.2 })
+            gsap.to(successStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
             form.reset();
             submitButton.setAttribute('disabled', true);
         } else {
             // Error
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
-                    gsap.to(errorStatus, { opacity: '1', ease: Ease.easeIn, duration: 0.2 })
+                    gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
                     submitButton.setAttribute('disabled', true);
                 } else {
-                    gsap.to(errorStatus, { opacity: '1', ease: Ease.easeIn, duration: 0.2 })
+                    gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
                     submitButton.setAttribute('disabled', true);
@@ -364,7 +364,7 @@ async function submitContactForm(event) {
             })
         }
     }).catch(error => {
-        gsap.to(errorStatus, { opacity: '1', ease: Ease.easeIn, duration: 0.2 })
+        gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
         submitButton.setAttribute('disabled', true);
         form.reset();
     });
@@ -373,8 +373,8 @@ async function submitContactForm(event) {
 function closeContactFormStatusAlert() {
     let successStatus = document.getElementById("contact-form-status-alert");
     let errorStatus = document.getElementById("contact-form-status-alert-error");
-    gsap.to(successStatus, { opacity: '0', ease: Ease.easeOut, duration: 0.2 })
-    gsap.to(errorStatus, { opacity: '0', ease: Ease.easeO, duration: 0.2 })
+    gsap.to(successStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
+    gsap.to(errorStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
 }
 
 /**
