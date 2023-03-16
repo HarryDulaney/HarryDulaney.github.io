@@ -127,7 +127,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
     /* Set About Me main paragraph years of work experience data */
     let fullTimeElapsedTime = Date.now() - fullTimeStartDate.getTime();
     let fullTimeElapsedYears = fullTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
-    let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years experience working as a software engineer on Agile project teams ';
+    let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years of experience';
     let fullTimeWorkElement = document.getElementById('insertYearsExperience');
     fullTimeWorkElement.innerText = fullTimeWorkMessage;
     /* Java */
