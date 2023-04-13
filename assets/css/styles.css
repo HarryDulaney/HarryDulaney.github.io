@@ -16,6 +16,8 @@
     --alert-success: #74ce77;
     --alert-error: #ce7474;
     --theme-transition: 0.5s ease-out;
+    --common-gray: #9a8a8a;
+
     transition: var(--theme-transition);
 }
 
@@ -37,6 +39,8 @@
     --alert-success: #74ce77;
     --alert-error: #ce7474;
     --theme-transition: 0.5s ease-out;
+    --common-gray: #9a8a8a;
+
     transition: var(--theme-transition);
 }
 
@@ -393,7 +397,7 @@ textarea {
     bottom: 4px;
     top: 0;
     bottom: 0;
-    color: var(--text-hover);
+    color: var(--common-gray);
     transition: var(--theme-transition);
     -webkit-transition: var(--theme-transition);
     -moz-transition: var(--theme-transition);
@@ -417,7 +421,7 @@ textarea {
     bottom: 4px;
     top: 0;
     bottom: 0;
-    color: var(--text-hover);
+    color: var(--common-gray);
     transition: var(--theme-transition);
     -webkit-transition: var(--theme-transition);
     -moz-transition: var(--theme-transition);
@@ -431,7 +435,7 @@ textarea {
 /* Dark Theme Inactive - Moon Icon */
 input:checked+.slider:after {
     font-weight: 900;
-    color: #000000;
+    color: #161616;
 
 }
 
@@ -442,7 +446,7 @@ input:checked+.slider:before {
     -ms-transform: translateX(1rem);
     -moz-transform: translateX(1rem);
     font-size: 1.3rem;
-    color: var(--text-hover);
+    color: var(--common-gray);
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f185";
