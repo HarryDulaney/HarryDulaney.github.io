@@ -124,12 +124,6 @@ $(document).ready(function () {
 
 function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
     azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate) {
-    /* Set About Me main paragraph years of work experience data */
-    let fullTimeElapsedTime = Date.now() - fullTimeStartDate.getTime();
-    let fullTimeElapsedYears = fullTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
-    let fullTimeWorkMessage = 'I have ' + (fullTimeElapsedYears).toFixed(1) + ' years of experience';
-    let fullTimeWorkElement = document.getElementById('insertYearsExperience');
-    fullTimeWorkElement.innerText = fullTimeWorkMessage;
     /* Java */
     let javaTimeElapsedTime = Date.now() - javaStartDate.getTime();
     let javaTimeElapsedYears = javaTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year
@@ -377,10 +371,11 @@ function closeContactFormStatusAlert() {
  * @returns number of pixels scrolled vertically from top of page
  */
 function getPixelScrolledFromTop() {
-    var y = (window.pageYOffset !== undefined)
-        ? window.pageYOffset
-        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    return y;
+    if (window.scrollY && window.scrollY !== undefined) {
+        return window.scrollY;
+    } else {
+        return (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    }
 }
 
 /**
