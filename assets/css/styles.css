@@ -4,10 +4,11 @@
     --text-contrast: #ffffff;
     --text-high-contrast: #2f2f2f;
     --text-hover: #4800ff;
+    --nav-bgcolor: #0e0e0eda;
     --text-header: #f5f6fc;
     --text-sub-header: #cdd9e5;
     --text-sub-title: #9a8a8a;
-    --bgcolor-primary: rgba(6, 18, 35, 0.94);
+    --bgcolor-primary: #061223f0;
     --bgcolor-secondary: #0e0e0e;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
     --card-bgcolor: rgba(6, 18, 35, 0.94);
@@ -17,7 +18,8 @@
     --alert-error: #ce7474;
     --theme-transition: 0.5s ease-out;
     --common-gray: #9a8a8a;
-
+    --border-radius-underlay: 25px 25px 25px 25px;
+    --bg-color-underlay: #0000009e !important;
     transition: var(--theme-transition);
 }
 
@@ -30,17 +32,19 @@
     --text-header: #001068;
     --text-sub-title: #3b3a3a;
     --text-sub-header: #08335d;
-    --bgcolor-primary: rgba(217, 231, 250, 0.94);
+    --nav-bgcolor: #d9e7faf0;
+    --bgcolor-primary: #d9e7faf0;
     --icon-primary: var(--text-primary);
     --bgcolor-secondary: #f3f3fe;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
-    --card-bgcolor: rgba(217, 231, 250, 0.94);
+    --card-bgcolor: #d9e7faf0;
     --icon-hover: var(--text-hover);
     --alert-success: #74ce77;
     --alert-error: #ce7474;
     --theme-transition: 0.5s ease-out;
     --common-gray: #9a8a8a;
-
+    --border-radius-underlay: 25px 25px 25px 25px !important;
+    --bg-color-underlay: transparent !important;
     transition: var(--theme-transition);
 }
 
@@ -336,14 +340,6 @@ textarea {
     z-index: 0;
 }
 
-.splash-one-overlay {
-    position: relative;
-    display: block;
-    background: url("../img/blue__splash.png") no-repeat center;
-    background-size: cover;
-    z-index: 0;
-}
-
 
 .main-container .main--body {
     width: 100%;
@@ -561,7 +557,7 @@ input+.slider:before {
     height: fit-content;
     min-height: 41px;
     max-height: 275px;
-    background-color: var(--bgcolor-primary);
+    background-color: var(--nav-bgcolor);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 99999;
@@ -666,7 +662,7 @@ input+.slider:before {
     left: 0;
     right: 0;
     height: 100%;
-    z-index: -10;
+    z-index: 1;
     background: var(--bgcolor-secondary);
     transform: skew(0deg, -19deg);
     -webkit-transform: skew(0deg, -19deg);
@@ -685,6 +681,7 @@ input+.slider:before {
     left: 0;
     right: 0;
     height: 100%;
+    z-index: 1;
     background: var(--bgcolor-secondary);
     transform: skew(0deg, 9deg);
     -webkit-transform: skew(0deg, 9deg);
@@ -698,6 +695,8 @@ input+.slider:before {
 
 .intro--wrapper #intro-message-body {
     color: var(--text-primary);
+    background-color: var(--bg-color-underlay);
+    border-radius: var(--border-radius-underlay);
     z-index: 999999999 !important;
     transition: var(--theme-transition);
     -webkit-transition: var(--theme-transition);
@@ -762,6 +761,7 @@ input+.slider:before {
     margin-right: 0px;
     width: 100% !important;
     height: 100% !important;
+    max-height: 80vh !important;
     z-index: 10;
 }
 
