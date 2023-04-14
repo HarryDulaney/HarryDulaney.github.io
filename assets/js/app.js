@@ -28,6 +28,7 @@ $(document).ready(function () {
         initializeTheme();
     });
 
+
     initializeTheme();
     initContactForm();
     var initialScrollPos = window.scrollY;
@@ -589,6 +590,37 @@ function initializeTheme() {
 
 }
 
+function initCloudsLightMode() {
+    VANTA.CLOUDS({
+        el: ".intro--wrapper",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        backgroundColor: "rgba(217, 231, 250, 0.94)"
+    });
+
+}
+
+function initCloudsDarkMode() {
+    VANTA.RINGS({
+        el: ".intro--wrapper",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0x0e0e0e
+    })
+
+
+}
+
+
+
 /** 
  * Toggle between light and dark themes 
  */
@@ -612,16 +644,11 @@ function storeTheme(themeName) {
 }
 
 function setLightTheme() {
-    $('.splash-one-overlay').css('background', 'url("./assets/img/blue__splash_light_theme.png") no-repeat center');
-    $('.splash-one-overlay').css('position', 'relative');
-    $('.splash-one-overlay').css('display', 'block');
-    $('.splash-one-overlay').css('background-size', 'cover');
-    $('.splash-one-overlay').css('z-index', '0');
-
     $('.intro--wrapper').css('position', 'relative');
     $('.intro--wrapper').css('overflow', 'hidden');
     $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
     $('.intro--wrapper').css('height', 'calc(100vh - 40px)');
+    initCloudsLightMode();
 
     $('.astronaut-flying-towards-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
     $('.astronaut-flying-towards-overlay').css('position', 'relative');
@@ -639,19 +666,15 @@ function setLightTheme() {
         element.classList.remove('text-white');
     });
 
+
 }
 
 function setDarkTheme() {
-    $('.splash-one-overlay').css('background', 'url("./assets/img/blue__splash.png") no-repeat center');
-    $('.splash-one-overlay').css('position', 'relative');
-    $('.splash-one-overlay').css('display', 'block');
-    $('.splash-one-overlay').css('background-size', 'cover');
-    $('.splash-one-overlay').css('z-index', '0');
-
     $('.intro--wrapper').css('position', 'relative');
     $('.intro--wrapper').css('overflow', 'hidden');
     $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
-    $('.intro--wrapper').css('height', 'calc(100vh - 40px)');
+    $('.intro--wrapper').css('height', 'calc(100vh - 60px)');
+    initCloudsDarkMode();
 
     $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
     $('.astronaut-flying-towards-overlay ').css('position', 'relative');
@@ -669,4 +692,5 @@ function setDarkTheme() {
     statsDateTime.forEach(element => {
         element.classList.add('text-white');
     });
+
 }
