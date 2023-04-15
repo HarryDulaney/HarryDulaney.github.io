@@ -651,7 +651,7 @@ input+.slider:before {
     position: relative;
     overflow: hidden;
     background-color: var(--bgcolor-primary);
-    height: 90vh
+    height: 96vh;
 }
 
 

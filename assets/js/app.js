@@ -20,6 +20,8 @@ var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
+var darkIntroBgEffect = null;
+var lightIntroBgEffect = null;
 /**
  * Main method, on document ready
  */
@@ -591,20 +593,24 @@ function initializeTheme() {
 }
 
 function initCloudsLightMode() {
-    VANTA.CLOUDS({
+    lightIntroBgEffect = VANTA.CLOUDS({
         el: ".intro--wrapper",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        backgroundColor: "rgba(217, 231, 250, 0.94)"
+        backgroundColor: "rgba(217, 231, 250)"
     });
+
+    if (darkIntroBgEffect) {
+        darkIntroBgEffect.destroy();
+    }
 
 }
 
 function initCloudsDarkMode() {
-    VANTA.RINGS({
+    darkIntroBgEffect = VANTA.RINGS({
         el: ".intro--wrapper",
         mouseControls: true,
         touchControls: true,
@@ -614,9 +620,12 @@ function initCloudsDarkMode() {
         scale: 1.00,
         scaleMobile: 1.00,
         backgroundColor: 0x0e0e0e
-    })
+    });
 
 
+    if (lightIntroBgEffect) {
+        lightIntroBgEffect.destroy();
+    }
 }
 
 
@@ -644,12 +653,7 @@ function storeTheme(themeName) {
 }
 
 function setLightTheme() {
-    $('.intro--wrapper').css('position', 'relative');
-    $('.intro--wrapper').css('overflow', 'hidden');
-    $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
-    $('.intro--wrapper').css('height', 'calc(100vh - 40px)');
     initCloudsLightMode();
-
     $('.astronaut-flying-towards-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
     $('.astronaut-flying-towards-overlay').css('position', 'relative');
     $('.astronaut-flying-towards-overlay').css('display', 'block');
@@ -670,12 +674,7 @@ function setLightTheme() {
 }
 
 function setDarkTheme() {
-    $('.intro--wrapper').css('position', 'relative');
-    $('.intro--wrapper').css('overflow', 'hidden');
-    $('.intro--wrapper').css('background-color', 'var(--bgcolor-primary)');
-    $('.intro--wrapper').css('height', 'calc(100vh - 60px)');
     initCloudsDarkMode();
-
     $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
     $('.astronaut-flying-towards-overlay ').css('position', 'relative');
     $('.astronaut-flying-towards-overlay ').css('display', 'block');
