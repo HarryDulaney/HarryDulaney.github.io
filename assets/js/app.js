@@ -252,8 +252,7 @@ function hideScrollArrow() {
     gsap.to(arrow, { bottom: 0, ease: 'easeOut' });
     gsap.to(arrow, { opacity: 0, ease: 'easeOut' });
     gsap.to(message, { opacity: 0, ease: 'easeOut' });
-    introAnimationTimeline.pause();
-
+    introAnimationTimeline.clear();
     introArrowTimer = null;
 }
 /**
