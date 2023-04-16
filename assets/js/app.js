@@ -593,27 +593,26 @@ function initializeTheme() {
 }
 
 function initCloudsLightMode() {
+    cleanupIntoAnimations();
     lightIntroBgEffect = VANTA.CLOUDS({
         el: ".intro--wrapper",
-        mouseControls: true,
-        touchControls: true,
+        mouseControls: false,
+        touchControls: false,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
         backgroundColor: "rgba(217, 231, 250)"
     });
 
-    if (darkIntroBgEffect) {
-        darkIntroBgEffect.destroy();
-    }
-
 }
 
 function initCloudsDarkMode() {
+    cleanupIntoAnimations();
+
     darkIntroBgEffect = VANTA.RINGS({
         el: ".intro--wrapper",
-        mouseControls: true,
-        touchControls: true,
+        mouseControls: false,
+        touchControls: false,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
@@ -623,9 +622,17 @@ function initCloudsDarkMode() {
     });
 
 
+}
+
+function cleanupIntoAnimations() {
     if (lightIntroBgEffect) {
         lightIntroBgEffect.destroy();
     }
+
+    if (darkIntroBgEffect) {
+        darkIntroBgEffect.destroy();
+    }
+
 }
 
 
