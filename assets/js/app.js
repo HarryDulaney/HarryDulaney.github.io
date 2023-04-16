@@ -20,14 +20,14 @@ var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-var darkIntroBgEffect = null;
-var lightIntroBgEffect = null;
+var introBackgroundEffect = null;
+var currentTheme = DARK_THEME_NAME;
 /**
  * Main method, on document ready
  */
 $(document).ready(function () {
     $(window).on('resize', function () {
-        initializeTheme();
+        onWindowResize();
     });
 
 
@@ -567,34 +567,52 @@ function hideBlogArrow(element) {
  * Initialize the UI theme from user prefereneces
  */
 function initializeTheme() {
-    var themeName = localStorage.getItem(THEME_STORAGE_KEY);
-    if (themeName === null) {
+    currentTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (currentTheme === null) {
         document.getElementById(THEME_SWITCH_ID).checked = false;
         document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
         // localStorage.themeName is null, set to Dark as default
-        themeName = DARK_THEME_NAME;
-        storeTheme(themeName);
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
+        currentTheme = DARK_THEME_NAME;
+        storeTheme(currentTheme);
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setDarkTheme();
 
-    } else if (themeName === LIGHT_THEME_NAME) {
+    } else if (currentTheme === LIGHT_THEME_NAME) {
         document.getElementById(THEME_SWITCH_ID).checked = true;
         document.getElementById(THEME_SWITCH_ID_MOBILE).checked = true;
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setLightTheme();
 
-    } else if (themeName === DARK_THEME_NAME) {
+    } else if (currentTheme === DARK_THEME_NAME) {
         document.getElementById(THEME_SWITCH_ID).checked = false;
         document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, themeName);
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setDarkTheme();
     }
 
 }
 
+function onWindowResize() {
+    if (currentTheme === LIGHT_THEME_NAME) {
+        document.getElementById(THEME_SWITCH_ID).checked = true;
+        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = true;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+        introBackgroundEffect.resize();
+    } else if (currentTheme === DARK_THEME_NAME) {
+        document.getElementById(THEME_SWITCH_ID).checked = false;
+        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+        introBackgroundEffect.resize();
+    }
+
+}
+
 function initCloudsLightMode() {
-    cleanupIntoAnimations();
-    lightIntroBgEffect = VANTA.CLOUDS({
+    if (introBackgroundEffect) {
+        introBackgroundEffect.destroy();
+    }
+
+    introBackgroundEffect = VANTA.CLOUDS({
         el: ".intro--wrapper",
         mouseControls: false,
         touchControls: false,
@@ -607,34 +625,22 @@ function initCloudsLightMode() {
 }
 
 function initCloudsDarkMode() {
-    cleanupIntoAnimations();
+    if (introBackgroundEffect) {
+        introBackgroundEffect.destroy();
+    }
 
-    darkIntroBgEffect = VANTA.RINGS({
+    introBackgroundEffect = VANTA.RINGS({
         el: ".intro--wrapper",
         mouseControls: false,
         touchControls: false,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
         backgroundColor: 0x0e0e0e
     });
 
 
 }
-
-function cleanupIntoAnimations() {
-    if (lightIntroBgEffect) {
-        lightIntroBgEffect.destroy();
-    }
-
-    if (darkIntroBgEffect) {
-        darkIntroBgEffect.destroy();
-    }
-
-}
-
 
 
 /** 
@@ -643,11 +649,13 @@ function cleanupIntoAnimations() {
 function toggleTheme() {
     if (localStorage.getItem(THEME_STORAGE_KEY) === LIGHT_THEME_NAME) {
         storeTheme(DARK_THEME_NAME);
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, DARK_THEME_NAME);
+        currentTheme = DARK_THEME_NAME;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setDarkTheme();
     } else {
         storeTheme(LIGHT_THEME_NAME);
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, LIGHT_THEME_NAME);
+        currentTheme = LIGHT_THEME_NAME;
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setLightTheme();
     }
 }
