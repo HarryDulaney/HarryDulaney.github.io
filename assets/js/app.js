@@ -247,10 +247,7 @@ function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaSc
 }
 
 function hideScrollArrow() {
-    let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
-    gsap.to(arrow, { bottom: 0, ease: 'easeOut' });
-    gsap.to(arrow, { opacity: 0, ease: 'easeOut' });
     gsap.to(message, { opacity: 0, ease: 'easeOut' });
     introAnimationTimeline.clear();
     introArrowTimer = null;
@@ -260,12 +257,9 @@ function hideScrollArrow() {
  * Timeout waits 10 seconds before starting the animation
  */
 function initializeScrollArrow() {
-    let arrow = document.querySelector('.intro--arrow-container .intro--arrow');
     let message = document.querySelector('.keep-scrolling-message');
     introArrowTimer = setTimeout(() => {
-        gsap.set(arrow, { opacity: 0.3, ease: 'easeIn' });
-        gsap.set(message, { opacity: 0.5, ease: 'easeIn' });
-        introAnimationTimeline.to(arrow, { bottom: 80 }, { bottom: 0, ease: Bounce.easeOut, duration: 1.2 })
+        gsap.set(message, { opacity: 1, ease: 'easeIn' });
         introAnimationTimeline.play()
     }, INTRO_SCROLL_ANIMATION_DELAY);
 }
@@ -417,6 +411,8 @@ function getAllRepoStats() {
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
+    const PFOLIE = 'pfolie';
+
 
     fetch(API_BASE + REPOS_URL + PAGE_COUNT_QUERY, {
         method: 'GET',
@@ -429,6 +425,19 @@ function getAllRepoStats() {
             response.json().then(data => {
                 for (let i in data) {
                     switch (data[i].name) {
+                        case PFOLIE:
+                            /* Set Pfolie Github Stats */
+                            let pfolieStats = document.getElementById('pfolie-app-stats');
+                            let pfolieUpdateTime = pfolieStats.getElementsByClassName('git-stats-datetime');
+                            let pfolieStars = document.getElementById('pfolie-stars');
+                            let pfolieForks = document.getElementById('pfolie-forks');
+                            pfolieStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            pfolieForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const pt1 = new Date().toLocaleTimeString();
+                            const pd1 = new Date().toLocaleDateString();
+                            pfolieUpdateTime[0].innerHTML = (`<div>${pt1} ${pd1}</div>`);
+                            break;
                         case SIM_AIR:
                             /* Set Air Sim Github Stats */
                             let simAirStats = document.getElementById('sim-air-app-stats');
