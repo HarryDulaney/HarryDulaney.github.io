@@ -9,8 +9,12 @@
 const THEME_STORAGE_KEY = 'harry-dulaney-com-theme-preference';
 const LIGHT_THEME_NAME = 'light';
 const DARK_THEME_NAME = 'dark';
-const THEME_SWITCH_ID = 'theme-switch-id';
-const THEME_SWITCH_ID_MOBILE = 'theme-switch-id-mobile';
+const LIGHT_THEME_ICON_ID = '#fs-light-theme-icon-id';
+const DARK_THEME_ICON_ID = '#fs-dark-theme-icon-id';
+const LIGHT_THEME_ICON_MOBILE_ID = '#mobile-light-theme-icon-id'
+const DARK_THEME_ICON_MOBILE_ID = '#mobile-dark-theme-icon-id'
+const THEME_SWITCH_CONTAINER_CLASS = 'theme-switch-container';
+const THEME_SWITCH_ID_MOBILE = 'mobile-theme-icon';
 const THEME_PREFERENCE_ATTRIBUTE = 'data-theme';
 const MILLIS_PER_YEAR = 31557600000;
 const INTRO_SCROLL_ANIMATION_DELAY = 20 * 1000; // 20 seconds
@@ -26,10 +30,7 @@ var currentTheme = DARK_THEME_NAME;
  * Main method, on document ready
  */
 $(document).ready(function () {
-    $(window).on('resize', function () {
-        onWindowResize();
-    });
-
+    $(window).on('resize', onWindowResize);
 
     initializeTheme();
     initContactForm();
@@ -124,6 +125,17 @@ $(document).ready(function () {
     getAllRepoStats();
 
 });
+
+function onWindowResize() {
+    if (currentTheme === LIGHT_THEME_NAME) {
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+        introBackgroundEffect.resize();
+    } else if (currentTheme === DARK_THEME_NAME) {
+        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+        introBackgroundEffect.resize();
+    }
+
+};
 
 function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
     azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate) {
@@ -576,9 +588,8 @@ function hideBlogArrow(element) {
  */
 function initializeTheme() {
     currentTheme = localStorage.getItem(THEME_STORAGE_KEY);
+
     if (currentTheme === null) {
-        document.getElementById(THEME_SWITCH_ID).checked = false;
-        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
         // localStorage.themeName is null, set to Dark as default
         currentTheme = DARK_THEME_NAME;
         storeTheme(currentTheme);
@@ -586,31 +597,12 @@ function initializeTheme() {
         setDarkTheme();
 
     } else if (currentTheme === LIGHT_THEME_NAME) {
-        document.getElementById(THEME_SWITCH_ID).checked = true;
-        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = true;
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setLightTheme();
 
     } else if (currentTheme === DARK_THEME_NAME) {
-        document.getElementById(THEME_SWITCH_ID).checked = false;
-        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setDarkTheme();
-    }
-
-}
-
-function onWindowResize() {
-    if (currentTheme === LIGHT_THEME_NAME) {
-        document.getElementById(THEME_SWITCH_ID).checked = true;
-        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = true;
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
-        introBackgroundEffect.resize();
-    } else if (currentTheme === DARK_THEME_NAME) {
-        document.getElementById(THEME_SWITCH_ID).checked = false;
-        document.getElementById(THEME_SWITCH_ID_MOBILE).checked = false;
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
-        introBackgroundEffect.resize();
     }
 
 }
