@@ -21,9 +21,8 @@ I don't require attribution, but it would be appreciated.
 I'm not currently accepting contributions to this project, but feel free to fork the repo and make it your own.
 Or if you have any suggestions, feel free to open an issue.
 
-## Contact
-Harry Dulaney - [harrydulaney.com](https://harrydulaney.com)
-[LinkedIn](https://www.linkedin.com/in/harrydulaney/) 
+## Contact Information
+Harry Dulaney - [harrydulaney.com](https://harrydulaney.com/#contact) - LinkedIn - [linkedin.com/in/harrydulaney](https://www.linkedin.com/in/harrydulaney) 
 
 ## License
 [Mit License](https://choosealicense.com/licenses/mit/)

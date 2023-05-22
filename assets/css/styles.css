@@ -521,6 +521,10 @@ textarea {
     -o-transition: all 100ms ease-in-out;
 }
 
+.nav--items .nav-git-stats-element {
+    
+}
+
 .nav--items .social--full .social--link {
     margin: 0.5rem;
     font-size: 1.4rem;
