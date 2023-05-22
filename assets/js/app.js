@@ -683,11 +683,11 @@ function storeTheme(themeName) {
 
 function setLightTheme() {
     initCloudsLightMode();
-    $('.astronaut-flying-towards-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
-    $('.astronaut-flying-towards-overlay').css('position', 'relative');
-    $('.astronaut-flying-towards-overlay').css('display', 'block');
-    $('.astronaut-flying-towards-overlay').css('background-size', 'contain');
-    $('.astronaut-flying-towards-overlay').css('z-index', '0');
+    $('.about-me-bg-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
+    $('.about-me-bg-overlay').css('position', 'relative');
+    $('.about-me-bg-overlay').css('display', 'block');
+    $('.about-me-bg-overlay').css('background-size', 'contain');
+    $('.about-me-bg-overlay').css('z-index', '0');
 
     var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text');
     gitStatusTextStyle.forEach(element => {
@@ -704,11 +704,11 @@ function setLightTheme() {
 
 function setDarkTheme() {
     initCloudsDarkMode();
-    $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
-    $('.astronaut-flying-towards-overlay ').css('position', 'relative');
-    $('.astronaut-flying-towards-overlay ').css('display', 'block');
-    $('.astronaut-flying-towards-overlay ').css('background-size', 'contain');
-    $('.astronaut-flying-towards-overlay ').css('z-index', '0');
+    $('.about-me-bg-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
+    $('.about-me-bg-overlay ').css('position', 'relative');
+    $('.about-me-bg-overlay ').css('display', 'block');
+    $('.about-me-bg-overlay ').css('background-size', 'contain');
+    $('.about-me-bg-overlay ').css('z-index', '0');
 
 
     var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text')
