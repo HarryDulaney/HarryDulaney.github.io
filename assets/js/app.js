@@ -424,6 +424,7 @@ function getAllRepoStats() {
     const STOCK_PREDICTOR = 'stock-predictor';
     const SIM_AIR = 'airline-reservation-system';
     const PFOLIE = 'pfolie';
+    const HARRY_DULANEY_COM = 'HarryDulaney.github.io';
 
 
     fetch(API_BASE + REPOS_URL + PAGE_COUNT_QUERY, {
@@ -437,6 +438,19 @@ function getAllRepoStats() {
             response.json().then(data => {
                 for (let i in data) {
                     switch (data[i].name) {
+                        case HARRY_DULANEY_COM:
+                            /* Set HarryDulaney.com Github Stats */
+                            let hdComStats = document.getElementById('harrydulaney-com-stats');
+                            let hdComUpdateTime = hdComStats.getElementsByClassName('git-stats-datetime');
+                            let hdComStars = document.getElementById('harrydulaney-com-stars');
+                            let hdComForks = document.getElementById('harrydulaney-com-forks');
+                            hdComStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            hdComForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                            /* Set Last Updated */
+                            const hdComTime = new Date().toLocaleTimeString();
+                            const hdComDate = new Date().toLocaleDateString();
+                            hdComUpdateTime[0].innerHTML = (`<span>${hdComDate} ${hdComTime}</span>`);
+                            break;
                         case PFOLIE:
                             /* Set Pfolie Github Stats */
                             let pfolieStats = document.getElementById('pfolie-app-stats');
@@ -448,7 +462,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const pt1 = new Date().toLocaleTimeString();
                             const pd1 = new Date().toLocaleDateString();
-                            pfolieUpdateTime[0].innerHTML = (`<div>${pt1} ${pd1}</div>`);
+                            pfolieUpdateTime[0].innerHTML = (`<span>${pt1} ${pd1}</span>`);
                             break;
                         case SIM_AIR:
                             /* Set Air Sim Github Stats */
@@ -461,7 +475,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t1 = new Date().toLocaleTimeString();
                             const d1 = new Date().toLocaleDateString();
-                            simAirUpdateTime[0].innerHTML = (`<div>${t1} ${d1}</div>`);
+                            simAirUpdateTime[0].innerHTML = (`<span>${t1} ${d1}</span>`);
                             break;
 
                         case DEEZER_APP:
@@ -475,7 +489,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t3 = new Date().toLocaleTimeString();
                             const d3 = new Date().toLocaleDateString();
-                            deezerUpdateTime[0].innerHTML = (`<div>${d3} ${t3}</div>`);
+                            deezerUpdateTime[0].innerHTML = (`<span>${d3} ${t3}</span>`);
                             break;
 
                         case INTRO_JAVA:
@@ -489,7 +503,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t4 = new Date().toLocaleTimeString();
                             const d4 = new Date().toLocaleDateString();
-                            introJavaUpdated[0].innerHTML = (`<div>${d4} ${t4}</div>`);
+                            introJavaUpdated[0].innerHTML = (`<span>${d4} ${t4}</span>`);
                             break;
 
                         case FILE_COMM:
@@ -503,7 +517,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t5 = new Date().toLocaleTimeString();
                             const d5 = new Date().toLocaleDateString();
-                            fileCommUpdated[0].innerHTML = (`<div>${d5} ${t5}</div>`);
+                            fileCommUpdated[0].innerHTML = (`<span>${d5} ${t5}</span>`);
                             break;
 
                         case CONTACT_LIST_APP:
@@ -517,7 +531,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t6 = new Date().toLocaleTimeString();
                             const d6 = new Date().toLocaleDateString();
-                            contactAppUpdate[0].innerHTML = (`<div>${d6} ${t6}</div>`);
+                            contactAppUpdate[0].innerHTML = (`<span>${d6} ${t6}</span>`);
                             break;
 
                         case NOTES_ANDROID:
@@ -531,7 +545,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t7 = new Date().toLocaleTimeString();
                             const d7 = new Date().toLocaleDateString();
-                            updateDateTime[0].innerHTML = (`<div>${d7} ${t7}</div>`);
+                            updateDateTime[0].innerHTML = (`<span>${d7} ${t7}</span>`);
                             break;
 
                         case STOCK_PREDICTOR:
@@ -545,7 +559,7 @@ function getAllRepoStats() {
                             /* Set Last Updated */
                             const t8 = new Date().toLocaleTimeString();
                             const d8 = new Date().toLocaleDateString();
-                            updateTime[0].innerHTML = (`<div>${d8} ${t8}</div>`);
+                            updateTime[0].innerHTML = (`<span>${d8} ${t8}</span>`);
                             break;
 
                     }
@@ -669,11 +683,11 @@ function storeTheme(themeName) {
 
 function setLightTheme() {
     initCloudsLightMode();
-    $('.astronaut-flying-towards-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
-    $('.astronaut-flying-towards-overlay').css('position', 'relative');
-    $('.astronaut-flying-towards-overlay').css('display', 'block');
-    $('.astronaut-flying-towards-overlay').css('background-size', 'contain');
-    $('.astronaut-flying-towards-overlay').css('z-index', '0');
+    $('.about-me-bg-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
+    $('.about-me-bg-overlay').css('position', 'relative');
+    $('.about-me-bg-overlay').css('display', 'block');
+    $('.about-me-bg-overlay').css('background-size', 'contain');
+    $('.about-me-bg-overlay').css('z-index', '0');
 
     var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text');
     gitStatusTextStyle.forEach(element => {
@@ -690,11 +704,11 @@ function setLightTheme() {
 
 function setDarkTheme() {
     initCloudsDarkMode();
-    $('.astronaut-flying-towards-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
-    $('.astronaut-flying-towards-overlay ').css('position', 'relative');
-    $('.astronaut-flying-towards-overlay ').css('display', 'block');
-    $('.astronaut-flying-towards-overlay ').css('background-size', 'contain');
-    $('.astronaut-flying-towards-overlay ').css('z-index', '0');
+    $('.about-me-bg-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
+    $('.about-me-bg-overlay ').css('position', 'relative');
+    $('.about-me-bg-overlay ').css('display', 'block');
+    $('.about-me-bg-overlay ').css('background-size', 'contain');
+    $('.about-me-bg-overlay ').css('z-index', '0');
 
 
     var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text')
