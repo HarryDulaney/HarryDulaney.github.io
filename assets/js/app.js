@@ -324,7 +324,7 @@ function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
 }
 
-function initContactForm() {
+function initializeContactForm() {
     var form = document.getElementById('contact-form');
     form.addEventListener("submit", submitContactForm);
 }
