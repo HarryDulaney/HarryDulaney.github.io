@@ -42,6 +42,15 @@ a :hover {
     color: var(--text-contrast) !important;
 }
 
+.project--link .launch-btn-text:hover {
+    color: var(--text-primary) !important;
+}
+
+.project--link .code-btn-text:hover {
+    color: var(--text-contrast) !important;
+}
+
+
 .projects--grid .section--header {
     color: var(--text-header);
     font-size: 2.2rem;
@@ -250,6 +259,11 @@ a :hover {
     -webkit-transition: all 100ms ease-in-out;
     -moz-transition: all 100ms ease-in-out;
     -o-transition: all 100ms ease-in-out;
+}
+
+.nav--items .home--nav-link>a>img {
+    max-height: 36px !important;
+    width: auto !important;
 }
 
 .nav--items .social--full .social--link {
