@@ -1,0 +1,315 @@
+/* --------------------------------- About Me ---------------------------------- */
+.about-me-bg-overlay {
+    position: relative;
+    display: block;
+    background: url("../img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center;
+    background-size: contain;
+    z-index: 0;
+}
+
+
+.about--scroll-help-image {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about--scroll-help-image img {
+    max-height: 240px;
+    object-fit: fill;
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
+/* --------------------------------------------- Top Skills ---------------------------------------------- */
+.skills {
+    margin-bottom: 6rem !important;
+}
+
+.skills .section-title {
+    margin-top: 3rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+}
+
+.skills .section-title h2:nth-child(1) {
+    font-size: small;
+    margin-left: 1rem;
+}
+
+.skills .section-title h2:nth-child(3) {
+    font-size: small;
+    margin-right: 1rem
+}
+
+.skills .container>ul li {
+    list-style-type: none !important;
+}
+
+ul .skills-list {
+    list-style: none !important;
+    margin: 0 auto !important;
+}
+
+.skills-list {
+    display: grid;
+    gap: 2rem;
+    width: 100% !important;
+    margin-block-start: 0px;
+    padding-inline-start: 0%;
+}
+
+.skills-item .wrapper {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none !important;
+    width: 100%;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.skills-title,
+.skills-data {
+    color: var(--text-header);
+    font-size: inherit;
+    font-weight: inherit;
+    margin-inline: 5px;
+}
+
+.skills-progress-box {
+    background-color: var(--text-header);
+    height: 0.7rem;
+    border-radius: 20px 20px 20px 20px;
+
+}
+
+.skills-progress {
+    background-color: var(--text-hover);
+    height: 100%;
+    border-radius: inherit;
+}
+
+
+/* ----------------------------------------------- About ----------------------------------------------- */
+.about--wrapper {
+    position: relative !important;
+    overflow: hidden;
+    background-color: var(--bgcolor-primary);
+    margin-top: 50px !important;
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+}
+
+
+.about--wrapper:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow-x: clip;
+    background: var(--bgcolor-secondary);
+    transform: skew(0deg, 9deg);
+    -webkit-transform: skew(0deg, 9deg);
+    -moz-transform: skew(0deg, 9deg);
+    -o-transform: skew(0deg, 9deg);
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+}
+
+.about {
+    display: block;
+    position: relative;
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+
+}
+
+#about--image-transition {
+    max-height: 200px !important;
+    height: auto;
+    width: 20% !important;
+    height: auto;
+    z-index: 9999 !important;
+    object-fit: fill;
+    margin-left: 5vw !important;
+    margin-top: 5vh !important;
+    z-index: 9999 !important;
+    opacity: 35% !important;
+}
+
+.about--banner {
+    text-align: left;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    color: var(--text-primary);
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+}
+
+.about--wrapper .section--header {
+    position: relative !important;
+    font-size: 5rem;
+    z-index: 9999999 !important;
+    text-align: center;
+    width: 100%;
+}
+
+
+.about--banner a {
+    padding: 5px 17px 5px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+}
+
+
+.about--banner a svg {
+    position: relative;
+    left: 5px;
+    width: 15px;
+    fill: #014F86;
+    -webkit-transition: left .2s ease-in-out;
+    -moz-transition: left .2s ease-in-out;
+    -o-transition: left .2s ease-in-out;
+    transition: left .2s ease-in-out
+}
+
+.about .about--banner .banner--image img {
+    margin-bottom: 1rem !important;
+    width: 35vh;
+    height: auto;
+    z-index: 10;
+    border-radius: 10%;
+
+}
+
+.about .about--banner .about-me-content-body {
+    font-size: 1.2rem !important;
+    z-index: 150 !important;
+}
+
+.about .about--banner .about-me-content-body p {
+    margin-bottom: 0.2rem !important;
+}
+
+.about .about--banner .about-me-content-body .new-paragraph {
+    text-indent: 3ch !important;
+}
+
+.about--options {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: justify;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-top: 5vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.about--options a {
+    position: relative;
+    width: 175px;
+    height: 100px;
+    text-decoration: none;
+    color: #2A6F97;
+    border: 1px solid #148d75;
+    background-position: center;
+    background-size: cover;
+    -moz-background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+
+}
+
+.about--options>a:nth-child(2) {
+    margin-bottom: 3vh;
+
+}
+
+.about--options>a:nth-child(2):hover {
+    background-image: url("../icon/git-icon.png");
+}
+
+.about--options>a:nth-child(3) {
+    margin-top: 3vh;
+}
+
+.about--options>a:nth-child(3):hover {
+    background-image: url("../icon/gsu-logo.jpg");
+
+}
+
+.about--options>a:nth-child(4) {
+    margin-bottom: 3vh;
+
+}
+
+.about--options>a:nth-child(4):hover {
+    background-image: url("../icon/icons-java-48.png");
+
+}
+
+.about--options>a:nth-child(5) {
+    margin-top: 3vh;
+
+
+}
+
+.about--options>a:nth-child(5):hover {
+    background-image: url("../icon/linkedin_b_w_icon.png");
+
+}
+
+.about--options>a:nth-child(1) {
+    margin-bottom: 3vh;
+}
+
+.about--options>a:nth-child(1):hover {
+    background-image: url("../img/harry_star_bar.jpg");
+}
+
+.about--options a>h3 {
+    position: relative;
+    font-size: 0.7rem;
+    bottom: 0;
+    text-transform: uppercase;
+    -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
+    transition: bottom .2s ease-in-out, left .2s ease-in-out;
+    -moz-transtion: bottom .2s ease-in-out, left .2s ease-in-out;
+    -o-transition: bottom .2s ease-in-out, left .2s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .about--wrapper .section--header {
+        font-size: 3rem;
+    }
+
+    .about--scroll-help-image img {
+        max-height: 100px;
+        object-fit: fill;
+        transition: 1s ease-in;
+        -webkit-transition: 1s ease-in;
+        -moz-transition: 1s ease-in;
+        -o-transition: 1s ease-in;
+    }
+}
