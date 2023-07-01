@@ -1,0 +1,120 @@
+/*  -------------------------------------------------- Intro ------------------------------------------------------  */
+.intro--wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bgcolor-primary);
+    height: 100vh;
+}
+
+.intro--wrapper #intro-message-body {
+    color: var(--text-primary);
+    background-color: var(--bg-color-underlay);
+    border-radius: var(--border-radius-underlay);
+    z-index: 999999999 !important;
+    transition: var(--theme-transition);
+    -webkit-transition: var(--theme-transition);
+    -moz-transition: var(--theme-transition);
+    -o-transition: var(--theme-transition);
+}
+
+.intro--wrapper #intro-message-body .ex-large-text {
+    font-size: 5rem !important;
+}
+
+.intro--wrapper #intro-message-body .med-large-text {
+    font-size: 2rem !important;
+}
+
+.intro--wrapper #intro-message-body .med-med-text {
+    font-size: 1.4em !important;
+}
+
+.intro--wrapper #intro-message-body .med-main-message-text {
+    font-size: 1.4rem !important;
+}
+
+.intro--wrapper #intro-message-body .sub--med-med-text {
+    font-size: 0.8rem !important;
+}
+
+
+.intro--arrow-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.keep-scrolling-message {
+    opacity: 0;
+    display: none;
+}
+
+
+.intro--arrow-container .intro--arrow {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    z-index: 9999 !important;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+    font-size: calc(10vh + 0.7vw) !important;
+    color: var(--text-primary);
+}
+
+
+.intro {
+    padding: 1rem;
+    margin-top: 5vh;
+}
+
+.intro .intro--image img {
+    margin-top: 1.5rem !important;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 80vh !important;
+    z-index: 10;
+}
+
+@media (max-width: 767px) {
+    .intro {
+        padding: 0.5rem;
+        margin-top: 5vh;
+    }
+
+    .intro .intro--image img {
+        margin-top: 0px !important;
+        max-width: 80% !important;
+    }
+
+
+    .intro--wrapper #intro-message-body .ex-large-text {
+        font-size: 3rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-large-text {
+        font-size: 1.5rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-med-text {
+        font-size: 0.9em !important;
+    }
+
+    .intro--wrapper #intro-message-body .med-main-message-text {
+        font-size: 0.9rem !important;
+    }
+
+    .intro--wrapper #intro-message-body .sub--med-med-text {
+        font-size: 0.6rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .intro .intro--image img {
+        margin-top: 0px !important;
+        max-width: 60% !important;
+    }
+}

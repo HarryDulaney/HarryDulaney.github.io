@@ -1,0 +1,92 @@
+/* ------------------------------------- Downloads + Resume --------------------------------------- */
+.download--wrapper {
+    content: "";
+    background-color: transparent;
+}
+
+.download--wrapper .download--image {
+    position: relative;
+    margin: 0 auto;
+}
+
+
+.download--wrapper .section--header {
+    position: relative !important;
+    font-size: 5rem;
+    z-index: 12 !important;
+    text-align: center;
+    width: 100%;
+}
+
+
+.download--wrapper .download--image img {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+    height: auto;
+    border-radius: 5% 5% 5% 5%;
+    transition: .5s ease;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -o-transition: .5s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.download--wrapper #resume--download-icon {
+    position: absolute;
+    transition: .5s ease;
+    font-size: 10.2rem !important;
+    opacity: 0;
+    width: auto;
+    bottom: 0;
+    left: 0;
+}
+
+.download--wrapper .download--image:hover #resume--download-icon {
+    opacity: 0.8;
+}
+
+.download--wrapper .download--image:hover img {
+    opacity: 0.3;
+}
+
+
+.downloads--scroll-help-image {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.downloads--scroll-help-image img {
+    max-height: 240px;
+    object-fit: fill;
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
+.download--wrapper .downloads-heading-wrapper {
+    margin-top: 6rem !important;
+}
+
+@media (max-width: 767px) {
+    .downloads--scroll-help-image img {
+        max-height: 100px;
+        object-fit: fill;
+        transition: 1s ease-in;
+        -webkit-transition: 1s ease-in;
+        -moz-transition: 1s ease-in;
+        -o-transition: 1s ease-in;
+    }
+
+    .download--wrapper .section--header {
+        position: relative !important;
+        font-size: 3rem;
+        z-index: 12 !important;
+        text-align: center;
+        width: 100%;
+    }
+
+}

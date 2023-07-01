@@ -1,0 +1,109 @@
+/*  ------------------------------------------- Contact ------------------------------------------------------ */
+
+.g-recaptcha {
+    margin: 0 auto !important;
+    padding: 1rem !important;
+
+}
+
+.contact--wrapper {
+    display: block;
+    position: center;
+    align-content: center;
+    -webkit-align-content: center;
+    justify-content: center;
+    margin-top: 5rem !important;
+    width: 100%;
+    height: 100%;
+    margin-block: auto;
+    margin-bottom: 1rem !important;
+}
+
+.contact--wrapper h2 {
+    color: var(--text-header);
+    font-size: 5rem;
+    z-index: 150;
+}
+
+.contact--wrapper a {
+    font-size: 4rem
+}
+
+#message {
+    height: 10rem !important;
+}
+
+
+.contact-form-label-text {
+    color: var(--text-header) !important;
+}
+
+.contact--wrapper .background-cover-art {
+    width: 100%;
+    height: auto;
+    background-image: url("../img/graphics/undraw_contact_us_re_4qqt.svg");
+    background-position-y: 8vh;
+    background-position-x: 34vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
+
+
+.contact--wrapper .contact--links {
+    display: inline-block;
+    position: relative;
+    align-content: center;
+    -webkit-align-content: center;
+    text-align: center;
+}
+
+.contact--wrapper .contact--links img {
+    height: 40px;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+
+
+#contact-form-status-alert {
+    z-index: 99999999999999999;
+    opacity: 0;
+    padding: 1.2rem;
+    background-color: var(--alert-success);
+    color: var(--text-contrast);
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+#contact-form-status-alert-error {
+    z-index: 99999999999999999;
+    padding: 1.2rem;
+    background-color: var(--alert-error);
+    color: var(--text-contrast);
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0;
+
+}
+
+
+@media (max-width: 767px) {
+    .contact--wrapper .contact-form .textarea--message {
+        width: 100%;
+        height: 50%;
+    }
+
+    .contact--wrapper h2 {
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact--wrapper .contact-form .textarea--message {
+        width: 100%;
+        height: 50%;
+    }
+
+}

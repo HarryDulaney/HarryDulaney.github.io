@@ -3,13 +3,15 @@
     --text-secondary: #cedfff;
     --text-contrast: #ffffff;
     --text-high-contrast: #2f2f2f;
-    --text-hover: #4800ff;
+    --text-hover: #6776fb;
     --nav-bgcolor: #0e0e0ea9;
+    --nav-active-color: #6776fb;
     --text-header: #f5f6fc;
     --text-sub-header: #cdd9e5;
     --text-sub-title: #9a8a8a;
     --bgcolor-primary: #061223f0;
     --bgcolor-secondary: #0e0e0e;
+    --bgcolor-alt: var(--bgcolor-primary);
     --bgcolor-common: rgba(6, 18, 35, 0.94);
     --card-bgcolor: rgba(6, 18, 35, 0.94);
     --icon-primary: var(--text-primary);
@@ -31,14 +33,16 @@
     --text-secondary: #0c1f43;
     --text-contrast: #2d0038;
     --text-high-contrast: #fff1f1;
-    --text-hover: #0056b3;
+    --text-hover:  #022d5a;
     --text-header: #001068;
     --text-sub-title: #3b3a3a;
     --text-sub-header: #08335d;
     --nav-bgcolor: #ffffff0e;
+    --nav-active-color: #022d5a;
     --bgcolor-primary: var(--nav-bgcolor);
     --icon-primary: var(--text-primary);
     --bgcolor-secondary: #f3f3fe;
+    --bgcolor-alt: #f3f3fe;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
     --card-bgcolor: #d9e7faf0;
     --icon-hover: #0056b3;
@@ -129,6 +133,17 @@ canvas,
 progress,
 video {
     vertical-align: baseline;
+}
+
+a {
+    color: var(--icon-primary);
+    text-decoration: none !important;
+    transition: .5s ease-in;
+}
+
+a :hover {
+    text-decoration: none !important;
+    color: var(--icon-hover) !important;
 }
 
 

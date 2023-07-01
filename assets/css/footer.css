@@ -1,0 +1,36 @@
+#footer {
+    padding-bottom: 0.2rem !important;
+    background-color: var(--bgcolor-primary);
+}
+
+#footer .social-footer-wrappper {
+    color: var(--text-sub-header);
+    font-size: 2.2rem;
+    padding: 1rem;
+    z-index: 150;
+    width: 100%;
+}
+
+#footer .social-footer-wrappper .tag--page-self-link {
+    color: var(--text-sub-header);
+    transition: .5s ease-in;
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+
+#footer .social-footer-wrappper .tag--page-self-link:hover {
+    color: var(--text-hover);
+}
+
+
+#footer .social-footer-wrappper .med-text {
+    font-size: medium;
+}
+
+#footer .copyright-stamp {
+    text-align: center;
+    -webkit-text-align: center;
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+    color: var(--text-contrast);
+}

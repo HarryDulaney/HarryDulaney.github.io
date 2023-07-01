@@ -1,0 +1,121 @@
+/* ---------------------------------- Projects ------------------------------------------ */
+
+.project--sub-text {
+    color: var(--text-sub-title) !important;
+}
+
+.projects--wrapper .badge {
+    color: var(--text-contrast) !important;
+}
+
+.project--link .launch-btn-text:hover {
+    color: var(--text-primary) !important;
+}
+
+.project--link .code-btn-text:hover {
+    color: var(--text-contrast) !important;
+}
+
+
+.projects--wrapper .section--header {
+    color: var(--text-header);
+    font-size: 5rem;
+    margin-bottom: 2vw;
+    margin-top: 1vw !important;
+    vertical-align: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* -------------------------------------------------------- Projects -------------------------------------------------------- */
+.projects--wrapper {
+    margin-top: 12vh !important;
+    text-align: center;
+    overflow: hidden;
+}
+
+.projects--wrapper h3 {
+    color: var(--text-header);
+}
+
+.projects--wrapper h4 {
+    color: var(--text-header);
+}
+
+.projects--wrapper h5 {
+    color: var(--text-sub-header);
+    font-size: 1.2rem;
+}
+
+.projects--wrapper .badge--image img {
+    height: 9vh;
+    width: auto;
+}
+
+.projects--wrapper .project--card {
+    margin: 0 0 1rem 0;
+    border-radius: 15px 15px 15px 15px;
+    background-color: var(--card-bgcolor);
+    transition: .6s ease-in-out;
+    -webkit-transition: .6s ease-in-out;
+    -moz-transition: .6s ease-in-out;
+    -o-transition: .6s ease-in-out;
+}
+
+.projects--wrapper .project--card:hover {
+    transform: scale(1.02);
+}
+
+.projects--wrapper img {
+    border-radius: 8px 8px 8px 8px;
+}
+
+.projects--wrapper>a button {
+    text-decoration-color: #3d3c3c;
+    transition: .9s ease-in-out;
+    -webkit-transition: .9s ease-in-out;
+    -moz-transition: .9s ease-in-out;
+    -o-transition: .9s ease-in-out;
+}
+
+.projects--wrapper .project--image {
+    max-height: 300px;
+}
+
+.contrib-number {
+    font-weight: 300;
+    line-height: 1.3em;
+    font-size: 24px;
+    display: block;
+    color: #ffffff;
+}
+
+.projects--scroll-help-image {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.projects--scroll-help-image img {
+    max-height: 240px;
+    object-fit: fill;
+    transition: 1s ease-in;
+    -webkit-transition: 1s ease-in;
+    -moz-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+}
+
+@media (max-width: 767px) {
+    .projects--wrapper .section--header {
+        font-size: 3rem;
+    }
+
+    .projects--scroll-help-image img {
+        max-height: 100px;
+        object-fit: fill;
+        transition: 1s ease-in;
+        -webkit-transition: 1s ease-in;
+        -moz-transition: 1s ease-in;
+        -o-transition: 1s ease-in;
+    }
+}
