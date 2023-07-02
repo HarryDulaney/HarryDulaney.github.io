@@ -77,6 +77,24 @@
     transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
 }
 
+.spinner-grow {
+    height: 8rem !important;
+    width: 8rem !important;
+}
+
+.loading--wrapper {
+    position: relative !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    -webkit-align-items: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    background-color: black !important;
+}
+
 
 .hide--h {
     display: none !important;
