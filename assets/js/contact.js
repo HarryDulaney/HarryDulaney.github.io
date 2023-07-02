@@ -19,22 +19,6 @@ function closeContactFormStatusAlert() {
     gsap.to(errorStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
 }
 
-/* ---------------  Contact Form Handlering--------------- */
-/**
- * Enable the Contact Form Submit Button
- * @param {*} token 
- */
-function enableSubmitButton(token) {
-    $('#submit-button-contact-form').prop('disabled', false);
-}
-
-/**
- * Disable the Contact Form Submit Button
- */
-function disableSubmitButton() {
-    $('#submit-button-contact-form').prop('disabled', true);
-}
-
 
 
 async function submitContactForm(event) {

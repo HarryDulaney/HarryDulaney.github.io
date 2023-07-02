@@ -1,11 +1,4 @@
 /*  ------------------------------------------- Contact ------------------------------------------------------ */
-
-.g-recaptcha {
-    margin: 0 auto !important;
-    padding: 1rem !important;
-
-}
-
 .contact--wrapper {
     display: block;
     position: center;
@@ -37,6 +30,12 @@
 .contact-form-label-text {
     color: var(--text-header) !important;
 }
+
+.g-recaptcha {
+    margin: 0 auto !important;
+    padding: 1rem !important;
+}
+
 
 .contact--wrapper .background-cover-art {
     width: 100%;
