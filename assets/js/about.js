@@ -1,7 +1,18 @@
+'use strict';
+//about.js
 
-
-function renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-    azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate) {
+function renderAboutMe(
+    fullTimeStartDate,
+    javaStartDate,
+    springStartDate,
+    javaScriptStartDate,
+    angularStartDate,
+    azureCloudStartDate,
+    kubernetesStartDate,
+    microServicesStartDate,
+    restApiStartDate,
+    webDevelopmentStartDate
+) {
     /* Java */
     let javaTimeElapsedTime = Date.now() - javaStartDate.getTime();
     let javaTimeElapsedYears = javaTimeElapsedTime / MILLIS_PER_YEAR; // Divide by millis in one year

@@ -1,3 +1,6 @@
+'use strict';
+//projects.js
+
 /**
  * Fetch and set Github Stats for the
  * Projects section.

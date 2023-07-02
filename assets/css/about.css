@@ -147,7 +147,7 @@ ul .skills-list {
 }
 
 .about--banner {
-    text-align: left;
+    text-align: left !important;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     color: var(--text-primary);
@@ -232,12 +232,13 @@ ul .skills-list {
     height: 100px;
     text-decoration: none;
     color: #2A6F97;
-    border: 1px solid #148d75;
+    border: 1px solid var(--text-hover);
     background-position: center;
     background-size: cover;
     -moz-background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
+    transition: var(--transition);
 
 }
 
@@ -312,4 +313,44 @@ ul .skills-list {
         -moz-transition: 1s ease-in;
         -o-transition: 1s ease-in;
     }
+
+    .about .about--banner .banner--image img {
+        margin-bottom: 1rem !important;
+        width: 30vh;
+        height: auto;
+        z-index: 10;
+        border-radius: 10%;
+
+    }
+
+    .about .about--banner .about-me-content-body {
+        font-size: 1rem !important;
+        z-index: 150 !important;
+    }
+
+
+    .about--options>a:nth-child(2) {
+        background-image: url("../icon/git-icon.png");
+    }
+
+    .about--options>a:nth-child(3) {
+        background-image: url("../icon/gsu-logo.jpg");
+
+    }
+
+    .about--options>a:nth-child(4) {
+        background-image: url("../icon/icons-java-48.png");
+
+    }
+
+    .about--options>a:nth-child(5) {
+        background-image: url("../icon/linkedin_b_w_icon.png");
+
+    }
+
+    .about--options>a:nth-child(1) {
+        background-image: url("../img/harry_star_bar.jpg");
+    }
+
+
 }
