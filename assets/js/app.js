@@ -22,11 +22,7 @@ var lastPage = INTRO_PAGE_FLAG;
  * Main method, on document ready
  */
 $(document).ready(function () {
-    const parentContainer = document.querySelector("#parent-container");
-    let template = document.getElementById("loading-page");
-    let node = document.querySelector('.loading--wrapper');
-
-    initializePage(parentContainer, template, node);
+    initializePage();
 
     $(window).on('resize', onWindowResize);
 
@@ -34,7 +30,6 @@ $(document).ready(function () {
 
     $(window).on('scroll', function () {
         // Hide scroll arrow on scroll
-
         if (open) {
             retractMobileMenu();
             $('#mobile-nav-icon').removeClass('open');
@@ -50,13 +45,13 @@ $(document).ready(function () {
             } else if (currentScrollPos >= 41) {
                 hideNavBar();
             }
+
             initialScrollPos = currentScrollPos;
         }
 
     });
 
     $('.mobile-nav-toggle').on('click', function () {
-
         //Mobile nav click behavior
         if (isMobile.matches) {
             $('#mobile-nav-icon').toggleClass('open');
@@ -65,20 +60,17 @@ $(document).ready(function () {
             } else if (open) {
                 retractMobileMenu();
                 $('#mobile-nav-icon').removeClass('open');
-
             }
         }
 
     });
 
     $('.main-container').on('click', function () {
-
         //Mobile body click behavior
         if (isMobile.matches) {
             if (open) {
                 retractMobileMenu();
                 $('#mobile-nav-icon').removeClass('open');
-
             }
         }
 
@@ -88,11 +80,8 @@ $(document).ready(function () {
         if (open) {
             retractMobileMenu();
             $('#mobile-nav-icon').removeClass('open');
-
         }
     });
-
-
 });
 
 
@@ -108,10 +97,16 @@ function onWindowResize() {
             introBackgroundEffect.resize();
         }
     }
-
 };
 
-function initializePage(parentContainer, template, node) {
+/**
+ * Handle rendering page on initial load
+ */
+function initializePage() {
+    const parentContainer = document.querySelector("#parent-container");
+    let node = document.querySelector('.loading--wrapper');
+    let template = null;
+
     currentPage = getLastPageVisited();
     switch (currentPage) {
         case INTRO_PAGE_FLAG:
@@ -121,28 +116,37 @@ function initializePage(parentContainer, template, node) {
             node = template.content.firstElementChild.cloneNode(true);
             parentContainer.appendChild(node);
             break;
+
         case PROJECTS_PAGE_FLAG:
             handleNavElement(PROJECTS_PAGE_FLAG);
             node.remove();
             template = document.getElementById("projects-page");
             node = template.content.firstElementChild.cloneNode(true);
             parentContainer.appendChild(node);
+            // Fetch and initialize Git status' on projects
+            getAllRepoStats(document);
             break;
+
         case ABOUT_PAGE_FLAG:
             handleNavElement(ABOUT_PAGE_FLAG);
             node.remove();
             template = document.getElementById("about-me-page");
             node = template.content.firstElementChild.cloneNode(true);
             parentContainer.appendChild(node);
-
+            /* Calculate + render years of experience */
+            renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
+                azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
             break;
+
         case CONTACT_PAGE_FLAG:
             handleNavElement(CONTACT_PAGE_FLAG);
             node.remove();
             template = document.getElementById("contact-page");
             node = template.content.firstElementChild.cloneNode(true);
             parentContainer.appendChild(node);
+            initContactForm(document, 'contact-form');
             break;
+
         case DOWNLOADS_PAGE_FLAG:
             handleNavElement(DOWNLOADS_PAGE_FLAG);
             node.remove();
@@ -156,6 +160,83 @@ function initializePage(parentContainer, template, node) {
     handleTheme(currentPage);
 
 }
+
+/* ----------------------------------------------- Page Navigation ---------------------------------------------------- */
+function intro() {
+    if (handleCurrentPage(currentPage, INTRO_PAGE_FLAG, document)) {
+        handleNavElement(INTRO_PAGE_FLAG);
+        const parentContainer = document.querySelector("#parent-container");
+        const template = document.querySelector("#intro-page");
+        const node = template.content.firstElementChild.cloneNode(true);
+        parentContainer.appendChild(node);
+        currentPage = INTRO_PAGE_FLAG;
+        handleTheme(currentPage);
+        setLastPageVisited(currentPage);
+    }
+
+}
+
+
+function projects() {
+    if (handleCurrentPage(currentPage, PROJECTS_PAGE_FLAG, document)) {
+        handleNavElement(PROJECTS_PAGE_FLAG);
+        const parentContainer = document.querySelector("#parent-container");
+        const template = document.querySelector("#projects-page");
+        const renderProjects = template.content.firstElementChild.cloneNode(true);
+        parentContainer.appendChild(renderProjects);
+        currentPage = PROJECTS_PAGE_FLAG;
+        // Fetch and initialize Git status' on projects
+        getAllRepoStats(document);
+        handleTheme(currentPage);
+        setLastPageVisited(currentPage);
+    }
+
+}
+
+function downloads() {
+    if (handleCurrentPage(currentPage, DOWNLOADS_PAGE_FLAG, document)) {
+        handleNavElement(DOWNLOADS_PAGE_FLAG);
+        const parentContainer = document.querySelector("#parent-container");
+        const template = document.getElementById("downloads-page");
+        const node = template.content.firstElementChild.cloneNode(true);
+        parentContainer.appendChild(node);
+        currentPage = DOWNLOADS_PAGE_FLAG;
+        handleTheme(currentPage);
+        setLastPageVisited(currentPage);
+    }
+}
+
+function contact() {
+    if (handleCurrentPage(currentPage, CONTACT_PAGE_FLAG, document)) {
+        handleNavElement(CONTACT_PAGE_FLAG);
+        const parentContainer = document.querySelector("#parent-container");
+        const template = document.querySelector("#contact-page");
+        const node = template.content.firstElementChild.cloneNode(true);
+        parentContainer.appendChild(node);
+        currentPage = CONTACT_PAGE_FLAG;
+        initContactForm(document, 'contact-form');
+        handleTheme(currentPage);
+        setLastPageVisited(currentPage);
+    }
+}
+
+
+function about() {
+    if (handleCurrentPage(currentPage, ABOUT_PAGE_FLAG, document)) {
+        handleNavElement(ABOUT_PAGE_FLAG);
+        const parentContainer = document.querySelector("#parent-container");
+        const template = document.querySelector("#about-me-page");
+        const node = template.content.firstElementChild.cloneNode(true);
+        parentContainer.appendChild(node);
+        /* Calculate + render years of experience */
+        renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
+            azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
+        currentPage = ABOUT_PAGE_FLAG;
+        handleTheme(currentPage);
+        setLastPageVisited(currentPage);
+    }
+}
+
 
 function resetNavLinks() {
     let navElementIds = [NAV_MENU_INTRO_ID, NAV_MENU_PROJECTS_ID, NAV_MENU_ABOUT_ID, NAV_MENU_CONTACT_ID, NAV_MENU_DOWNLOADS_ID];
@@ -229,88 +310,12 @@ function handleNavElement(pageFlag) {
 
 }
 
-function intro() {
-    if (handleCurrentPage(currentPage, INTRO_PAGE_FLAG, document)) {
-        handleNavElement(INTRO_PAGE_FLAG);
-        const parentContainer = document.querySelector("#parent-container");
-        const template = document.querySelector("#intro-page");
-        const node = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(node);
-        currentPage = INTRO_PAGE_FLAG;
-        setLastPageVisited(currentPage);
-        handleTheme(currentPage);
-    }
-
-}
-
-
-function projects() {
-    if (handleCurrentPage(currentPage, PROJECTS_PAGE_FLAG, document)) {
-        handleNavElement(PROJECTS_PAGE_FLAG);
-        const parentContainer = document.querySelector("#parent-container");
-        const template = document.querySelector("#projects-page");
-        const renderProjects = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(renderProjects);
-        currentPage = PROJECTS_PAGE_FLAG;
-        setLastPageVisited(currentPage);
-        // Fetch and initialize Git status' on projects
-        getAllRepoStats(document);
-        handleTheme(currentPage);
-    }
-
-}
-
-function downloads() {
-    if (handleCurrentPage(currentPage, DOWNLOADS_PAGE_FLAG, document)) {
-        handleNavElement(DOWNLOADS_PAGE_FLAG);
-        const parentContainer = document.querySelector("#parent-container");
-        const template = document.getElementById("downloads-page");
-        const node = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(node);
-        currentPage = DOWNLOADS_PAGE_FLAG;
-        setLastPageVisited(currentPage);
-        handleTheme(currentPage);
-    }
-}
-
-function contact() {
-    if (handleCurrentPage(currentPage, CONTACT_PAGE_FLAG, document)) {
-        handleNavElement(CONTACT_PAGE_FLAG);
-        const parentContainer = document.querySelector("#parent-container");
-        const template = document.querySelector("#contact-page");
-        const node = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(node);
-        currentPage = CONTACT_PAGE_FLAG;
-        setLastPageVisited(currentPage);
-        initContactForm(document, 'contact-form');
-        handleTheme(currentPage);
-    }
-}
-
-
-function about() {
-    if (handleCurrentPage(currentPage, ABOUT_PAGE_FLAG, document)) {
-        handleNavElement(ABOUT_PAGE_FLAG);
-        const parentContainer = document.querySelector("#parent-container");
-        const template = document.querySelector("#about-me-page");
-        const node = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(node);
-        /* Calculate + render years of experience */
-
-        renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-            azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
-        currentPage = ABOUT_PAGE_FLAG;
-        setLastPageVisited(currentPage);
-        handleTheme(currentPage);
-    }
-}
-
-
 function handleCurrentPage(currentPage, nextPage, document) {
     if (nextPage === currentPage) { return false; }
     switch (currentPage) {
         case INTRO_PAGE_FLAG:
             const introPage = document.querySelector(".intro--wrapper");
+            introBackgroundEffect.destroy(); // Cleanup intro page background effect
             introPage.remove();
             break;
         case PROJECTS_PAGE_FLAG:
@@ -337,116 +342,10 @@ function handleCurrentPage(currentPage, nextPage, document) {
     return true;
 }
 
-/**
- * Expand the mobile menu navigation
- */
-function expandMobileMenu() {
-    gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
-    gsap.to('.mobile--nav', { display: 'block', duration: 0.2 });
-    open = true;
-
-}
-
-/**
- * Retract the mobile menu navigation to start position
- */
-function retractMobileMenu() {
-    gsap.to('.mobile--nav', { display: 'none', duration: 0.2 });
-    gsap.to('.top--navbar', { height: 'fit-content', duration: 0.1 });
-    open = false;
-}
-
-/**
- * Make the navbar visible
- */
-function showNavbar() {
-    $('.top--navbar').css('top', '0px');
-}
-
-/**
- * Disappear the navbar
- */
-function hideNavBar() {
-    $('.top--navbar').css('top', '-50px');
-}
-/* ---------------  Contact Form Handlering--------------- */
-/**
- * Enable the Contact Form Submit Button
- * @param {*} token 
- */
-function enableSubmitButton(token) {
-    $('#submit-button-contact-form').prop('disabled', false);
-}
-
-/**
- * Disable the Contact Form Submit Button
- */
-function disableSubmitButton() {
-    $('#submit-button-contact-form').prop('disabled', true);
-}
-
-
-
-async function submitContactForm(event) {
-    event.preventDefault();
-    var form = document.getElementById('contact-form');
-    var successStatus = document.getElementById("contact-form-status-alert");
-    var errorStatus = document.getElementById("contact-form-status-alert-error");
-
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            // Success
-            gsap.to(successStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
-            form.reset();
-        } else {
-            // Error
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                    gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
-                    console.log('Unknown error occurred on contact form...');
-                    form.reset();
-                } else {
-                    gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
-                    console.log('Unknown error occurred on contact form...');
-                    form.reset();
-                }
-            })
-        }
-    }).catch(error => {
-        gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
-        form.reset();
-    });
-}
-
-function closeContactFormStatusAlert() {
-    let successStatus = document.getElementById("contact-form-status-alert");
-    let errorStatus = document.getElementById("contact-form-status-alert-error");
-    gsap.to(successStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
-    gsap.to(errorStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
-}
-
-
-
-function showBlogArrow(element) {
-    gsap.to('#blog--link-arrow', { display: 'inherit', duration: 0.2 })
-    gsap.to('#blog--link-arrow', { opacity: 1, duration: 0.5 });
-}
-
-function hideBlogArrow(element) {
-    gsap.to('#blog--link-arrow', { opacity: 0, duration: 0.5 });
-    gsap.to('#blog--link-arrow', { display: 'none', duration: 0.2 })
-}
 
 
 /**
- * Initialize the UI theme from user prefereneces
+ * Initialize light/dark theme from user prefereneces
  */
 function handleTheme(page) {
     currentTheme = localStorage.getItem(THEME_STORAGE_KEY);
@@ -469,21 +368,6 @@ function handleTheme(page) {
 
 }
 
-
-function getLastPageVisited() {
-    const page = localStorage.getItem(LAST_PAGE_KEY);
-
-    if (page !== null) {
-        return page;
-    }
-
-    return INTRO_PAGE_FLAG;
-}
-
-
-function setLastPageVisited(page) {
-    localStorage.setItem(LAST_PAGE_KEY, page);
-}
 
 function initCloudsLightMode() {
     if (introBackgroundEffect) {
@@ -520,6 +404,15 @@ function initCloudsDarkMode() {
 
 }
 
+function clearIntroAnimation() {
+    if (introBackgroundEffect) {
+        introBackgroundEffect.destroy();
+    } else {
+        console.log('introBackgroundEffect is null');
+    }
+
+}
+
 
 /** 
  * Toggle between light and dark themes 
@@ -538,12 +431,6 @@ function toggleTheme() {
     }
 }
 
-/** 
- * Save user preference for theme
- */
-function storeTheme(themeName) {
-    localStorage.setItem(THEME_STORAGE_KEY, themeName);
-}
 
 function setLightTheme(page) {
     switch (page) {
@@ -551,6 +438,7 @@ function setLightTheme(page) {
             initCloudsLightMode();
             break;
         case ABOUT_PAGE_FLAG:
+            clearIntroAnimation();
             $('.about-me-bg-overlay').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn-light.svg") no-repeat center');
             $('.about-me-bg-overlay').css('position', 'relative');
             $('.about-me-bg-overlay').css('display', 'block');
@@ -558,6 +446,7 @@ function setLightTheme(page) {
             $('.about-me-bg-overlay').css('z-index', '0');
             break;
         case PROJECTS_PAGE_FLAG:
+            clearIntroAnimation();
             var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text');
             gitStatusTextStyle.forEach(element => {
                 element.classList.remove('text-white');
@@ -569,8 +458,10 @@ function setLightTheme(page) {
             });
             break;
         case CONTACT_PAGE_FLAG:
+            clearIntroAnimation();
             break;
         case DOWNLOADS_PAGE_FLAG:
+            clearIntroAnimation();
             break;
 
     }
