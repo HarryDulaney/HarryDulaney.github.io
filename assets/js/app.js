@@ -104,7 +104,7 @@ function onWindowResize() {
  */
 function initializePage() {
     const parentContainer = document.querySelector("#parent-container");
-    let node = document.querySelector('.loading--wrapper');
+    let node = document.querySelector('#loading-page');
     let template = null;
 
     currentPage = getLastPageVisited();

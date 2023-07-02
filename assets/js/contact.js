@@ -26,6 +26,7 @@ async function submitContactForm(event) {
     var form = document.getElementById('contact-form');
     var successStatus = document.getElementById("contact-form-status-alert");
     var errorStatus = document.getElementById("contact-form-status-alert-error");
+    showLoadingMask();
 
     var data = new FormData(event.target);
     fetch(event.target.action, {
@@ -39,6 +40,7 @@ async function submitContactForm(event) {
             // Success
             gsap.to(successStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
             form.reset();
+            hideLoadingMask();
         } else {
             // Error
             response.json().then(data => {
@@ -46,15 +48,30 @@ async function submitContactForm(event) {
                     gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
+                    hideLoadingMask();
                 } else {
                     gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
                     console.log('Unknown error occurred on contact form...');
                     form.reset();
+                    hideLoadingMask();
                 }
             })
         }
     }).catch(error => {
         gsap.to(errorStatus, { opacity: '1', ease: "easeIn", duration: 0.2 })
         form.reset();
+        hideLoadingMask();
     });
+}
+
+function showLoadingMask() {
+    const parentContainer = document.querySelector("#parent-container");
+    const template = document.querySelector("#loading-mask");
+    const node = template.content.firstElementChild.cloneNode(true);
+    parentContainer.appendChild(node);
+}
+
+function hideLoadingMask() {
+    const loadingOverlay = document.querySelector("#loading-mask");
+    loadingOverlay.remove();
 }

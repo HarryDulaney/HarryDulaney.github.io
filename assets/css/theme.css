@@ -57,7 +57,7 @@
     --bg-color-underlay: transparent !important;
     --dark-icon-display: inherit !important;
     --light-icon-display: none !important;
-    --bg-mask: #00000077 !important;
+    --bg-mask: #000000dd !important;
     transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;

@@ -83,7 +83,7 @@
 }
 
 .loading--wrapper {
-    position: relative !important;
+    position: fixed !important;
     height: 100vh !important;
     width: 100vw !important;
     display: flex !important;
@@ -92,7 +92,7 @@
     -webkit-align-items: center;
     flex-direction: column;
     -webkit-flex-direction: column;
-    background-color: black !important;
+    background: #000000dc !important;
 }
 
 
