@@ -34,6 +34,10 @@
     overflow: hidden;
 }
 
+.page-slide-in-start {
+    transform: translateX(100%);
+}
+
 
 /* -------------------------------Theme Swtich ------------------------------------ */
 #fs-light-theme-icon-id,

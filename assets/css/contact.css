@@ -1,3 +1,7 @@
+.contacts-page-slide-in-start {
+    transform: translateX(100%);
+}
+
 /*  ------------------------------------------- Contact ------------------------------------------------------ */
 .contact--wrapper {
     display: block;
