@@ -168,9 +168,11 @@ function intro() {
         const parentContainer = document.querySelector("#parent-container");
         const template = document.querySelector("#intro-page");
         const node = template.content.firstElementChild.cloneNode(true);
+        node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
         currentPage = INTRO_PAGE_FLAG;
         handleTheme(currentPage);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<")
         setLastPageVisited(currentPage);
     }
 
@@ -182,12 +184,14 @@ function projects() {
         handleNavElement(PROJECTS_PAGE_FLAG);
         const parentContainer = document.querySelector("#parent-container");
         const template = document.querySelector("#projects-page");
-        const renderProjects = template.content.firstElementChild.cloneNode(true);
-        parentContainer.appendChild(renderProjects);
+        const node = template.content.firstElementChild.cloneNode(true);
+        node.classList.add('page-slide-in-start');
+        parentContainer.appendChild(node);
         currentPage = PROJECTS_PAGE_FLAG;
         // Fetch and initialize Git status' on projects
         getAllRepoStats(document);
         handleTheme(currentPage);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<")
         setLastPageVisited(currentPage);
     }
 
@@ -199,7 +203,9 @@ function downloads() {
         const parentContainer = document.querySelector("#parent-container");
         const template = document.getElementById("downloads-page");
         const node = template.content.firstElementChild.cloneNode(true);
+        node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<")
         currentPage = DOWNLOADS_PAGE_FLAG;
         handleTheme(currentPage);
         setLastPageVisited(currentPage);
@@ -212,7 +218,9 @@ function contact() {
         const parentContainer = document.querySelector("#parent-container");
         const template = document.querySelector("#contact-page");
         const node = template.content.firstElementChild.cloneNode(true);
+        node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<")
         currentPage = CONTACT_PAGE_FLAG;
         initContactForm(document, 'contact-form');
         handleTheme(currentPage);
@@ -227,7 +235,9 @@ function about() {
         const parentContainer = document.querySelector("#parent-container");
         const template = document.querySelector("#about-me-page");
         const node = template.content.firstElementChild.cloneNode(true);
+        node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<")
         /* Calculate + render years of experience */
         renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
             azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
@@ -315,24 +325,49 @@ function handleCurrentPage(currentPage, nextPage, document) {
     switch (currentPage) {
         case INTRO_PAGE_FLAG:
             const introPage = document.querySelector(".intro--wrapper");
-            introBackgroundEffect.destroy(); // Cleanup intro page background effect
-            introPage.remove();
+            let tl = new TimelineMax({
+                onComplete: function () {
+                    introBackgroundEffect.destroy(); // Cleanup intro page background effect
+                    introPage.remove();
+                },
+            });
+            tl.to(introPage, { duration: 0.1, x: '-100%' });
             break;
         case PROJECTS_PAGE_FLAG:
             const projectsPage = document.querySelector(".projects--wrapper");
-            projectsPage.remove();
+            let tl2 = new TimelineMax({
+                onComplete: function () {
+                    projectsPage.remove();
+                },
+            });
+            tl2.to(projectsPage, { duration: 0.1, x: '-100%' });
             break;
         case ABOUT_PAGE_FLAG:
             const aboutPage = document.querySelector(".about--wrapper");
-            aboutPage.remove();
+            let tl3 = new TimelineMax({
+                onComplete: function () {
+                    aboutPage.remove();
+                },
+            });
+            tl3.to(aboutPage, { duration: 0.1, x: '-100%'});
             break;
         case CONTACT_PAGE_FLAG:
             const contactPage = document.querySelector(".contact--wrapper");
-            contactPage.remove();
+            let tl4 = new TimelineMax({
+                onComplete: function () {
+                    contactPage.remove();
+                },
+            });
+            tl4.to(contactPage, { duration: 0.1, x: '-100%' });
             break;
         case DOWNLOADS_PAGE_FLAG:
             const downloadsPage = document.querySelector(".download--wrapper");
-            downloadsPage.remove();
+            let tl5 = new TimelineMax({
+                onComplete: function () {
+                    downloadsPage.remove();
+                },
+            });
+            tl5.to(downloadsPage, { duration: 0.1, x: '-100%'});
             break;
         default:
             console.error("Attempted to navigate to an unknown page: " + currentPage);
