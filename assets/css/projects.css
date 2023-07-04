@@ -14,6 +14,13 @@
     color: var(--text-contrast) !important;
 }
 
+
+.project--link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .project--link .launch-btn-text:hover {
     color: var(--text-primary) !important;
 }
@@ -36,9 +43,26 @@
 
 /* -------------------------------------------------------- Projects -------------------------------------------------------- */
 .projects--wrapper {
-    margin-top: 12vh !important;
-    text-align: center;
+    position: relative !important;
     overflow: hidden;
+    background-color: var(--bgcolor-primary);
+    margin-top: 56px !important;
+}
+
+
+.projects--wrapper:before {
+    content: '';
+    position: absolute;
+    bottom: 99%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow-x: clip;
+    background: var(--bgcolor-secondary);
+    transform: skew(0deg, 12deg);
+    -webkit-transform: skew(0deg, 12deg);
+    -moz-transform: skew(0deg, 12deg);
+    -o-transform: skew(0deg, 12deg);
 }
 
 .projects--wrapper h3 {
@@ -62,7 +86,7 @@
 .projects--wrapper .project--card {
     margin: 0 0 1rem 0;
     border-radius: 15px 15px 15px 15px;
-    background-color: var(--card-bgcolor);
+    background-color: var(--bgcolor-secondary);
     transition: .6s ease-in-out;
     -webkit-transition: .6s ease-in-out;
     -moz-transition: .6s ease-in-out;
@@ -113,7 +137,7 @@
 
 @media (max-width: 767px) {
     .projects--wrapper .section--header {
-        font-size: 3rem;
+        font-size: 3.6rem;
     }
 
     .projects--scroll-help-image img {
