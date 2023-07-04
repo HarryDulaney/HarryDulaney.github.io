@@ -97,10 +97,6 @@ ul .skills-list {
     overflow: hidden;
     background-color: var(--bgcolor-primary);
     margin-top: 50px !important;
-    transition: var(--theme-transition);
-    -webkit-transition: var(--theme-transition);
-    -moz-transition: var(--theme-transition);
-    -o-transition: var(--theme-transition);
 }
 
 
@@ -117,20 +113,11 @@ ul .skills-list {
     -webkit-transform: skew(0deg, 22deg);
     -moz-transform: skew(0deg, 22deg);
     -o-transform: skew(0deg, 22deg);
-    transition: var(--theme-transition);
-    -webkit-transition: var(--theme-transition);
-    -moz-transition: var(--theme-transition);
-    -o-transition: var(--theme-transition);
 }
 
 .about {
     display: block;
     position: relative;
-    transition: var(--theme-transition);
-    -webkit-transition: var(--theme-transition);
-    -moz-transition: var(--theme-transition);
-    -o-transition: var(--theme-transition);
-
 }
 
 #about--image-transition {
