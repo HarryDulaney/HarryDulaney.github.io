@@ -3,7 +3,7 @@
 /**
  * app.js is main javascript driver for harrydulaney.com
  * @author Harry Dulaney
- * @since  1.1.1
+ * @since  1.1.2
  */
 
 
@@ -106,57 +106,12 @@ function initializePage() {
     const parentContainer = document.querySelector("#parent-container");
     let node = document.querySelector('#loading-page');
     let template = null;
-
-    currentPage = getLastPageVisited();
-    switch (currentPage) {
-        case INTRO_PAGE_FLAG:
-            handleNavElement(INTRO_PAGE_FLAG);
-            node.remove();
-            template = document.getElementById("intro-page");
-            node = template.content.firstElementChild.cloneNode(true);
-            parentContainer.appendChild(node);
-            break;
-
-        case PROJECTS_PAGE_FLAG:
-            handleNavElement(PROJECTS_PAGE_FLAG);
-            node.remove();
-            template = document.getElementById("projects-page");
-            node = template.content.firstElementChild.cloneNode(true);
-            parentContainer.appendChild(node);
-            // Fetch and initialize Git status' on projects
-            getAllRepoStats(document);
-            break;
-
-        case ABOUT_PAGE_FLAG:
-            handleNavElement(ABOUT_PAGE_FLAG);
-            node.remove();
-            template = document.getElementById("about-me-page");
-            node = template.content.firstElementChild.cloneNode(true);
-            parentContainer.appendChild(node);
-            /* Calculate + render years of experience */
-            renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-                azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
-            break;
-
-        case CONTACT_PAGE_FLAG:
-            handleNavElement(CONTACT_PAGE_FLAG);
-            node.remove();
-            template = document.getElementById("contact-page");
-            node = template.content.firstElementChild.cloneNode(true);
-            parentContainer.appendChild(node);
-            initContactForm(document, 'contact-form');
-            break;
-
-        case DOWNLOADS_PAGE_FLAG:
-            handleNavElement(DOWNLOADS_PAGE_FLAG);
-            node.remove();
-            template = document.getElementById("downloads-page");
-            node = template.content.firstElementChild.cloneNode(true);
-            parentContainer.appendChild(node);
-            break;
-
-    }
-
+    handleNavElement(INTRO_PAGE_FLAG);
+    node.remove();
+    template = document.getElementById("intro-page");
+    node = template.content.firstElementChild.cloneNode(true);
+    parentContainer.appendChild(node);
+    currentPage = INTRO_PAGE_FLAG;
     handleTheme(currentPage);
 
 }
@@ -172,8 +127,8 @@ function intro() {
         parentContainer.appendChild(node);
         currentPage = INTRO_PAGE_FLAG;
         handleTheme(currentPage);
-        gsap.to(node, { duration: 0.1, x: 0 }, "<")
-        setLastPageVisited(currentPage);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<");
+
     }
 
 }
@@ -191,8 +146,8 @@ function projects() {
         // Fetch and initialize Git status' on projects
         getAllRepoStats(document);
         handleTheme(currentPage);
-        gsap.to(node, { duration: 0.1, x: 0 }, "<")
-        setLastPageVisited(currentPage);
+        gsap.to(node, { duration: 0.1, x: 0 }, "<");
+
     }
 
 }
@@ -205,10 +160,10 @@ function downloads() {
         const node = template.content.firstElementChild.cloneNode(true);
         node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
-        gsap.to(node, { duration: 0.1, x: 0 }, "<")
+        gsap.to(node, { duration: 0.1, x: 0 }, "<");
         currentPage = DOWNLOADS_PAGE_FLAG;
         handleTheme(currentPage);
-        setLastPageVisited(currentPage);
+
     }
 }
 
@@ -220,11 +175,11 @@ function contact() {
         const node = template.content.firstElementChild.cloneNode(true);
         node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
-        gsap.to(node, { duration: 0.1, x: 0 }, "<")
+        gsap.to(node, { duration: 0.1, x: 0 }, "<");
         currentPage = CONTACT_PAGE_FLAG;
         initContactForm(document, 'contact-form');
         handleTheme(currentPage);
-        setLastPageVisited(currentPage);
+
     }
 }
 
@@ -237,13 +192,13 @@ function about() {
         const node = template.content.firstElementChild.cloneNode(true);
         node.classList.add('page-slide-in-start');
         parentContainer.appendChild(node);
-        gsap.to(node, { duration: 0.1, x: 0 }, "<")
+        gsap.to(node, { duration: 0.1, x: 0 }, "<");
         /* Calculate + render years of experience */
         renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
             azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
         currentPage = ABOUT_PAGE_FLAG;
         handleTheme(currentPage);
-        setLastPageVisited(currentPage);
+
     }
 }
 
@@ -349,7 +304,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
                     aboutPage.remove();
                 },
             });
-            tl3.to(aboutPage, { duration: 0.1, x: '-100%'});
+            tl3.to(aboutPage, { duration: 0.1, x: '-100%' });
             break;
         case CONTACT_PAGE_FLAG:
             const contactPage = document.querySelector(".contact--wrapper");
@@ -367,7 +322,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
                     downloadsPage.remove();
                 },
             });
-            tl5.to(downloadsPage, { duration: 0.1, x: '-100%'});
+            tl5.to(downloadsPage, { duration: 0.1, x: '-100%' });
             break;
         default:
             console.error("Attempted to navigate to an unknown page: " + currentPage);
