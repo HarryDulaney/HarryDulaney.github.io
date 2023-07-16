@@ -15,6 +15,13 @@
     color: var(--text-hover);
 }
 
+#blog--link-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
 /*  ------------------------------------ Navbar ---------------------------------------  */
 #nav-title {
     color: var(--text-primary);
@@ -106,6 +113,12 @@
     color: var(--text-primary) !important;
 }
 
+
+#nav-menu-blog {
+    font-size: 1.1rem !important;
+    color: var(--text-primary) !important;
+}
+
 #nav-menu-downloads {
     font-size: 1.1rem !important;
     color: var(--text-primary) !important;
@@ -113,6 +126,12 @@
 
 
 #mobile-menu-intro {
+    font-size: 1.2rem !important;
+    margin-left: 1rem !important;
+    color: var(--text-primary) !important;
+}
+
+#mobile-menu-blog {
     font-size: 1.2rem !important;
     margin-left: 1rem !important;
     color: var(--text-primary) !important;
@@ -145,6 +164,14 @@
 
 
 #nav-menu-intro:hover {
+    color: var(--nav-active-color) !important;
+    transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+}
+
+#nav-menu-blog:hover {
     color: var(--nav-active-color) !important;
     transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
@@ -194,6 +221,14 @@
     -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
 }
 
+#mobile-menu-blog:hover {
+    color: var(--nav-active-color) !important;
+    transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+}
+
 #mobile-menu-projects:hover {
     color: var(--nav-active-color) !important;
     transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
@@ -232,6 +267,10 @@
     font-weight: bolder !important;
 }
 
+#nav-menu-blog[data-active=true] {
+    color: var(--nav-active-color) !important;
+    font-weight: bolder !important;
+}
 
 #nav-menu-about[data-active=true] {
     color: var(--nav-active-color) !important;
@@ -262,6 +301,10 @@
     font-weight: bolder !important;
 }
 
+#mobile-menu-blog[data-active=true] {
+    color: var(--nav-active-color) !important;
+    font-weight: bolder !important;
+}
 
 #mobile-menu-about[data-active=true] {
     color: var(--nav-active-color) !important;

@@ -1,5 +1,5 @@
 //constants.js
-
+const BLOG_URL = 'https://blog.harrydulaney.com';
 const THEME_STORAGE_KEY = 'harry-dulaney-com-theme-preference';
 const LAST_PAGE_KEY = 'harry-dulaney-com-last-page-visited';
 const LIGHT_THEME_NAME = 'light';
@@ -18,18 +18,21 @@ const PROJECTS_PAGE_FLAG = 'projects';
 const ABOUT_PAGE_FLAG = 'about';
 const CONTACT_PAGE_FLAG = 'contact';
 const DOWNLOADS_PAGE_FLAG = 'downloads';
+const BLOG_PAGE_FLAG = 'blog';
 
 const NAV_MENU_INTRO_ID = 'nav-menu-intro';
 const NAV_MENU_ABOUT_ID = 'nav-menu-about';
 const NAV_MENU_CONTACT_ID = 'nav-menu-contact';
 const NAV_MENU_PROJECTS_ID = 'nav-menu-projects';
 const NAV_MENU_DOWNLOADS_ID = 'nav-menu-downloads';
+const NAV_MENU_BLOG_ID = 'nav-menu-blog';
 
 const NAV_MOBILE_INTRO_ID = 'mobile-menu-intro';
 const NAV_MOBILE_PROJECTS_ID = 'mobile-menu-projects';
 const NAV_MOBILE_ABOUT_ID = 'mobile-menu-about';
 const NAV_MOBILE_DOWNLOADS_ID = 'mobile-menu-downloads';
 const NAV_MOBILE_CONTACT_ID = 'mobile-menu-contact';
+const NAV_MOBILE_BLOG_ID = 'mobile-menu-blog';
 
 const fullTimeStartDate = new Date(2019, 4, 1);
 const javaStartDate = new Date(2017, 1, 1);

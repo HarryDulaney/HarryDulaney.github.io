@@ -17,6 +17,7 @@
 /* Downloads */
 @import url("downloads.css");
 
+
 .section--header {
     color: var(--text-header);
 }
@@ -37,6 +38,7 @@
 .page-slide-in-start {
     transform: translateX(100%);
 }
+
 
 
 /* -------------------------------Theme Swtich ------------------------------------ */

@@ -6,7 +6,7 @@
  * @since  1.1.2
  */
 
-
+// Global variables
 var open = false;
 var isBlog = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
@@ -17,7 +17,6 @@ var currentTheme = DARK_THEME_NAME;
 var currentPage = INTRO_PAGE_FLAG;
 var lastPage = INTRO_PAGE_FLAG;
 
-
 /**
  * Main method, on document ready
  */
@@ -27,6 +26,16 @@ $(document).ready(function () {
     $(window).on('resize', onWindowResize);
 
     var initialScrollPos = window.scrollY;
+    var blogLink = $('#nav-menu-blog');
+    var blogArrowTimeline;
+    blogLink.bind('mouseenter', function (e) {
+        blogArrowTimeline = showArrow(this);
+    });
+
+    blogLink.bind('mouseleave', function (e) {
+        hideArrow(blogArrowTimeline);
+
+    });
 
     $(window).on('scroll', function () {
         // Hide scroll arrow on scroll
@@ -133,6 +142,10 @@ function intro() {
 
 }
 
+function blog() {
+    handleNavElement(BLOG_PAGE_FLAG);
+}
+
 
 function projects() {
     if (handleCurrentPage(currentPage, PROJECTS_PAGE_FLAG, document)) {
@@ -229,6 +242,15 @@ function handleNavElement(pageFlag) {
             document.getElementById(introElementId).dataset.active = true;
             break;
 
+        case BLOG_PAGE_FLAG:
+            let blogIdElement = null;
+            if (isMobile.matches) {
+                blogIdElement = NAV_MOBILE_BLOG_ID;
+            } else {
+                blogIdElement = NAV_MENU_BLOG_ID;
+            }
+            document.getElementById(blogIdElement).dataset.active = true;
+            break;
         case PROJECTS_PAGE_FLAG:
             let projectsElementId = null;
             if (isMobile.matches) {
@@ -279,6 +301,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
     if (nextPage === currentPage) { return false; }
     switch (currentPage) {
         case INTRO_PAGE_FLAG:
+            setLastPageVisited(INTRO_PAGE_FLAG);
             const introPage = document.querySelector(".intro--wrapper");
             let tl = new TimelineMax({
                 onComplete: function () {
@@ -289,6 +312,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
             tl.to(introPage, { duration: 0.1, x: '-100%' });
             break;
         case PROJECTS_PAGE_FLAG:
+            setLastPageVisited(PROJECTS_PAGE_FLAG);
             const projectsPage = document.querySelector(".projects--wrapper");
             let tl2 = new TimelineMax({
                 onComplete: function () {
@@ -298,6 +322,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
             tl2.to(projectsPage, { duration: 0.1, x: '-100%' });
             break;
         case ABOUT_PAGE_FLAG:
+            setLastPageVisited(ABOUT_PAGE_FLAG);
             const aboutPage = document.querySelector(".about--wrapper");
             let tl3 = new TimelineMax({
                 onComplete: function () {
@@ -307,6 +332,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
             tl3.to(aboutPage, { duration: 0.1, x: '-100%' });
             break;
         case CONTACT_PAGE_FLAG:
+            setLastPageVisited(CONTACT_PAGE_FLAG);
             const contactPage = document.querySelector(".contact--wrapper");
             let tl4 = new TimelineMax({
                 onComplete: function () {
@@ -316,6 +342,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
             tl4.to(contactPage, { duration: 0.1, x: '-100%' });
             break;
         case DOWNLOADS_PAGE_FLAG:
+            setLastPageVisited(DOWNLOADS_PAGE_FLAG);
             const downloadsPage = document.querySelector(".download--wrapper");
             let tl5 = new TimelineMax({
                 onComplete: function () {
@@ -504,4 +531,25 @@ function setDarkTheme(page) {
 
     }
 
+
+
+}
+
+function enableResumeDownloadButton() { }
+function disableResumeDownloadButton() { }
+
+
+function showArrow(element) {
+    const rect = element.getBoundingClientRect();
+    const targetEl = element.querySelector('#blog--link-arrow');
+    var tl = gsap.timeline({duration:0.5});
+    tl.to(targetEl, { duration: 0.1, opacity: 1 });
+    tl.to(targetEl, { left: rect.right, top: rect.top, duration: 0.2 }, '>');
+    tl.to(targetEl, {rotation:'+=300',duration:0.1}, '+=0.3');
+    tl.duration(0.3);
+    return tl;
+}
+
+function hideArrow(timeline) {
+    timeline.reverse();
 }
