@@ -176,6 +176,22 @@
                                 >resume.</a></li>
 
                             </li>
+                            <li>
+                                <a
+                                    href='https://blog.harrydulaney.com'
+                                    data-active="false"
+                                    target="_blank"
+                                    id="mobile-menu-blog"
+                                    class="m-sm-3"
+                                    style="text-decoration: none;"
+                                >
+                                    <span>blog.</span>
+                                    <span id="blog--link-arrow"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </li>
+
+
+
                         </ul>
                     </div>
                     <div class="float-right w-50">
@@ -265,6 +281,17 @@
                     id="nav-menu-downloads"
                 >
                     resume.
+                </a>
+                <a
+                    href='https://blog.harrydulaney.com'
+                    data-active="false"
+                    target="_blank"
+                    id="nav-menu-blog"
+                    class="m-sm-3"
+                    style="text-decoration: none;"
+                >
+                    <span>blog.</span>
+                    <span id="blog--link-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
                 <span class="ml-5">
                     <div class="theme-switch-container">
@@ -1716,10 +1743,11 @@
                         <div class="downloads">
                             <div class="row p-5 w-100 align-content-center text-center ml-1">
                                 <a
-                                    href="assets/img/HarryDulaneyResume.pdf"
-                                    download="HarryDulaneyResume"
+                                    id="resume--download-link"
+                                    href="#"
                                     type="application/pdf"
                                     class="download--image"
+                                    disabled
                                 >
                                     <img
                                         src="assets/img/resume_icon_img.png"
@@ -1729,12 +1757,27 @@
                                         style="cursor: pointer"
                                     />
                                     <i
-                                        class="fas fa-download"
+                                        class="fas fa-window-close"
                                         id="resume--download-icon"
                                     ></i>
                                 </a>
                             </div>
+                            <br>
 
+                            <div class="row">
+                                <script
+                                    async
+                                    src="https://www.google.com/recaptcha/api.js"
+                                ></script>
+                                <div
+                                    class="g-recaptcha"
+                                    data-theme="dark"
+                                    data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
+                                    data-callback="enableSubmitButton"
+                                    data-expired-callback="disableSubmitButton"
+                                ></div>
+                            </div>
+                            <br>
                         </div>
                     </div>
             </template>
