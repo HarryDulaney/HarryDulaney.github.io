@@ -1743,11 +1743,11 @@
                         <div class="downloads">
                             <div class="row p-5 w-100 align-content-center text-center ml-1">
                                 <a
-                                    aria-disabled="true"
-                                    href="assets/img/HarryDulaneyResume.pdf"
-                                    download="HarryDulaneyResume"
+                                    id="resume--download-link"
+                                    href="#"
                                     type="application/pdf"
                                     class="download--image"
+                                    disabled
                                 >
                                     <img
                                         src="assets/img/resume_icon_img.png"
@@ -1757,7 +1757,7 @@
                                         style="cursor: pointer"
                                     />
                                     <i
-                                        class="fas fa-download"
+                                        class="fas fa-window-close"
                                         id="resume--download-icon"
                                     ></i>
                                 </a>
@@ -1773,8 +1773,8 @@
                                     class="g-recaptcha"
                                     data-theme="dark"
                                     data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
-                                    data-callback="enableResumeDownloadButton"
-                                    data-expired-callback="disableResumeDownloadButton"
+                                    data-callback="enableSubmitButton"
+                                    data-expired-callback="disableSubmitButton"
                                 ></div>
                             </div>
                             <br>

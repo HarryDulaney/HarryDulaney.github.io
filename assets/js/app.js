@@ -36,6 +36,7 @@ $(document).ready(function () {
         hideArrow(blogArrowTimeline);
 
     });
+    $('#resume--download-icon').addClass('fas fa-xmark');
 
     $(window).on('scroll', function () {
         // Hide scroll arrow on scroll
@@ -359,7 +360,7 @@ function handleCurrentPage(currentPage, nextPage, document) {
     return true;
 }
 
-/* ---------------  Contact Form Handlering--------------- */
+/* --------------- Handle Contact Form --------------- */
 /**
  * Enable the Contact Form Submit Button
  * @param {*} token 
@@ -528,24 +529,17 @@ function setDarkTheme(page) {
             break;
         case DOWNLOADS_PAGE_FLAG:
             break;
-
     }
-
-
-
 }
-
-function enableResumeDownloadButton() { }
-function disableResumeDownloadButton() { }
 
 
 function showArrow(element) {
     const rect = element.getBoundingClientRect();
     const targetEl = element.querySelector('#blog--link-arrow');
-    var tl = gsap.timeline({duration:0.5});
+    var tl = gsap.timeline({ duration: 0.5 });
     tl.to(targetEl, { duration: 0.1, opacity: 1 });
     tl.to(targetEl, { left: rect.right, top: rect.top, duration: 0.2 }, '>');
-    tl.to(targetEl, {rotation:'+=300',duration:0.1}, '+=0.3');
+    tl.to(targetEl, { rotation: '+=300', duration: 0.1 }, '+=0.3');
     tl.duration(0.3);
     return tl;
 }
