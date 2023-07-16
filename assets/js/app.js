@@ -36,7 +36,6 @@ $(document).ready(function () {
         hideArrow(blogArrowTimeline);
 
     });
-    $('#resume--download-icon').addClass('fas fa-xmark');
 
     $(window).on('scroll', function () {
         // Hide scroll arrow on scroll
