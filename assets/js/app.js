@@ -26,13 +26,13 @@ $(document).ready(function () {
     $(window).on('resize', onWindowResize);
 
     var initialScrollPos = window.scrollY;
-    var blogLink = $('#nav-menu-blog');
     var blogArrowTimeline;
-    blogLink.bind('mouseenter', function (e) {
+
+    $('#nav-menu-blog').bind('mouseenter', function (e) {
         blogArrowTimeline = showArrow(this);
     });
 
-    blogLink.bind('mouseleave', function (e) {
+    $('#nav-menu-blog').bind('mouseleave', function (e) {
         hideArrow(blogArrowTimeline);
 
     });
