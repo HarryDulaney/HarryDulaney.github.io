@@ -4,6 +4,7 @@
     --text-contrast: #ffffff;
     --text-high-contrast: #2f2f2f;
     --text-hover: #6776fb;
+    --text-color-intro: var(--text-primary);
     --nav-bgcolor: #0e0e0ea9;
     --nav-active-color: #6776fb;
     --text-header: #f5f6fc;
@@ -21,7 +22,8 @@
     --theme-transition: 0.4 ease-in-out;
     --common-gray: #9a8a8a;
     --border-radius-underlay: 25px 25px 25px 25px;
-    --bg-color-underlay: #0000009e !important;
+    --bg-color-underlay: #00000083 !important;
+    --bg-filter-underlay: blur(10px) !important;
     --dark-icon-display: none !important;
     --light-icon-display: inherit !important;
     --bg-mask: #dedede49 !important;
@@ -29,7 +31,7 @@
     -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    
+
 }
 
 [data-theme="light"] {
@@ -40,6 +42,7 @@
     --text-hover: #022d5a;
     --text-header: #001068;
     --text-sub-title: #3b3a3a;
+    --text-color-intro: var(--text-primary);
     --text-sub-header: #08335d;
     --nav-bgcolor: #ffffff0e;
     --nav-active-color: #022d5a;
@@ -55,7 +58,8 @@
     --theme-transition: 0.4 ease-in-out;
     --common-gray: #9a8a8a;
     --border-radius-underlay: 25px 25px 25px 25px !important;
-    --bg-color-underlay: transparent !important;
+    --bg-color-underlay: #ffffff55 !important;
+    --bg-filter-underlay: blur(10px) !important;
     --dark-icon-display: inherit !important;
     --light-icon-display: none !important;
     --bg-mask: #000000dd !important;
