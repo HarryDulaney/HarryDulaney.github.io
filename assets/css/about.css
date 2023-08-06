@@ -85,7 +85,7 @@ ul .skills-list {
 }
 
 .skills-progress {
-    background-color: var(--text-hover);
+    background-color: var(--shared-accent-color);
     height: 100%;
     border-radius: inherit;
 }
@@ -108,7 +108,7 @@ ul .skills-list {
     right: 0;
     height: 100%;
     overflow-x: clip;
-    background: var(--bgcolor-secondary);
+    background: var(--page-fill-color);
     transform: skew(0deg, 22deg);
     -webkit-transform: skew(0deg, 22deg);
     -moz-transform: skew(0deg, 22deg);
@@ -201,30 +201,34 @@ ul .skills-list {
 }
 
 .about--options {
+    display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-around;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 10vh !important;
+    -webkit-justify-content: space-around !important;
     -ms-flex-pack: justify;
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
     list-style: none;
     margin-top: 5vh;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
 }
 
 .about--options a {
     position: relative;
-    width: 175px;
-    height: 100px;
+    height: 10rem !important;
+    width: 10rem !important;
+    padding: 1rem !important;
+    font-size: 0.9rem !important;
     text-decoration: none;
-    color: #2A6F97;
     border: 1px solid var(--text-hover);
     background-position: center;
-    background-size: cover;
-    -moz-background-size: cover;
+    background-size: contain;
+    -moz-background-size: contain;
     text-align: center;
     background-repeat: no-repeat;
+    background-color: #014e8634 !important;
     transition: var(--transition);
 
 }
@@ -235,7 +239,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(2):hover {
-    background-image: url("../icon/git-icon.png");
+    background-image: url("../img/graphics/undraw_pair_programming_re_or4x.svg");
 }
 
 .about--options>a:nth-child(3) {
@@ -243,7 +247,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(3):hover {
-    background-image: url("../icon/gsu-logo.jpg");
+    background-image: url("../img/graphics/undraw_articles_wbpb.svg");
 
 }
 
@@ -253,7 +257,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(4):hover {
-    background-image: url("../icon/icons-java-48.png");
+    background-image: url("../img/graphics/undraw_certificate_re_yadi.svg");
 
 }
 
@@ -264,7 +268,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(5):hover {
-    background-image: url("../icon/linkedin_b_w_icon.png");
+    background-image: url("../img/graphics/undraw_modern_professional_re_3b6l.svg");
 
 }
 
@@ -273,13 +277,12 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(1):hover {
-    background-image: url("../img/harry_star_bar.jpg");
+    background-image: url("../img/graphics/undraw_happy_music_g6wc.svg");
 }
 
 .about--options a>h3 {
     position: relative;
-    font-size: 0.7rem;
-    bottom: 0;
+    font-size: 0.9rem;
     text-transform: uppercase;
     -webkit-transition: bottom .2s ease-in-out, left .2s ease-in-out;
     transition: bottom .2s ease-in-out, left .2s ease-in-out;
@@ -287,9 +290,30 @@ ul .skills-list {
     -o-transition: bottom .2s ease-in-out, left .2s ease-in-out;
 }
 
+@media (max-width: 854px) {
+    .about--options a {
+        height: 8rem !important;
+        width: 8rem !important;
+    }
+
+    .about--options a>h3 {
+        font-size: 0.6rem !important;
+    }
+
+}
+
 @media (max-width: 767px) {
     .about--wrapper .section--header {
         font-size: 3rem;
+    }
+
+    .about--options a {
+        height: 4rem !important;
+        width: 4rem !important;
+    }
+
+    .about--options a>h3 {
+        font-size: 0.5rem !important;
     }
 
     .about--scroll-help-image {
@@ -322,26 +346,26 @@ ul .skills-list {
 
 
     .about--options>a:nth-child(2) {
-        background-image: url("../icon/git-icon.png");
+        background-image: url("../img/graphics/undraw_code_review_re_woeb.svg");
     }
 
     .about--options>a:nth-child(3) {
-        background-image: url("../icon/gsu-logo.jpg");
+        background-image: url("../img/graphics/undraw_articles_wbpb.svg");
 
     }
 
     .about--options>a:nth-child(4) {
-        background-image: url("../icon/icons-java-48.png");
+        background-image: url("../img/graphics/undraw_certificate_re_yadi.svg");
 
     }
 
     .about--options>a:nth-child(5) {
-        background-image: url("../icon/linkedin_b_w_icon.png");
+        background-image: url("../img/graphics/undraw_modern_professional_re_3b6l.svg");
 
     }
 
     .about--options>a:nth-child(1) {
-        background-image: url("../img/harry_star_bar.jpg");
+        background-image: url("../img/graphics/undraw_happy_music_g6wc.svg");
     }
 
 

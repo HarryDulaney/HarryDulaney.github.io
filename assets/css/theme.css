@@ -1,3 +1,13 @@
+* {
+    --shared-accent-color: #6b63ff !important;
+    --shared-fill-color: #3f3d56 !important;
+    --shared-cards-color: #0e0e0e !important;
+    --shared-header-text-color: #0e0e0e !important;
+    --shared-sub-header-text-color: #0e0e0e !important;
+    --shared-cards-header-text-color: #0e0e0e !important;
+
+}
+
 [data-theme="dark"] {
     --text-primary: #caf0f8;
     --text-secondary: #cedfff;
@@ -14,7 +24,8 @@
     --bgcolor-secondary: #0e0e0e;
     --bgcolor-alt: var(--bgcolor-primary);
     --bgcolor-common: rgba(6, 18, 35, 0.94);
-    --card-bgcolor: rgba(6, 18, 35, 0.94);
+    --card-bg-color: var(--shared-cards-color);
+    --page-fill-color: var(--bgcolor-secondary);
     --icon-primary: var(--text-primary);
     --icon-hover: var(--text-hover);
     --alert-success: #74ce77;
@@ -31,7 +42,11 @@
     -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-
+    /* Projects Page */
+    --project-card-text-header: var(--text-header) !important;
+    --project-card-text-sub-header: var(--text-sub-header) !important;
+    --project-card-text-sub-title: var(--text-sub-title) !important;
+    --project-card-text-contrast: var(--text-contrast) !important;
 }
 
 [data-theme="light"] {
@@ -51,7 +66,8 @@
     --bgcolor-secondary: #f3f3fe;
     --bgcolor-alt: #f3f3fe;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
-    --card-bgcolor: #d9e7faf0;
+    --card-bg-color: var(--shared-fill-color);
+    --page-fill-color: var(--shared-fill-color);
     --icon-hover: #0056b3;
     --alert-success: #74ce77;
     --alert-error: #ce7474;
@@ -67,6 +83,11 @@
     -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
     -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    /* Projects Page */
+    --project-card-text-header: var(--text-high-contrast) !important;
+    --project-card-text-sub-header: #ffffff !important;
+    --project-card-text-sub-title: var(--shared-accent-color) !important;
+    --project-card-text-contrast: var(--project-card-text-sub-header) !important;
 
 }
 

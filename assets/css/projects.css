@@ -7,11 +7,21 @@
 /* ---------------------------------- Projects ------------------------------------------ */
 
 .project--sub-text {
-    color: var(--text-sub-title) !important;
+    color: var(--project-card-text-sub-title) !important;
 }
 
 .projects--wrapper .badge {
-    color: var(--text-contrast) !important;
+    color: var(--project-card-text-contrast) !important;
+}
+
+
+.git-stats-label-text {
+    color: var(--project-card-text-contrast) !important;
+}
+
+.git-stats-datetime {
+    color: var(--project-card-text-contrast) !important;
+
 }
 
 
@@ -58,7 +68,7 @@
     right: 0;
     height: 100%;
     overflow-x: clip;
-    background: var(--bgcolor-secondary);
+    background: var(--page-fill-color);
     transform: skew(0deg, 12deg);
     -webkit-transform: skew(0deg, 12deg);
     -moz-transform: skew(0deg, 12deg);
@@ -66,15 +76,15 @@
 }
 
 .projects--wrapper h3 {
-    color: var(--text-header);
+    color: var(--project-card-text-header);
 }
 
 .projects--wrapper h4 {
-    color: var(--text-header);
+    color: var(--project-card-text-header);
 }
 
 .projects--wrapper h5 {
-    color: var(--text-sub-header);
+    color: var(--project-card-text-sub-header);
     font-size: 1.2rem;
 }
 
@@ -86,7 +96,7 @@
 .projects--wrapper .project--card {
     margin: 0 0 1rem 0;
     border-radius: 15px 15px 15px 15px;
-    background-color: var(--bgcolor-secondary);
+    background-color: var(--card-bg-color);
     transition: .6s ease-in-out;
     -webkit-transition: .6s ease-in-out;
     -moz-transition: .6s ease-in-out;
