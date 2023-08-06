@@ -196,7 +196,6 @@ function contact() {
     }
 }
 
-
 function about() {
     if (handleCurrentPage(currentPage, ABOUT_PAGE_FLAG, document)) {
         handleNavElement(ABOUT_PAGE_FLAG);
@@ -375,37 +374,36 @@ function disableSubmitButton() {
     $('#submit-button-contact-form').prop('disabled', true);
 }
 
-
-
 /**
  * Initialize light/dark theme from user prefereneces
  */
 function handleTheme(page) {
     currentTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (currentTheme !== null) {
+        currentTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        if (currentTheme === LIGHT_THEME_NAME) {
+            document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+            setLightTheme(page);
 
-    if (currentTheme === null) {
-        // localStorage.themeName is null, set to Dark as default
-        currentTheme = DARK_THEME_NAME;
+        } else if (currentTheme === DARK_THEME_NAME) {
+            document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
+            setDarkTheme(page);
+        }
+
+    } else {
+        currentTheme = LIGHT_THEME_NAME;
         storeTheme(currentTheme);
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
-        setDarkTheme(page);
-
-    } else if (currentTheme === LIGHT_THEME_NAME) {
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
         setLightTheme(page);
-
-    } else if (currentTheme === DARK_THEME_NAME) {
-        document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, currentTheme);
-        setDarkTheme(page);
     }
 
 }
-
 
 function initLightModeIntro() {
     if (introBackgroundEffect) {
         introBackgroundEffect.destroy();
     }
+
     introBackgroundEffect =
         VANTA.BIRDS({
             el: ".intro--wrapper",
@@ -489,15 +487,6 @@ function setLightTheme(page) {
             break;
         case PROJECTS_PAGE_FLAG:
             clearIntroAnimation();
-            var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text');
-            gitStatusTextStyle.forEach(element => {
-                element.classList.remove('text-white');
-            });
-
-            var statsDateTime = document.querySelectorAll('.git-stats-datetime')
-            statsDateTime.forEach(element => {
-                element.classList.remove('text-white');
-            });
             break;
         case CONTACT_PAGE_FLAG:
             clearIntroAnimation();
@@ -516,6 +505,7 @@ function setDarkTheme(page) {
             initDarkModeIntro();
             break;
         case ABOUT_PAGE_FLAG:
+            clearIntroAnimation();
             $('.about-me-bg-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');
             $('.about-me-bg-overlay ').css('position', 'relative');
             $('.about-me-bg-overlay ').css('display', 'block');
@@ -523,19 +513,13 @@ function setDarkTheme(page) {
             $('.about-me-bg-overlay ').css('z-index', '0');
             break;
         case PROJECTS_PAGE_FLAG:
-            var gitStatusTextStyle = document.querySelectorAll('.git-stats-label-text')
-            gitStatusTextStyle.forEach(element => {
-                element.classList.add('text-white');
-            });
-
-            var statsDateTime = document.querySelectorAll('.git-stats-datetime')
-            statsDateTime.forEach(element => {
-                element.classList.add('text-white');
-            });
+            clearIntroAnimation();
             break;
         case CONTACT_PAGE_FLAG:
+            clearIntroAnimation();
             break;
         case DOWNLOADS_PAGE_FLAG:
+            clearIntroAnimation();
             break;
     }
 }

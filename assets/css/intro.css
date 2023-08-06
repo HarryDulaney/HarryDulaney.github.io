@@ -1,9 +1,11 @@
 /*  -------------------------------------------------- Intro ------------------------------------------------------  */
 .intro--wrapper {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
     background-color: var(--bgcolor-primary);
-    height: 100vh;
+    min-height: 100vh !important;
+    height: fit-content !important;
 }
 
 .intro--wrapper #intro-message-body {
