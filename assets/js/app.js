@@ -402,24 +402,33 @@ function handleTheme(page) {
 }
 
 
-function initCloudsLightMode() {
+function initLightModeIntro() {
     if (introBackgroundEffect) {
         introBackgroundEffect.destroy();
     }
-
-    introBackgroundEffect = VANTA.CLOUDS({
-        el: ".intro--wrapper",
-        mouseControls: false,
-        touchControls: false,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        backgroundColor: "rgba(217, 231, 250)"
-    });
+    introBackgroundEffect =
+        VANTA.BIRDS({
+            el: ".intro--wrapper",
+            mouseControls: false,
+            touchControls: false,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            colorMode: "lerp",
+            birdSize: 0.80,
+            wingSpan: 29.00,
+            separation: 60.00,
+            alignment: 53.00,
+            cohesion: 56.00,
+            backgroundColor: "rgba(217, 231, 250)",
+            backgroundAlpha: 0.00
+        });
 
 }
 
-function initCloudsDarkMode() {
+function initDarkModeIntro() {
     if (introBackgroundEffect) {
         introBackgroundEffect.destroy();
     }
@@ -431,7 +440,7 @@ function initCloudsDarkMode() {
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        backgroundColor: 0x0e0e0e
+        backgroundColor: 0x0e0e0e,
     });
 
 
@@ -468,7 +477,7 @@ function toggleTheme() {
 function setLightTheme(page) {
     switch (page) {
         case INTRO_PAGE_FLAG:
-            initCloudsLightMode();
+            initLightModeIntro();
             break;
         case ABOUT_PAGE_FLAG:
             clearIntroAnimation();
@@ -504,7 +513,7 @@ function setLightTheme(page) {
 function setDarkTheme(page) {
     switch (page) {
         case INTRO_PAGE_FLAG:
-            initCloudsDarkMode();
+            initDarkModeIntro();
             break;
         case ABOUT_PAGE_FLAG:
             $('.about-me-bg-overlay ').css('background', 'url("./assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center');

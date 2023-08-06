@@ -8,8 +8,9 @@
 
 .intro--wrapper #intro-message-body {
     margin-top: 3vw;
-    color: var(--text-primary);
+    color: var(--text-color-intro);
     background-color: var(--bg-color-underlay);
+    backdrop-filter: var(--bg-filter-underlay);
     border-radius: var(--border-radius-underlay);
     z-index: 999999999 !important;
     transition: var(--theme-transition);
