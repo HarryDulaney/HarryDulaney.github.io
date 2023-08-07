@@ -4,10 +4,16 @@
     background-color: transparent;
 }
 
-.download--wrapper .download--image {
+.download--wrapper .downloads .download--image[disabled=true] {
     position: relative;
     margin: 0 auto;
-    cursor: not-allowed !important;
+    cursor: not-allowed;
+}
+
+.download--wrapper .downloads .download--image[disabled=false] {
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
 i.fas.fa-window-close {

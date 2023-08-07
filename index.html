@@ -1737,13 +1737,12 @@
                         <div class="downloads">
                             <div class="row p-5 w-100 align-content-center text-center ml-1">
                                 <a
-                                    id="resume--download-link"
                                     href="#"
                                     type="application/pdf"
                                     class="download--image"
                                     alt="Harry Dulaney Resume"
-                                    title="Please solve the reCAPTCHA to download my resume."
-                                    disabled
+                                    title=""
+                                    disabled="true"
                                 >
                                     <img
                                         src="assets/img/resume_icon_img.png"
@@ -1763,7 +1762,7 @@
                             <div class="row">
                                 <script
                                     async
-                                    src="https://www.google.com/recaptcha/api.js"
+                                    src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptcha"
                                 ></script>
                                 <div
                                     class="g-recaptcha"
@@ -1881,8 +1880,8 @@
                                                 class="g-recaptcha"
                                                 data-theme="dark"
                                                 data-sitekey="6LecntgZAAAAABpmuLYOrT9mYo6i2lW6wpyDn-rn"
-                                                data-callback="enableSubmitButton"
-                                                data-expired-callback="disableSubmitButton"
+                                                data-callback="enableContactSubmitButton"
+                                                data-expired-callback="disableContactSubmitButton"
                                             ></div>
                                         </div>
                                         <br>
