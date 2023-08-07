@@ -358,22 +358,6 @@ function handleCurrentPage(currentPage, nextPage, document) {
     return true;
 }
 
-/* --------------- Handle Contact Form --------------- */
-/**
- * Enable the Contact Form Submit Button
- * @param {*} token 
- */
-function enableSubmitButton(token) {
-    $('#submit-button-contact-form').prop('disabled', false);
-}
-
-/**
- * Disable the Contact Form Submit Button
- */
-function disableSubmitButton() {
-    $('#submit-button-contact-form').prop('disabled', true);
-}
-
 /**
  * Initialize light/dark theme from user prefereneces
  */

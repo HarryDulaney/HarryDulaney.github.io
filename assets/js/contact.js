@@ -1,5 +1,6 @@
 'use strict';
 //contact.js
+let contactPageRecaptchaValidated = false;
 
 /**
  * Initialize the contact form
@@ -74,4 +75,22 @@ function showLoadingMask() {
 function hideLoadingMask() {
     const loadingOverlay = document.querySelector("#loading-mask");
     loadingOverlay.remove();
+}
+
+/**
+ * Enable the Contact Form Submit Button
+ * @param {*} token 
+ */
+function enableContactSubmitButton(token) {
+    contactPageRecaptchaValidated = true;
+    $('#submit-button-contact-form').prop('disabled', false);
+    $('#submit-button-contact-form').attr('title', 'Submit and Send!.');
+}
+
+/**
+ * Disable the Contact Form Submit Button
+ */
+function disableContactSubmitButton() {
+    contactPageRecaptchaValidated = false;
+    $('#submit-button-contact-form').prop('disabled', true);
 }
