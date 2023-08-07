@@ -7,6 +7,7 @@
 .download--wrapper .download--image {
     position: relative;
     margin: 0 auto;
+    cursor: not-allowed !important;
 }
 
 i.fas.fa-window-close {
@@ -34,7 +35,6 @@ i.fas.fa-window-close:hover {
 
 .download--wrapper .download--image img {
     display: block;
-    cursor: pointer;
     opacity: 1;
     height: auto;
     border-radius: 5% 5% 5% 5%;
