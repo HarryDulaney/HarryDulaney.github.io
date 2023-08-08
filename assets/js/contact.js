@@ -81,7 +81,7 @@ function hideLoadingMask() {
 function enableContactSubmitButton(token) {
     contactPageRecaptchaValidated = true;
     $('#submit-button-contact-form').prop('disabled', false);
-    $('#submit-button-contact-form').attr('title', 'Submit and Send!.');
+    $('#submit-button-contact-form').attr('title', 'Submit and Send!');
 }
 
 /**
