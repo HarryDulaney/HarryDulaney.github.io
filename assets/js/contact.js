@@ -12,15 +12,12 @@ function initContactForm(document, formElementId) {
     form.addEventListener("submit", submitContactForm);
 }
 
-
 function closeContactFormStatusAlert() {
     let successStatus = document.getElementById("contact-form-status-alert");
     let errorStatus = document.getElementById("contact-form-status-alert-error");
     gsap.to(successStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
     gsap.to(errorStatus, { opacity: '0', ease: "easeOut", duration: 0.2 })
 }
-
-
 
 async function submitContactForm(event) {
     event.preventDefault();
