@@ -336,10 +336,6 @@
     cursor: pointer !important;
 }
 
-.nav--items div a:active {
-    background-color: #2C7DA0;
-}
-
 .nav--items div>a>img {
     width: 25px;
     cursor: pointer !important;
