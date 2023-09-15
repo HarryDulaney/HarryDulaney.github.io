@@ -67,7 +67,7 @@
     --bgcolor-alt: #f3f3fe;
     --bgcolor-common: rgba(6, 18, 35, 0.94);
     --card-bg-color: var(--shared-fill-color);
-    --page-fill-color: var(--shared-fill-color);
+    --page-fill-color: var(--bgcolor-secondary);
     --icon-hover: #0056b3;
     --alert-success: #74ce77;
     --alert-error: #ce7474;

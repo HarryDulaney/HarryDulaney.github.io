@@ -18,7 +18,7 @@ function getAllRepoStats(document) {
     const FILE_COMM = 'file-commander';
     const DEEZER_APP = 'deezer-web-app';
     const STOCK_PREDICTOR = 'stock-predictor';
-    const SIM_AIR = 'airline-reservation-system';
+    const SPREADSHEET_BUDDY = 'Spreadsheet-Buddy';
     const PFOLIE = 'pfolie';
     const HARRY_DULANEY_COM = 'HarryDulaney.github.io';
 
@@ -60,18 +60,18 @@ function getAllRepoStats(document) {
                             const pd1 = new Date().toLocaleDateString();
                             pfolieUpdateTime[0].innerHTML = (`<span>${pt1} ${pd1}</span>`);
                             break;
-                        case SIM_AIR:
-                            /* Set Air Sim Github Stats */
-                            let simAirStats = document.getElementById('sim-air-app-stats');
-                            let simAirUpdateTime = simAirStats.getElementsByClassName('git-stats-datetime');
-                            let simAirStars = document.getElementById('sim-air-stars');
-                            let simAirForks = document.getElementById('sim-air-forks');
-                            simAirStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                            simAirForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
+                        case SPREADSHEET_BUDDY:
+                            /* Set SSB Github Stats */
+                            let ssbStats = document.getElementById('ssb-app-stats');
+                            let ssbUpdateTime = ssbStats.getElementsByClassName('git-stats-datetime');
+                            let ssbStars = document.getElementById('ssb-stars');
+                            let ssbForks = document.getElementById('ssb-forks');
+                            ssbStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
+                            ssbForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
                             /* Set Last Updated */
-                            const t1 = new Date().toLocaleTimeString();
-                            const d1 = new Date().toLocaleDateString();
-                            simAirUpdateTime[0].innerHTML = (`<span>${t1} ${d1}</span>`);
+                            const ssbt1 = new Date().toLocaleTimeString();
+                            const ssbd1 = new Date().toLocaleDateString();
+                            ssbUpdateTime[0].innerHTML = (`<span>${ssbt1} ${ssbd1}</span>`);
                             break;
 
                         case DEEZER_APP:
@@ -114,20 +114,6 @@ function getAllRepoStats(document) {
                             const t5 = new Date().toLocaleTimeString();
                             const d5 = new Date().toLocaleDateString();
                             fileCommUpdated[0].innerHTML = (`<span>${d5} ${t5}</span>`);
-                            break;
-
-                        case CONTACT_LIST_APP:
-                            /* Set Contact List App GitHub Stats */
-                            let contactAppStats = document.getElementById('contact-app-stats');
-                            let contactAppUpdate = contactAppStats.getElementsByClassName('git-stats-datetime');
-                            let contactAppStars = document.getElementById('contact-app-stars');
-                            let contactAppForks = document.getElementById('contact-app-forks');
-                            contactAppStars.innerHTML = (`<strong> ${data[i].stargazers_count}</strong>`);
-                            contactAppForks.innerHTML = (`<strong>${data[i].forks_count}</strong>`);
-                            /* Set Last Updated */
-                            const t6 = new Date().toLocaleTimeString();
-                            const d6 = new Date().toLocaleDateString();
-                            contactAppUpdate[0].innerHTML = (`<span>${d6} ${t6}</span>`);
                             break;
 
                         case NOTES_ANDROID:
