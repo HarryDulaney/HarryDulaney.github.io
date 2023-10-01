@@ -414,6 +414,50 @@
         class="main-container"
         id="parent-container"
     >
+
+        <!-- ----------------------------------------- Reusable iframe / modal dialog ----------------------------------------------- -->
+        <template id="modal-dialog-element">
+            <div
+                class="modal fade p-3 m-2"
+                id="web-app-discog-modal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="web-app-discog-title"
+                aria-hidden="true"
+                style="z-index: 999999;"
+            >
+                <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="application"
+                    style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;
+                         min-width: 85vw; "
+                >
+                    <div
+                        class="modal-content"
+                        style="display: -webkit-flex;display: -ms-flexbox;display:
+                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;"
+                    >
+                        <div
+                            class="modal-body"
+                            style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;"
+                        >
+                            <iframe
+                                style="height:100%;width:100%; top:0;bottom:0;"
+                                src="https://harrydulaney.com/"
+                            ></iframe>
+                        </div>
+                        <div class="justify-content-center">
+                            <button
+                                type="button"
+                                class="btn btn-sm btn-secondary mt-1 mb-1"
+                                data-dismiss="modal"
+                            >CLOSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
         <!--------------------------------------- Intro ------------------------------------------->
         <template id="intro-page">
             <div class="intro--wrapper">
@@ -660,20 +704,20 @@
                         </div>
                         <hr>
 
-                        <!------------------------------------------------ BloGorilla ---------------------------------------------------->
+                        <!------------------------------------------------ Blogorilla ---------------------------------------------------->
                         <div class="row p-2 project--card">
                             <div class="col-md-7">
                                 <img
-                                    alt="BloGorilla screenshot"
+                                    alt="blogorilla-screenshot-image"
                                     class="project--image img-fluid mb-3 mb-md-0"
                                     id="blogorillaProjectImage"
                                     src="assets/img/blogorilla-screenshot.png"
                                 >
                             </div>
                             <div class="col-md-5">
-                                <h3>BloGorilla</h3>
+                                <h3>Blogorilla.com</h3>
                                 <h6 class="project--sub-text">Creator, Designer, Programmer, Maintainer</h6>
-                                <h5>A NextGen publishing platform for everyone</h5>
+                                <h5>The #1 free publishing platform for impatient, hyper-creative writers.</h5>
                                 </h5>
                                 <div class="d-inline-block mt-1 mb-1 p-2">
                                     <div class="badge">Node.js</div>
@@ -683,7 +727,8 @@
                                     <div class="badge">TypeScript</div>
                                     <div class="badge">GCP</div>
                                     <div class="badge">PostgreSql</div>
-
+                                    <div class="badge">GitOps</div>
+                                    <div class="badge">OAuth2.0</div>
                                 </div>
                                 <div class="project--link">
                                     <a
@@ -1047,14 +1092,6 @@
                                     <div class="project--link">
                                         <a
                                             type="button"
-                                            class="text-white btn btn-primary m-1"
-                                            data-toggle="modal"
-                                            data-target="#web-app-discog-modal"
-                                        >
-                                            <span class="launch-btn-text">Launch</span> <i class="fas fa-rocket"></i>
-                                        </a>
-                                        <a
-                                            type="button"
                                             class="btn btn-light"
                                             target="_blank"
                                             href="https://github.com/HarryDulaney/deezer-web-app"
@@ -1117,47 +1154,7 @@
 
                                 </div>
                             </div>
-                            <!-- Popup Modal for Discography Web App Deezer Api -->
-                            <div
-                                class="modal fade p-3 m-2"
-                                id="web-app-discog-modal"
-                                tabindex="-1"
-                                role="dialog"
-                                aria-labelledby="web-app-discog-title"
-                                aria-hidden="true"
-                                style="z-index: 999999;"
-                            >
-                                <div
-                                    class="modal-dialog modal-dialog-centered"
-                                    role="application"
-                                    style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;
-                         min-width: 85vw; "
-                                >
-                                    <div
-                                        class="modal-content"
-                                        style="display: -webkit-flex;display: -ms-flexbox;display:
-                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;"
-                                    >
-                                        <div
-                                            class="modal-body"
-                                            style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;"
-                                        >
-                                            <iframe
-                                                style="height:100%;width:100%; top:0;bottom:0;"
-                                                src="https://discog.harrydulaney.com/"
-                                            ></iframe>
-                                        </div>
-                                        <div class="justify-content-center">
-                                            <button
-                                                type="button"
-                                                class="btn btn-sm btn-secondary mt-1 mb-1"
-                                                data-dismiss="modal"
-                                            >CLOSE
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <hr>
 
 
