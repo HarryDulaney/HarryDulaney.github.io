@@ -1,6 +1,9 @@
 'use strict';
-//projects.js
 
+/**
+ * Selector for Projects HTML Template
+ * use to render the projects page.
+ */
 /**
  * Fetch and set Github Stats for the
  * Projects section.

@@ -1,6 +1,5 @@
 'use strict';
 
-//utils.js
 /**
  * Get current value of the scroll Y offset postion (scroll position)
  * @returns number of pixels scrolled vertically from top of page
@@ -11,23 +10,6 @@ function getPixelScrolledFromTop(window, document) {
     } else {
         return (document.documentElement || document.body.parentNode || document.body).scrollTop;
     }
-}
-
-
-
-function getLastPageVisited() {
-    const page = localStorage.getItem(LAST_PAGE_KEY);
-
-    if (page !== null) {
-        return page;
-    }
-
-    return INTRO_PAGE_FLAG;
-}
-
-
-function setLastPageVisited(page) {
-    localStorage.setItem(LAST_PAGE_KEY, page);
 }
 
 

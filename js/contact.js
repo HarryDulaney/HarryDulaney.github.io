@@ -1,5 +1,5 @@
 'use strict';
-//contact.js
+
 let contactPageRecaptchaValidated = false;
 
 /**
@@ -63,10 +63,10 @@ async function submitContactForm(event) {
 }
 
 function showLoadingMask() {
-    const parentContainer = document.querySelector("#parent-container");
+    const appContainer = document.querySelector("#app-container");
     const template = document.querySelector("#loading-mask");
     const node = template.content.firstElementChild.cloneNode(true);
-    parentContainer.appendChild(node);
+    appContainer.appendChild(node);
 }
 
 function hideLoadingMask() {

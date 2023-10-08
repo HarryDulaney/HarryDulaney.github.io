@@ -1,5 +1,5 @@
 'use strict';
-//download.js
+
 let downloadPageRecaptchaValidated = false;
 const RESUME_DOWNLOAD_PATH = 'assets/img/HarryDulaneyResume.pdf';
 const RESUME_DOWNLOAD_NAME = 'HarryDulaneyResume';
