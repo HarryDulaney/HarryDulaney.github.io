@@ -53,7 +53,7 @@ const restApiStartDate = new Date(2017, 6, 1);
 /* Global Variables */
 var open = false;
 var isBlog = false;
-var isLoading = true;
+var isLoading = false;
 var isMobile = window.matchMedia("(max-width: 846px)");
 var introArrowTimer = null;
 var introAnimationTimeline = gsap.timeline({ repeat: -1, yoyo: true });
@@ -97,15 +97,7 @@ function router(event) {
     loadRoute(route);
 };
 
-$(document).on("DOMContentLoaded", (event) => {
-    showLoadingMask();
-    isLoading = true;
-});
-
-
-$(document).on('hashchange', onHashChange);
-$(window).on('resize', onWindowResize);
-
+/* 
 $(document).on("readystatechange", (event) => {
     if ((event.target.readyState === "interactive" ||
         event.target.readyState === "loading") && !isLoading) {
@@ -113,13 +105,21 @@ $(document).on("readystatechange", (event) => {
     } else if (event.target.readyState === "complete") {
         hideLoadingMask();
     }
-});
+}); */
 
-$(document).on('load', function () {
+$(window).on('load', function () {
     let route = routes[window.location.pathname];
     onInitialPageLoad(route);
-    hideLoadingMask();
 });
+
+$(window).on("DOMContentLoaded", (event) => {
+    showLoadingMask();
+    isLoading = true;
+});
+
+$(window).on('hashchange', onHashChange);
+$(window).on('resize', onWindowResize);
+
 
 
 /**
@@ -259,6 +259,7 @@ function onInitialPageLoad(route) {
     appContainer.appendChild(node);
     currentPage = route.name;
     handleTheme(currentPage);
+    this.hideLoadingMask();
 }
 
 function intro(route) {
