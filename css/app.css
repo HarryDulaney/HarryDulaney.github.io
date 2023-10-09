@@ -1,7 +1,9 @@
-/* Data CSS for dynamic skills graph */
-@import url("data.css");
+/* Bouncy Loader */
+@import url("bouncy-loader.css");
 /* Dark/Light Theme CSS */
 @import url("theme.css");
+/* Data CSS for dynamic skills graph */
+@import url("data.css");
 /* Footer */
 @import url("footer.css");
 /* Contact */
@@ -91,14 +93,15 @@
 .loading--wrapper {
     position: fixed !important;
     height: 100vh !important;
+    z-index: 999999999999 !important;
     width: 100vw !important;
-    display: flex !important;
+    display: flex;
     justify-content: center !important;
     align-items: center !important;
     -webkit-align-items: center;
     flex-direction: column;
     -webkit-flex-direction: column;
-    background: #000000dc !important;
+    background: var(--bgcolor-secondary) !important;
 }
 
 

@@ -12,22 +12,19 @@
         http-equiv="X-UA-Compatible"
         content="IE=edge"
     >
+    <base href="/">
+    <!-- Base Meta Tags -->
+    <meta
+        name="description"
+        content="Official website of Harry Dulaney, full-stack engineer, Java programmer, web developer, musician, and inventor based in Atlanta, GA."
+    />
     <meta
         name="keywords"
-        content="Harry Dulaney, software developer, developer project portfolio, software engineer,Atlanta Software, Java developer
+        content="Harry Dulaney, software developer, developer project portfolio, software engineer, Atlanta Software, Java developer
             Harry Dulaney IV, developer portfolio, Computer Science, web developer, developer blog, "
     >
     <meta
-        name="description"
-        content="Official website of Harry Dulaney"
-    />
-    <meta
         name="title"
-        content="HarryDulaney.com"
-    />
-    <meta
-        name="title"
-        property="og:title"
         content="HarryDulaney.com"
     />
     <meta
@@ -36,28 +33,63 @@
     />
     <meta
         name="thumbnail"
-        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page-preview.png"
+        content="/android-chrome-192x192.png"
     />
-
-    <meta
-        name="image"
-        property="og:image"
-        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page-preview.png"
-    />
-    <meta
-        name="description"
-        property="og:description"
-        content="Harry Dulaney official website"
-    />
-    <meta
-        name="url"
-        property="og:url"
-        content="https://harrydulaney.com"
-    >
     <meta
         name="author"
         content="Harry Dulaney"
     >
+    <!-- Twitter Meta Tags -->
+    <meta
+        name="twitter:description"
+        content="Official website of Harry Dulaney, full-stack engineer, Java programmer, web developer, musician, and inventor based in Atlanta, GA."
+    >
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+    <meta
+        property="twitter:domain"
+        content="harrydulaney.com"
+    >
+    <meta
+        property="twitter:url"
+        content="https://harrydulaney.com"
+    >
+    <meta
+        name="twitter:title"
+        content="HarryDulaney.com"
+    >
+    <meta
+        name="twitter:image"
+        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page-preview.png"
+    >
+
+    <!-- Facebook Meta Tags -->
+    <meta
+        property="og:url"
+        content="https://harrydulaney.com"
+    >
+    <meta
+        property="og:type"
+        content="website"
+    >
+    <meta
+        property="og:title"
+        content="HarryDulaney.com"
+    />
+    <meta
+        property="og:image"
+        content="https://raw.githubusercontent.com/HarryDulaney/HarryDulaney.github.io/master/assets/img/page-preview.png"
+    >
+    <meta
+        property="og:author"
+        content="Harry Dulaney"
+    >
+    <meta
+        property="og:description"
+        content="Official website of Harry Dulaney, full-stack engineer, Java programmer, web developer, musician, and inventor based in Atlanta, GA."
+    />
     <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -66,7 +98,7 @@
     >
     <link
         rel="stylesheet"
-        href="./assets/css/app.css"
+        href="./css/app.css"
     >
     <link
         rel="stylesheet"
@@ -75,6 +107,11 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/android-chrome-512x512.png"
+    >
     <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -124,17 +161,10 @@
 </script>
 
 <body>
-    <!-- ---------------------------------------- Loading Placeholder ----------------------------------------- -->
-    <div id="loading-page">
-        <div class="loading--wrapper">
-            <div class="spinner-grow text-primary bg-black"></div>
-        </div>
+    <!-- ---------------------------------------- Loading Mask ----------------------------------------- -->
+    <div class="loading--wrapper">
+        <span class="loader"></span>
     </div>
-    <template id="loading-mask">
-        <div class="loading--wrapper">
-            <div class="spinner-grow text-primary bg-black"></div>
-        </div>
-    </template>
     <!-----------------------------------------------  Intro  ---------------------------------------------------->
     <nav class="top--navbar">
         <div class="nav--items">
@@ -150,28 +180,28 @@
                             role="menu"
                         >
                             <li><a
+                                    href="#/"
                                     data-active="false"
-                                    onclick="intro()"
                                     id="mobile-menu-intro"
                                 >intro.</a></li>
                             <li><a
+                                    href="#/projects"
                                     data-active="false"
-                                    onclick="projects()"
                                     id="mobile-menu-projects"
                                 >projects.</a></li>
                             <li><a
+                                    href="#/about"
                                     data-active="false"
-                                    onclick="about()"
                                     id="mobile-menu-about"
                                 >about me.</a></li>
                             <li><a
+                                    href="#/contact"
                                     data-active="false"
-                                    onclick="contact()"
                                     id="mobile-menu-contact"
                                 >contact.</a></li>
                             <li><a
+                                    href="#/downloads"
                                     data-active="false"
-                                    onclick="downloads()"
                                     id="mobile-menu-downloads"
                                 >resume.</a></li>
 
@@ -249,32 +279,32 @@
                     </a></span>
 
                 <a
+                    href="#/"
                     data-active="false"
-                    onclick="intro()"
                     class="m-sm-3"
                     id="nav-menu-intro"
                 >intro.</a>
                 <a
+                    href="#/projects"
                     data-active="false"
-                    onclick="projects()"
                     class="m-sm-3"
                     id="nav-menu-projects"
                 >projects.</a>
                 <a
+                    href="#/about"
                     data-active="false"
-                    onclick="about()"
                     class="m-sm-3"
                     id="nav-menu-about"
                 >about me.</a>
                 <a
+                    href="#/contact"
                     data-active="false"
-                    onclick="contact()"
                     class="m-sm-3"
                     id="nav-menu-contact"
                 >contact.</a>
                 <a
+                    href="#/downloads"
                     data-active="false"
-                    onclick="downloads()"
                     class="m-sm-3"
                     id="nav-menu-downloads"
                 >
@@ -412,7 +442,7 @@
     </nav>
     <div
         class="main-container"
-        id="parent-container"
+        id="app-container"
     >
 
         <!-- ----------------------------------------- Reusable iframe / modal dialog ----------------------------------------------- -->
@@ -1670,7 +1700,6 @@
                 <div class="downloads">
                     <div class="row p-5 w-100 align-content-center text-center ml-1">
                         <a
-                            href="#"
                             type="application/pdf"
                             class="download--image"
                             alt="Harry Dulaney Resume"
@@ -1919,13 +1948,30 @@
         integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
         crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/constants.js"></script>
-    <script src="./assets/js/util.js"></script>
-    <script src="./assets/js/projects.js"></script>
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/about.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/download.js"></script>
+    <script
+        defer
+        src="./js/util.js"
+    ></script>
+    <script
+        defer
+        src="./js/projects.js"
+    ></script>
+    <script
+        defer
+        src="./js/contact.js"
+    ></script>
+    <script
+        defer
+        src="./js/about.js"
+    ></script>
+    <script
+        defer
+        src="./js/download.js"
+    ></script>
+    <script
+        defer
+        src="./js/app.js"
+    ></script>
 </body>
 
 </html>

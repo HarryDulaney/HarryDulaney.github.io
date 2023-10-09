@@ -2,7 +2,6 @@
 .intro--wrapper {
     position: relative;
     overflow-x: hidden !important;
-    overflow-y: scroll !important;
     background-color: var(--bgcolor-primary);
     min-height: 100vh !important;
     height: fit-content !important;

@@ -1,5 +1,4 @@
 'use strict';
-//about.js
 
 function renderAboutMe(
     fullTimeStartDate,
