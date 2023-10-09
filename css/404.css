@@ -1,6 +1,6 @@
 svg {
     display: block;
-    max-height: 100vw !important;
+    max-width: 100vw !important;
     max-height: 100vh !important;
     margin: 0 auto !important;
 }
@@ -70,5 +70,13 @@ svg#freepik_stories-oops-404-error-with-a-broken-robot.animated #freepik--Charac
 
     75% {
         transform: rotate(-1deg);
+    }
+}
+
+
+@media (max-width: 600px) {
+    svg {
+        vertical-align: middle !important;
+        padding-top: 30% !important;
     }
 }
