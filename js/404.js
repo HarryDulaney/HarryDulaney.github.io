@@ -37,24 +37,29 @@ function router(fragment) {
  * Intro page route handler
  */
 function intro() {
-    window.location.assign('#/intro');
+    const introPath = window.location.origin + '/';
+    window.location.assign(introPath);
 }
 
 
 function projects() {
-    window.location.assign('#/projects');
+    const projectsPath = window.location.origin + '/#/projects';
+    window.location.assign(projectsPath);
 }
 
 function downloads() {
-    window.location.assign('#/downloads');
+    const downloadPath = window.location.origin + '/#/downloads';
+    window.location.assign(downloadPath);
 }
 
 function contact() {
-    window.location.assign('#/contact');
+    const contactPath = window.location.origin + '/#/contact';
+    window.location.assign(contactPath);
 }
 
 function about() {
-    window.location.assign('#/about');
+    const aboutPath = window.location.origin + '/#/about';
+    window.location.assign(aboutPath);
 }
 
 
@@ -79,27 +84,25 @@ template('downloads', function () {
 });
 
 
-route('/', 'intro');
+route('/intro', 'intro');
 route('/about', 'about');
 route('/projects', 'projects');
 route('/contact', 'contact');
 route('/downloads', 'downloads');
-route('/blog', 'blog');
+route('/intro.html', 'intro');
+route('/about.html', 'about');
+route('/projects.html', 'projects');
+route('/contact.html', 'contact');
+route('/downloads.html', 'downloads');
 
+function router(event) {
+    const url = window.location.pathname;
+    const route = resolveRoute(url);
+    route();
+}
 
-$(window).on('load', function () {
-    const fragment = window.location.hash;
-    if (fragment.includes('intro')) {
-        router(fragment);
-    } else if (fragment.includes('about')) {
-        router(fragment);
-    } else if (fragment.includes('projects')) {
-        router(fragment);
-    } else if (fragment.includes('contact')) {
-        router(fragment);
-    } else if (fragment.includes('downloads')) {
-        router(fragment);
-    } else if (fragment.includes('blog')) {
-        router(fragment);
+document.addEventListener('readystatechange', function (event) {
+    if (event.target.readyState === 'complete') {
+        router();
     }
 });
