@@ -24,7 +24,7 @@ function onloadDownloadRecaptcha() {
     } else {
         $('#resume--download-icon').removeClass('fas fa-download');
         $('#resume--download-icon').addClass('fas fa-window-close');
-        $('.download--wrapper .downloads .download--image').prop('href', '#');
+        $('.download--wrapper .downloads .download--image').prop('href', undefined);
         $('.download--wrapper .downloads .download--image').prop('download', undefined);
         $('.download--wrapper .downloads .download--image').css('cursor', 'not-allowed');
         $('.download--wrapper .downloads .download--image').attr('title', RESUME_RECAPTCHA_REQUIRED);
@@ -55,7 +55,7 @@ function disableResumeDownloadButton() {
     downloadPageRecaptchaValidated = false;
     $('#resume--download-icon').removeClass('fas fa-download');
     $('#resume--download-icon').addClass('fas fa-window-close');
-    $('.download--wrapper .downloads .download--image').prop('href', '#');
+    $('.download--wrapper .downloads .download--image').prop('href', undefined);
     $('.download--wrapper .downloads .download--image').prop('download', undefined);
     $('.download--wrapper .downloads .download--image').css('cursor', 'not-allowed');
     $('.download--wrapper .downloads .download--image').attr('title', RESUME_RECAPTCHA_REQUIRED);

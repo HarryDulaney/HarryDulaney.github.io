@@ -61,65 +61,243 @@ var introBackgroundEffect = null;
 var currentTheme = DARK_THEME_NAME;
 var currentPage = 'intro';
 var lastPage = 'intro';
-const introRoute = { name: 'intro', id: 'intro-page', template: '#intro-page', wrapper: '.intro--wrapper' };
-const projectsRoute = { name: 'projects', id: 'projects-page', template: '#projects-page', wrapper: '.projects--wrapper' };
-const aboutRoute = { name: 'about', id: 'about-me-page', template: '#about-me-page', wrapper: '.about--wrapper' };
-const contactRoute = { name: 'contact', id: 'contact-page', template: '#contact-page', wrapper: '.contact--wrapper' };
-const downloadsRoute = { name: 'downloads', id: 'downloads-page', template: '#downloads-page', wrapper: '.download--wrapper' };
-const blogRoute = { name: 'blog', id: 'blog-page', template: '#blog-page' };
+var initialized = false;
 
-const routes = {
-    '/': introRoute,
-    '/intro': introRoute,
-    '/index.html': introRoute,
-    '/about': aboutRoute,
-    '/about.html': aboutRoute,
-    '/downloads': downloadsRoute,
-    '/downloads.html': downloadsRoute,
-    '/contact': contactRoute,
-    '/contact.html': contactRoute,
-    '/blog.html': blogRoute,
-    '/blog': blogRoute
+const routes = {};
+const templates = {};
+
+function template(name, templateFunction) {
+    return templates[name] = templateFunction;
+};
+
+function route(path, template) {
+    if (typeof template === 'function') {
+        return routes[path] = template;
+    }
+    else if (typeof template === 'string') {
+        return routes[path] = templates[template];
+    } else {
+        return;
+    };
 };
 
 
-function resolveRoute(id) {
+function resolveRoute(routeName) {
     try {
-        return routes[id];
-    } catch (error) {
-        throw new Error("The route is not defined");
-    }
+        return routes[routeName];
+    } catch (e) {
+        throw new Error(`Route ${routeName} not found`);
+    };
 };
 
 function router(event) {
     const url = window.location.hash.slice(1) || "/";
     const route = resolveRoute(url);
-    loadRoute(route);
+    route();
 };
 
-/* 
-$(document).on("readystatechange", (event) => {
-    if ((event.target.readyState === "interactive" ||
-        event.target.readyState === "loading") && !isLoading) {
+
+/**
+ * Intro page route handler
+ */
+function intro() {
+    if (!initialized) {
+        initialized = true;
+    } else {
+        animateTransition(document);
+    }
+    resetActiveNavItems();
+    let introElementId = null;
+    if (isMobile.matches) {
+        introElementId = NAV_MOBILE_INTRO_ID;
+    } else {
+        introElementId = NAV_MENU_INTRO_ID;
+    }
+    document.getElementById(introElementId).dataset.active = true;
+    const appContainer = document.querySelector("#app-container");
+    const template = document.querySelector('#intro-page');
+    const node = template.content.firstElementChild.cloneNode(true);
+    node.classList.add('page-slide-in-start');
+    appContainer.appendChild(node);
+    currentPage = 'intro';
+    handleTheme(currentPage);
+    gsap.to(node, { duration: 0.1, x: 0 }, "<");
+
+}
+
+
+function blog() {
+    resetActiveNavItems();
+    let blogIdElement = null;
+    if (isMobile.matches) {
+        blogIdElement = NAV_MOBILE_BLOG_ID;
+    } else {
+        blogIdElement = NAV_MENU_BLOG_ID;
+    }
+    document.getElementById(blogIdElement).dataset.active = true;
+
+}
+
+
+function projects() {
+    if (!initialized) {
+        initialized = true;
+    } else {
+        animateTransition(document);
+    }
+    resetActiveNavItems();
+    let projectsElementId = null;
+    if (isMobile.matches) {
+        projectsElementId = NAV_MOBILE_PROJECTS_ID;
+    } else {
+        projectsElementId = NAV_MENU_PROJECTS_ID;
+    }
+    document.getElementById(projectsElementId).dataset.active = true;
+
+    const appContainer = document.querySelector("#app-container");
+    const template = document.querySelector('#projects-page');
+    const node = template.content.firstElementChild.cloneNode(true);
+    node.classList.add('page-slide-in-start');
+    appContainer.appendChild(node);
+    currentPage = 'projects';
+    // Fetch and initialize Git status' on projects
+    getAllRepoStats(document);
+    handleTheme(currentPage);
+    gsap.to(node, { duration: 0.1, x: 0 }, "<");
+
+}
+
+function downloads() {
+    if (!initialized) {
+        initialized = true;
+    } else {
+        animateTransition(document);
+    }
+    resetActiveNavItems();
+    let downloadsElementId = null;
+    if (isMobile.matches) {
+        downloadsElementId = NAV_MOBILE_DOWNLOADS_ID;
+    } else {
+        downloadsElementId = NAV_MENU_DOWNLOADS_ID;
+
+    }
+    document.getElementById(downloadsElementId).dataset.active = true;
+
+    const parentContainer = document.querySelector("#app-container");
+    const template = document.querySelector("#downloads-page");
+    const node = template.content.firstElementChild.cloneNode(true);
+    node.classList.add('page-slide-in-start');
+    parentContainer.appendChild(node);
+    gsap.to(node, { duration: 0.1, x: 0 }, "<");
+    currentPage = 'downloads';
+    handleTheme(currentPage);
+}
+
+function contact() {
+    if (!initialized) {
+        initialized = true;
+    } else {
+        animateTransition(document);
+    }
+    resetActiveNavItems();
+    let contactElementId = null;
+    if (isMobile.matches) {
+        contactElementId = NAV_MOBILE_CONTACT_ID;
+    } else {
+        contactElementId = NAV_MENU_CONTACT_ID;
+
+    }
+    document.getElementById(contactElementId).dataset.active = true;
+
+    const parentContainer = document.querySelector("#app-container");
+    const template = document.querySelector("#contact-page");
+    const node = template.content.firstElementChild.cloneNode(true);
+    node.classList.add('page-slide-in-start');
+    parentContainer.appendChild(node);
+    gsap.to(node, { duration: 0.1, x: 0 }, "<");
+    currentPage = 'contact';
+    initContactForm(document, 'contact-form');
+    handleTheme(currentPage);
+
+}
+
+function about() {
+    if (!initialized) {
+        initialized = true;
+    } else {
+        animateTransition(document);
+    }
+    resetActiveNavItems();
+    let aboutElementId = null;
+    if (isMobile.matches) {
+        aboutElementId = NAV_MOBILE_ABOUT_ID;
+    } else {
+        aboutElementId = NAV_MENU_ABOUT_ID;
+    }
+
+    document.getElementById(aboutElementId).dataset.active = true;
+    const parentContainer = document.querySelector("#app-container");
+    const template = document.querySelector("#about-me-page");
+    const node = template.content.firstElementChild.cloneNode(true);
+    node.classList.add('page-slide-in-start');
+    parentContainer.appendChild(node);
+    gsap.to(node, { duration: 0.1, x: 0 }, "<");
+    /* Calculate + render years of experience */
+    renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
+        azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
+    currentPage = 'about';
+    handleTheme(currentPage);
+}
+
+
+template('intro', function () {
+    intro();
+});
+
+template('about', function () {
+    about();
+});
+
+template('projects', function () {
+    projects();
+});
+
+template('contact', function () {
+    contact();
+});
+
+template('downloads', function () {
+    downloads();
+});
+
+
+route('/', 'intro');
+route('/about', 'about');
+route('/projects', 'projects');
+route('/contact', 'contact');
+route('/downloads', 'downloads');
+route('/blog', 'blog');
+
+
+document.addEventListener('readystatechange', function () {
+    if (document.readyState === 'interactive') {
         showLoadingMask();
-    } else if (event.target.readyState === "complete") {
+    } else if (document.readyState === 'loading') {
+        showLoadingMask();
+    } else if (document.readyState === 'complete') {
         hideLoadingMask();
     }
-}); */
-
-$(window).on('load', function () {
-    let route = routes[window.location.pathname];
-    onInitialPageLoad(route);
 });
+
 
 $(window).on("DOMContentLoaded", (event) => {
     showLoadingMask();
-    isLoading = true;
 });
 
-$(window).on('hashchange', onHashChange);
 $(window).on('resize', onWindowResize);
 
+$(window).on('hashchange', router);
+$(window).on('load', router);
 
 
 /**
@@ -198,19 +376,15 @@ $(document).ready(function () {
 
 
 function showLoadingMask() {
+    let node = document.querySelector('div.loading--wrapper');
+    node.setAttribute('style', 'display: flex');
     isLoading = true;
-    let template = document.getElementById('loading-mask');
-    const appContainer = document.querySelector("#app-container");
-    let node = template.content.firstElementChild.cloneNode(true);
-    appContainer.appendChild(node);
 }
 
 function hideLoadingMask() {
-    if (isLoading) {
-        let loaderMask = document.querySelector('.loading--wrapper');
-        loaderMask.remove();
-        isLoading = false;
-    }
+    let node = document.querySelector('div.loading--wrapper');
+    node.setAttribute('style', 'display: none');
+    isLoading = false;
 }
 
 
@@ -229,119 +403,27 @@ function onWindowResize() {
 };
 
 
-function onHashChange(event) {
-
-}
-
-/* ----------------------------------------------- Page Navigation ---------------------------------------------------- */
-
-function loadRoute(route) {
-    animateTransition(route, document);
-    setActiveNavMenuItem(route.name);
-    const appContainer = document.querySelector("#app-container");
-    const template = document.querySelector(route.template);
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
-    appContainer.appendChild(node);
-    currentPage = route.name;
-    handleTheme(currentPage);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-}
+/* ----------------------------------------------- Page Inital Load ---------------------------------------------------- */
 
 /**
  * Handle rendering page on initial load
  */
-function onInitialPageLoad(route) {
+function onInitialPageLoad(pathName) {
     const appContainer = document.querySelector("#app-container");
-    setActiveNavMenuItem(route.name);
-    let template = document.getElementById(route.id);
-    let node = template.content.firstElementChild.cloneNode(true);
-    appContainer.appendChild(node);
-    currentPage = route.name;
-    handleTheme(currentPage);
-    this.hideLoadingMask();
-}
+    resetActiveNavItems();
+    let introElementId = null;
+    if (isMobile.matches) {
+        introElementId = NAV_MOBILE_INTRO_ID;
+    } else {
+        introElementId = NAV_MENU_INTRO_ID;
 
-function intro(route) {
-    animateTransition(route, document);
-    setActiveNavMenuItem(route.name);
-    const appContainer = document.querySelector("#app-container");
-    const template = document.querySelector(route.template);
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
+    } let template = document.getElementById('intro-page');
+    let node = template.content.firstElementChild.cloneNode(true);
     appContainer.appendChild(node);
     currentPage = 'intro';
     handleTheme(currentPage);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-
+    hideLoadingMask();
 }
-
-
-function blog() {
-    setActiveNavMenuItem('blog');
-}
-
-
-function projects(route) {
-    animateTransition(route, document)
-    setActiveNavMenuItem('projects');
-    const appContainer = document.querySelector("#app-container");
-    const template = document.querySelector(route.template);
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
-    appContainer.appendChild(node);
-    currentPage = 'projects';
-    // Fetch and initialize Git status' on projects
-    getAllRepoStats(document);
-    handleTheme(currentPage);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-
-}
-
-function downloads(route) {
-    animateTransition(route, document)
-    setActiveNavMenuItem('downloads');
-    const parentContainer = document.querySelector("#app-container");
-    const template = document.getElementById(route.id);
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-    currentPage = 'downloads';
-    handleTheme(currentPage);
-
-}
-
-function contact(route) {
-    animateTransition(route, document)
-    setActiveNavMenuItem('contact');
-    const parentContainer = document.querySelector("#app-container");
-    const template = document.querySelector("#contact-page");
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-    currentPage = 'contact';
-    initContactForm(document, 'contact-form');
-    handleTheme(currentPage);
-}
-
-function about(route) {
-    animateTransition(route, document)
-    setActiveNavMenuItem('about');
-    const parentContainer = document.querySelector("#app-container");
-    const template = document.querySelector("#about-me-page");
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
-    gsap.to(node, { duration: 0.1, x: 0 }, "<");
-    /* Calculate + render years of experience */
-    renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
-        azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
-    currentPage = 'about';
-    handleTheme(currentPage);
-}
-
 
 function resetActiveNavItems() {
     let navElementIds = [NAV_MENU_INTRO_ID, NAV_MENU_PROJECTS_ID, NAV_MENU_ABOUT_ID, NAV_MENU_CONTACT_ID, NAV_MENU_DOWNLOADS_ID];
@@ -356,78 +438,11 @@ function resetActiveNavItems() {
 
 }
 
-function setActiveNavMenuItem(pageName) {
-    resetActiveNavItems();
-    switch (pageName) {
+
+function animateTransition(document) {
+    switch (currentPage) {
         case 'intro':
-            let introElementId = null;
-            if (isMobile.matches) {
-                introElementId = NAV_MOBILE_INTRO_ID;
-            } else {
-                introElementId = NAV_MENU_INTRO_ID;
-            }
-            document.getElementById(introElementId).dataset.active = true;
-            break;
-
-        case 'blog':
-            let blogIdElement = null;
-            if (isMobile.matches) {
-                blogIdElement = NAV_MOBILE_BLOG_ID;
-            } else {
-                blogIdElement = NAV_MENU_BLOG_ID;
-            }
-            document.getElementById(blogIdElement).dataset.active = true;
-            break;
-        case 'projects':
-            let projectsElementId = null;
-            if (isMobile.matches) {
-                projectsElementId = NAV_MOBILE_PROJECTS_ID;
-            } else {
-                projectsElementId = NAV_MENU_PROJECTS_ID;
-            }
-            document.getElementById(projectsElementId).dataset.active = true;
-            break;
-
-        case 'about':
-            let aboutElementId = null;
-            if (isMobile.matches) {
-                aboutElementId = NAV_MOBILE_ABOUT_ID;
-            } else {
-                aboutElementId = NAV_MENU_ABOUT_ID;
-
-            }
-            document.getElementById(aboutElementId).dataset.active = true;
-            break;
-
-        case 'contact':
-            let contactElementId = null;
-            if (isMobile.matches) {
-                contactElementId = NAV_MOBILE_CONTACT_ID;
-            } else {
-                contactElementId = NAV_MENU_CONTACT_ID;
-
-            }
-            document.getElementById(contactElementId).dataset.active = true;
-            break;
-
-        case 'downloads':
-            let downloadsElementId = null;
-            if (isMobile.matches) {
-                downloadsElementId = NAV_MOBILE_DOWNLOADS_ID;
-            } else {
-                downloadsElementId = NAV_MENU_DOWNLOADS_ID;
-
-            }
-            document.getElementById(downloadsElementId).dataset.active = true;
-            break;
-    }
-
-}
-
-function animateTransition(route, document) {
-    switch (route.name) {
-        case 'intro':
-            const introPage = document.querySelector(route.wrapper);
+            const introPage = document.querySelector('.intro--wrapper');
             let tl = new TimelineMax({
                 onComplete: function () {
                     introBackgroundEffect.destroy(); // Cleanup intro page background effect
@@ -437,16 +452,16 @@ function animateTransition(route, document) {
             tl.to(introPage, { duration: 0.1, x: '-100%' });
             break;
         case 'projects':
-            const projectsPage = document.querySelector(route.wrapper);
-            let tl2 = new TimelineMax({
+            const projectsPage = document.querySelector('.projects--wrapper');
+            let t2 = new TimelineMax({
                 onComplete: function () {
                     projectsPage.remove();
                 },
             });
-            tl2.to(projectsPage, { duration: 0.1, x: '-100%' });
+            t2.to(projectsPage, { duration: 0.1, x: '-100%' });
             break;
         case 'about':
-            const aboutPage = document.querySelector(route.wrapper);
+            const aboutPage = document.querySelector('.about--wrapper');
             let tl3 = new TimelineMax({
                 onComplete: function () {
                     aboutPage.remove();
@@ -455,7 +470,7 @@ function animateTransition(route, document) {
             tl3.to(aboutPage, { duration: 0.1, x: '-100%' });
             break;
         case 'contact':
-            const contactPage = document.querySelector(route.wrapper);
+            const contactPage = document.querySelector('.contact--wrapper');
             let tl4 = new TimelineMax({
                 onComplete: function () {
                     contactPage.remove();
@@ -464,7 +479,7 @@ function animateTransition(route, document) {
             tl4.to(contactPage, { duration: 0.1, x: '-100%' });
             break;
         case 'downloads':
-            const downloadsPage = document.querySelector(route.wrapper);
+            const downloadsPage = document.querySelector('.download--wrapper');
             let tl5 = new TimelineMax({
                 onComplete: function () {
                     downloadsPage.remove();
@@ -473,7 +488,7 @@ function animateTransition(route, document) {
             tl5.to(downloadsPage, { duration: 0.1, x: '-100%' });
             break;
         default:
-            console.error("Attempted to navigate to an unknown page: " + route.name);
+            console.error("Attempted to navigate to an unknown page: " + currentPage);
             break;
     }
 
@@ -553,10 +568,7 @@ function initDarkModeIntro() {
 function clearIntroAnimation() {
     if (introBackgroundEffect) {
         introBackgroundEffect.destroy();
-    } else {
-        console.log('introBackgroundEffect is null');
     }
-
 }
 
 

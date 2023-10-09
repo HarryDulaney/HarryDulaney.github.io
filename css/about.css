@@ -2,7 +2,7 @@
 .about-me-bg-overlay {
     position: relative;
     display: block;
-    background: url("../img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center;
+    background: url("../assets/img/graphics/undraw_moonlight_-5-ksn.svg") no-repeat center;
     background-size: contain;
     z-index: 0;
 }
@@ -239,7 +239,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(2):hover {
-    background-image: url("../img/graphics/undraw_pair_programming_re_or4x.svg");
+    background-image: url("../assets/img/graphics/undraw_pair_programming_re_or4x.svg");
 }
 
 .about--options>a:nth-child(3) {
@@ -247,7 +247,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(3):hover {
-    background-image: url("../img/graphics/undraw_articles_wbpb.svg");
+    background-image: url("../assets/img/graphics/undraw_articles_wbpb.svg");
 
 }
 
@@ -257,7 +257,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(4):hover {
-    background-image: url("../img/graphics/undraw_certificate_re_yadi.svg");
+    background-image: url("../assets/img/graphics/undraw_certificate_re_yadi.svg");
 
 }
 
@@ -268,7 +268,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(5):hover {
-    background-image: url("../img/graphics/undraw_modern_professional_re_3b6l.svg");
+    background-image: url("../assets/img/graphics/undraw_modern_professional_re_3b6l.svg");
 
 }
 
@@ -277,7 +277,7 @@ ul .skills-list {
 }
 
 .about--options>a:nth-child(1):hover {
-    background-image: url("../img/graphics/undraw_happy_music_g6wc.svg");
+    background-image: url("../assets/img/graphics/undraw_happy_music_g6wc.svg");
 }
 
 .about--options a>h3 {
@@ -346,26 +346,26 @@ ul .skills-list {
 
 
     .about--options>a:nth-child(2) {
-        background-image: url("../img/graphics/undraw_code_review_re_woeb.svg");
+        background-image: url("../assets/img/graphics/undraw_code_review_re_woeb.svg");
     }
 
     .about--options>a:nth-child(3) {
-        background-image: url("../img/graphics/undraw_articles_wbpb.svg");
+        background-image: url("../assets/img/graphics/undraw_articles_wbpb.svg");
 
     }
 
     .about--options>a:nth-child(4) {
-        background-image: url("../img/graphics/undraw_certificate_re_yadi.svg");
+        background-image: url("../assets/img/graphics/undraw_certificate_re_yadi.svg");
 
     }
 
     .about--options>a:nth-child(5) {
-        background-image: url("../img/graphics/undraw_modern_professional_re_3b6l.svg");
+        background-image: url("../assets/img/graphics/undraw_modern_professional_re_3b6l.svg");
 
     }
 
     .about--options>a:nth-child(1) {
-        background-image: url("../img/graphics/undraw_happy_music_g6wc.svg");
+        background-image: url("../assets/img/graphics/undraw_happy_music_g6wc.svg");
     }
 
 

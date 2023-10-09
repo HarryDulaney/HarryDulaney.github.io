@@ -95,7 +95,7 @@
     height: 100vh !important;
     z-index: 999999999999 !important;
     width: 100vw !important;
-    display: flex !important;
+    display: flex;
     justify-content: center !important;
     align-items: center !important;
     -webkit-align-items: center;
