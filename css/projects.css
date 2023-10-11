@@ -50,6 +50,10 @@
     width: 100%;
 }
 
+.projects--wrapper .main-sub-text {
+    font-weight: 400;
+    color: var(--text-sub-header);
+}
 
 /* -------------------------------------------------------- Projects -------------------------------------------------------- */
 .projects--wrapper {

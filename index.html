@@ -161,10 +161,6 @@
 </script>
 
 <body>
-    <!-- ---------------------------------------- Loading Mask ----------------------------------------- -->
-    <div class="loading--wrapper">
-        <span class="loader"></span>
-    </div>
     <!-----------------------------------------------  Intro  ---------------------------------------------------->
     <nav class="top--navbar">
         <div class="nav--items">
@@ -444,50 +440,6 @@
         class="main-container"
         id="app-container"
     >
-
-        <!-- ----------------------------------------- Reusable iframe / modal dialog ----------------------------------------------- -->
-        <template id="modal-dialog-element">
-            <div
-                class="modal fade p-3 m-2"
-                id="web-app-discog-modal"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="web-app-discog-title"
-                aria-hidden="true"
-                style="z-index: 999999;"
-            >
-                <div
-                    class="modal-dialog modal-dialog-centered"
-                    role="application"
-                    style="display: -webkit-flex;display: -ms-flexbox;display: flex; height: 85vh;
-                         min-width: 85vw; "
-                >
-                    <div
-                        class="modal-content"
-                        style="display: -webkit-flex;display: -ms-flexbox;display:
-                        flex; height:100%;width: 100%; bottom: 0;top: 0;overflow-y: auto;"
-                    >
-                        <div
-                            class="modal-body"
-                            style="-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;padding: 0.1rem;"
-                        >
-                            <iframe
-                                style="height:100%;width:100%; top:0;bottom:0;"
-                                src="https://harrydulaney.com/"
-                            ></iframe>
-                        </div>
-                        <div class="justify-content-center">
-                            <button
-                                type="button"
-                                class="btn btn-sm btn-secondary mt-1 mb-1"
-                                data-dismiss="modal"
-                            >CLOSE
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
         <!--------------------------------------- Intro ------------------------------------------->
         <template id="intro-page">
             <div class="intro--wrapper">
@@ -539,8 +491,13 @@
                             style="margin-bottom: 6vw"
                         >
                             <div class="col-xl-4 col-lg-4 col-md-12">
-                                <h2 class="text-center section--header">
-                                    projects.</h2>
+                                <div class="d-flex flex-column justify-content-center w-100">
+                                    <h2 class="text-center section--header">
+                                        projects.</h2>
+                                    <div class="text-center main-sub-text">
+                                        Side projects, some of them are open-source. </div>
+                                </div>
+
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-12">
                                 <div class="text-center projects--scroll-help-image">
@@ -1000,8 +957,6 @@
                             id="more-projects-wrapper"
                         >
 
-
-
                             <!------------------------------------- Spreadsheet Buddy -------------------------------------------->
                             <div class="row p-2 project--card">
                                 <div class="col-md-7">
@@ -1129,6 +1084,17 @@
                                             <span class="code-btn-text">Project</span> <i
                                                 class="fas fa-code-branch"></i>
                                         </a>
+                                        <div class="project--link m-2">
+                                            <a
+                                                type="button"
+                                                class="btn btn-primary"
+                                                target="_blank"
+                                                href="https://discog.harrydulaney.com"
+                                            >
+                                                <span class="launch-btn-text m-1">Launch</span> <i
+                                                    class="fa fa-rocket"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div
                                         class="project--stats mt-1"
@@ -1186,8 +1152,6 @@
                             </div>
 
                             <hr>
-
-
 
 
                             <!---------------------------------- Note Pad Android App ------------------------------------>
@@ -1863,7 +1827,6 @@
                                 </div>
                         </div>
 
-
                         </form>
                     </div>
                 </div>
@@ -1948,30 +1911,12 @@
         integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
         crossorigin="anonymous"
     ></script>
-    <script
-        defer
-        src="./js/util.js"
-    ></script>
-    <script
-        defer
-        src="./js/projects.js"
-    ></script>
-    <script
-        defer
-        src="./js/contact.js"
-    ></script>
-    <script
-        defer
-        src="./js/about.js"
-    ></script>
-    <script
-        defer
-        src="./js/download.js"
-    ></script>
-    <script
-        defer
-        src="./js/app.js"
-    ></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/projects.js"></script>
+    <script src="./js/contact.js"></script>
+    <script src="./js/about.js"></script>
+    <script src="./js/download.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
