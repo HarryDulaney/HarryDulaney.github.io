@@ -183,11 +183,11 @@ function downloads() {
     }
     document.getElementById(downloadsElementId).dataset.active = true;
 
-    const parentContainer = document.querySelector("#app-container");
+    const appContainer = document.querySelector("#app-container");
     const template = document.querySelector("#downloads-page");
     const node = template.content.firstElementChild.cloneNode(true);
     node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
+    appContainer.appendChild(node);
     gsap.to(node, { duration: 0.1, x: 0 }, "<");
     currentPage = 'downloads';
     handleTheme(currentPage);
@@ -209,11 +209,11 @@ function contact() {
     }
     document.getElementById(contactElementId).dataset.active = true;
 
-    const parentContainer = document.querySelector("#app-container");
+    const appContainer = document.querySelector("#app-container");
     const template = document.querySelector("#contact-page");
     const node = template.content.firstElementChild.cloneNode(true);
     node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
+    appContainer.appendChild(node);
     gsap.to(node, { duration: 0.1, x: 0 }, "<");
     currentPage = 'contact';
     initContactForm(document, 'contact-form');
@@ -236,11 +236,11 @@ function about() {
     }
 
     document.getElementById(aboutElementId).dataset.active = true;
-    const parentContainer = document.querySelector("#app-container");
+    const appContainer = document.querySelector("#app-container");
     const template = document.querySelector("#about-me-page");
     const node = template.content.firstElementChild.cloneNode(true);
     node.classList.add('page-slide-in-start');
-    parentContainer.appendChild(node);
+    appContainer.appendChild(node);
     gsap.to(node, { duration: 0.1, x: 0 }, "<");
     /* Calculate + render years of experience */
     renderAboutMe(fullTimeStartDate, javaStartDate, springStartDate, javaScriptStartDate, angularStartDate,
@@ -279,23 +279,9 @@ route('/downloads', 'downloads');
 route('/blog', 'blog');
 
 
-document.addEventListener('readystatechange', function () {
-    if (document.readyState === 'interactive') {
-        showLoadingMask();
-    } else if (document.readyState === 'loading') {
-        showLoadingMask();
-    } else if (document.readyState === 'complete') {
-        hideLoadingMask();
-    }
-});
 
-
-$(window).on("DOMContentLoaded", (event) => {
-    showLoadingMask();
-});
 
 $(window).on('resize', onWindowResize);
-
 $(window).on('hashchange', router);
 $(window).on('load', router);
 
@@ -303,7 +289,7 @@ $(window).on('load', router);
 /**
  * Main method, on document ready
  */
-$(document).ready(function () {
+$(window).ready(function () {
     var initialScrollPos = window.scrollY;
     var blogArrowTimeline;
 
@@ -371,21 +357,7 @@ $(document).ready(function () {
             $('#mobile-nav-icon').removeClass('open');
         }
     });
-
 });
-
-
-function showLoadingMask() {
-    let node = document.querySelector('div.loading--wrapper');
-    node.setAttribute('style', 'display: flex');
-    isLoading = true;
-}
-
-function hideLoadingMask() {
-    let node = document.querySelector('div.loading--wrapper');
-    node.setAttribute('style', 'display: none');
-    isLoading = false;
-}
 
 
 function onWindowResize() {
@@ -401,29 +373,6 @@ function onWindowResize() {
         }
     }
 };
-
-
-/* ----------------------------------------------- Page Inital Load ---------------------------------------------------- */
-
-/**
- * Handle rendering page on initial load
- */
-function onInitialPageLoad(pathName) {
-    const appContainer = document.querySelector("#app-container");
-    resetActiveNavItems();
-    let introElementId = null;
-    if (isMobile.matches) {
-        introElementId = NAV_MOBILE_INTRO_ID;
-    } else {
-        introElementId = NAV_MENU_INTRO_ID;
-
-    } let template = document.getElementById('intro-page');
-    let node = template.content.firstElementChild.cloneNode(true);
-    appContainer.appendChild(node);
-    currentPage = 'intro';
-    handleTheme(currentPage);
-    hideLoadingMask();
-}
 
 function resetActiveNavItems() {
     let navElementIds = [NAV_MENU_INTRO_ID, NAV_MENU_PROJECTS_ID, NAV_MENU_ABOUT_ID, NAV_MENU_CONTACT_ID, NAV_MENU_DOWNLOADS_ID];
