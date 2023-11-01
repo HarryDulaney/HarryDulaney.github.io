@@ -22,7 +22,7 @@ I'm not currently accepting contributions to this project, but feel free to fork
 Or if you have any suggestions, feel free to open an issue.
 
 ## Contact Information
-Harry Dulaney - [harrydulaney.com](https://harrydulaney.com/#contact) - LinkedIn - [linkedin.com/in/harrydulaney](https://www.linkedin.com/in/harrydulaney) 
+Harry Dulaney - [harrydulaney.com](https://harrydulaney.com/#/contact) - LinkedIn - [linkedin.com/in/harrydulaney](https://www.linkedin.com/in/harrydulaney) 
 
 ## License
 [Mit License](https://choosealicense.com/licenses/mit/)
