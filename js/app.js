@@ -3,7 +3,7 @@
 /**
  * app.js is main javascript driver for harrydulaney.com
  * @author Harry Dulaney
- * @since  1.4.6
+ * @version  1.5.1
  */
 
 /*  Global constants */
@@ -99,7 +99,6 @@ function addRoute(path, template) {
     };
 };
 
-
 function resolveRoute(routeName) {
     try {
         return routes[routeName];
@@ -115,14 +114,18 @@ function router(event) {
 };
 
 function navigate(navigateFn) {
+    var delay = 0;
     if (INITIALIZED) {
         animateTransition(document);
         navigateFn();
     } else {
         navigateFn();
-        hideLoader(200);
+        delay = 200;
         INITIALIZED = true;
     }
+
+    hideLoader(delay);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -207,25 +210,29 @@ function toggleLoader() {
 }
 
 function showLoader() {
-    FOOTER_CONTAINER.classList.add('hide-footer');
-    NAV_BAR_CONTAINER.classList.add('hide-navbar');
-    FOOTER_CONTAINER.classList.remove('show-footer');
-    NAV_BAR_CONTAINER.classList.remove('show-navbar');
-    LOADER_CONTAINER.classList.add('show-loading');
-    LOADER_CONTAINER.classList.remove('hide-loading');
-    isLoading = true;
+    if (!isLoading) {
+        FOOTER_CONTAINER.classList.add('hide-footer');
+        NAV_BAR_CONTAINER.classList.add('hide-navbar');
+        FOOTER_CONTAINER.classList.remove('show-footer');
+        NAV_BAR_CONTAINER.classList.remove('show-navbar');
+        LOADER_CONTAINER.classList.add('show-loading');
+        LOADER_CONTAINER.classList.remove('hide-loading');
+        isLoading = true;
+    }
 }
 
 function hideLoader(delay) {
-    setTimeout(function () {
-        LOADER_CONTAINER.classList.remove('show-loading');
-        LOADER_CONTAINER.classList.add('hide-loading');
-        FOOTER_CONTAINER.classList.remove('hide-footer');
-        NAV_BAR_CONTAINER.classList.remove('hide-navbar');
-        FOOTER_CONTAINER.classList.add('show-footer');
-        NAV_BAR_CONTAINER.classList.add('show-navbar');
-        isLoading = false;
-    }, delay || 0);
+    if (isLoading) {
+        setTimeout(function () {
+            LOADER_CONTAINER.classList.remove('show-loading');
+            LOADER_CONTAINER.classList.add('hide-loading');
+            FOOTER_CONTAINER.classList.remove('hide-footer');
+            NAV_BAR_CONTAINER.classList.remove('hide-navbar');
+            FOOTER_CONTAINER.classList.add('show-footer');
+            NAV_BAR_CONTAINER.classList.add('show-navbar');
+            isLoading = false;
+        }, delay || 0);
+    }
 }
 
 addTemplate('intro', function () {
@@ -256,6 +263,10 @@ addRoute('/downloads', 'downloads');
 
 $(window).on('hashchange', router);
 $(window).on('load', router);
+$(window).on('beforeunload', function () {
+
+});
+
 
 /**
  * Main method, on document ready
@@ -511,8 +522,6 @@ function initDarkModeIntro() {
         minWidth: 200.00,
         backgroundColor: 0x0e0e0e,
     });
-
-
 }
 
 function clearIntroAnimation() {
@@ -520,7 +529,6 @@ function clearIntroAnimation() {
         introBackgroundEffect.destroy();
     }
 }
-
 
 /** 
  * Toggle between light and dark themes 
@@ -538,7 +546,6 @@ function toggleTheme() {
         setLightTheme(CURRENT_PAGE_NAME);
     }
 }
-
 
 function setLightTheme(page) {
     switch (page) {
@@ -564,7 +571,6 @@ function setLightTheme(page) {
             break;
 
     }
-
 }
 
 function setDarkTheme(page) {
@@ -591,7 +597,6 @@ function setDarkTheme(page) {
             break;
     }
 }
-
 
 function showArrow(element) {
     const rect = element.getBoundingClientRect();
