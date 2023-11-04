@@ -1,3 +1,11 @@
+#nav-container.top--navbar.hide-navbar {
+    display: none;
+}
+
+#nav-container.top--navbar.show-navbar {
+    display: inline-block;
+}
+
 .close--btn {
     color: var(--text-primary);
     font-weight: 900;

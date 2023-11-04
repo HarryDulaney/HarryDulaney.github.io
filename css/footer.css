@@ -1,3 +1,12 @@
+#footer-container.hide-footer {
+    display: none;
+}
+
+#footer-container.show-footer {
+    display: inherit;
+}
+
+
 #footer {
     padding-bottom: 0.2rem !important;
     background-color: var(--bgcolor-secondary);

@@ -5,6 +5,9 @@
     --shared-header-text-color: #0e0e0e !important;
     --shared-sub-header-text-color: #0e0e0e !important;
     --shared-cards-header-text-color: #0e0e0e !important;
+    --shared-transition-cubic-bezier: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    --shared-transition: 0.3s ease-in-out !important;
+    transition: var(--shared-transition);
 
 }
 
@@ -38,10 +41,10 @@
     --dark-icon-display: none !important;
     --light-icon-display: inherit !important;
     --bg-mask: #dedede49 !important;
-    transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    transition: var(--shared-transition-cubic-bezier);
+    -webkit-transition: var(--shared-transition-cubic-bezier);
+    -moz-transition: var(--shared-transition-cubic-bezier);
+    -o-transition: var(--shared-transition-cubic-bezier);
     /* Projects Page */
     --project-card-text-header: var(--text-header) !important;
     --project-card-text-sub-header: var(--text-sub-header) !important;
@@ -79,20 +82,16 @@
     --dark-icon-display: inherit !important;
     --light-icon-display: none !important;
     --bg-mask: #000000dd !important;
-    transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -webkit-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -moz-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
-    -o-transition: cubic-bezier(0.9 ease-in, 0.9 ease-in-out, 0.2 ease, 1 ease-in-out) 0.5s !important;
+    transition: var(--shared-transition-cubic-bezier);
+    -webkit-transition: var(--shared-transition-cubic-bezier);
+    -moz-transition: var(--shared-transition-cubic-bezier);
+    -o-transition: var(--shared-transition-cubic-bezier);
     /* Projects Page */
     --project-card-text-header: var(--text-high-contrast) !important;
     --project-card-text-sub-header: #ffffff !important;
     --project-card-text-sub-title: var(--shared-accent-color) !important;
     --project-card-text-contrast: var(--project-card-text-sub-header) !important;
 
-}
-
-* {
-    transition: 0.3s ease-in-out;
 }
 
 

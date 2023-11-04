@@ -147,6 +147,36 @@
         content="#ffffff"
     >
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+<script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+></script>
+<script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+></script>
+</script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+    integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
+    crossorigin="anonymous"
+></script>
+<script src="./js/util.js"></script>
+<script src="./js/projects.js"></script>
+<script src="./js/contact.js"></script>
+<script src="./js/about.js"></script>
+<script src="./js/download.js"></script>
+<script src="./js/app.js"></script>
 <!-- Google tag (gtag.js) -->
 <script
     async
@@ -156,13 +186,22 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-8SEGDSK9CG');
 </script>
 
 <body>
-    <!-----------------------------------------------  Intro  ---------------------------------------------------->
-    <nav class="top--navbar">
+    <!----------------------------------------------- Loader overlay  ---------------------------------------------------->
+    <div
+        id="loader-container"
+        class="show-loading"
+    >
+        <div class="loader"></div>
+    </div>
+    <!-----------------------------------------------  NavBar  ---------------------------------------------------->
+    <nav
+        id="nav-container"
+        class="top--navbar hide-navbar"
+    >
         <div class="nav--items">
             <nav
                 class="mobile--nav"
@@ -440,8 +479,8 @@
         class="main-container"
         id="app-container"
     >
-        <!--------------------------------------- Intro ------------------------------------------->
-        <template id="intro-page">
+        <!--------------------------------------- Intro (Home) ------------------------------------------->
+        <template id="intro-page-template">
             <div class="intro--wrapper">
                 <div class="intro">
                     <div class="container">
@@ -464,7 +503,7 @@
                                     <span class="med-large-text text-nowrap">I'm Harry,</span> <br>
                                     <span class="med-med-text">
                                         I'm a full stack software engineer, Java programmer, web developer,
-                                        musician, and inventor based in Atlanta, GA.
+                                        musician, and dog dad based in Atlanta, GA.
                                     </span><br><br>
                                     <span class="med-main-message-text">
                                         I am passionate about building outstanding software solutions
@@ -483,7 +522,7 @@
         </template>
         <main class="main--body">
             <!-----------------------------------------------------------  Projects  ---------------------------------------------------------->
-            <template id="projects-page">
+            <template id="projects-page-template">
                 <section class="projects--wrapper">
                     <div class="container">
                         <div
@@ -1331,7 +1370,7 @@
     </section>
     </template>
     <!-----------------------------------------------  About Me  ---------------------------------------------------->
-    <template id="about-me-page">
+    <template id="about-page-template">
         <section class="about--wrapper">
             <div class="about about-me-bg-overlay">
                 <div class="about--banner">
@@ -1636,7 +1675,7 @@
         </section>
     </template>
     <!-----------------------------------------------  Resume/ Downloads ---------------------------------------------------->
-    <template id="downloads-page">
+    <template id="downloads-page-template">
         <div class="download--wrapper">
             <div class="w-100 align-content-center text-center ml-1">
                 <div class="container downloads-heading-wrapper">
@@ -1703,7 +1742,7 @@
             </div>
     </template>
     <!-----------------------------------------------  Contact  ---------------------------------------------------->
-    <template id="contact-page">
+    <template id="contact-page-template">
         <!-- Contact Section -->
         <section class="contact--wrapper">
             <div class="background-cover-art">
@@ -1836,87 +1875,59 @@
     </template>
     </main>
     </div>
-    <footer id="footer">
-        <div class="container social-footer-wrappper">
-            <div class="row d-flex justify-content-center">
-                <a
-                    class="mr-3"
-                    href="https://www.github.com/harrydulaney"
-                    target="_blank"
-                >
-                    <i class="fab fa-github"></i></a>
-                <a
-                    href="https://www.linkedin.com/in/harrydulaney"
-                    target="_blank"
-                >
-                    <i class="fab fa-linkedin"></i></a>
-                <a
-                    class="ml-3"
-                    href="https://www.facebook.com/HarryGDulaney"
-                    target="_blank"
-                >
-                    <i class="fab fa-facebook"></i></a>
-                <a
-                    class="ml-3"
-                    href="https://www.twitter.com/DulaneyHarry"
-                    target="_blank"
-                >
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                    class="ml-3"
-                    href="https://stackoverflow.com/users/11600831/harry-dulaney"
-                    target="_blank"
-                >
-                    <i class="fab fa-stack-overflow"></i>
-                </a>
+    <div id="footer-container" class="hide-footer">
+        <footer id="footer">
+            <div class="container social-footer-wrappper">
+                <div class="row d-flex justify-content-center">
+                    <a
+                        class="mr-3"
+                        href="https://www.github.com/harrydulaney"
+                        target="_blank"
+                    >
+                        <i class="fab fa-github"></i></a>
+                    <a
+                        href="https://www.linkedin.com/in/harrydulaney"
+                        target="_blank"
+                    >
+                        <i class="fab fa-linkedin"></i></a>
+                    <a
+                        class="ml-3"
+                        href="https://www.facebook.com/HarryGDulaney"
+                        target="_blank"
+                    >
+                        <i class="fab fa-facebook"></i></a>
+                    <a
+                        class="ml-3"
+                        href="https://www.twitter.com/DulaneyHarry"
+                        target="_blank"
+                    >
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a
+                        class="ml-3"
+                        href="https://stackoverflow.com/users/11600831/harry-dulaney"
+                        target="_blank"
+                    >
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
 
-                <br>
+                    <br>
+                </div>
+                <div class="row d-flex justify-content-center med-text p-2 mt-1">
+                    <a
+                        href="https://undraw.co/"
+                        target="_blank"
+                    >
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Illustrations by unDraw</span>
+                    </a>
+                </div>
             </div>
-            <div class="row d-flex justify-content-center med-text p-2 mt-1">
-                <a
-                    href="https://undraw.co/"
-                    target="_blank"
-                >
-                    <i class="fas fa-paint-brush"></i>
-                    <span>Illustrations by unDraw</span>
-                </a>
-            </div>
-        </div>
 
-        <p class="copyright-stamp">
-            ©2020-2023 Harry Dulaney - All Rights Reserved<br></p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
-    <script
-        src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"
-    ></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"
-    ></script>
-    <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"
-    ></script>
-    </script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
-        integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
-        crossorigin="anonymous"
-    ></script>
-    <script src="./js/util.js"></script>
-    <script src="./js/projects.js"></script>
-    <script src="./js/contact.js"></script>
-    <script src="./js/about.js"></script>
-    <script src="./js/download.js"></script>
-    <script src="./js/app.js"></script>
+            <p class="copyright-stamp">
+                ©2020-2023 Harry Dulaney - All Rights Reserved<br></p>
+        </footer>
+    </div>
 </body>
 
 </html>
