@@ -3,7 +3,7 @@
 /**
  * app.js is main javascript driver for harrydulaney.com
  * @author Harry Dulaney
- * @since  1.4.6
+ * @version  1.5.1
  */
 
 /*  Global constants */
@@ -98,7 +98,6 @@ function addRoute(path, template) {
         return;
     };
 };
-
 
 function resolveRoute(routeName) {
     try {
@@ -511,8 +510,6 @@ function initDarkModeIntro() {
         minWidth: 200.00,
         backgroundColor: 0x0e0e0e,
     });
-
-
 }
 
 function clearIntroAnimation() {
@@ -520,7 +517,6 @@ function clearIntroAnimation() {
         introBackgroundEffect.destroy();
     }
 }
-
 
 /** 
  * Toggle between light and dark themes 
@@ -538,7 +534,6 @@ function toggleTheme() {
         setLightTheme(CURRENT_PAGE_NAME);
     }
 }
-
 
 function setLightTheme(page) {
     switch (page) {
@@ -564,7 +559,6 @@ function setLightTheme(page) {
             break;
 
     }
-
 }
 
 function setDarkTheme(page) {
@@ -591,7 +585,6 @@ function setDarkTheme(page) {
             break;
     }
 }
-
 
 function showArrow(element) {
     const rect = element.getBoundingClientRect();
