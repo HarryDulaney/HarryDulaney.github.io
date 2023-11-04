@@ -114,14 +114,18 @@ function router(event) {
 };
 
 function navigate(navigateFn) {
+    var delay = 0;
     if (INITIALIZED) {
         animateTransition(document);
         navigateFn();
     } else {
         navigateFn();
-        hideLoader(200);
+        delay = 200;
         INITIALIZED = true;
     }
+
+    hideLoader(delay);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -206,25 +210,29 @@ function toggleLoader() {
 }
 
 function showLoader() {
-    FOOTER_CONTAINER.classList.add('hide-footer');
-    NAV_BAR_CONTAINER.classList.add('hide-navbar');
-    FOOTER_CONTAINER.classList.remove('show-footer');
-    NAV_BAR_CONTAINER.classList.remove('show-navbar');
-    LOADER_CONTAINER.classList.add('show-loading');
-    LOADER_CONTAINER.classList.remove('hide-loading');
-    isLoading = true;
+    if (!isLoading) {
+        FOOTER_CONTAINER.classList.add('hide-footer');
+        NAV_BAR_CONTAINER.classList.add('hide-navbar');
+        FOOTER_CONTAINER.classList.remove('show-footer');
+        NAV_BAR_CONTAINER.classList.remove('show-navbar');
+        LOADER_CONTAINER.classList.add('show-loading');
+        LOADER_CONTAINER.classList.remove('hide-loading');
+        isLoading = true;
+    }
 }
 
 function hideLoader(delay) {
-    setTimeout(function () {
-        LOADER_CONTAINER.classList.remove('show-loading');
-        LOADER_CONTAINER.classList.add('hide-loading');
-        FOOTER_CONTAINER.classList.remove('hide-footer');
-        NAV_BAR_CONTAINER.classList.remove('hide-navbar');
-        FOOTER_CONTAINER.classList.add('show-footer');
-        NAV_BAR_CONTAINER.classList.add('show-navbar');
-        isLoading = false;
-    }, delay || 0);
+    if (isLoading) {
+        setTimeout(function () {
+            LOADER_CONTAINER.classList.remove('show-loading');
+            LOADER_CONTAINER.classList.add('hide-loading');
+            FOOTER_CONTAINER.classList.remove('hide-footer');
+            NAV_BAR_CONTAINER.classList.remove('hide-navbar');
+            FOOTER_CONTAINER.classList.add('show-footer');
+            NAV_BAR_CONTAINER.classList.add('show-navbar');
+            isLoading = false;
+        }, delay || 0);
+    }
 }
 
 addTemplate('intro', function () {
@@ -255,6 +263,10 @@ addRoute('/downloads', 'downloads');
 
 $(window).on('hashchange', router);
 $(window).on('load', router);
+$(window).on('beforeunload', function () {
+
+});
+
 
 /**
  * Main method, on document ready
