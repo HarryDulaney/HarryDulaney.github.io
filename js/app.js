@@ -114,11 +114,21 @@ function router(event) {
     route();
 };
 
+function navigate(navigateFn) {
+    if (INITIALIZED) {
+        animateTransition(document);
+        navigateFn();
+    } else {
+        navigateFn();
+        hideLoader(200);
+        INITIALIZED = true;
+    }
+}
 
 /**
  * Intro page route handler
  */
-function intro() {
+function navigateToHome() {
     resetActiveNavItems();
     document.getElementById(INTRO_NAV_ELEMENT_ID).dataset.active = true;
     let introElement = templates['intro']['element'];
@@ -130,15 +140,13 @@ function intro() {
 
 }
 
-
 function blog() {
     resetActiveNavItems();
     document.getElementById(BLOG_NAV_ELEMENT_ID).dataset.active = true;
 
 }
 
-
-function projects() {
+function navigateToProjects() {
     resetActiveNavItems();
     document.getElementById(PROJECTS_NAV_ELEMENT_ID).dataset.active = true;
     const projectsElement = templates['projects']['element'];
@@ -152,7 +160,7 @@ function projects() {
 
 }
 
-function downloads() {
+function navigateToDownloads() {
     resetActiveNavItems();
     document.getElementById(DOWNLOADS_NAV_ELEMENT_ID).dataset.active = true;
     const downloadsElement = templates['downloads']['element'];
@@ -163,7 +171,7 @@ function downloads() {
     handleTheme(CURRENT_PAGE_NAME);
 }
 
-function contact() {
+function navigateToContact() {
     resetActiveNavItems();
     document.getElementById(CONTACT_NAV_ELEMENT_ID).dataset.active = true;
     const contactElement = templates['contact']['element'];
@@ -176,7 +184,7 @@ function contact() {
 
 }
 
-function about() {
+function navigateToAbout() {
     resetActiveNavItems();
     document.getElementById(ABOUT_NAV_ELEMENT_ID).dataset.active = true;
     const aboutElement = templates['about']['element'];
@@ -189,7 +197,6 @@ function about() {
     CURRENT_PAGE_NAME = 'about';
     handleTheme(CURRENT_PAGE_NAME);
 }
-
 
 function toggleLoader() {
     if (isLoading) {
@@ -221,66 +228,25 @@ function hideLoader(delay) {
     }, delay || 0);
 }
 
-
 addTemplate('intro', function () {
-    if (INITIALIZED) {
-        animateTransition(document);
-        intro();
-    } else {
-        intro();
-        hideLoader();
-        INITIALIZED = true;
-    }
-
+    navigate(navigateToHome);
 }, '#intro-page-template');
 
 addTemplate('about', function () {
-    if (INITIALIZED) {
-        animateTransition(document);
-        about();
-    } else {
-        about();
-        hideLoader();
-        INITIALIZED = true;
-    }
-
+    navigate(navigateToAbout);
 }, '#about-page-template');
 
 addTemplate('projects', function () {
-    if (INITIALIZED) {
-        animateTransition(document);
-        projects();
-    } else {
-        projects();
-        hideLoader();
-        INITIALIZED = true;
-    }
-
+    navigate(navigateToProjects);
 }, '#projects-page-template');
 
 addTemplate('contact', function () {
-    if (INITIALIZED) {
-        animateTransition(document);
-        contact();
-    } else {
-        contact();
-        hideLoader();
-        INITIALIZED = true;
-    }
-
+    navigate(navigateToContact);
 }, '#contact-page-template');
 
 addTemplate('downloads', function () {
-    if (INITIALIZED) {
-        animateTransition(document);
-        downloads();
-    } else {
-        downloads();
-        hideLoader();
-        INITIALIZED = true;
-    }
+    navigate(navigateToDownloads);
 }, '#downloads-page-template');
-
 
 addRoute('/', 'intro');
 addRoute('/about', 'about');
@@ -288,10 +254,8 @@ addRoute('/projects', 'projects');
 addRoute('/contact', 'contact');
 addRoute('/downloads', 'downloads');
 
-
 $(window).on('hashchange', router);
 $(window).on('load', router);
-
 
 /**
  * Main method, on document ready
@@ -314,7 +278,6 @@ $(window).ready(function () {
 
     $('#nav-menu-blog').bind('mouseleave', function (e) {
         hideArrow(blogArrowTimeline);
-
     });
 
     $(window).on('scroll', function () {
@@ -377,20 +340,6 @@ $(window).ready(function () {
 
 });
 
-
-
-function initializeAndRoute(requestedPage) {
-    handleTheme(requestedPage);
-    switch (requestedPage) {
-
-
-    }
-
-    INITIALIZED = true;
-
-}
-
-
 function setNavMenuElementIds() {
     if (isMobile.matches) {
         INTRO_NAV_ELEMENT_ID = NAV_MOBILE_INTRO_ID;
@@ -409,7 +358,6 @@ function setNavMenuElementIds() {
         BLOG_NAV_ELEMENT_ID = NAV_MENU_BLOG_ID;
     }
 }
-
 
 function onWindowResize() {
     if (CURRENT_THEME === LIGHT_THEME_NAME) {
@@ -440,11 +388,10 @@ function resetActiveNavItems() {
 
 }
 
-
 function animateTransition(document) {
     switch (CURRENT_PAGE_NAME) {
         case 'intro':
-            const introPage = document.querySelector('.intro--wrapper');
+            const introPage = templates['intro']['element'];
             let tl = new TimelineMax({
                 onComplete: function () {
                     introBackgroundEffect.destroy(); // Cleanup intro page background effect
@@ -454,7 +401,7 @@ function animateTransition(document) {
             tl.to(introPage, { duration: 0.1, x: '-100%' });
             break;
         case 'projects':
-            const projectsPage = document.querySelector('.projects--wrapper');
+            const projectsPage = templates['projects']['element'];
             let t2 = new TimelineMax({
                 onComplete: function () {
                     projectsPage.remove();
@@ -463,7 +410,7 @@ function animateTransition(document) {
             t2.to(projectsPage, { duration: 0.1, x: '-100%' });
             break;
         case 'about':
-            const aboutPage = document.querySelector('.about--wrapper');
+            const aboutPage = templates['about']['element'];
             let tl3 = new TimelineMax({
                 onComplete: function () {
                     aboutPage.remove();
@@ -472,7 +419,7 @@ function animateTransition(document) {
             tl3.to(aboutPage, { duration: 0.1, x: '-100%' });
             break;
         case 'contact':
-            const contactPage = document.querySelector('.contact--wrapper');
+            const contactPage = templates['contact']['element'];
             let tl4 = new TimelineMax({
                 onComplete: function () {
                     contactPage.remove();
@@ -481,7 +428,7 @@ function animateTransition(document) {
             tl4.to(contactPage, { duration: 0.1, x: '-100%' });
             break;
         case 'downloads':
-            const downloadsPage = document.querySelector('.download--wrapper');
+            const downloadsPage = templates['downloads']['element'];
             let tl5 = new TimelineMax({
                 onComplete: function () {
                     downloadsPage.remove();
