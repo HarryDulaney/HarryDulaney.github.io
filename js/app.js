@@ -63,6 +63,7 @@ var CURRENT_THEME = DARK_THEME_NAME;
 var CURRENT_PAGE_NAME = 'intro';
 var lastPage = 'intro';
 var INITIALIZED = false;
+var IS_RELOADED = false;
 
 var APP_CONTAINER = null;
 var FOOTER_CONTAINER = null;
@@ -117,22 +118,19 @@ function router(event) {
 function navigate(navigateFn) {
     if (INITIALIZED) {
         animateTransition(document);
-        navigateFn();
-        hideLoader();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-        navigateFn();
-        INITIALIZED = true;
-        hideLoader();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    INITIALIZED = true;
+    navigateFn();
+    hideLoader();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
 }
 
 /**
  * Intro page route handler
  */
-function navigateToHome() {
+function routeToHome() {
     resetActiveNavItems();
     document.getElementById(INTRO_NAV_ELEMENT_ID).dataset.active = true;
     let introElement = templates['intro']['element'];
@@ -150,7 +148,7 @@ function blog() {
 
 }
 
-function navigateToProjects() {
+function routeToProjects() {
     resetActiveNavItems();
     document.getElementById(PROJECTS_NAV_ELEMENT_ID).dataset.active = true;
     const projectsElement = templates['projects']['element'];
@@ -164,7 +162,7 @@ function navigateToProjects() {
 
 }
 
-function navigateToDownloads() {
+function routeToDownloads() {
     resetActiveNavItems();
     document.getElementById(DOWNLOADS_NAV_ELEMENT_ID).dataset.active = true;
     const downloadsElement = templates['downloads']['element'];
@@ -175,7 +173,7 @@ function navigateToDownloads() {
     handleTheme(CURRENT_PAGE_NAME);
 }
 
-function navigateToContact() {
+function routeToContact() {
     resetActiveNavItems();
     document.getElementById(CONTACT_NAV_ELEMENT_ID).dataset.active = true;
     const contactElement = templates['contact']['element'];
@@ -188,7 +186,7 @@ function navigateToContact() {
 
 }
 
-function navigateToAbout() {
+function routeToAbout() {
     resetActiveNavItems();
     document.getElementById(ABOUT_NAV_ELEMENT_ID).dataset.active = true;
     const aboutElement = templates['about']['element'];
@@ -211,74 +209,62 @@ function toggleLoader() {
 }
 
 function showLoader() {
-    if (!isLoading) {
-        isLoading = true;
-        FOOTER_CONTAINER.classList.add('hide-footer');
-        NAV_BAR_CONTAINER.classList.add('hide-navbar');
-        FOOTER_CONTAINER.classList.remove('show-footer');
-        NAV_BAR_CONTAINER.classList.remove('show-navbar');
-        LOADER_CONTAINER.classList.add('show-loading');
-        LOADER_CONTAINER.classList.remove('hide-loading');
-    }
+    if (isLoading) { return; } // Already shown
+    isLoading = true;
+    FOOTER_CONTAINER.classList.add('hide-footer');
+    NAV_BAR_CONTAINER.classList.add('hide-navbar');
+    FOOTER_CONTAINER.classList.remove('show-footer');
+    NAV_BAR_CONTAINER.classList.remove('show-navbar');
+    LOADER_CONTAINER.classList.add('show-loading');
+    LOADER_CONTAINER.classList.remove('hide-loading');
 
 }
 
 function hideLoader() {
-    if (isLoading) {
-        isLoading = false;
-        LOADER_CONTAINER.classList.remove('show-loading');
-        LOADER_CONTAINER.classList.add('hide-loading');
-        FOOTER_CONTAINER.classList.remove('hide-footer');
-        NAV_BAR_CONTAINER.classList.remove('hide-navbar');
-        FOOTER_CONTAINER.classList.add('show-footer');
-        NAV_BAR_CONTAINER.classList.add('show-navbar');
-    }
+    if (!isLoading) { return; } // Already hidden
+    isLoading = false;
+    LOADER_CONTAINER.classList.remove('show-loading');
+    LOADER_CONTAINER.classList.add('hide-loading');
+    FOOTER_CONTAINER.classList.remove('hide-footer');
+    NAV_BAR_CONTAINER.classList.remove('hide-navbar');
+    FOOTER_CONTAINER.classList.add('show-footer');
+    NAV_BAR_CONTAINER.classList.add('show-navbar');
+
 }
 
-addTemplate('intro', function () {
-    navigate(navigateToHome);
-}, '#intro-page-template');
 
-addTemplate('about', function () {
-    navigate(navigateToAbout);
-}, '#about-page-template');
+$(function () {
+    addTemplate('intro', function () {
+        navigate(routeToHome);
+    }, '#intro-page-template');
 
-addTemplate('projects', function () {
-    navigate(navigateToProjects);
-}, '#projects-page-template');
+    addTemplate('about', function () {
+        navigate(routeToAbout);
+    }, '#about-page-template');
 
-addTemplate('contact', function () {
-    navigate(navigateToContact);
-}, '#contact-page-template');
+    addTemplate('projects', function () {
+        navigate(routeToProjects);
+    }, '#projects-page-template');
 
-addTemplate('downloads', function () {
-    navigate(navigateToDownloads);
-}, '#downloads-page-template');
+    addTemplate('contact', function () {
+        navigate(routeToContact);
+    }, '#contact-page-template');
 
-addRoute('/', 'intro');
-addRoute('/about', 'about');
-addRoute('/projects', 'projects');
-addRoute('/contact', 'contact');
-addRoute('/downloads', 'downloads');
+    addTemplate('downloads', function () {
+        navigate(routeToDownloads);
+    }, '#downloads-page-template');
 
-$(window).on('hashchange', router);
-$(window).on('load', router);
-$(window).on('beforeunload', function () {
-    sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
-    INITIALIZED = false;
-});
-
-
-/**
- * Main method, on document ready
- */
-$(window).ready(function () {
+    addRoute('/', 'intro');
+    addRoute('/about', 'about');
+    addRoute('/projects', 'projects');
+    addRoute('/contact', 'contact');
+    addRoute('/downloads', 'downloads');
     APP_CONTAINER = document.querySelector("#app-container");
     initializePageElements();
     FOOTER_CONTAINER = document.querySelector('#footer-container');
     NAV_BAR_CONTAINER = document.querySelector('#nav-container');
     LOADER_CONTAINER = document.querySelector('#loader-container');
-    // const isReloaded = sessionStorage.getItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');        
+    IS_RELOADED = sessionStorage.getItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded') !== null;
     showLoader();
     setNavMenuElementIds();
     initializeTheme();
@@ -293,7 +279,7 @@ $(window).ready(function () {
         hideArrow(blogArrowTimeline);
     });
 
-    $(window).on('scroll', function () {
+    $(document).on('scroll', function () {
         // Hide scroll arrow on scroll
         if (open) {
             retractMobileMenu();
@@ -349,9 +335,19 @@ $(window).ready(function () {
         }
     });
 
+    $(window).on('load', router);
+    $(window).on('hashchange', router);
+    $(window).on('beforeunload', function () {
+        sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
+        INITIALIZED = false;
+    });
     $(window).on('resize', onWindowResize);
 
 });
+
+/**
+ * Main method, on document ready
+ */
 
 function setNavMenuElementIds() {
     if (isMobile.matches) {
@@ -494,16 +490,20 @@ function initLightModeIntro() {
             mouseControls: false,
             touchControls: false,
             gyroControls: false,
+            colorMode: "lerp",// variance | varianceGradient | lerpGradient | lerp
+            color1: 0x1007c5,
+            color2: 0x6c63ff,
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            colorMode: "lerp",
-            birdSize: 0.80,
-            wingSpan: 29.00,
-            separation: 60.00,
-            alignment: 53.00,
-            cohesion: 56.00,
+            birdSize: 1.0,
+            wingSpan: 48.00,
+            speedLimit: 5.00,
+            separation: 41.00,
+            alignment: 41.00,
+            cohesion: 42.00,
+            quantity: 4.00,
             backgroundColor: "rgba(217, 231, 250)",
             backgroundAlpha: 0.00
         });
@@ -524,15 +524,20 @@ function initDarkModeIntro() {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        colorMode: "lerp",
-        birdSize: 0.80,
-        wingSpan: 29.00,
-        separation: 60.00,
-        alignment: 53.00,
-        cohesion: 56.00,
+        colorMode: "varianceGradient",// variance | varianceGradient | lerpGradient | lerp
+        color1: 0x6c63ff,
+        color2: 0x6c63ff,
+        birdSize: 1.0,
+        wingSpan: 48.00,
+        speedLimit: 5.00,
+        separation: 41.00,
+        alignment: 41.00,
+        cohesion: 42.00,
+        quantity: 4.00,
         backgroundColor: 0x0e0e0f,
         backgroundAlpha: 1.00
     });
+
 }
 
 function clearIntroAnimation() {
@@ -555,6 +560,13 @@ function toggleTheme() {
         CURRENT_THEME = LIGHT_THEME_NAME;
         document.body.setAttribute(THEME_PREFERENCE_ATTRIBUTE, CURRENT_THEME);
         setLightTheme(CURRENT_PAGE_NAME);
+    }
+}
+
+function onBodyLoaded() {
+    isLoading = true;
+    if (IS_RELOADED) {
+        hideLoader();
     }
 }
 
