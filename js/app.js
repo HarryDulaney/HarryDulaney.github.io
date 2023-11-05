@@ -67,7 +67,6 @@ var INITIALIZED = false;
 var APP_CONTAINER = null;
 var FOOTER_CONTAINER = null;
 var NAV_BAR_CONTAINER = null;
-var LOADER_CONTAINER = null;
 
 var INTRO_NAV_ELEMENT_ID = null;
 var ABOUT_NAV_ELEMENT_ID = null;
@@ -215,14 +214,10 @@ function toggleLoader() {
 function showLoader() {
     FOOTER_CONTAINER.classList.replace('show-footer', 'hide-footer');
     NAV_BAR_CONTAINER.classList.replace('show-navbar', 'hide-navbar');
-    if (!LOADER_CONTAINER.classList.length === 0) {
-        LOADER_CONTAINER.classList.add('show-loading');
-    }
     isLoading = true;
 }
 
 function hideLoader() {
-    LOADER_CONTAINER.classList.remove('show-loading');
     FOOTER_CONTAINER.classList.replace('hide-footer', 'show-footer');
     NAV_BAR_CONTAINER.classList.replace('hide-navbar', 'show-navbar');
     isLoading = false;
@@ -260,9 +255,6 @@ $(function () {
     initializePageElements();
     FOOTER_CONTAINER = document.querySelector('#footer-container');
     NAV_BAR_CONTAINER = document.querySelector('#nav-container');
-    LOADER_CONTAINER = document.querySelector('#loader-container');
-    showLoader();
-
     setNavMenuElementIds();
     initializeTheme();
     var initialScrollPos = window.scrollY;
