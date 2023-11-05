@@ -3,11 +3,12 @@
 /**
  * app.js is main javascript driver for harrydulaney.com
  * @author Harry Dulaney
- * @since  1.4.6
+ * @version  1.5.1
  */
 
 /*  Global constants */
 const THEME_STORAGE_KEY = 'harry-dulaney-com-theme-preference';
+const PAGE_RELOADED_STORAGE_KEY = 'harry-dulaney-com-page-reloaded';
 const LAST_PAGE_KEY = 'harry-dulaney-com-last-page-visited';
 const DIRECT_ROUTE_NAV_KEY = `harry-dulaney-com-direct-route-navigation`;
 const LIGHT_THEME_NAME = 'light';
@@ -99,7 +100,6 @@ function addRoute(path, template) {
     };
 };
 
-
 function resolveRoute(routeName) {
     try {
         return routes[routeName];
@@ -120,9 +120,11 @@ function navigate(navigateFn) {
         navigateFn();
     } else {
         navigateFn();
-        hideLoader(200);
         INITIALIZED = true;
     }
+
+    hideLoader();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -216,16 +218,14 @@ function showLoader() {
     isLoading = true;
 }
 
-function hideLoader(delay) {
-    setTimeout(function () {
-        LOADER_CONTAINER.classList.remove('show-loading');
-        LOADER_CONTAINER.classList.add('hide-loading');
-        FOOTER_CONTAINER.classList.remove('hide-footer');
-        NAV_BAR_CONTAINER.classList.remove('hide-navbar');
-        FOOTER_CONTAINER.classList.add('show-footer');
-        NAV_BAR_CONTAINER.classList.add('show-navbar');
-        isLoading = false;
-    }, delay || 0);
+function hideLoader() {
+    LOADER_CONTAINER.classList.remove('show-loading');
+    LOADER_CONTAINER.classList.add('hide-loading');
+    FOOTER_CONTAINER.classList.remove('hide-footer');
+    NAV_BAR_CONTAINER.classList.remove('hide-navbar');
+    FOOTER_CONTAINER.classList.add('show-footer');
+    NAV_BAR_CONTAINER.classList.add('show-navbar');
+    isLoading = false;
 }
 
 addTemplate('intro', function () {
@@ -256,6 +256,10 @@ addRoute('/downloads', 'downloads');
 
 $(window).on('hashchange', router);
 $(window).on('load', router);
+$(window).on('beforeunload', function () {
+    sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
+});
+
 
 /**
  * Main method, on document ready
@@ -502,17 +506,24 @@ function initDarkModeIntro() {
         introBackgroundEffect.destroy();
     }
 
-    introBackgroundEffect = VANTA.RINGS({
+    introBackgroundEffect = VANTA.BIRDS({
         el: ".intro--wrapper",
         mouseControls: false,
         touchControls: false,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        backgroundColor: 0x0e0e0e,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        colorMode: "lerp",
+        birdSize: 0.80,
+        wingSpan: 29.00,
+        separation: 60.00,
+        alignment: 53.00,
+        cohesion: 56.00,
+        backgroundColor: 0x0e0e0f,
+        backgroundAlpha: 1.00
     });
-
-
 }
 
 function clearIntroAnimation() {
@@ -520,7 +531,6 @@ function clearIntroAnimation() {
         introBackgroundEffect.destroy();
     }
 }
-
 
 /** 
  * Toggle between light and dark themes 
@@ -538,7 +548,6 @@ function toggleTheme() {
         setLightTheme(CURRENT_PAGE_NAME);
     }
 }
-
 
 function setLightTheme(page) {
     switch (page) {
@@ -564,7 +573,6 @@ function setLightTheme(page) {
             break;
 
     }
-
 }
 
 function setDarkTheme(page) {
@@ -591,7 +599,6 @@ function setDarkTheme(page) {
             break;
     }
 }
-
 
 function showArrow(element) {
     const rect = element.getBoundingClientRect();
