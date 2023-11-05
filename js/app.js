@@ -324,7 +324,6 @@ $(function () {
         }
     });
     /* =============== Window Event Binding ============== */
-    $(window).on('hashchange', router);
     $(window).on('beforeunload', function () {
         sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
         INITIALIZED = false;

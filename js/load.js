@@ -9,3 +9,4 @@ function load() {
 }
 
 $(window).on('load', load);
+$(window).on('hashchange', load);
