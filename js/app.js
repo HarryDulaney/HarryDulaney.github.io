@@ -63,7 +63,6 @@ var CURRENT_THEME = DARK_THEME_NAME;
 var CURRENT_PAGE_NAME = 'intro';
 var lastPage = 'intro';
 var INITIALIZED = false;
-var IS_RELOADED = false;
 
 var APP_CONTAINER = null;
 var FOOTER_CONTAINER = null;
@@ -139,6 +138,7 @@ function routeToHome() {
     CURRENT_PAGE_NAME = 'intro';
     handleTheme(CURRENT_PAGE_NAME);
     gsap.to(introElement, { duration: 0.1, x: 0 }, "<");
+    hideLoader();
 
 }
 
@@ -159,6 +159,7 @@ function routeToProjects() {
     getAllRepoStats(document);
     handleTheme(CURRENT_PAGE_NAME);
     gsap.to(projectsElement, { duration: 0.1, x: 0 }, "<");
+    hideLoader();
 
 }
 
@@ -171,6 +172,7 @@ function routeToDownloads() {
     gsap.to(downloadsElement, { duration: 0.1, x: 0 }, "<");
     CURRENT_PAGE_NAME = 'downloads';
     handleTheme(CURRENT_PAGE_NAME);
+    hideLoader();
 }
 
 function routeToContact() {
@@ -183,6 +185,7 @@ function routeToContact() {
     CURRENT_PAGE_NAME = 'contact';
     initContactForm(document, 'contact-form');
     handleTheme(CURRENT_PAGE_NAME);
+    hideLoader();
 
 }
 
@@ -198,6 +201,7 @@ function routeToAbout() {
         azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
     CURRENT_PAGE_NAME = 'about';
     handleTheme(CURRENT_PAGE_NAME);
+    hideLoader();
 }
 
 function toggleLoader() {
@@ -211,12 +215,14 @@ function toggleLoader() {
 function showLoader() {
     FOOTER_CONTAINER.classList.replace('show-footer', 'hide-footer');
     NAV_BAR_CONTAINER.classList.replace('show-navbar', 'hide-navbar');
-    LOADER_CONTAINER.classList.replace('hide-loading', 'show-loading');
+    if (!LOADER_CONTAINER.classList.length === 0) {
+        LOADER_CONTAINER.classList.add('show-loading');
+    }
     isLoading = true;
 }
 
 function hideLoader() {
-    LOADER_CONTAINER.classList.replace('show-loading', 'hide-loading');
+    LOADER_CONTAINER.classList.remove('show-loading');
     FOOTER_CONTAINER.classList.replace('hide-footer', 'show-footer');
     NAV_BAR_CONTAINER.classList.replace('hide-navbar', 'show-navbar');
     isLoading = false;
@@ -224,6 +230,7 @@ function hideLoader() {
 
 
 $(function () {
+    INITIALIZED = false;
     addTemplate('intro', function () {
         navigate(routeToHome);
     }, '#intro-page-template');
@@ -254,7 +261,8 @@ $(function () {
     FOOTER_CONTAINER = document.querySelector('#footer-container');
     NAV_BAR_CONTAINER = document.querySelector('#nav-container');
     LOADER_CONTAINER = document.querySelector('#loader-container');
-    IS_RELOADED = sessionStorage.getItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded') !== null;
+    showLoader();
+
     setNavMenuElementIds();
     initializeTheme();
     var initialScrollPos = window.scrollY;
@@ -325,7 +333,6 @@ $(function () {
     });
     /* =============== Window Event Binding ============== */
     $(window).on('beforeunload', function () {
-        sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
         INITIALIZED = false;
     });
     $(window).on('resize', onWindowResize);
@@ -615,3 +622,6 @@ function hideArrow(timeline) {
     timeline.reverse();
 }
 
+
+$(window).on('load', router);
+$(window).on('hashchange', router);

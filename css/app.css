@@ -87,8 +87,8 @@
 
 }
 
-#loader-container.hide-loading {
-    display: none;
+#loader-container {
+    display: none !important;
 }
 
 
