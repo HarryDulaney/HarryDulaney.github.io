@@ -1,5 +1,10 @@
 # This repo contains source code for [harrydulaney.com](https://harrydulaney.github.io)
 ![page-preview](assets/img/page-preview.png)
+![project-page-preview](assets/img/projects-page-preview.png)
+![about-page-preview](assets/img/about-page-preview.png)
+![contact-page-preview](assets/img/contact-page-preview.png)
+![downloads-page-preview](assets/img/downloads-page-preview.png)
+
 ## Description
 This is my personal portfolio website. It is hosted on GitHub Pages and features the following technologies:
 - HTML
