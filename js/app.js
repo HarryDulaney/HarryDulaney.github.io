@@ -323,15 +323,12 @@ $(function () {
             $('#mobile-nav-icon').removeClass('open');
         }
     });
-
-    $(window).on('load', router);
-    $(window).on('hashchange', router);
+    /* =============== Window Event Binding ============== */
     $(window).on('beforeunload', function () {
         sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
         INITIALIZED = false;
     });
     $(window).on('resize', onWindowResize);
-
 });
 
 /**
@@ -552,13 +549,6 @@ function toggleTheme() {
     }
 }
 
-function onBodyLoaded() {
-    isLoading = true;
-    if (IS_RELOADED) {
-        hideLoader();
-    }
-}
-
 function setLightTheme(page) {
     switch (page) {
         case 'intro':
@@ -624,3 +614,4 @@ function showArrow(element) {
 function hideArrow(timeline) {
     timeline.reverse();
 }
+

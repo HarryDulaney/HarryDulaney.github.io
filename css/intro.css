@@ -1,7 +1,6 @@
 /*  -------------------------------------------------- Intro ------------------------------------------------------  */
 .intro--wrapper {
     position: relative;
-    overflow-x: hidden !important;
     background-color: var(--bgcolor-primary);
     min-height: 100vh !important;
     height: fit-content !important;
