@@ -118,13 +118,15 @@ function navigate(navigateFn) {
     if (INITIALIZED) {
         animateTransition(document);
         navigateFn();
+        hideLoader();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
         navigateFn();
         INITIALIZED = true;
+        hideLoader();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    hideLoader();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -209,23 +211,28 @@ function toggleLoader() {
 }
 
 function showLoader() {
-    FOOTER_CONTAINER.classList.add('hide-footer');
-    NAV_BAR_CONTAINER.classList.add('hide-navbar');
-    FOOTER_CONTAINER.classList.remove('show-footer');
-    NAV_BAR_CONTAINER.classList.remove('show-navbar');
-    LOADER_CONTAINER.classList.add('show-loading');
-    LOADER_CONTAINER.classList.remove('hide-loading');
-    isLoading = true;
+    if (!isLoading) {
+        isLoading = true;
+        FOOTER_CONTAINER.classList.add('hide-footer');
+        NAV_BAR_CONTAINER.classList.add('hide-navbar');
+        FOOTER_CONTAINER.classList.remove('show-footer');
+        NAV_BAR_CONTAINER.classList.remove('show-navbar');
+        LOADER_CONTAINER.classList.add('show-loading');
+        LOADER_CONTAINER.classList.remove('hide-loading');
+    }
+
 }
 
 function hideLoader() {
-    LOADER_CONTAINER.classList.remove('show-loading');
-    LOADER_CONTAINER.classList.add('hide-loading');
-    FOOTER_CONTAINER.classList.remove('hide-footer');
-    NAV_BAR_CONTAINER.classList.remove('hide-navbar');
-    FOOTER_CONTAINER.classList.add('show-footer');
-    NAV_BAR_CONTAINER.classList.add('show-navbar');
-    isLoading = false;
+    if (isLoading) {
+        isLoading = false;
+        LOADER_CONTAINER.classList.remove('show-loading');
+        LOADER_CONTAINER.classList.add('hide-loading');
+        FOOTER_CONTAINER.classList.remove('hide-footer');
+        NAV_BAR_CONTAINER.classList.remove('hide-navbar');
+        FOOTER_CONTAINER.classList.add('show-footer');
+        NAV_BAR_CONTAINER.classList.add('show-navbar');
+    }
 }
 
 addTemplate('intro', function () {
@@ -258,6 +265,7 @@ $(window).on('hashchange', router);
 $(window).on('load', router);
 $(window).on('beforeunload', function () {
     sessionStorage.setItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');
+    INITIALIZED = false;
 });
 
 
@@ -270,6 +278,7 @@ $(window).ready(function () {
     FOOTER_CONTAINER = document.querySelector('#footer-container');
     NAV_BAR_CONTAINER = document.querySelector('#nav-container');
     LOADER_CONTAINER = document.querySelector('#loader-container');
+    // const isReloaded = sessionStorage.getItem(PAGE_RELOADED_STORAGE_KEY, 'reloaded');        
     showLoader();
     setNavMenuElementIds();
     initializeTheme();
