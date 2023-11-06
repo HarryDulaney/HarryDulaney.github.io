@@ -63,10 +63,12 @@ var CURRENT_THEME = DARK_THEME_NAME;
 var CURRENT_PAGE_NAME = 'intro';
 var lastPage = 'intro';
 var INITIALIZED = false;
+var DOC_INITIALIZED = false;
 
 var APP_CONTAINER = null;
 var FOOTER_CONTAINER = null;
 var NAV_BAR_CONTAINER = null;
+var LOADER_CONTAINER = null;
 
 var INTRO_NAV_ELEMENT_ID = null;
 var ABOUT_NAV_ELEMENT_ID = null;
@@ -120,9 +122,6 @@ function navigate(navigateFn) {
 
     INITIALIZED = true;
     navigateFn();
-    hideLoader();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
 }
 
 /**
@@ -137,8 +136,6 @@ function routeToHome() {
     CURRENT_PAGE_NAME = 'intro';
     handleTheme(CURRENT_PAGE_NAME);
     gsap.to(introElement, { duration: 0.1, x: 0 }, "<");
-    hideLoader();
-
 }
 
 function blog() {
@@ -158,7 +155,7 @@ function routeToProjects() {
     getAllRepoStats(document);
     handleTheme(CURRENT_PAGE_NAME);
     gsap.to(projectsElement, { duration: 0.1, x: 0 }, "<");
-    hideLoader();
+
 
 }
 
@@ -171,7 +168,6 @@ function routeToDownloads() {
     gsap.to(downloadsElement, { duration: 0.1, x: 0 }, "<");
     CURRENT_PAGE_NAME = 'downloads';
     handleTheme(CURRENT_PAGE_NAME);
-    hideLoader();
 }
 
 function routeToContact() {
@@ -184,7 +180,6 @@ function routeToContact() {
     CURRENT_PAGE_NAME = 'contact';
     initContactForm(document, 'contact-form');
     handleTheme(CURRENT_PAGE_NAME);
-    hideLoader();
 
 }
 
@@ -200,7 +195,6 @@ function routeToAbout() {
         azureCloudStartDate, kubernetesStartDate, microServicesStartDate, restApiStartDate, webDevelopmentStartDate);
     CURRENT_PAGE_NAME = 'about';
     handleTheme(CURRENT_PAGE_NAME);
-    hideLoader();
 }
 
 function toggleLoader() {
@@ -223,34 +217,47 @@ function hideLoader() {
     isLoading = false;
 }
 
+addTemplate('intro', function () {
+    navigate(routeToHome);
+}, '#intro-page-template');
 
-$(function () {
+addTemplate('about', function () {
+    navigate(routeToAbout);
+}, '#about-page-template');
+
+addTemplate('projects', function () {
+    navigate(routeToProjects);
+}, '#projects-page-template');
+
+addTemplate('contact', function () {
+    navigate(routeToContact);
+}, '#contact-page-template');
+
+addTemplate('downloads', function () {
+    navigate(routeToDownloads);
+}, '#downloads-page-template');
+
+addRoute('/', 'intro');
+addRoute('/about', 'about');
+addRoute('/projects', 'projects');
+addRoute('/contact', 'contact');
+addRoute('/downloads', 'downloads');
+
+$(document).ready(function () { initialize() });
+$(document).on('pageshow', function () {
+    hideLoader();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+$(window).on('hashchange', router);
+$(window).on('load', function () {
+    if (!DOC_INITIALIZED) {
+        initialize();
+    }
+    router();
+});
+
+function initialize() {
     INITIALIZED = false;
-    addTemplate('intro', function () {
-        navigate(routeToHome);
-    }, '#intro-page-template');
-
-    addTemplate('about', function () {
-        navigate(routeToAbout);
-    }, '#about-page-template');
-
-    addTemplate('projects', function () {
-        navigate(routeToProjects);
-    }, '#projects-page-template');
-
-    addTemplate('contact', function () {
-        navigate(routeToContact);
-    }, '#contact-page-template');
-
-    addTemplate('downloads', function () {
-        navigate(routeToDownloads);
-    }, '#downloads-page-template');
-
-    addRoute('/', 'intro');
-    addRoute('/about', 'about');
-    addRoute('/projects', 'projects');
-    addRoute('/contact', 'contact');
-    addRoute('/downloads', 'downloads');
     APP_CONTAINER = document.querySelector("#app-container");
     initializePageElements();
     FOOTER_CONTAINER = document.querySelector('#footer-container');
@@ -326,13 +333,11 @@ $(function () {
     /* =============== Window Event Binding ============== */
     $(window).on('beforeunload', function () {
         INITIALIZED = false;
+        DOC_INITIALIZED = false;
     });
     $(window).on('resize', onWindowResize);
-});
-
-/**
- * Main method, on document ready
- */
+    DOC_INITIALIZED = true;
+}
 
 function setNavMenuElementIds() {
     if (isMobile.matches) {
@@ -613,7 +618,3 @@ function showArrow(element) {
 function hideArrow(timeline) {
     timeline.reverse();
 }
-
-
-$(window).on('load', router);
-$(window).on('hashchange', router);
