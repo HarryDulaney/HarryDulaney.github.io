@@ -122,6 +122,8 @@ function navigate(navigateFn) {
 
     INITIALIZED = true;
     navigateFn();
+    hideLoader();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /**
@@ -244,10 +246,6 @@ addRoute('/contact', 'contact');
 addRoute('/downloads', 'downloads');
 
 $(document).ready(function () { initialize() });
-$(document).on('pageshow', function () {
-    hideLoader();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 $(window).on('hashchange', router);
 $(window).on('load', function () {
     if (!DOC_INITIALIZED) {
