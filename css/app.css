@@ -70,7 +70,7 @@
 }
 
 
-#loader-container.show-loading {
+#loader-container[data-loading="true"] {
     display: flex;
     position: absolute;
     padding: 0;
@@ -87,7 +87,7 @@
 
 }
 
-#loader-container {
+#loader-container[data-loading="false"] .loader {
     display: none !important;
 }
 
