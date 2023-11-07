@@ -92,6 +92,12 @@
     />
     <link
         rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+        integrity="sha384-HW5lF8RAdL8caSZX0knRBqXpi7nbJfd3NxWyTtp6pXU1RhHAlcIwkqoXkW8bW+Un"
+        crossorigin="anonymous"
+    >
+    <link
+        rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous"
@@ -190,6 +196,7 @@
         src="./js/download.js"
     ></script>
     <script
+        async
         defer
         src="./js/app.js"
     ></script>
@@ -484,6 +491,12 @@
             </div>
         </div>
     </nav>
+    <div id="loader-container">
+        <div
+            class="loader"
+            data-loading="false"
+        ></div>
+    </div>
     <div
         class="main-container"
         id="app-container"
