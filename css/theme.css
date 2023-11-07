@@ -147,7 +147,26 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+hgroup,
+menu,
+header,
+section,
+summary {
+    display: block;
+}
 
+audio,
+canvas,
+progress,
+video {
+    vertical-align: baseline;
+}
 
 a {
     color: var(--icon-primary);
